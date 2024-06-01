@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-const plugin = require('tailwindcss/plugin')
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   content: [
@@ -52,7 +52,7 @@ module.exports = {
     require('@headlessui/tailwindcss'),
     plugin(function ({ addUtilities }) {
       addUtilities({
-        '.no-scrollbar::webkit-scrollbar': {
+        '.no-scrollbar::-webkit-scrollbar': {
           display: 'none',
         },
         '.no-scrollbar': {
