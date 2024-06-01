@@ -1,0 +1,13 @@
+{
+  "Header": {
+    "language": "zh"
+  },
+  "CTA": {
+    "donate": "立即捐赠",
+    "telegram": "加入Telegram聊天群",
+    "apply": "申请加入团队"
+  },
+  "CenterBar": {
+    "presentation": "都灵理工大学学生团队从事比特币教育的研发"
+  }
+}

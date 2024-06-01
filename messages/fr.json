@@ -1,0 +1,13 @@
+{
+  "Header": {
+    "language": "fr"
+  },
+  "CTA": {
+    "donate": "Faire un don",
+    "telegram": "Rejoins-nous sur Telegram",
+    "apply": "Postuler pour rejoindre l'équipe"
+  },
+  "CenterBar": {
+    "presentation": "Une équipe d'étudiants de l'École polytechnique de Turin qui s'occupe d'éducation, recherche et développement de Bitcoin."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "Header": {
+    "language": "es"
+  },
+  "CTA": {
+    "donate": "Donar ahora",
+    "telegram": "Únete a nosotros en Telegram",
+    "apply": "Solicita para unirte al equipo"
+  },
+  "CenterBar": {
+    "presentation": "Equipo de estudiantes en el Politécnico de Turín dedicado a la educación, investigación y desarrollo de Bitcoin"
+  }
+}

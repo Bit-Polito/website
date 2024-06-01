@@ -1,0 +1,24 @@
+{
+  "Header": {
+    "language": "it"
+  },
+  "CTA": {
+    "donate": "Dona Ora",
+    "telegram": "Unisciti a Telegram",
+    "apply": "Diventa un membro del team"
+  },
+  "CenterBar": {
+    "presentation": "Team studentesco del Politecnico di Torino che si occupa di educazione, ricerca e sviluppo su Bitcoin"
+  },
+  "Home": {
+    "title": "Team studentesco del Politecnico di Torino",
+    "subtitle": "Educazione, ricerca e sviluppo su Bitcoin",
+    "events": "Eventi",
+    "projects": "Progetti",
+    "podcast": "Podcast",
+    "contacts": "Contatti",
+    "joinus": "Entra nel canale",
+    "donate":"Dona Ora",
+    "top": "Torna in cima"
+  }
+}

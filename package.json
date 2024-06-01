@@ -1,0 +1,31 @@
+{
+  "name": "bitpolito",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.18",
+    "@headlessui/tailwindcss": "^0.2.0",
+    "next": "^14.1.4",
+    "next-intl": "^3.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-tinder-card": "1.5.4",
+    "sharp": "^0.33.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "^14.1.4",
+    "eslint-config-prettier": "^9.0.0",
+    "postcss": "^8",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.2.8",
+    "tailwindcss": "^3"
+  }
+}
