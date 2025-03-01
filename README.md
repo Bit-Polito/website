@@ -36,9 +36,13 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## Useful Links
-figma project: https://www.figma.com/design/ssdd5DmVcAvOxY3g5bYAzB/Grafica-Bitpolito-%E2%80%93-Website?node-id=248-8520&t=h6i8QT3Hiv1Peap8-1
-old version - vercel: https://website-bit-politos-projects.vercel.app/en
-new version testnet - vercel: website-wheat-psi.vercel.app/
+[figma project](https://www.figma.com/design/ssdd5DmVcAvOxY3g5bYAzB/Grafica-Bitpolito-%E2%80%93-Website?node-id=248-8520&t=h6i8QT3Hiv1Peap8-1)
+
+[old version - vercel](https://website-bit-politos-projects.vercel.app/en)
+
+[new version - vercel](https://website-wheat-psi.vercel.app/)
+
+[db - google drive](https://drive.google.com/drive/folders/1sUirMe1Cr_P1dcA20sraaevpdkDZiiBr?usp=drive_link)
 
 ## Branches Structure
 We use the dev branch as a staging branch, so all PR must be done toward that branch. Lastly they'll go in main. 
