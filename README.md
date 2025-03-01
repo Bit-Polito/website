@@ -34,3 +34,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Useful Links
+figma project: https://www.figma.com/design/ssdd5DmVcAvOxY3g5bYAzB/Grafica-Bitpolito-%E2%80%93-Website?node-id=248-8520&t=h6i8QT3Hiv1Peap8-1
+old version - vercel: https://website-bit-politos-projects.vercel.app/en
+new version testnet - vercel: website-wheat-psi.vercel.app/
+
+## Branches Structure
+We use the dev branch as a staging branch, so all PR must be done toward that branch. Lastly they'll go in main. 
+The branch called "landing" is the one that contains the old landing page (curently live at bitpolito.it).
+
+## How to wok on an issue
+When working on an issue you are gonna create a new branch and push on that, opening than a PR to merge from that branch to dev.
