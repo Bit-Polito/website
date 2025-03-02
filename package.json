@@ -19,8 +19,5 @@
     "postcss": "^8.0.0",
     "autoprefixer": "^10.0.0",
     "@headlessui/tailwindcss": "latest"
-  },
-  "peerDependencies": {
-    "react-native": "^0.74.1"
   }
 }
