@@ -54,4 +54,3 @@ The branch called "landing" is the one that contains the old landing page (curen
 
 ## How to wok on an issue
 When working on an issue you are gonna create a new branch and push on that, opening than a PR to merge from that branch to dev.
-

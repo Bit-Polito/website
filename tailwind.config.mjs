@@ -12,9 +12,6 @@ export default {
         'blue-light': '#ffffff',
         'blue-dark': '#0000ff',
       },
-      rotate: {
-        '7': '7deg',
-      },
     },
   },
   plugins: [],

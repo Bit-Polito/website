@@ -41,13 +41,13 @@ export default function LanguageSelector() {
         <div className="relative inline-block" ref={dropdownRef}>
             <button
                 onClick={() => setIsDropdownOpen((prev) => !prev)}
-                className="btn-b rounded-full border-blue-700"
+                className="btn-b rounded-full !px-5"
             >
                 {i18n.language.toUpperCase()}
             </button>
 
             {isDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-blue-700 rounded shadow-lg">
+                <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-blue-dark rounded shadow-lg">
                     <ul className="py-1">
                         {languages.map((lang) => (
                             <li key={lang.code}>

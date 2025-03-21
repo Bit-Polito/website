@@ -15,6 +15,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       <div className={`${"sm:pr-2 sm:mr-0 sm:ml-0 sm:break-words" +
         " lg:flex-1 lg:overflow-y-auto lg:min-h-screen lg:pr-20 lg:pl-2 lg:break-words lg:mr-[350px]"
         }`} style={{ paddingBottom: `${footerHeight}px` }}
@@ -42,20 +43,20 @@ export default function HomePage() {
         <Chessboard />
 
         {isBottom && (
-          <div className="fixed bottom-[calc(100vh-100px)] left-7 z-20" style={{ bottom: `${footerHeight + 15}px` }}>
-            <button onClick={scrollToTop} className="btn-w">
-              <img src={"icons/back-top-light.png"} className="icon-style-opposite"></img>
-              {t("top")}
-            </button>
-          </div>
+          <>
+            <div className="fixed bottom-[calc(100vh-100px)] left-7 z-20" style={{ bottom: `${footerHeight + 15}px` }}>
+              <button onClick={scrollToTop} className="btn-w">
+                <img src={"icons/back-top-light.png"} className="icon-style-opposite !w-6 !h-6"></img>
+                {t("top")}
+              </button>
+            </div>
+
+            <div ref={footerRef} className="w-full bg-blue-dark dark:bg-white text-white dark:text-blue-dark font-bold p-4 fixed bottom-0 left-0 flex flex-col items-center justify-center space-y-4 z-10">
+              <Footer />
+            </div>
+          </>
         )}
       </div>
-
-      {isBottom && (
-        <div ref={footerRef} className="w-full bg-blue-700 dark:bg-white text-white dark:text-blue-700 font-bold p-4 fixed bottom-0 left-0 flex flex-col items-center justify-center space-y-4 z-10">
-          <Footer />
-        </div>
-      )}
     </div>
   );
 }
