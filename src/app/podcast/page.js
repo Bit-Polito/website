@@ -26,18 +26,18 @@ export default function Podcast() {
       </div>
 
       {isBottom && (
-        <div className="fixed bottom-[calc(100vh-100px)] left-7 z-20" style={{ bottom: `${footerHeight + 15}px` }}>
-          <button onClick={scrollToTop} className="btn-w">
-            <img src={"icons/back-top-light.png"} className="icon-style-opposite !w-6 !h-6"></img>
-            {t("top")}
-          </button>
-        </div>
-      )}
+        <>
+          <div className="fixed bottom-[calc(100vh-100px)] left-7 z-20" style={{ bottom: `${footerHeight + 15}px` }}>
+            <button onClick={scrollToTop} className="btn-w">
+              <img src={"icons/back-top-light.png"} className="icon-style-opposite !w-6 !h-6"></img>
+              {t("top")}
+            </button>
+          </div>
 
-      {isBottom && (
-        <div ref={footerRef} className="w-full bg-blue-dark dark:bg-white text-white dark:text-blue-dark font-bold p-4 fixed bottom-0 left-0 flex flex-col items-center justify-center space-y-4 z-10">
-          <Footer />
-        </div>
+          <div ref={footerRef} className="w-full bg-blue-dark dark:bg-white text-white dark:text-blue-dark font-bold p-4 fixed bottom-0 left-0 flex flex-col items-center justify-center space-y-4 z-10">
+            <Footer />
+          </div>
+        </>
       )}
     </>
   );

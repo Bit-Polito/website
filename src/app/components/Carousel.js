@@ -22,7 +22,7 @@ const imageLinks = [
 
 export default function Carousel() {
     const { t } = useTranslation();
-    const { currentImage, progress, fade, changeImage, arrowsVisible, showArrows, isOpen, setIsOpen, newLine } = functions();
+    const { currentImage, progress, fade, changeImage, arrowsVisible, showArrows, isOpen, setIsOpen } = functions();
     const descriptionImages = [
         t("alt-img-1"),
         t("alt-img-2"),
@@ -98,10 +98,10 @@ export default function Carousel() {
                         </button>
 
                         <h1 className="text-5xl font-bold mb-4 dark:text-white">{t("popup-title")}</h1>
-                        <p className="text-xl mb-6 dark:text-white">{newLine(t("popup-paragraph"))}</p>
+                        <p className="text-xl mb-6 dark:text-white">{t("popup-paragraph")}</p>
 
                         <div className="flex items-center">
-                            <img src="#" className="w-60 h-64 object-cover"></img>
+                            <img src="bitpolito-bitgen-3.jpg" className="w-60 h-64 object-cover"></img>
                             <div className="flex flex-col ml-12 space-y-2">
                                 <a href="https://t.me/bitciccio" target="_blank" rel="noopener noreferrer" className="btn-w">
                                     <img src={"icons/bitpolito-icon-social-telegram.svg"} className="icon-style-opposite"></img>

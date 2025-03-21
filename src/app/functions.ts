@@ -4,13 +4,38 @@ import { useState, useEffect, useRef } from "react";
 import { carouselImages } from "./components/Carousel";
 import axios from "axios";
 
-export default function functions() {
-    // page.js
-    const [isBottom, setIsBottom] = useState(false);
-    const [footerHeight, setFooterHeight] = useState(0);
-    const footerRef = useRef(null);
+type Episode = {
+    id: string;
+    name: string;
+    [key: string]: any;
+};
 
-    const scrollToTop = () => {
+type FunctionsReturnType = {
+    isBottom: boolean;
+    footerHeight: number;
+    footerRef: React.RefObject<HTMLDivElement | null>;
+    scrollToTop: () => void;
+    currentImage: number;
+    progress: number;
+    fade: boolean;
+    changeImage: (direction: number) => void;
+    arrowsVisible: boolean;
+    showArrows: (visible: boolean) => void;
+    isOpen: boolean;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    episodes: Episode[];
+    currentEpisode: Episode | null;
+    loading: boolean;
+    setCurrentEpisode: React.Dispatch<React.SetStateAction<Episode | null>>;
+};
+
+export default function useFunctions(): FunctionsReturnType {
+    // page.ts
+    const [isBottom, setIsBottom] = useState<boolean>(false);
+    const [footerHeight, setFooterHeight] = useState<number>(0);
+    const footerRef = useRef<HTMLDivElement>(null);
+
+    const scrollToTop = (): void => {
         const scrollInterval = setInterval(() => {
             if (window.scrollY !== 0) {
                 window.scrollBy(0, -window.scrollY / (500 / 15));
@@ -20,16 +45,14 @@ export default function functions() {
         }, 15);
     };
 
-    const handleScroll = () => {
+    const handleScroll = (): void => {
         const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
         setIsBottom(isAtBottom);
     };
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     useEffect(() => {
@@ -39,24 +62,21 @@ export default function functions() {
     }, [isBottom]);
 
     useEffect(() => {
-        const handleResize = () => {
+        const handleResize = (): void => {
             if (footerRef.current) {
                 setFooterHeight(footerRef.current.offsetHeight);
             }
         };
         window.addEventListener("resize", handleResize);
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // Carousel.js
-    const [currentImage, setCurrentImage] = useState(0);
-    const [progress, setProgress] = useState(0);
-    const [fade, setFade] = useState(true);
-    const [arrowsVisible, setArrowsVisible] = useState(false);
-
-    const [isOpen, setIsOpen] = useState(false);
+    // Carousel.ts
+    const [currentImage, setCurrentImage] = useState<number>(0);
+    const [progress, setProgress] = useState<number>(0);
+    const [fade, setFade] = useState<boolean>(true);
+    const [arrowsVisible, setArrowsVisible] = useState<boolean>(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -80,7 +100,7 @@ export default function functions() {
         };
     }, [fade]);
 
-    const changeImage = (direction) => {
+    const changeImage = (direction: number): void => {
         setFade(false);
         setTimeout(() => {
             setCurrentImage((prev) => (prev + direction + carouselImages.length) % carouselImages.length);
@@ -89,11 +109,10 @@ export default function functions() {
         }, 100);
     };
 
-    const showArrows = (visible) => {
+    const showArrows = (visible: boolean): void => {
         setArrowsVisible(visible);
     };
 
-    // Disable scrolling when the popup is open
     useEffect(() => {
         if (isOpen) {
             document.body.classList.add("overflow-hidden");
@@ -106,22 +125,13 @@ export default function functions() {
         };
     }, [isOpen]);
 
-    // Allows to paragraph in the popup to go to a new line
-    const newLine = (text) =>
-        text.split(". ").map((sentence, i) => (
-            <span key={i}>
-                {sentence}.
-                <br />
-            </span>
-        ));
-
-    // SpotifyPodcast.js
-    const [episodes, setEpisodes] = useState([]);
-    const [currentEpisode, setCurrentEpisode] = useState(null);
-    const [loading, setLoading] = useState(true);
+    // SpotifyPodcast.ts
+    const [episodes, setEpisodes] = useState<Episode[]>([]);
+    const [currentEpisode, setCurrentEpisode] = useState<Episode | null>(null);
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
-        async function fetchEpisodes() {
+        async function fetchEpisodes(): Promise<void> {
             try {
                 const response = await axios.get("/api/spotify");
                 setEpisodes(response.data.episodes.items);
@@ -136,8 +146,21 @@ export default function functions() {
     }, []);
 
     return {
-        isBottom, footerHeight, footerRef, scrollToTop, // page.js
-        currentImage, progress, fade, changeImage, arrowsVisible, showArrows, isOpen, setIsOpen, newLine, // Carousel.js
-        episodes, currentEpisode, loading, setCurrentEpisode, // SpotifyPodcast.js
+        isBottom,
+        footerHeight,
+        footerRef,
+        scrollToTop,
+        currentImage,
+        progress,
+        fade,
+        changeImage,
+        arrowsVisible,
+        showArrows,
+        isOpen,
+        setIsOpen,
+        episodes,
+        currentEpisode,
+        loading,
+        setCurrentEpisode,
     };
-};
+}
