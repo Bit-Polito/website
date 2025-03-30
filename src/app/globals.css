@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0000ff;
+    --foreground: #ffffff;
   }
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
+  background-color: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-w,
+.btn-b {
+  @apply flex items-center justify-center px-2 py-1 transition-all duration-200 hover:shadow-lg hover:scale-105 font-bold;
+  width: auto;
+}
+
+.btn-w {
+  @apply rounded-md border border-blue-dark text-blue-dark;
+  background-color: white;
+}
+
+.dark .btn-w {
+  @apply border-white text-white;
+  background-color: blue;
+}
+
+.btn-b {
+  @apply border text-white;
+  background-color: blue;
+}
+
+.dark .btn-b {
+  @apply border-blue-dark text-blue-dark;
+  background-color: white;
+}
+
+@layer utilities {
+  .filter-white {
+    filter: brightness(0) invert(1);
+  }
+}
+
+.icon-style {
+  @apply w-8 h-8 mr-3 filter-white dark:invert-0 dark:brightness-100 dark:filter-none;
+}
+
+.icon-style-opposite {
+  @apply w-8 h-8 mr-3 dark:invert dark:brightness-0 dark:filter-white;
+}
+
+.arrow {
+  @apply absolute top-1/2 transform -translate-y-1/2 bg-blue-dark text-white text-2xl rounded-full px-2 py-4 cursor-pointer transition-opacity duration-200 ease-in-out hover:bg-blue-500 hover:scale-110 hover:shadow-2xl font-bold;
+  @apply dark:bg-white dark:text-blue-dark;
+}
+
+.chessboard {
+  @apply w-full h-full object-cover border-2 border-blue-dark transition-all duration-500 ease-in-out hover:opacity-95 hover:scale-105 dark:border-white;
 }

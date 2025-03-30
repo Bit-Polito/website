@@ -1,103 +1,100 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useTranslation } from "react-i18next";
+import "./i18n/i18n";
+import { useEffect, useRef, useState } from "react";
+import Carousel from "./components/Carousel";
+import Footer from "./components/Footer";
+import Chessboard from "./components/Chessboard";
+import DarkModeSwitch from "./components/DarkModeSwitch";
+import LanguageSelector from "./components/LanguageSelector";
+
+export default function HomePage() {
+  const { t } = useTranslation();
+  const [isBottom, setIsBottom] = useState<boolean>(false);
+  const [footerHeight, setFooterHeight] = useState<number>(0);
+  const footerRef = useRef<HTMLDivElement>(null);
+
+  const scrollToTop = (): void => {
+    const scrollInterval = setInterval(() => {
+      if (window.scrollY !== 0) {
+        window.scrollBy(0, -window.scrollY / (500 / 15));
+      } else {
+        clearInterval(scrollInterval);
+      }
+    }, 15);
+  };
+
+  const handleScroll = (): void => {
+    const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+    setIsBottom(isAtBottom);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (footerRef.current) {
+      setFooterHeight(footerRef.current.offsetHeight);
+    }
+  }, [isBottom]);
+
+  useEffect(() => {
+    const handleResize = (): void => {
+      if (footerRef.current) {
+        setFooterHeight(footerRef.current.offsetHeight);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="flex flex-col min-h-screen">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      <div className={`${"sm:pr-2 sm:mr-0 sm:ml-0 sm:break-words" +
+        " lg:flex-1 lg:overflow-y-auto lg:min-h-screen lg:pr-20 lg:pl-2 lg:break-words lg:mr-[350px]"
+        }`} style={{ paddingBottom: `${footerHeight}px` }}
+      >
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <header className="w-full flex justify-between">
+          <img src="bitpolito-logo-light.png" className="icon-style-opposite !w-64 !h-16 pt-3 pl-4 mt-4"></img>
+          <div className="flex flex-col">
+            <div className="flex items-center space-x-2 lg:hidden block mt-3 mb-3 mr-4">
+              <DarkModeSwitch />
+            </div>
+            <div className="flex items-center space-x-2 lg:hidden block">
+              <LanguageSelector />
+            </div>
+          </div>
+        </header>
+
+        <h1 className="text-7xl my-2 mt-16 ml-4">{t("title")}</h1>
+        <h2 className="text-2xl my-2 mt-3 ml-4">{t("paragraph")}</h2>
+
+        <div className={`w-[400px] h-screen flex flex-col items-end justify-end p-2 ml-auto ${isBottom ? 'hidden' : 'block'} lg:fixed lg:right-0 lg:top-0 lg:z-20 absolute sm:relative`}>
+          <Carousel />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <Chessboard />
+
+        {isBottom && (
+          <>
+            <div className="fixed bottom-[calc(100vh-100px)] left-7 z-20" style={{ bottom: `${footerHeight + 15}px` }}>
+              <button onClick={scrollToTop} className="btn-w">
+                <img src={"icons/back-top-light.png"} className="icon-style-opposite !w-6 !h-6"></img>
+                {t("top")}
+              </button>
+            </div>
+
+            <div ref={footerRef} className="w-full bg-blue-dark dark:bg-white text-white dark:text-blue-dark font-bold p-4 fixed bottom-0 left-0 flex flex-col items-center justify-center space-y-4 z-10">
+              <Footer />
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }
