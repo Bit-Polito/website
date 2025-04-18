@@ -1,5 +1,32 @@
 import { useTranslation } from "react-i18next";
 
+/**
+ * Footer component that renders the footer section of the website.
+ * 
+ * This component includes:
+ * - A logo image with a light mode issue to be fixed.
+ * - Contact and application links.
+ * - Social media links for various platforms (Telegram, LinkedIn, X (Twitter), Instagram, YouTube, Spotify, GitHub).
+ * - Footer text with Cookie Policy, Privacy Policy, and copyright information.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered footer section.
+ */
+/**
+ * @description Footer component for the BitPolito website. 
+ *              Displays contact links, social media links, and legal information.
+ * @author BitPolito Team : Lorenzo
+ * @version 1.0.0
+ * @dependencies 
+ *   - useTranslation (from 'react-i18next'): For internationalization (multiple languages).
+ *   - Tailwind CSS: For styling the component.
+ * @issues 
+ *   - Image in light mode has a display issue (marked with a TODO comment in the code).
+ *   - Missing image source for the X (Twitter) link.
+ *   - I think that the issue of the footer that appears all of a sudden is due to the isBottom function
+ *   - TODO: Understand whether there should be a better way on handle the footer, is it required that is not seen until we reach the end? 
+ * @returns {JSX.Element} The rendered Footer component.
+ */
 export default function Footer() {
     const { t } = useTranslation();
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
+// TODO: Handle images in a more dynamic way, maybe using a JSON file or similar
 const chessboardImages = [
     "/bitpolito-bitgen-3.jpg",
     "/bitpolito-bitgen-3.jpg",
@@ -78,10 +79,32 @@ const layout = [
     ]
 ];
 
+/**
+ * Chessboard component renders a grid layout with dynamic rows and interactive elements.
+ * It includes navigation buttons, a grid of items, and a "Load More" button to display additional rows.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered Chessboard component.
+ * @author BitPolito Team : Lorenzo
+ * @version 1.0.0
+ * @example
+ * <Chessboard />
+ *
+ * @description
+ * - The component displays a grid of images and charts in a responsive layout.
+ * - Each item can be a clickable link or an image, depending on its type.
+ * - The "Load More" button allows users to reveal more rows (4) of items dynamically.
+ *  
+ * @dependencies
+ * - `useTranslation`: A hook for internationalization (multiple language support).
+ *
+ * @function
+ * @name Chessboard
+ */
 export default function Chessboard() {
     const { t } = useTranslation();
     const [visibleRows, setVisibleRows] = useState(4);
-
+    
     const loadMoreRows = () => {
         setVisibleRows((prev) => prev + 4);
     };

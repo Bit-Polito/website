@@ -1,15 +1,15 @@
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
 
-import translationEN from "./locales/en/en.json";
-import translationIT from "./locales/it/it.json";
-import translationDE from "./locales/de/de.json";
-import translationES from "./locales/es/es.json";
-import translationFR from "./locales/fr/fr.json";
-import translationNL from "./locales/nl/nl.json";
-import translationPT from "./locales/pt/pt.json";
-import translationRU from "./locales/ru/ru.json";
-import translationZH from "./locales/zh/zh.json";
+import translationDE from './locales/de/de.json';
+import translationEN from './locales/en/en.json';
+import translationES from './locales/es/es.json';
+import translationFR from './locales/fr/fr.json';
+import translationIT from './locales/it/it.json';
+import translationNL from './locales/nl/nl.json';
+import translationPT from './locales/pt/pt.json';
+import translationRU from './locales/ru/ru.json';
+import translationZH from './locales/zh/zh.json';
 
 i18n.use(initReactI18next).init({
     resources: {
@@ -21,13 +21,13 @@ i18n.use(initReactI18next).init({
         nl: { translation: translationNL },
         pt: { translation: translationPT },
         ru: { translation: translationRU },
-        zh: { translation: translationZH },
+        zh: { translation: translationZH }
     },
-    lng: "en",
-    fallbackLng: "en",
+    lng: 'en',
+    fallbackLng: 'en',
     interpolation: {
-        escapeValue: false,
-    },
+        escapeValue: false
+    }
 });
 
 export default i18n;

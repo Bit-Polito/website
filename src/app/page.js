@@ -15,10 +15,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <div className={`${"sm:pr-2 sm:mr-0 sm:ml-0 sm:break-words" +
-        " lg:flex-1 lg:overflow-y-auto lg:min-h-screen lg:pr-20 lg:pl-2 lg:break-words lg:mr-[350px]"
-        }`} style={{ paddingBottom: `${footerHeight}px` }}
-      >
+      <div className="sm:pr-2 sm:mr-0 sm:ml-0 sm:break-words lg:flex-1 lg:overflow-y-auto lg:min-h-screen lg:pr-20 lg:pl-2 lg:break-words lg:mr-[350px]" style={{ paddingBottom: `${footerHeight}px` }}>
 
         <header className="w-full flex justify-between">
           <img src="bitpolito-logo-light.png" className="icon-style-opposite !w-64 !h-16 pt-3 pl-4 mt-4"></img>
