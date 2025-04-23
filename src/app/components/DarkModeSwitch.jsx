@@ -39,6 +39,9 @@ export default function DarkModeToggle() {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
 
+export default function DarkModeToggle() {
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
     useEffect(() => {
         document.documentElement.classList.toggle("dark", isDarkMode);
     }, [isDarkMode]);
