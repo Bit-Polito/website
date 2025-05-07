@@ -85,14 +85,14 @@ export default function Chessboard() {
 
     return (
         <>
-            <div className="flex justify-center gap-x-2 mb-3 pt-16 pl-4">
-                <a className="cursor-not-allowed btn-b rounded-full !px-5">{t("events")}</a>
-                <a className="cursor-not-allowed btn-b rounded-full !px-5">{t("podcast")}</a>
-                <a className="cursor-not-allowed btn-b rounded-full !px-5">{t("projects")}</a>
-                <a className="cursor-not-allowed btn-b rounded-full !px-5">{t("others")}</a>
+            <div className="flex justify-center gap-[8px] mt-[80px] mb-[80px] font-sf-pro font-510 text-[20px] leading-[1.15] tracking-tight text-center align-middle">
+                <a className="cursor-not-allowed btn-b !rounded-full w-[96px] h-[30px]">{t("events")}</a>
+                <a className="cursor-not-allowed btn-b !rounded-full w-[109px] h-[30px]">{t("podcast")}</a>
+                <a className="cursor-not-allowed btn-b !rounded-full w-[109px] h-[30px]">{t("projects")}</a>
+                <a className="cursor-not-allowed btn-b !rounded-full w-[97px] h-[30px]">{t("others")}</a>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 p-5 w-full max-w-5xl mx-auto">
+            <div className="grid grid-cols-3 gap-4 max-w-[900px] ml-[80px]">
                 {layout.slice(0, visibleRows).flatMap((row, rowIndex) =>
                     row.map((item, colIndex) => (
                         <div
@@ -114,19 +114,19 @@ export default function Chessboard() {
                 )}
             </div>
 
-            <div className="flex mb-12">
+            <div className="flex ml-[80px]">
                 <button
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    className="btn-w ml-5"
+                    className="btn-w mt-[130px] mb-[80px] w-[168px] h-[55px]"
                 >
-                    <img src={"icons/back-top-light.png"} className="icon-style-opposite !w-6 !h-6" />
-                    <span>{t("top")}</span>
+                    <img src={"icons/back-top-light.png"} className="icon-style-opposite w-[35px] h-[30px] mr-[5.5px]" />
+                    <p className="font-sf-pro font-semibold text-[20px] leading-[100%] tracking-normal">{t("top")}</p>
                 </button>
-                <div className="mt-1.5 ml-60">
+                <div className="mt-[80px] ml-[250px]">
                     {visibleRows < layout.length && (
                         <button
                             onClick={() => setVisibleRows(prev => prev + 4)}
-                            className="font-bold">
+                            className="font-sf-pro font-semibold text-[20px] leading-[100%] tracking-normal">
                             {t("load-more")}
                         </button>
                     )}

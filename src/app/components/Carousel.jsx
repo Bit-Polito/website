@@ -111,14 +111,14 @@ export default function Carousel() {
 
     return (
         <div className="flex-1 flex flex-col items-center justify-center w-full">
-            <header className="w-full flex justify-center">
+            <header className="w-full flex justify-center mb-[15px]">
                 <div className="flex items-center gap-x-7 lg:flex hidden">
                     <DarkModeSwitch />
                     <LanguageSelector />
                 </div>
             </header>
 
-            <div className="flex justify-between gap-x-8 mb-3 mt-7">
+            <div className="flex justify-between gap-x-8 mb-3 mt-7 font-sf-pro font-[590] text-[25px] leading-[22px] tracking-normal text-center align-middle mb-[25px]">
                 <a className="cursor-not-allowed transition-all duration-200 hover:scale-105 font-bold">{t("projects")}</a>
                 <a className="cursor-not-allowed transition-all duration-200 hover:scale-105 font-bold">{t("podcast")}</a>
                 <a className="cursor-not-allowed transition-all duration-200 hover:scale-105 font-bold">{t("about")}</a>
@@ -127,6 +127,7 @@ export default function Carousel() {
             <div
                 onMouseEnter={() => showArrows(true)}
                 onMouseLeave={() => showArrows(false)}
+                className="relative"
             >
                 <div className="w-full h-1 bg-white dark:bg-blue-dark mb-2">
                     <div
@@ -137,14 +138,14 @@ export default function Carousel() {
 
                 <button
                     onClick={() => changeImage(-1)}
-                    className={`arrow !left-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
+                    className={`arrow left-0 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
                     &lt;
                 </button>
-                <a href={imageLinks[currentImage]} target="_blank" rel="noopener noreferrer" className="max-w-full w-full">
+                <a href={imageLinks[currentImage]} target="_blank" rel="noopener noreferrer">
                     <img
                         src={carouselImages[currentImage]}
                         title={descriptionImages[currentImage]}
-                        className={`max-w-full w-full h-[400px] object-cover transition-opacity duration-700 ease-in-out ${fade ? 'opacity-100' : 'opacity-0'} cursor-grab active:cursor-grabbing`}
+                        className={`w-full h-[583px] object-cover transition-opacity duration-700 ease-in-out ${fade ? 'opacity-100' : 'opacity-0'} cursor-grab active:cursor-grabbing`}
                         // for mobile / tablet
                         onTouchStart={(e) => handleStart(e.touches[0].clientX)}
                         onTouchMove={(e) => handleMove(e.touches[0].clientX)}
@@ -161,46 +162,48 @@ export default function Carousel() {
                 </a>
                 <button
                     onClick={() => changeImage(1)}
-                    className={`arrow !right-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
+                    className={`arrow right-0 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
                     &gt;
                 </button>
-            </div>
 
-            <footer className="w-full flex justify-between gap-x-3 mt-5">
-                <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className="btn-w !px-8">
-                    <img src={"icons/bitpolito-icon-social-telegram.svg"} className="icon-style-opposite"></img>
-                    <span>{t("telegram")}</span>
-                </a>
-                <button onClick={() => setIsOpen(true)} className="btn-b rounded-md !px-7">
-                    <img src="icons/donate-light.png" className="icon-style !w-6 !h-6"></img>
-                    {t("donate")}
-                </button>
-            </footer>
+                <footer className="w-full flex justify-between gap-x-[5.5px] mt-[10px]">
+                    <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className="btn-w w-[259px] h-[60px]">
+                        <img src={"icons/bitpolito-icon-social-telegram.svg"} className="icon-style-opposite w-[30px] h-[30px] mr-[10px]"></img>
+                        <p className="font-sf-pro-display font-medium text-[20px] leading-[40px] tracking-normal align-middle">{t("telegram")}</p>
+                    </a>
+                    <button onClick={() => setIsOpen(true)} className="btn-b w-[184px] h-[60px]">
+                        <img src="icons/donate-light.png" className="icon-style !h-[26px] !mr-[10px]"></img>
+                        <p className="font-sf-pro-display font-semibold text-[20px] leading-[1] tracking-normal">{t("donate")}</p>
+                    </button>
+                </footer>
+            </div>
 
             {isOpen && (
                 <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
-                    <div className="relative bg-white dark:bg-blue-dark p-9 rounded-3xl w-128 h-128">
+                    <div className="relative bg-white dark:bg-[#0016E5] w-[900px] h-[700px] rounded-3xl">
                         <button
                             onClick={() => setIsOpen(false)}
-                            className="absolute top-3 right-3 btn-b rounded-full"
+                            className="absolute top-3 right-3 btn-b w-[30px] h-[30px] rounded-full"
                         >
                             ⨉
                         </button>
 
-                        <h1 className="text-5xl font-bold mb-4 dark:text-white">{t("popup-title")}</h1>
-                        <p className="text-xl mb-6 dark:text-white">{newLine(t("popup-paragraph"))}</p>
+                        <div className="ml-[50px] font-sf-pro font-medium tracking-normal dark:text-white">
+                            <h1 className="mt-[50px] text-[120px] leading-[120px]">{t("popup-title")}</h1>
+                            <p className="mt-[20px] text-2xl leading-10">{newLine(t("popup-paragraph"))}</p>
 
-                        <div className="flex items-center">
-                            <img src="/bitpolito-foto-presidente.jpg" className="w-60 h-64"></img>
-                            <div className="flex flex-col ml-12 gap-y-7">
-                                <a href="https://t.me/bitciccio" target="_blank" rel="noopener noreferrer" className="btn-w">
-                                    <img src={"icons/bitpolito-icon-social-telegram.svg"} className="icon-style-opposite"></img>
-                                    <span>@Bitciccio</span>
-                                </a>
-                                <a href='mailto: francesco.pelle@studenti.polito.it' target="_blank" rel="noopener noreferrer" className="btn-w">
-                                    <img src="icons/bitpolito-icon-mail.svg" className="icon-style-opposite"></img>
-                                    francesco.pelle@studenti.polito.it
-                                </a>
+                            <div className="flex items-center mt-[50px]">
+                                <img src="/bitpolito-foto-presidente.jpg" className="w-[330.02px] h-[330.3px] rounded-3xl"></img>
+                                <div className="flex flex-col gap-y-7 mt-[50px] ml-[70px] w-[400px] h-[145px]">
+                                    <a href="https://t.me/bitciccio" target="_blank" rel="noopener noreferrer" className="btn-w w-[400px] h-[60px]">
+                                        <img src={"icons/bitpolito-icon-social-telegram.svg"} className="icon-style-opposite w-[31px] h-[31px] mr-[4.5px]"></img>
+                                        <p className="font-sf-pro font-medium text-2xl leading-10 tracking-normal">@Bitciccio</p>
+                                    </a>
+                                    <a href='mailto: francesco.pelle@studenti.polito.it' target="_blank" rel="noopener noreferrer" className="btn-w w-[400px] h-[60px]">
+                                        <img src="icons/bitpolito-icon-mail.svg" className="icon-style-opposite w-[31px] h-[22.55px] mr-[8.73px]"></img>
+                                        <p className="font-sf-pro- font-medium text-2xl leading-10 tracking-normal">francesco.pelle@studenti.polito.it</p>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -41,7 +41,7 @@ export default function LanguageSelector() {
         <div className="relative inline-block" ref={dropdownRef}>
             <button
                 onClick={() => setIsDropdownOpen((prev) => !prev)}
-                className="btn-b rounded-full !px-5"
+                className="btn-b !rounded-full w-[66px] h-[31px]"
             >
                 {i18n.language.toUpperCase()}
             </button>

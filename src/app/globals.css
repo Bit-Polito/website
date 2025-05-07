@@ -17,23 +17,22 @@ body {
 
 .btn-w,
 .btn-b {
-  @apply flex items-center justify-center px-2 py-1 transition-all duration-200 hover:shadow-lg hover:[scale:1.03] font-bold;
-  width: auto;
+  @apply flex items-center border-2 justify-center transition-all duration-200 hover:shadow-lg hover:[scale:1.03] font-bold;
 }
 
 .btn-w {
-  @apply rounded-md border border-blue-dark text-blue-dark;
+  @apply rounded-lg border-blue-dark text-blue-dark;
   background-color: white;
 }
 
 .dark .btn-w {
   @apply border-white text-white;
-  background-color: blue;
+  background-color: #001CE0;
 }
 
 .btn-b {
-  @apply border text-white;
-  background-color: blue;
+  @apply rounded-lg border-white text-white;
+  background-color: #001CE0;
 }
 
 .dark .btn-b {
@@ -48,11 +47,11 @@ body {
 }
 
 .icon-style {
-  @apply w-8 h-8 mr-3 filter-white dark:invert-0 dark:brightness-100 dark:filter-none;
+  @apply w-[30px] h-[30px] mr-[5.5px] filter-white dark:invert-0 dark:brightness-100 dark:filter-none;
 }
 
 .icon-style-opposite {
-  @apply w-8 h-8 mr-3 dark:invert dark:brightness-0 dark:filter-white;
+  @apply dark:invert dark:brightness-0 dark:filter-white;
 }
 
 .arrow {
@@ -65,5 +64,5 @@ body {
 }
 
 .footer {
-  @apply w-full bg-blue-dark dark:bg-white text-white dark:text-blue-dark font-bold flex flex-col items-center justify-center bottom-0 left-0 p-4;
+  @apply w-auto h-[556.43px] bg-blue-dark dark:bg-white text-white dark:text-blue-dark font-bold flex flex-col items-center justify-center bottom-0 left-0 p-4;
 }

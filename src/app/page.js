@@ -39,7 +39,7 @@ export default function HomePage() {
         "
       >
         <header className="flex justify-between gap-7">
-          <img src="bitpolito-logo-light.png" className="icon-style-opposite !w-fit !h-fit !mr-0 pt-3 pl-4 mt-4"></img>
+          <img src="bitpolito-logo-light.png" className="icon-style-opposite w-[334px] h-[57px] ml-[80px] mt-[80px]"></img>
           {/* only for mobile and tablet version */}
           <div className="flex flex-col items-center gap-4 mt-8 lg:hidden block">
             <DarkModeSwitch />
@@ -47,8 +47,8 @@ export default function HomePage() {
           </div>
         </header>
 
-        <h1 className="text-8xl my-2 mt-16 ml-4">{t("title")}</h1>
-        <h1 className="text-xl my-2 mt-3 ml-4">{t("paragraph")}</h1>
+        <h1 className="text-8xl my-2 mt-16 ml-[80px]">{t("title")}</h1>
+        <h1 className="text-xl my-2 mt-3 ml-[80px]">{t("paragraph")}</h1>
 
         {/* only for mobile and tablte version */}
         <div className="sm:hidden">
@@ -60,7 +60,7 @@ export default function HomePage() {
             <Chessboard />
           </div>
 
-          <div className={`sm:block hidden w-[400px] h-full p-2 ml-auto transition-all duration-300 top-0 right-0 ${isCarouselFixed ? "fixed" : "absolute"}`}>
+          <div className={`sm:block hidden transition-all duration-300 mt-[20px] top-0 right-[52.5px] ${isCarouselFixed ? "fixed" : "absolute"}`}>
             <Carousel />
           </div>
         </div>

@@ -8,9 +8,15 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sf-pro': ['SF Pro Display', 'sans-serif'],
+      },
+      fontWeight: {
+        '510': '510',
+      },
       colors: {
         'blue-light': '#ffffff',
-        'blue-dark': '#0000ff',
+        'blue-dark': '#001CE0',
       },
     },
   },
