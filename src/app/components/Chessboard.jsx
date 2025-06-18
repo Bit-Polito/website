@@ -1,30 +1,29 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-// import Link from "next/link";
 import chessboardImages from '../data/chessboardImages.json';
 
-const chartRow = [
-    { type: 'image', span: 1 },
-    { type: 'chart', span: 2, src: null, link: null }
-];
+// const chartRow = [
+//     { type: 'image', span: 1 },
+//     { type: 'chart', span: 2, src: null, link: null }
+// ];
 
-const row1 = [
+const box1 = [
     { type: 'image', span: 1 },
     { type: 'box', span: 2, src: null, link: null }
 ];
 
-const row2 = [
-    { type: 'image', span: 1 },
-    { type: 'image', span: 1 },
-    { type: 'image', span: 1 }
-];
-
-const row3 = [
+const box2 = [
     { type: 'box', span: 2, src: null, link: null },
     { type: 'image', span: 1 }
 ];
 
-const singleRow = [
+const fullImage = [
+    { type: 'image', span: 1 },
+    { type: 'image', span: 1 },
+    { type: 'image', span: 1 }
+];
+
+const singleImage = [
     { type: 'image', span: 1 }
 ];
 
@@ -32,19 +31,19 @@ const singleRow = [
  * @constant {Array[]} layoutTemplate
  * @description 
  * An array representing the layout template of chessboard. Each "page" 
- * is composed of rows (chartRow, row1, row2, row3, singleRow), which are repeated across multiple pages.
+ * is composed of rows (chartRow, box1, box2, fullImage, singleImage), which are repeated across multiple pages.
  * 
  */
 const layoutTemplate = [
-    chartRow,
-    row2,
-    row1,
-    row3,
-    row2,
-    row2,
-    row2,
-    row2,
-    singleRow
+    fullImage,
+    fullImage,
+    box1,
+    box2,
+    fullImage,
+    fullImage,
+    fullImage,
+    singleImage,
+    singleImage
 ];
 
 /**
