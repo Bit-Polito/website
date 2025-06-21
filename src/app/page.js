@@ -37,7 +37,7 @@ export default function HomePage() {
         lg:pr-20 lg:pl-2 lg:break-words lg:mr-[350px]
         text-sm sm:text-base
       ">
-        <header className="flex justify-between items-center gap-4 sm:gap-7 max-w-7xl mx-auto pt-4 sm:pt-6">
+        <header className="flex justify-between items-center gap-4 sm:gap-7 max-w-7xl w-full pt-4 sm:pt-6">
           <div className="relative w-[334px] sm:w-[160px] md:w-[200px] lg:w-[334px] mt-[20px] ml-[50px]">
             <img
               src="/bitpolito-logo-light.svg"
