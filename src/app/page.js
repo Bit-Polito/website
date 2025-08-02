@@ -56,12 +56,12 @@ export default function HomePage() {
         </header>
 
         <div className="max-w-7xl mx-auto mt-8 sm:mt-12 md:mt-16 lg:mt-20 ml-[50px]">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-6">
+          <h1 className="font-sf-pro font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight mb-6">
             {t("title")}
           </h1>
 
           <div className="max-w-prose">
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed tracking-wide
+            <p className="font-sf-pro font-medium text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed tracking-wide
                w-full sm:w-[85%] md:w-[75%] lg:w-[65%] xl:w-[60%]">
               {t("paragraph")}
             </p>

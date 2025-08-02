@@ -11,6 +11,13 @@ export default {
       colors: {
         'blue-dark': '#001CE0',
       },
+      fontFamily: {
+        'sf-pro': 'SF Pro Display',
+      },
+      fontWeight: {
+        medium: 500,
+        semibold: 600,
+      },
     },
   },
   plugins: [],
