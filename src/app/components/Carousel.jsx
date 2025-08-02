@@ -229,7 +229,10 @@ export default function Carousel() {
     };
 
     return (
-        <div className="flex-1 flex flex-col items-center justify-center w-full">
+        <div className="relative flex-1 flex flex-col items-center justify-center w-full"
+            onMouseEnter={() => showArrows(true)}
+            onMouseLeave={() => showArrows(false)}
+        >
             <header className="w-full flex justify-center">
                 <div className="flex items-center gap-x-7 lg:flex hidden">
                     <DarkModeSwitch />
@@ -246,10 +249,7 @@ export default function Carousel() {
                 ))}
             </div>
 
-            <div
-                onMouseEnter={() => showArrows(true)}
-                onMouseLeave={() => showArrows(false)}
-            >
+            <div>
                 <div className="w-full h-1 bg-white dark:bg-blue-dark mb-2">
                     <div
                         className="h-full bg-blue-dark dark:bg-white"
