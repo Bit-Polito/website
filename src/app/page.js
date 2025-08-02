@@ -68,6 +68,10 @@ export default function HomePage() {
           </div>
         </div>
 
+        <div className="lg:hidden">
+          <Carousel />
+        </div>
+
         <div className="flex mt-8 sm:mt-12">
           <div ref={chessboardRef}>
             <Chessboard />
