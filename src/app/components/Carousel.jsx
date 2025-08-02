@@ -286,18 +286,18 @@ export default function Carousel() {
                     className={`arrow !right-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
                     &gt;
                 </button>
-            </div>
 
-            <footer className="w-full flex justify-between gap-x-3 mt-5">
-                <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className="btn-w !px-8">
-                    <img src={"icons/bitpolito-icon-social-telegram.svg"} className="icon-style-opposite"></img>
-                    <span>{t("telegram")}</span>
-                </a>
-                <button onClick={() => setIsOpen(true)} className="btn-b rounded-md !px-7">
-                    <img src="icons/donate-light.png" className="icon-style !w-6 !h-6"></img>
-                    {t("donate")}
-                </button>
-            </footer>
+                <footer className="w-full flex justify-between gap-x-3 mt-5">
+                    <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className="btn-w !px-8">
+                        <img src={"icons/bitpolito-icon-social-telegram.svg"} className="icon-style-opposite"></img>
+                        <span>{t("telegram")}</span>
+                    </a>
+                    <button onClick={() => setIsOpen(true)} className="btn-b rounded-md !px-7">
+                        <img src="icons/donate-light.png" className="icon-style !w-6 !h-6"></img>
+                        {t("donate")}
+                    </button>
+                </footer>
+            </div>
 
             {isOpen && (
                 <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">

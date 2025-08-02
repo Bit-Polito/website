@@ -73,7 +73,7 @@ export default function HomePage() {
             <Chessboard />
           </div>
 
-          <div className={`bg-white dark:bg-blue-dark lg:block hidden w-[400px] h-full p-2 ml-auto transition-all duration-300 top-0 right-0 ${isCarouselFixed ? "fixed" : "absolute"}`}>
+          <div className={`bg-white dark:bg-blue-dark lg:block hidden w-[430px] h-full p-2 ml-auto transition-all duration-300 top-0 right-0 ${isCarouselFixed ? "fixed" : "absolute"}`}>
             <Carousel />
           </div>
         </div>
