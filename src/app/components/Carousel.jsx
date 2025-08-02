@@ -231,7 +231,7 @@ export default function Carousel() {
     return (
         <div className="flex-1 flex flex-col items-center justify-center w-full">
             <header className="w-full flex justify-center">
-                <div className="flex items-center gap-x-7 lg:flex hidden">
+                <div className="flex items-center gap-x-16 lg:flex hidden">
                     <DarkModeSwitch />
                     <LanguageSelector />
                 </div>
