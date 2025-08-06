@@ -266,7 +266,7 @@ export default function Carousel() {
                     <img
                         src={carouselImages[currentImage]}
                         title={descriptionImages[currentImage]}
-                        className={`max-w-full w-full h-[400px] object-cover transition-opacity duration-700 ease-in-out ${fade ? 'opacity-100' : 'opacity-0'} cursor-grab active:cursor-grabbing`}
+                        className={`img-carousel ${fade ? 'opacity-100' : 'opacity-0'}`}
                         // for mobile / tablet
                         onTouchStart={(e) => handleStart(e.touches[0].clientX)}
                         onTouchMove={(e) => handleMove(e.touches[0].clientX)}
