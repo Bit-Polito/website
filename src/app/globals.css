@@ -44,8 +44,7 @@ body {
 }
 
 .arrow {
-  @apply absolute top-1/2 transform -translate-y-1/2 bg-blue-dark text-white text-2xl rounded-full px-2 py-4 cursor-pointer transition-opacity duration-200 ease-in-out hover:bg-blue-500 hover:scale-110 hover:shadow-2xl font-bold;
-  @apply dark:bg-white dark:text-blue-dark;
+  @apply absolute top-1/2 transform -translate-y-1/2 text-blue-dark dark:text-white text-2xl cursor-pointer transition-opacity duration-200 ease-in-out hover:scale-110 hover:shadow-2xl font-bold;
 }
 
 .chessboard {
