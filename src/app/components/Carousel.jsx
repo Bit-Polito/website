@@ -259,7 +259,7 @@ export default function Carousel() {
 
                 <button
                     onClick={() => changeImage(-1)}
-                    className={`arrow !left-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
+                    className={`hidden lg:block arrow !left-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
                     &lt;
                 </button>
                 <a href={imageLinks[currentImage]} target="_blank" rel="noopener noreferrer" className="max-w-full w-full">
@@ -283,7 +283,7 @@ export default function Carousel() {
                 </a>
                 <button
                     onClick={() => changeImage(1)}
-                    className={`arrow !right-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
+                    className={`hidden lg:block arrow !right-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
                     &gt;
                 </button>
             </div>
