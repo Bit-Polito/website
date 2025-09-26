@@ -4,7 +4,6 @@ import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import DarkModeSwitch from "./DarkModeSwitch";
 import LanguageSelector from "./LanguageSelector";
-// import Link from "next/link";
 
 /**
  * @constant {string[]} carouselImages
@@ -259,7 +258,7 @@ export default function Carousel() {
 
                 <button
                     onClick={() => changeImage(-1)}
-                    className={`arrow !left-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
+                    className={`hidden lg:block arrow !left-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
                     &lt;
                 </button>
                 <a href={imageLinks[currentImage]} target="_blank" rel="noopener noreferrer" className="max-w-full w-full">
@@ -283,7 +282,7 @@ export default function Carousel() {
                 </a>
                 <button
                     onClick={() => changeImage(1)}
-                    className={`arrow !right-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
+                    className={`hidden lg:block arrow !right-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
                     &gt;
                 </button>
 
@@ -300,8 +299,10 @@ export default function Carousel() {
             </div>
 
             {isOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
-                    <div className="relative bg-white dark:bg-blue-dark p-9 rounded-3xl w-128 h-128">
+                <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50"
+                    onClick={(e) => { if (e.target === e.currentTarget) setIsOpen(false) }} // closes popup when clicking outside the content
+                >
+                    <div className="relative bg-white dark:bg-blue-dark p-6 rounded-3xl w-80 sm:w-[600] h-auto">
                         <button
                             onClick={() => setIsOpen(false)}
                             className="absolute top-3 right-3 btn-b rounded-full"
@@ -309,15 +310,15 @@ export default function Carousel() {
                             ⨉
                         </button>
 
-                        <h1 className="text-5xl font-bold mb-4 dark:text-white">{t("popup-title")}</h1>
-                        <p className="text-xl mb-6 dark:text-white">{newLine(t("popup-paragraph"))}</p>
+                        <h1 className="text-3xl sm:text-5xl font-bold mb-4 dark:text-white">{t("popup-title")}</h1>
+                        <p className="text-base sm:text-xl mb-6 dark:text-white">{newLine(t("popup-paragraph"))}</p>
 
-                        <div className="flex items-center">
-                            <img src="/FP_PhotoProfile.png" className="w-60 h-64"></img>
-                            <div className="flex flex-col ml-12 gap-y-7">
+                        <div className="flex flex-col items-center">
+                            <img src="/FP_PhotoProfile.png" className="w-40 h-43 sm:w-60 sm:h-64"></img>
+                            <div className="flex flex-col mt-5 gap-y-5">
                                 <a href="https://t.me/bitciccio" target="_blank" rel="noopener noreferrer" className="btn-w">
-                                    <img src={"icons/bitpolito-icon-social-telegram.svg"} className="icon-style-opposite"></img>
-                                    <span>@Bitciccio</span>
+                                    <img src="icons/bitpolito-icon-social-telegram.svg" className="icon-style-opposite"></img>
+                                    @Bitciccio
                                 </a>
                                 <a href='mailto: francesco.pelle@studenti.polito.it' target="_blank" rel="noopener noreferrer" className="btn-w">
                                     <img src="icons/bitpolito-icon-mail.svg" className="icon-style-opposite"></img>
