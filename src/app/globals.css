@@ -60,6 +60,6 @@ body {
 }
 
 .img-carousel {
-  @apply max-w-full w-full h-[400px] object-cover border-2 border-blue-dark rounded-lg dark:border-white;
+  @apply max-w-full w-full h-[420px] border-2 border-blue-dark rounded-lg dark:border-white;
   @apply transition-opacity duration-700 ease-in-out cursor-grab active:cursor-grabbing;
 }

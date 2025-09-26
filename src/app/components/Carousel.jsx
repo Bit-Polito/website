@@ -248,7 +248,7 @@ export default function Carousel() {
                 ))}
             </div>
 
-            <div>
+            <div className="w-[300px] sm:w-[400px]">
                 <div className="w-full h-1 bg-white dark:bg-blue-dark mb-2">
                     <div
                         className="h-full bg-blue-dark dark:bg-white"
@@ -286,7 +286,7 @@ export default function Carousel() {
                     &gt;
                 </button>
 
-                <footer className="w-full flex justify-between gap-x-3 mt-5">
+                <footer className="flex justify-between gap-x-3 mt-5">
                     <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className="btn-w !px-8">
                         <img src={"icons/bitpolito-icon-social-telegram.svg"} className="icon-style-opposite"></img>
                         <span>{t("telegram")}</span>
