@@ -5,22 +5,7 @@ import { useTranslation } from "react-i18next";
 import DarkModeSwitch from "./DarkModeSwitch";
 import LanguageSelector from "./LanguageSelector";
 
-/**
- * @constant {string[]} carouselImages
- * @description Array of image paths for the carousel
- */
-const carouselImages = [
-    "/bitpolito-bitgen-3.jpg",
-    "/bitpolito-missione-praga.png",
-    "/DRAFT-bitpolito-panel-mining.jpg",
-    "/DRAFT-bitpolito-partnership-braiins.jpg"
-];
-
-/**
- * @constant {string[]} imageLinks
- * @description URLs that each carousel image links to when clicked
- */
-const imageLinks = ["", "", "", ""];
+// I dati del carousel vengono ora caricati dinamicamente da Notion
 
 /**
  * Carousel component renders a series of images in swipeable format.
@@ -81,6 +66,46 @@ export default function Carousel() {
      */
     const [isOpen, setIsOpen] = useState(false);
 
+    /**
+     * @state {string[]} carouselImages
+     * @description Array of image paths loaded from Notion
+     */
+    const [carouselImages, setCarouselImages] = useState([]);
+
+    /**
+     * @state {string[]} imageLinks
+     * @description Array of links loaded from Notion
+     */
+    const [imageLinks, setImageLinks] = useState([]);
+
+    /**
+     * @hook useEffect
+     * @description Carica i dati del carousel da Notion API
+     */
+    useEffect(() => {
+        const fetchCarouselData = async () => {
+            try {
+                const response = await fetch('/api/notion');
+                const data = await response.json();
+                
+                if (data.featured && data.featured.length > 0) {
+                    const images = data.featured.map(item => item.src);
+                    const links = data.featured.map(item => item.link || '#');
+                    
+                    setCarouselImages(images);
+                    setImageLinks(links);
+                } else {
+                    setCarouselImages([]);
+                    setImageLinks([]);
+                }
+            } catch (error) {
+                console.error('Error fetching carousel data from Notion:', error);
+                setCarouselImages([]);
+                setImageLinks([]);
+            }
+        };
+        fetchCarouselData();
+    }, []);
 
     // to make the carousel swipeable on mobile and on desktop
     /**
@@ -123,6 +148,8 @@ export default function Carousel() {
      * @description An effect hook that automatically changes the image every 15 seconds and updates the progress bar
      */
     useEffect(() => {
+        if (carouselImages.length === 0) return;
+        
         const interval = setInterval(() => {
             setFade(false);
             setTimeout(() => {
@@ -150,6 +177,8 @@ export default function Carousel() {
      * @param {number} direction - The direction to change the image: positive for forward, negative for backward
      */
     const changeImage = (direction) => {
+        if (carouselImages.length === 0) return;
+        
         setFade(false);
         setTimeout(() => {
             setCurrentImage((prev) => (prev + direction + carouselImages.length) % carouselImages.length);
@@ -210,7 +239,7 @@ export default function Carousel() {
      * @param {number} x - The current x position of the swipe gesture
      */
     const handleMove = (x) => {
-        if (!isDragging.current) return;
+        if (!isDragging.current || carouselImages.length === 0) return;
         const difference = x - startX.current;
 
         if (Math.abs(difference) > threshold && !hasMoved.current) {
@@ -256,16 +285,18 @@ export default function Carousel() {
                     ></div>
                 </div>
 
-                <button
-                    onClick={() => changeImage(-1)}
-                    className={`hidden lg:block arrow !left-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
-                    &lt;
-                </button>
-                <a href={imageLinks[currentImage]} target="_blank" rel="noopener noreferrer" className="max-w-full w-full">
-                    <img
-                        src={carouselImages[currentImage]}
-                        title={descriptionImages[currentImage]}
-                        className={`img-carousel ${fade ? 'opacity-100' : 'opacity-0'}`}
+                {carouselImages.length > 0 && (
+                    <>
+                        <button
+                            onClick={() => changeImage(-1)}
+                            className={`hidden lg:block arrow !left-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
+                            &lt;
+                        </button>
+                        <a href={imageLinks[currentImage]} target="_blank" rel="noopener noreferrer" className="max-w-full w-full">
+                            <img
+                                src={carouselImages[currentImage]}
+                                title={descriptionImages[currentImage]}
+                                className={`img-carousel ${fade ? 'opacity-100' : 'opacity-0'}`}
                         // for mobile / tablet
                         onTouchStart={(e) => handleStart(e.touches[0].clientX)}
                         onTouchMove={(e) => handleMove(e.touches[0].clientX)}
@@ -279,12 +310,14 @@ export default function Carousel() {
                         onMouseUp={handleEnd}
                         onMouseLeave={handleEnd}
                     />
-                </a>
-                <button
-                    onClick={() => changeImage(1)}
-                    className={`hidden lg:block arrow !right-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
-                    &gt;
-                </button>
+                        </a>
+                        <button
+                            onClick={() => changeImage(1)}
+                            className={`hidden lg:block arrow !right-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
+                            &gt;
+                        </button>
+                    </>
+                )}
 
                 <footer className="w-full flex justify-between gap-x-3 mt-5">
                     <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className="btn-w !px-8">
