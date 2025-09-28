@@ -8,39 +8,89 @@ const isImageHorizontal = (isHorizontalCheckbox) => {
 };
 
 
-// Funzione helper per creare un layout dinamico basato sul checkbox "Is Horizontal"
+// Funzione helper per creare un layout dinamico con ordinamento intelligente
 const createDynamicLayout = (images) => {
     if (!images || images.length === 0) return [];
     
-    const layout = [];
-    let imageIndex = 0;
+    // Separa elementi orizzontali e verticali
+    const horizontalItems = images.filter(img => isImageHorizontal(img.isHorizontal));
+    const verticalItems = images.filter(img => !isImageHorizontal(img.isHorizontal));
     
-    // Crea righe dinamiche basate sulle immagini disponibili
-    while (imageIndex < images.length) {
-        const currentImage = images[imageIndex];
-        const isHorizontal = isImageHorizontal(currentImage.isHorizontal);
+    const layout = [];
+    let verticalIndex = 0;
+    let lastHorizontalRow = -3; // Inizializza a -3 per permettere il primo elemento orizzontale
+    
+    // Mescola casualmente gli elementi verticali
+    const shuffledVertical = verticalItems.sort(() => Math.random() - 0.5);
+    
+    // Mescola casualmente gli elementi orizzontali
+    const shuffledHorizontal = horizontalItems.sort(() => Math.random() - 0.5);
+    
+    // Calcola le posizioni possibili per gli elementi orizzontali
+    const totalRows = Math.ceil((shuffledVertical.length + shuffledHorizontal.length) / 3);
+    const horizontalPositions = [];
+    
+    // Genera posizioni casuali per gli elementi orizzontali (con distanza minima di 3)
+    for (let i = 0; i < shuffledHorizontal.length; i++) {
+        let position;
+        do {
+            position = Math.floor(Math.random() * Math.max(1, totalRows - 2)) + 1; // Non alla prima riga
+        } while (horizontalPositions.some(pos => Math.abs(pos - position) < 3));
+        horizontalPositions.push(position);
+    }
+    horizontalPositions.sort((a, b) => a - b);
+    
+    let horizontalPositionIndex = 0;
+    
+    // Crea il layout con le regole specifiche
+    while (verticalIndex < shuffledVertical.length || horizontalPositionIndex < horizontalPositions.length) {
+        const currentRowIndex = layout.length;
         
-        if (isHorizontal) {
-            // Immagine orizzontale occupa 2 span
-            layout.push([
-                { type: 'image', span: 2, src: currentImage.src, link: currentImage.link, filter: currentImage.filter }
-            ]);
-            imageIndex++;
+        // Controlla se dobbiamo inserire un elemento orizzontale in questa riga
+        const shouldInsertHorizontal = horizontalPositionIndex < horizontalPositions.length && 
+                                     currentRowIndex === horizontalPositions[horizontalPositionIndex];
+        
+        if (shouldInsertHorizontal) {
+            // Inserisci elemento orizzontale con un elemento verticale
+            const horizontalItem = shuffledHorizontal[horizontalPositionIndex];
+            const verticalItem = shuffledVertical[verticalIndex];
+            
+            if (verticalItem) {
+                layout.push([
+                    { type: 'image', span: 2, src: horizontalItem.src, link: horizontalItem.link, filter: horizontalItem.filter, altTextITA: horizontalItem.altTextITA },
+                    { type: 'image', span: 1, src: verticalItem.src, link: verticalItem.link, filter: verticalItem.filter, altTextITA: verticalItem.altTextITA }
+                ]);
+                verticalIndex++;
+            } else {
+                // Solo elemento orizzontale se non ci sono più elementi verticali
+                layout.push([
+                    { type: 'image', span: 2, src: horizontalItem.src, link: horizontalItem.link, filter: horizontalItem.filter, altTextITA: horizontalItem.altTextITA }
+                ]);
+            }
+            horizontalPositionIndex++;
         } else {
-            // Crea una riga con 3 immagini verticali
+            // Crea una riga normale con elementi verticali
             const row = [];
-            for (let i = 0; i < 3 && imageIndex < images.length; i++) {
-                const img = images[imageIndex];
-                if (!isImageHorizontal(img.isHorizontal)) {
-                    row.push({ type: 'image', span: 1, src: img.src, link: img.link, filter: img.filter });
-                    imageIndex++;
-                } else {
-                    break; // Se troviamo un'immagine orizzontale, fermiamoci
-                }
+            for (let i = 0; i < 3 && verticalIndex < shuffledVertical.length; i++) {
+                const verticalItem = shuffledVertical[verticalIndex];
+                row.push({ 
+                    type: 'image', 
+                    span: 1, 
+                    src: verticalItem.src, 
+                    link: verticalItem.link, 
+                    filter: verticalItem.filter,
+                    altTextITA: verticalItem.altTextITA
+                });
+                verticalIndex++;
             }
             if (row.length > 0) {
                 layout.push(row);
             }
+        }
+        
+        // Se non ci sono più elementi da inserire, esci
+        if (verticalIndex >= shuffledVertical.length && horizontalPositionIndex >= horizontalPositions.length) {
+            break;
         }
     }
     

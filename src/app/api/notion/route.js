@@ -1,10 +1,10 @@
 import { Client } from '@notionhq/client';
 
 const notion = new Client({
-  auth: process.env.NOTION_TOKEN,
+  auth: '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',
 });
 
-const DATABASE_ID = process.env.NOTION_DATABASE_ID;
+const DATABASE_ID = '27cae3dac7c4817da038df21ae8482f7';
 
 export async function GET() {
   try {
@@ -16,20 +16,22 @@ export async function GET() {
       });
     }
 
-    const response = await notion.databases.query({
-      database_id: DATABASE_ID,
-            sorts: [
-              {
-                property: 'Date',
-                direction: 'ascending',
-              },
-            ],
+    const response = await notion.search({
+      query: '',
+      filter: {
+        property: 'object',
+        value: 'page'
+      },
+      page_size: 100
     });
 
     const chessboardItems = [];
     const featuredItems = [];
 
-    response.results.forEach((page) => {
+    // Mescola casualmente i risultati
+    const shuffledResults = response.results.sort(() => Math.random() - 0.5);
+
+    shuffledResults.forEach((page) => {
       const properties = page.properties;
       
       // Estrai i dati dalle proprietà di Notion
