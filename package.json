@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@notionhq/client": "^5.1.0",
     "axios": "^1.8.1",
     "i18next": "^24.2.0",
     "i18next-browser-languagedetector": "^8.0.2",
