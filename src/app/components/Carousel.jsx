@@ -248,7 +248,7 @@ export default function Carousel() {
                 ))}
             </div>
 
-            <div className="w-[300px] sm:w-[400px]">
+            <div>
                 <div className="w-full h-1 bg-white dark:bg-blue-dark mb-2">
                     <div
                         className="h-full bg-blue-dark dark:bg-white"
