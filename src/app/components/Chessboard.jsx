@@ -255,7 +255,7 @@ export default function Chessboard() {
             </div>
 
             {/* Navigation buttons */}
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 px-4 py-8 sm:py-12">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-5 px-5 py-8 sm:py-12">
                 <button
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     className="btn-w flex items-center gap-2"
