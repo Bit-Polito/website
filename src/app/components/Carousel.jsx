@@ -302,7 +302,7 @@ export default function Carousel() {
                 <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50"
                     onClick={(e) => { if (e.target === e.currentTarget) setIsOpen(false) }} // closes popup when clicking outside the content
                 >
-                    <div className="relative bg-white dark:bg-blue-dark p-6 rounded-3xl w-80 sm:w-[600] h-auto">
+                    <div className="relative bg-white dark:bg-blue-dark p-6 rounded-3xl w-80 sm:w-[600px] h-auto">
                         <button
                             onClick={() => setIsOpen(false)}
                             className="absolute top-3 right-3 btn-b rounded-full"
