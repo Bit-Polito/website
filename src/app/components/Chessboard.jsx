@@ -1,103 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-// Funzione helper per determinare se un'immagine è orizzontale
-const isImageHorizontal = (isHorizontalCheckbox) => {
-    // Usa solo il campo checkbox dal database Notion
-    return isHorizontalCheckbox === true;
-};
-
-
-// Funzione helper per creare un layout dinamico con ordinamento intelligente
-const createDynamicLayout = (images) => {
-    if (!images || images.length === 0) return [];
-    
-    // Separa elementi orizzontali e verticali
-    const horizontalItems = images.filter(img => isImageHorizontal(img.isHorizontal));
-    const verticalItems = images.filter(img => !isImageHorizontal(img.isHorizontal));
-    
-    const layout = [];
-    let verticalIndex = 0;
-    let lastHorizontalRow = -3; // Inizializza a -3 per permettere il primo elemento orizzontale
-    
-    // Mescola casualmente gli elementi verticali
-    const shuffledVertical = verticalItems.sort(() => Math.random() - 0.5);
-    
-    // Mescola casualmente gli elementi orizzontali
-    const shuffledHorizontal = horizontalItems.sort(() => Math.random() - 0.5);
-    
-    // Calcola le posizioni possibili per gli elementi orizzontali
-    const totalRows = Math.ceil((shuffledVertical.length + shuffledHorizontal.length) / 3);
-    const horizontalPositions = [];
-    
-    // Genera posizioni casuali per gli elementi orizzontali (con distanza minima di 3)
-    for (let i = 0; i < shuffledHorizontal.length; i++) {
-        let position;
-        do {
-            position = Math.floor(Math.random() * Math.max(1, totalRows - 2)) + 1; // Non alla prima riga
-        } while (horizontalPositions.some(pos => Math.abs(pos - position) < 3));
-        horizontalPositions.push(position);
-    }
-    horizontalPositions.sort((a, b) => a - b);
-    
-    let horizontalPositionIndex = 0;
-    
-    // Crea il layout con le regole specifiche
-    while (verticalIndex < shuffledVertical.length || horizontalPositionIndex < horizontalPositions.length) {
-        const currentRowIndex = layout.length;
-        
-        // Controlla se dobbiamo inserire un elemento orizzontale in questa riga
-        const shouldInsertHorizontal = horizontalPositionIndex < horizontalPositions.length && 
-                                     currentRowIndex === horizontalPositions[horizontalPositionIndex];
-        
-        if (shouldInsertHorizontal) {
-            // Inserisci elemento orizzontale con un elemento verticale
-            const horizontalItem = shuffledHorizontal[horizontalPositionIndex];
-            const verticalItem = shuffledVertical[verticalIndex];
-            
-            if (verticalItem) {
-                layout.push([
-                    { type: 'image', span: 2, src: horizontalItem.src, link: horizontalItem.link, filter: horizontalItem.filter, altTextITA: horizontalItem.altTextITA },
-                    { type: 'image', span: 1, src: verticalItem.src, link: verticalItem.link, filter: verticalItem.filter, altTextITA: verticalItem.altTextITA }
-                ]);
-                verticalIndex++;
-            } else {
-                // Solo elemento orizzontale se non ci sono più elementi verticali
-                layout.push([
-                    { type: 'image', span: 2, src: horizontalItem.src, link: horizontalItem.link, filter: horizontalItem.filter, altTextITA: horizontalItem.altTextITA }
-                ]);
-            }
-            horizontalPositionIndex++;
-        } else {
-            // Crea una riga normale con elementi verticali
-            const row = [];
-            for (let i = 0; i < 3 && verticalIndex < shuffledVertical.length; i++) {
-                const verticalItem = shuffledVertical[verticalIndex];
-                row.push({ 
-                    type: 'image', 
-                    span: 1, 
-                    src: verticalItem.src, 
-                    link: verticalItem.link, 
-                    filter: verticalItem.filter,
-                    altTextITA: verticalItem.altTextITA
-                });
-                verticalIndex++;
-            }
-            if (row.length > 0) {
-                layout.push(row);
-            }
-        }
-        
-        // Se non ci sono più elementi da inserire, esci
-        if (verticalIndex >= shuffledVertical.length && horizontalPositionIndex >= horizontalPositions.length) {
-            break;
-        }
-    }
-    
-    return layout;
-};
-
-
 /**
  * Chessboard component renders a grid layout with dynamic rows and interactive elements.
  * It includes a grid of items and a "Load More" button to display additional rows.
@@ -140,6 +43,12 @@ export default function Chessboard() {
      */
     const [isLoading, setIsLoading] = useState(true);
 
+    const cacheTTL = 60 * 60 * 24 * 1000; // 24 hrs in ms
+    const [cache, setCache] = useState({
+        data: null,
+        timestamp: 0
+    });
+
     /**
      * Populates the layout with images from Notion API.
      * 
@@ -163,6 +72,101 @@ export default function Chessboard() {
         return createDynamicLayout(notionImages);
     }
 
+    // Funzione helper per determinare se un'immagine è orizzontale
+    const isImageHorizontal = (isHorizontalCheckbox) => {
+        // Usa solo il campo checkbox dal database Notion
+        return isHorizontalCheckbox === true;
+    };
+
+    // Funzione helper per creare un layout dinamico con ordinamento intelligente
+    const createDynamicLayout = (images) => {
+        if (!images || images.length === 0) return [];
+
+        // Separa elementi orizzontali e verticali
+        const horizontalItems = images.filter(img => isImageHorizontal(img.isHorizontal));
+        const verticalItems = images.filter(img => !isImageHorizontal(img.isHorizontal));
+
+        const layout = [];
+        let verticalIndex = 0;
+        let lastHorizontalRow = -3; // Inizializza a -3 per permettere il primo elemento orizzontale
+
+        // Mescola casualmente gli elementi verticali
+        const shuffledVertical = verticalItems.sort(() => Math.random() - 0.5);
+
+        // Mescola casualmente gli elementi orizzontali
+        const shuffledHorizontal = horizontalItems.sort(() => Math.random() - 0.5);
+
+        // Calcola le posizioni possibili per gli elementi orizzontali
+        const totalRows = Math.ceil((shuffledVertical.length + shuffledHorizontal.length) / 3);
+        const horizontalPositions = [];
+
+        // Genera posizioni casuali per gli elementi orizzontali (con distanza minima di 3)
+        for (let i = 0; i < shuffledHorizontal.length; i++) {
+            let position;
+            do {
+                position = Math.floor(Math.random() * Math.max(1, totalRows - 2)) + 1; // Non alla prima riga
+            } while (horizontalPositions.some(pos => Math.abs(pos - position) < 3));
+            horizontalPositions.push(position);
+        }
+        horizontalPositions.sort((a, b) => a - b);
+
+        let horizontalPositionIndex = 0;
+
+        // Crea il layout con le regole specifiche
+        while (verticalIndex < shuffledVertical.length || horizontalPositionIndex < horizontalPositions.length) {
+            const currentRowIndex = layout.length;
+
+            // Controlla se dobbiamo inserire un elemento orizzontale in questa riga
+            const shouldInsertHorizontal = horizontalPositionIndex < horizontalPositions.length &&
+                currentRowIndex === horizontalPositions[horizontalPositionIndex];
+
+            if (shouldInsertHorizontal) {
+                // Inserisci elemento orizzontale con un elemento verticale
+                const horizontalItem = shuffledHorizontal[horizontalPositionIndex];
+                const verticalItem = shuffledVertical[verticalIndex];
+
+                if (verticalItem) {
+                    layout.push([
+                        { type: 'image', span: 2, src: horizontalItem.src, link: horizontalItem.link, filter: horizontalItem.filter, altTextITA: horizontalItem.altTextITA },
+                        { type: 'image', span: 1, src: verticalItem.src, link: verticalItem.link, filter: verticalItem.filter, altTextITA: verticalItem.altTextITA }
+                    ]);
+                    verticalIndex++;
+                } else {
+                    // Solo elemento orizzontale se non ci sono più elementi verticali
+                    layout.push([
+                        { type: 'image', span: 2, src: horizontalItem.src, link: horizontalItem.link, filter: horizontalItem.filter, altTextITA: horizontalItem.altTextITA }
+                    ]);
+                }
+                horizontalPositionIndex++;
+            } else {
+                // Crea una riga normale con elementi verticali
+                const row = [];
+                for (let i = 0; i < 3 && verticalIndex < shuffledVertical.length; i++) {
+                    const verticalItem = shuffledVertical[verticalIndex];
+                    row.push({
+                        type: 'image',
+                        span: 1,
+                        src: verticalItem.src,
+                        link: verticalItem.link,
+                        filter: verticalItem.filter,
+                        altTextITA: verticalItem.altTextITA
+                    });
+                    verticalIndex++;
+                }
+                if (row.length > 0) {
+                    layout.push(row);
+                }
+            }
+
+            // Se non ci sono più elementi da inserire, esci
+            if (verticalIndex >= shuffledVertical.length && horizontalPositionIndex >= horizontalPositions.length) {
+                break;
+            }
+        }
+
+        return layout;
+    };
+
     /**
      * @hook useEffect
      * @description 
@@ -178,12 +182,23 @@ export default function Chessboard() {
     useEffect(() => {
         const fetchNotionData = async () => {
             setIsLoading(true);
+
+            if (cache.data && Date.now() - cache.timestamp < cacheTTL * 1000) {
+                setLayout(populateLayout(cache.data.chessboard));
+                setIsLoading(false);
+                return;
+            }
+
             try {
                 const response = await fetch('/api/notion');
                 const data = await response.json();
-                
+
                 if (data.chessboard && data.chessboard.length > 0) {
                     setLayout(populateLayout(data.chessboard));
+                    setCache({
+                        data: data,
+                        timestamp: Date.now(),
+                    });
                 } else {
                     // Nessun dato disponibile
                     setLayout([]);
@@ -198,7 +213,7 @@ export default function Chessboard() {
         };
 
         fetchNotionData();
-    }, []);
+    }, [cache]);
 
     /**
      * @state {string[]} activeFilters
@@ -237,7 +252,7 @@ export default function Chessboard() {
                 // Mappa i filtri ai valori corretti dal database Notion
                 const filterMap = {
                     'event': 'Event',
-                    'podcast': 'Podcast', 
+                    'podcast': 'Podcast',
                     'project': 'Project',
                     'other': 'Other'
                 };

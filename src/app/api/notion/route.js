@@ -1,10 +1,13 @@
 import { Client } from '@notionhq/client';
 
-const notion = new Client({
-  auth: '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',
-});
+const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
-const DATABASE_ID = '27cae3dac7c4817da038df21ae8482f7';
+const cacheTTL = 60 * 60 * 24 * 1000; // 24 hrs in ms
+
+let cache = {
+  data: null,
+  timestamp: 0
+};
 
 export async function GET() {
   try {
@@ -13,6 +16,12 @@ export async function GET() {
         chessboard: [],
         featured: [],
         error: 'Missing Notion credentials'
+      });
+    }
+
+    if (cache.data && currentTimestamp - cache.timestamp < cacheTTL) {
+      return Response.json(cache.data, {
+        headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
       });
     }
 
@@ -33,7 +42,7 @@ export async function GET() {
 
     shuffledResults.forEach((page) => {
       const properties = page.properties;
-      
+
       // Estrai i dati dalle proprietà di Notion
       const contentType = properties['Content type']?.select?.name;
       const contentLocation = properties['Content location']?.select?.name;
@@ -84,9 +93,18 @@ export async function GET() {
       }
     });
 
-    return Response.json({
-      chessboard: chessboardItems,
-      featured: featuredItems
+    cache = {
+      data: {
+        chessboard: chessboardItems,
+        featured: featuredItems,
+      },
+      timestamp: Date.now(),
+    };
+
+    return Response.json(cache.data, {
+      headers: {
+        'Cache-Control': 'public, max-age=31536000, immutable'
+      },
     });
   } catch (error) {
     console.error('Error fetching from Notion:', error);
