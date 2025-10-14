@@ -174,7 +174,7 @@ export default function Chessboard() {
     return (
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Filter buttons */}
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-x-3 mb-3 pt-8 sm:pt-12 lg:pt-16">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-x-3 mb-3 pt-2 sm:pt-3 lg:pt-4">
                 {["events", "podcast", "projects", "others"].map((key) => {
                     const isActive = activeFilters.includes(key);
                     return (

@@ -60,7 +60,7 @@ body {
 }
 
 .img-carousel {
-  @apply max-w-full w-full h-[390px] sm:h-[400px] md:h-[410px] lg:h-[380px] border-2 border-blue-dark rounded-lg dark:border-white;
+  @apply max-w-full w-[340px] h-[390px] sm:h-[400px] md:h-[410px] lg:h-[380px] border-2 border-blue-dark rounded-lg dark:border-white;
   @apply transition-opacity duration-700 ease-in-out cursor-grab active:cursor-grabbing;
 }
 
