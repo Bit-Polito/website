@@ -69,7 +69,7 @@ export default function HomePage() {
         </div>
 
         {/* only for mobile and tablet version */}
-        <div className="lg:hidden">
+        <div className="carousel-mobile">
           <Carousel />
         </div>
 
@@ -78,7 +78,7 @@ export default function HomePage() {
             <Chessboard />
           </div>
 
-          <div className={`bg-white dark:bg-blue-dark lg:block hidden w-[460px] h-full p-2 ml-auto transition-all duration-300 top-0 right-0 ${isCarouselFixed ? "fixed" : "absolute"}`}>
+          <div className={`bg-white dark:bg-blue-dark carousel-desktop w-[460px] h-full p-2 ml-auto transition-all duration-300 top-0 right-0 ${isCarouselFixed ? "fixed" : "absolute"}`}>
             <Carousel />
           </div>
         </div>

@@ -195,13 +195,13 @@ export default function Chessboard() {
             </div>
 
             {/* Chessboard grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 p-2 sm:p-4 lg:p-5">
+            <div className="grid grid-cols-1 chessboard-responsive gap-3 sm:gap-4 lg:gap-5 p-2 sm:p-4 lg:p-5">
                 {filteredLayout.slice(0, visibleRows).flatMap((row, rowIndex) =>
                     row.map((item, colIndex) => (
                         <div
                             key={`${rowIndex}-${colIndex}`}
                             className={`${item.span === 2
-                                ? 'col-span-1 sm:col-span-2'
+                                ? 'col-span-1 chessboard-span-2'
                                 : 'col-span-1'
                                 } transition-all duration-300 ease-in-out hover:opacity-95 hover:scale-[1.02]`}
                         >
