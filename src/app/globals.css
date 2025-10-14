@@ -60,6 +60,48 @@ body {
 }
 
 .img-carousel {
-  @apply max-w-full w-full h-[420px] border-2 border-blue-dark rounded-lg dark:border-white;
+  @apply max-w-full w-full h-[390px] sm:h-[400px] md:h-[410px] lg:h-[380px] border-2 border-blue-dark rounded-lg dark:border-white;
   @apply transition-opacity duration-700 ease-in-out cursor-grab active:cursor-grabbing;
+}
+
+.carousel-mobile {
+  @apply block;
+}
+
+.carousel-desktop {
+  @apply hidden;
+}
+
+.chessboard-responsive {
+  @apply grid-cols-1;
+}
+
+.chessboard-span-2 {
+  @apply col-span-1;
+}
+
+@media (min-width: 640px) {
+  .chessboard-responsive {
+    @apply grid-cols-2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-mobile {
+    @apply hidden;
+  }
+  
+  .carousel-desktop {
+    @apply block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .chessboard-responsive {
+    @apply grid-cols-3;
+  }
+  
+  .chessboard-span-2 {
+    @apply col-span-2;
+  }
 }
