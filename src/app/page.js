@@ -62,7 +62,7 @@ export default function HomePage() {
 
           <div className="max-w-prose">
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed tracking-wide
-               w-full sm:w-[85%] md:w-[75%] lg:w-[65%] xl:w-[60%]">
+               w-full sm:w-[85%] md:w-[75%] lg:w-[65%] xl:w-[60%] whitespace-nowrap">
               {t("paragraph")}
             </p>
           </div>

@@ -261,7 +261,7 @@ export default function Carousel() {
                     className={`hidden lg:block arrow !left-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
                     &lt;
                 </button>
-                <a href={imageLinks[currentImage]} target="_blank" rel="noopener noreferrer" className="max-w-full w-full">
+                <a href={imageLinks[currentImage]} target="_blank" rel="noopener noreferrer" className="max-w-full w-full flex justify-center">
                     <img
                         src={carouselImages[currentImage]}
                         title={descriptionImages[currentImage]}
@@ -286,13 +286,13 @@ export default function Carousel() {
                     &gt;
                 </button>
 
-                <footer className="flex justify-between gap-x-3 mt-5">
-                    <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className="btn-w !px-8">
-                        <img src={"icons/bitpolito-icon-social-telegram.svg"} className="icon-style-opposite"></img>
+                <footer className="flex justify-between gap-x-3 mt-5 w-[340px] mx-auto">
+                    <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className="btn-w !px-8 whitespace-nowrap gap-1">
+                        <img src={"icons/bitpolito-icon-social-telegram.svg"} className="w-8 h-8 dark:invert dark:brightness-0 dark:filter-white"></img>
                         <span>{t("telegram")}</span>
                     </a>
-                    <button onClick={() => setIsOpen(true)} className="btn-b rounded-md !px-7">
-                        <img src="icons/donate-light.png" className="icon-style !w-6 !h-6"></img>
+                    <button onClick={() => setIsOpen(true)} className="btn-b rounded-md !px-7 whitespace-nowrap gap-1">
+                        <img src="icons/donate-light.png" className="w-6 h-6 filter-white dark:invert-0 dark:brightness-100 dark:filter-none"></img>
                         {t("donate")}
                     </button>
                 </footer>
