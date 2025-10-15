@@ -45,7 +45,7 @@ export default function Footer() {
                     <img src="icons/bitpolito-icon-mail.svg" className="icon-style"></img>
                     info@bitpolito.it
                 </a>
-                <a href="https://forms.gle/P9mzEhqh8DdrkyQ96" target="_blank" rel="noopener noreferrer" className="btn-b rounded-md !px-5">
+                <a href="https://tinyurl.com/bitpolito" target="_blank" rel="noopener noreferrer" className="btn-b rounded-md !px-5">
                     <img src="icons/bitpolito-icon-share.svg" className="icon-style"></img>
                     {t("apply")}
                 </a>
