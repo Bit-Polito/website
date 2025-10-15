@@ -12,15 +12,14 @@ import LanguageSelector from "./LanguageSelector";
 const carouselImages = [
     "/bitpolito-bitgen-3.jpg",
     "/bitpolito-missione-praga.png",
-    "/DRAFT-bitpolito-panel-mining.jpg",
-    "/DRAFT-bitpolito-partnership-braiins.jpg"
+    "/DRAFT-bitpolito-panel-mining.jpg"
 ];
 
 /**
  * @constant {string[]} imageLinks
  * @description URLs that each carousel image links to when clicked
  */
-const imageLinks = ["", "", "", ""];
+const imageLinks = ["", "", ""];
 
 /**
  * Carousel component renders a series of images in swipeable format.
@@ -286,13 +285,13 @@ export default function Carousel() {
                     &gt;
                 </button>
 
-                <footer className="flex justify-between gap-x-3 mt-5 w-[340px] mx-auto">
-                    <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className="btn-w !px-8 whitespace-nowrap gap-1">
-                        <img src={"icons/bitpolito-icon-social-telegram.svg"} className="w-8 h-8 dark:invert dark:brightness-0 dark:filter-white"></img>
+                <footer className="flex gap-x-2 mt-4 mx-auto text-base w-[340px] lg:w-[280px] xl:w-[300px] 2xl:w-[340px]">
+                    <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className="btn-w !px-5 !py-1.5 whitespace-nowrap gap-1 flex-1">
+                        <img src={"icons/bitpolito-icon-social-telegram.svg"} className="w-6 h-6 dark:invert dark:brightness-0 dark:filter-white"></img>
                         <span>{t("telegram")}</span>
                     </a>
-                    <button onClick={() => setIsOpen(true)} className="btn-b rounded-md !px-7 whitespace-nowrap gap-1">
-                        <img src="icons/donate-light.png" className="w-6 h-6 filter-white dark:invert-0 dark:brightness-100 dark:filter-none"></img>
+                    <button onClick={() => setIsOpen(true)} className="btn-b rounded-md !px-5 !py-1.5 whitespace-nowrap gap-1 flex-1">
+                        <img src="icons/donate-light.png" className="w-5 h-5 filter-white dark:invert-0 dark:brightness-100 dark:filter-none"></img>
                         {t("donate")}
                     </button>
                 </footer>

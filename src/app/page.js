@@ -55,8 +55,8 @@ export default function HomePage() {
           </div>
         </header>
 
-        <div className="max-w-7xl mx-auto mt-8 sm:mt-12 md:mt-16 lg:mt-20 ml-[20px] sm:ml-[50px]">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-6">
+        <div className="max-w-7xl mx-auto mt-8 sm:mt-12 ml-[20px] sm:ml-[50px]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight mb-6">
             {t("title")}
           </h1>
 
