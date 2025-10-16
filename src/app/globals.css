@@ -17,6 +17,43 @@ h1, h2, h3, h4, h5, h6 {
   width: auto;
 }
 
+.carousel-button {
+  white-space: nowrap;
+}
+
+.carousel-button.wrap-text {
+  white-space: normal;
+  line-height: 1.3;
+}
+
+.carousel-button.small-text {
+  font-size: 0.8rem;
+}
+
+@media (min-width: 640px) {
+  .carousel-button.small-text {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-button.small-text {
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .carousel-button.small-text {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .carousel-button.small-text {
+    font-size: 0.8rem;
+  }
+}
+
 .btn-w {
   @apply rounded-md border border-blue-dark text-blue-dark bg-white;
 }
