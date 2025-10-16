@@ -48,7 +48,15 @@ const imageLinks = ["", "", ""];
  * @name Carousel
  */
 export default function Carousel() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    
+    // Lingue che richiedono testo su più righe
+    const wrapLanguages = ['fr', 'nl', 'ru', 'fa', 'de'];
+    const shouldWrap = wrapLanguages.includes(i18n.language);
+    
+    // Lingue che richiedono font più piccolo
+    const smallTextLanguages = ['de', 'nl'];
+    const shouldUseSmallText = smallTextLanguages.includes(i18n.language);
 
     /**
      * @state {number} currentImage
@@ -286,12 +294,12 @@ export default function Carousel() {
                 </button>
 
                 <footer className="flex gap-x-2 mt-4 mx-auto text-base w-[340px] lg:w-[280px] xl:w-[300px] 2xl:w-[340px]">
-                    <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className="btn-w !px-5 !py-1.5 whitespace-nowrap gap-1 flex-1">
-                        <img src={"icons/bitpolito-icon-social-telegram.svg"} className="w-6 h-6 dark:invert dark:brightness-0 dark:filter-white"></img>
+                    <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className={`btn-w carousel-button !px-5 !py-1.5 gap-1 flex-1 ${shouldWrap ? 'wrap-text' : ''} ${shouldUseSmallText ? 'small-text' : ''}`}>
+                        <img src={"icons/bitpolito-icon-social-telegram.svg"} className="w-6 h-6 flex-shrink-0 dark:invert dark:brightness-0 dark:filter-white"></img>
                         <span>{t("telegram")}</span>
                     </a>
-                    <button onClick={() => setIsOpen(true)} className="btn-b rounded-md !px-5 !py-1.5 whitespace-nowrap gap-1 flex-1">
-                        <img src="icons/donate-light.png" className="w-5 h-5 filter-white dark:invert-0 dark:brightness-100 dark:filter-none"></img>
+                    <button onClick={() => setIsOpen(true)} className={`btn-b carousel-button rounded-md !px-5 !py-1.5 gap-1 flex-1 ${shouldWrap ? 'wrap-text' : ''} ${shouldUseSmallText ? 'small-text' : ''}`}>
+                        <img src="icons/donate-light.png" className="w-5 h-5 flex-shrink-0 filter-white dark:invert-0 dark:brightness-100 dark:filter-none"></img>
                         {t("donate")}
                     </button>
                 </footer>
