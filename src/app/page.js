@@ -36,6 +36,7 @@ export default function HomePage() {
         lg:flex-1 lg:overflow-y-auto lg:min-h-screen
         lg:pr-20 lg:pl-2 lg:break-words lg:mr-[460px]
         text-sm sm:text-base
+        overflow-x-hidden
       ">
         <header className="flex justify-between items-center gap-4 sm:gap-7 max-w-7xl w-full pt-4 sm:pt-6">
           <div className="relative w-[334px] sm:w-[160px] md:w-[200px] lg:w-[334px] mt-[20px] ml-[20px] sm:ml-[50px]">
@@ -55,8 +56,8 @@ export default function HomePage() {
           </div>
         </header>
 
-        <div className="max-w-7xl mx-auto mt-8 sm:mt-12 ml-[20px] sm:ml-[50px]">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight mb-6">
+        <div className="max-w-7xl mx-auto mt-8 sm:mt-10 lg:mt-12 ml-[20px] sm:ml-[50px]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight mb-8 sm:mb-10 lg:mb-12">
             {t("title")}
           </h1>
 
@@ -73,12 +74,12 @@ export default function HomePage() {
           <Carousel />
         </div>
 
-        <div className="flex mt-8 sm:mt-12">
+        <div className="flex mt-2 sm:mt-10 lg:mt-12">
           <div ref={chessboardRef}>
             <Chessboard />
           </div>
 
-          <div className={`bg-white dark:bg-blue-dark carousel-desktop w-[460px] h-full p-2 ml-auto transition-all duration-300 top-0 right-0 ${isCarouselFixed ? "fixed" : "absolute"}`}>
+          <div className={`bg-white dark:bg-blue-dark carousel-desktop w-[460px] h-screen p-2 ml-auto transition-all duration-300 top-0 right-0 ${isCarouselFixed ? "fixed" : "absolute"}`}>
             <Carousel />
           </div>
         </div>
