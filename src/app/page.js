@@ -74,7 +74,7 @@ export default function HomePage() {
           <Carousel />
         </div>
 
-        <div className="flex mt-4 sm:mt-10 lg:mt-12">
+        <div className="flex mt-2 sm:mt-10 lg:mt-12">
           <div ref={chessboardRef}>
             <Chessboard />
           </div>
