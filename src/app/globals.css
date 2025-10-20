@@ -18,8 +18,9 @@ h6 {
 
 .btn-w,
 .btn-b {
-  @apply flex items-center justify-center px-2 py-1 transition-all duration-200 hover:shadow-lg hover:[scale:1.03] font-bold;
+  @apply flex items-center justify-center px-2 py-2 transition-all duration-200 hover:shadow-lg hover:[scale:1.03] font-bold;
   width: auto;
+  min-height: fit-content;
 }
 
 .btn-w {
@@ -96,18 +97,6 @@ h6 {
 
 @media (min-width: 1024px) {
   .img-carousel {
-    width: 280px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .img-carousel {
-    width: 340px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .img-carousel {
     width: 340px;
   }
 }
@@ -178,4 +167,49 @@ h6 {
   .button-font {
     font-size: medium;
   }
+}
+
+/* Hide scrollbar for carousel by default */
+.carousel-scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+
+.carousel-scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.carousel-scrollable::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+}
+
+/* Show scrollbar on hover */
+.carousel-scrollable:hover::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dark .carousel-scrollable:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.carousel-scrollable:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dark .carousel-scrollable:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Firefox */
+.carousel-scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.carousel-scrollable:hover {
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+.dark .carousel-scrollable:hover {
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
