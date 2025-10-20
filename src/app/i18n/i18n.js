@@ -10,6 +10,7 @@ import translationNL from "./locales/nl/nl.json";
 import translationPT from "./locales/pt/pt.json";
 import translationRU from "./locales/ru/ru.json";
 import translationZH from "./locales/zh/zh.json";
+import translationFA from "./locales/fa/fa.json";
 
 i18n.use(initReactI18next).init({
     resources: {
@@ -22,6 +23,7 @@ i18n.use(initReactI18next).init({
         pt: { translation: translationPT },
         ru: { translation: translationRU },
         zh: { translation: translationZH },
+        fa: { translation: translationFA },
     },
     lng: "en",
     fallbackLng: "en",

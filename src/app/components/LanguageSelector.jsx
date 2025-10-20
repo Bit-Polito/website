@@ -59,6 +59,7 @@ export default function LanguageSelector() {
         { code: "pt", name: "Português" },
         { code: "ru", name: "Русский" },
         { code: "zh", name: "中文" },
+        { code: "fa", name: "فارسی" },
     ];
 
     /**
