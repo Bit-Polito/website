@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Chessboard from "./components/Chessboard";
 import DarkModeSwitch from "./components/DarkModeSwitch";
 import LanguageSelector from "./components/LanguageSelector";
+import Image from "next/image";
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -40,12 +41,13 @@ export default function HomePage() {
       ">
         <header className="flex justify-between items-center gap-4 sm:gap-7 max-w-7xl w-full pt-4 sm:pt-6">
           <div className="relative w-[334px] sm:w-[160px] md:w-[200px] lg:w-[334px] mt-[20px] ml-[20px] sm:ml-[50px]">
-            <img
+            <Image
               src="/bitpolito-logo-light.svg"
               alt="Bitpolito Logo"
               width={334}
               height={57}
               className="icon-style-opposite !w-full !h-auto"
+              priority
             />
           </div>
 
