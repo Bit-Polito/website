@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import chessboardImages from '../data/chessboardImages.json';
+import Image from "next/image";
 
 // const chartRow = [
 //     { type: 'image', span: 1 },
@@ -209,10 +210,13 @@ export default function Chessboard() {
                                 switch (item.type) {
                                     case 'chart':
                                         return (
-                                            <img
+                                            <Image
                                                 src="#"
                                                 alt="Chart placeholder"
                                                 className="chessboard !min-h-[200px]"
+                                                priority
+                                                width={2000}
+                                                height={2000}
                                             />
                                         );
                                     case 'box':
@@ -223,10 +227,13 @@ export default function Chessboard() {
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <img
+                                                    <Image
                                                         src={item.src}
                                                         alt="Project image"
                                                         className="w-full h-full object-cover rounded-2xl"
+                                                        priority
+                                                        width={2000}
+                                                        height={2000}
                                                     />
                                                 </a>
                                             </div>
@@ -239,11 +246,14 @@ export default function Chessboard() {
                                                 rel="noopener noreferrer"
                                                 className="block w-full h-full"
                                             >
-                                                <img
+                                                <Image
                                                     src={item.src}
                                                     alt={`Chessboard item ${rowIndex}-${colIndex}`}
                                                     className="chessboard"
-                                                    loading="lazy"
+                                                    //loading="lazy"
+                                                    priority
+                                                    width={2000}
+                                                    height={2000}
                                                 />
                                             </a>
                                         );
