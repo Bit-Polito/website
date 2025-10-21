@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import DarkModeSwitch from "./DarkModeSwitch";
 import LanguageSelector from "./LanguageSelector";
+import Image from "next/image";
 
 /**
  * @constant {string[]} carouselImages
@@ -263,7 +264,7 @@ export default function Carousel() {
                         &lt;
                     </button>
                     <a href={imageLinks[currentImage]} target="_blank" rel="noopener noreferrer" className="max-w-full w-full flex justify-center">
-                        <img
+                        <Image
                             src={carouselImages[currentImage]}
                             title={descriptionImages[currentImage]}
                             className={`img-carousel ${fade ? 'opacity-100' : 'opacity-0'}`}
@@ -279,6 +280,10 @@ export default function Carousel() {
                             }}
                             onMouseUp={handleEnd}
                             onMouseLeave={handleEnd}
+                            priority
+                            width={1000}
+                            height={1000}
+                            alt=""
                         />
                     </a>
                     <button
@@ -317,7 +322,7 @@ export default function Carousel() {
                         <p className="text-base sm:text-xl mb-6 dark:text-white">{newLine(t("popup-paragraph"))}</p>
 
                         <div className="flex flex-col items-center">
-                            <img src="/FP_PhotoProfile.png" className="w-40 h-43 sm:w-60 sm:h-64"></img>
+                            <Image src="/FP_PhotoProfile.png" className="w-40 h-43 sm:w-60 sm:h-64" priority width={100} height={100} alt=""/>
                             <div className="flex flex-col mt-5 gap-y-5 w-full px-4">
                                 <a href="https://t.me/bitciccio" target="_blank" rel="noopener noreferrer" className="btn-w text-sm sm:text-base break-words">
                                     <img src="icons/bitpolito-icon-social-telegram.svg" className="icon-style-opposite"></img>
