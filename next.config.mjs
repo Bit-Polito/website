@@ -1,8 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-        turbopack: false,
-    },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*.s3.us-west-2.amazonaws.com',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

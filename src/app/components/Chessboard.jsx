@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
 
 /**
  * Chessboard component renders a grid layout with dynamic rows and interactive elements.
@@ -82,13 +83,26 @@ export default function Chessboard() {
     const createDynamicLayout = (images) => {
         if (!images || images.length === 0) return [];
 
+        images = images.filter(img => img && typeof img.src === 'string' && img.src.trim() !== '');
+
+        // avoid duplicates based on src
+        const uniqueImages = [];
+        const seen = new Set();
+
+        for (const img of images) {
+            if (img && typeof img.src === 'string' && img.src.trim() !== '' && !seen.has(img.src)) {
+                seen.add(img.src);
+                uniqueImages.push(img);
+            }
+        }
+
         // Separa elementi orizzontali e verticali
-        const horizontalItems = images.filter(img => isImageHorizontal(img.isHorizontal));
-        const verticalItems = images.filter(img => !isImageHorizontal(img.isHorizontal));
+        const horizontalItems = uniqueImages.filter(img => isImageHorizontal(img.isHorizontal));
+        const verticalItems = uniqueImages.filter(img => !isImageHorizontal(img.isHorizontal));
 
         const layout = [];
         let verticalIndex = 0;
-        let lastHorizontalRow = -3; // Inizializza a -3 per permettere il primo elemento orizzontale
+        // let lastHorizontalRow = -3; // Inizializza a -3 per permettere il primo elemento orizzontale
 
         // Mescola casualmente gli elementi verticali
         const shuffledVertical = verticalItems.sort(() => Math.random() - 0.5);
@@ -127,14 +141,14 @@ export default function Chessboard() {
 
                 if (verticalItem) {
                     layout.push([
-                        { type: 'image', span: 2, src: horizontalItem.src, link: horizontalItem.link, filter: horizontalItem.filter, altTextITA: horizontalItem.altTextITA },
-                        { type: 'image', span: 1, src: verticalItem.src, link: verticalItem.link, filter: verticalItem.filter, altTextITA: verticalItem.altTextITA }
+                        { type: 'image', span: 2, src: horizontalItem.src || null, link: horizontalItem.link, filter: horizontalItem.filter, altTextITA: horizontalItem.altTextITA },
+                        { type: 'image', span: 1, src: verticalItem.src || null, link: verticalItem.link, filter: verticalItem.filter, altTextITA: verticalItem.altTextITA }
                     ]);
                     verticalIndex++;
                 } else {
                     // Solo elemento orizzontale se non ci sono più elementi verticali
                     layout.push([
-                        { type: 'image', span: 2, src: horizontalItem.src, link: horizontalItem.link, filter: horizontalItem.filter, altTextITA: horizontalItem.altTextITA }
+                        { type: 'image', span: 2, src: horizontalItem.src || null, link: horizontalItem.link, filter: horizontalItem.filter, altTextITA: horizontalItem.altTextITA }
                     ]);
                 }
                 horizontalPositionIndex++;
@@ -146,7 +160,7 @@ export default function Chessboard() {
                     row.push({
                         type: 'image',
                         span: 1,
-                        src: verticalItem.src,
+                        src: verticalItem.src || null,
                         link: verticalItem.link,
                         filter: verticalItem.filter,
                         altTextITA: verticalItem.altTextITA
@@ -299,7 +313,7 @@ export default function Chessboard() {
 
             {/* Chessboard grid */}
             {!isLoading && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 p-2 sm:p-4 lg:p-5">
+                <div className="grid grid-cols-1 chessboard-responsive gap-3 sm:gap-4 lg:gap-5 p-2 sm:p-4 lg:p-5">
                     {filteredLayout.slice(0, visibleRows).flatMap((row, rowIndex) =>
                         row.map((item, colIndex) => (
                             <div
@@ -313,10 +327,13 @@ export default function Chessboard() {
                                     switch (item.type) {
                                         case 'chart':
                                             return (
-                                                <img
+                                                <Image
                                                     src="#"
                                                     alt="Chart placeholder"
                                                     className="chessboard !min-h-[200px]"
+                                                    loader={({ src }) => src}
+                                                    width={2000}
+                                                    height={2000}
                                                 />
                                             );
                                         case 'box':
@@ -327,10 +344,13 @@ export default function Chessboard() {
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                     >
-                                                        <img
+                                                        <Image
                                                             src={item.src}
                                                             alt="Project image"
                                                             className="w-full h-full object-cover rounded-2xl"
+                                                            loader={({ src }) => src}
+                                                            width={2000}
+                                                            height={2000}
                                                         />
                                                     </a>
                                                 </div>
@@ -343,11 +363,13 @@ export default function Chessboard() {
                                                     rel="noopener noreferrer"
                                                     className="block w-full h-full"
                                                 >
-                                                    <img
+                                                    <Image
                                                         src={item.src}
                                                         alt={item.altTextITA || `Chessboard item ${rowIndex}-${colIndex}`}
                                                         className="chessboard"
-                                                        loading="lazy"
+                                                        loader={({ src }) => src}
+                                                        width={2000}
+                                                        height={2000}
                                                     />
                                                 </a>
                                             );
@@ -361,7 +383,7 @@ export default function Chessboard() {
 
             {/* Navigation buttons */}
             {!isLoading && (
-                <div className="flex flex-col sm:flex-row justify-between items-center gap-4 px-4 py-8 sm:py-12">
+                <div className="flex flex-col sm:flex-row justify-between items-center gap-5 px-5 py-8 sm:py-12">
                     <button
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                         className="btn-w flex items-center gap-2"
@@ -380,6 +402,14 @@ export default function Chessboard() {
                             className="font-bold hover:opacity-80 transition-opacity"
                         >
                             {t("load-more")}
+                        </button>
+                    )}
+                    {visibleRows >= filteredLayout.length && (
+                        <button
+                            onClick={() => setVisibleRows(4)}
+                            className="font-bold hover:opacity-80 transition-opacity"
+                        >
+                            {t("reset")}
                         </button>
                     )}
                 </div>
