@@ -51,7 +51,7 @@ export default function DarkModeToggle() {
 
     return (
         <div className="flex items-center">
-            <img src="/icons/bitpolito-icon-sun.svg" className="icon-style-opposite !w-6 !h-6 !mr-2"></img>
+            <img src="/icons/bitpolito-icon-sun.svg" className="icon-style-opposite !w-6 !h-6 !mr-2 hidden sm:block"></img>
             <label className="relative inline-flex items-center cursor-pointer">
                 <input
                     type="checkbox"
@@ -62,7 +62,7 @@ export default function DarkModeToggle() {
                 <div className="w-11 h-6 bg-blue-dark rounded-full peer peer-checked:bg-white"></div>
                 <div className="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-all peer-checked:translate-x-5 dark:peer-checked:bg-blue-dark"></div>
             </label>
-            <img src="/icons/bitpolito-icon-moon.svg" className="icon-style-opposite !w-6 !h-6 !mr-0 ml-2"></img>
+            <img src="/icons/bitpolito-icon-moon.svg" className="icon-style-opposite !w-6 !h-6 !mr-0 ml-2 hidden sm:block"></img>
         </div>
     );
 }

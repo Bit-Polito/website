@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Chessboard from "./components/Chessboard";
 import DarkModeSwitch from "./components/DarkModeSwitch";
 import LanguageSelector from "./components/LanguageSelector";
+import Image from "next/image";
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -34,11 +35,12 @@ export default function HomePage() {
         px-4 sm:px-6 lg:px-8
         sm:mr-0 sm:ml-0 sm:break-words
         lg:flex-1 lg:overflow-y-auto lg:min-h-screen
-        lg:pr-20 lg:pl-2 lg:break-words lg:mr-[350px]
+        lg:pr-20 lg:pl-2 lg:break-words lg:mr-[460px]
         text-sm sm:text-base
+        overflow-x-hidden
       ">
         <header className="flex justify-between items-center gap-4 sm:gap-7 max-w-7xl w-full pt-4 sm:pt-6">
-          <div className="relative w-[334px] sm:w-[160px] md:w-[200px] lg:w-[334px] mt-[20px] ml-[50px]">
+          <div className="relative w-[334px] sm:w-[160px] md:w-[200px] lg:w-[334px] mt-[20px] ml-[20px] sm:ml-[50px]">
             <img
               src="/bitpolito-logo-light.svg"
               alt="Bitpolito Logo"
@@ -55,29 +57,30 @@ export default function HomePage() {
           </div>
         </header>
 
-        <div className="max-w-7xl mx-auto mt-8 sm:mt-12 md:mt-16 lg:mt-20 ml-[50px]">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-6">
+        <div className="max-w-7xl mx-auto mt-8 sm:mt-10 lg:mt-12 ml-[20px] sm:ml-[50px]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight mb-8 sm:mb-10 lg:mb-12">
             {t("title")}
           </h1>
 
           <div className="max-w-prose">
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed tracking-wide
-               w-full sm:w-[85%] md:w-[75%] lg:w-[65%] xl:w-[60%]">
+               w-full sm:w-[85%] md:w-[75%] lg:w-[65%] xl:w-[60%] whitespace-nowrap">
               {t("paragraph")}
             </p>
           </div>
         </div>
 
-        <div className="lg:hidden">
+        {/* only for mobile and tablet version */}
+        <div className="carousel-mobile">
           <Carousel />
         </div>
 
-        <div className="flex mt-8 sm:mt-12">
+        <div className="flex mt-4 sm:mt-10 lg:mt-12">
           <div ref={chessboardRef}>
             <Chessboard />
           </div>
 
-          <div className={`bg-white dark:bg-blue-dark lg:block hidden w-[430px] h-full p-2 ml-auto transition-all duration-300 top-0 right-0 ${isCarouselFixed ? "fixed" : "absolute"}`}>
+          <div className={`bg-white dark:bg-blue-dark carousel-desktop w-[460px] h-screen p-2 ml-auto transition-all duration-300 top-0 right-0 ${isCarouselFixed ? "fixed" : "absolute"}`}>
             <Carousel />
           </div>
         </div>

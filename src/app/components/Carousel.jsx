@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import DarkModeSwitch from "./DarkModeSwitch";
 import LanguageSelector from "./LanguageSelector";
+import Image from "next/image";
 
 // I dati del carousel vengono ora caricati dinamicamente da Notion
 
@@ -87,11 +88,11 @@ export default function Carousel() {
             try {
                 const response = await fetch('/api/notion');
                 const data = await response.json();
-                
+
                 if (data.featured && data.featured.length > 0) {
                     const images = data.featured.map(item => item.src);
                     const links = data.featured.map(item => item.link || '#');
-                    
+
                     setCarouselImages(images);
                     setImageLinks(links);
                 } else {
@@ -149,7 +150,7 @@ export default function Carousel() {
      */
     useEffect(() => {
         if (carouselImages.length === 0) return;
-        
+
         const interval = setInterval(() => {
             setFade(false);
             setTimeout(() => {
@@ -178,7 +179,7 @@ export default function Carousel() {
      */
     const changeImage = (direction) => {
         if (carouselImages.length === 0) return;
-        
+
         setFade(false);
         setTimeout(() => {
             setCurrentImage((prev) => (prev + direction + carouselImages.length) % carouselImages.length);
@@ -257,85 +258,91 @@ export default function Carousel() {
     };
 
     return (
-        <div className="relative flex-1 flex flex-col items-center justify-center w-full"
-            onMouseEnter={() => showArrows(true)}
-            onMouseLeave={() => showArrows(false)}
-        >
-            <header className="w-full flex justify-center">
-                <div className="flex items-center gap-x-7 lg:flex hidden">
-                    <DarkModeSwitch />
-                    <LanguageSelector />
-                </div>
-            </header>
-
-            <div className="flex justify-between gap-x-8 mb-3 mt-7">
-                {["projects", "podcast", "about"].map((key) => (
-                    <div key={key} className="relative group">
-                        <a className="cursor-not-allowed transition-all duration-200 hover:scale-105 font-bold">{t(key)}</a>
-                        <div className="coming-soon">{t("coming-soon")}</div>
+        <div className="relative overflow-y-auto overflow-x-hidden h-full w-full carousel-scrollable">
+            <div className="flex flex-col items-center w-full pt-8 pb-4"
+                onMouseEnter={() => showArrows(true)}
+                onMouseLeave={() => showArrows(false)}
+            >
+                <header className="w-full flex justify-center">
+                    <div className="flex items-center gap-x-7 lg:flex hidden">
+                        <DarkModeSwitch />
+                        <LanguageSelector />
                     </div>
-                ))}
-            </div>
+                </header>
 
-            <div>
-                <div className="w-full h-1 bg-white dark:bg-blue-dark mb-2">
-                    <div
-                        className="h-full bg-blue-dark dark:bg-white"
-                        style={{ width: `${progress}%` }}
-                    ></div>
+                <div className="flex justify-between gap-x-8 mb-3 mt-7">
+                    {["projects", "podcast", "about"].map((key) => (
+                        <div key={key} className="relative group">
+                            <a className="cursor-not-allowed transition-all duration-200 hover:scale-105 font-bold">{t(key)}</a>
+                            <div className="coming-soon">{t("coming-soon")}</div>
+                        </div>
+                    ))}
                 </div>
 
-                {carouselImages.length > 0 && (
-                    <>
+                <div className="pb-4">
+                    <div className="w-[340px] lg:w-[340px] h-1 bg-white dark:bg-blue-dark mb-2">
+                        <div
+                            className="h-full bg-blue-dark dark:bg-white"
+                            style={{ width: `${progress}%` }}
+                        ></div>
+                    </div>
+
+                    <div className="relative">
                         <button
                             onClick={() => changeImage(-1)}
-                            className={`hidden lg:block arrow !left-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
+                            className={`hidden lg:block arrow -left-12 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
                             &lt;
                         </button>
-                        <a href={imageLinks[currentImage]} target="_blank" rel="noopener noreferrer" className="max-w-full w-full">
-                            <img
-                                src={carouselImages[currentImage]}
-                                title={descriptionImages[currentImage]}
-                                className={`img-carousel ${fade ? 'opacity-100' : 'opacity-0'}`}
-                        // for mobile / tablet
-                        onTouchStart={(e) => handleStart(e.touches[0].clientX)}
-                        onTouchMove={(e) => handleMove(e.touches[0].clientX)}
-                        onTouchEnd={handleEnd}
-                        // for desktop
-                        onMouseDown={(e) => handleStart(e.clientX)}
-                        onMouseMove={(e) => {
-                            if (isDragging.current) e.preventDefault();
-                            handleMove(e.clientX);
-                        }}
-                        onMouseUp={handleEnd}
-                        onMouseLeave={handleEnd}
-                    />
+                        <a href={imageLinks[currentImage]} target="_blank" rel="noopener noreferrer" className="max-w-full w-full flex justify-center">
+                            {carouselImages[currentImage] ? (
+                                <Image
+                                    src={carouselImages[currentImage]}
+                                    title={descriptionImages[currentImage]}
+                                    className={`img-carousel ${fade ? 'opacity-100' : 'opacity-0'}`}
+                                    // for mobile / tablet
+                                    onTouchStart={(e) => handleStart(e.touches[0].clientX)}
+                                    onTouchMove={(e) => handleMove(e.touches[0].clientX)}
+                                    onTouchEnd={handleEnd}
+                                    // for desktop
+                                    onMouseDown={(e) => handleStart(e.clientX)}
+                                    onMouseMove={(e) => {
+                                        if (isDragging.current) e.preventDefault();
+                                        handleMove(e.clientX);
+                                    }}
+                                    onMouseUp={handleEnd}
+                                    onMouseLeave={handleEnd}
+                                    loader={({ src }) => src}
+                                    width={1000}
+                                    height={1000}
+                                    alt=""
+                                />
+                            ) : null}
                         </a>
                         <button
                             onClick={() => changeImage(1)}
-                            className={`hidden lg:block arrow !right-1 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
+                            className={`hidden lg:block arrow -right-12 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
                             &gt;
                         </button>
-                    </>
-                )}
+                    </div>
 
-                <footer className="w-full flex justify-between gap-x-3 mt-5">
-                    <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className="btn-w !px-8">
-                        <img src={"icons/bitpolito-icon-social-telegram.svg"} className="icon-style-opposite"></img>
-                        <span>{t("telegram")}</span>
-                    </a>
-                    <button onClick={() => setIsOpen(true)} className="btn-b rounded-md !px-7">
-                        <img src="icons/donate-light.png" className="icon-style !w-6 !h-6"></img>
-                        {t("donate")}
-                    </button>
-                </footer>
+                    <footer className="flex flex-col sm:flex-row gap-2 sm:gap-x-2 mt-4 mb-8 text-base w-[340px] lg:w-[340px]">
+                        <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className={"btn-w gap-3 flex-1 min-h-[44px] order-2 sm:order-1"}>
+                            <img src={"icons/bitpolito-icon-social-telegram.svg"} className="w-6 h-6 flex-shrink-0 dark:invert dark:brightness-0 dark:filter-white"></img>
+                            <span className="button-font">{t("telegram")}</span>
+                        </a>
+                        <button onClick={() => setIsOpen(true)} className={"btn-b rounded-md gap-3 flex-1 min-h-[44px] order-1 sm:order-2"}>
+                            <img src="icons/donate-light.png" className="w-5 h-5 flex-shrink-0 filter-white dark:invert-0 dark:brightness-100 dark:filter-none"></img>
+                            <span className="button-font">{t("donate")}</span>
+                        </button>
+                    </footer>
+                </div>
             </div>
 
             {isOpen && (
                 <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50"
                     onClick={(e) => { if (e.target === e.currentTarget) setIsOpen(false) }} // closes popup when clicking outside the content
                 >
-                    <div className="relative bg-white dark:bg-blue-dark p-6 rounded-3xl w-80 sm:w-[600] h-auto">
+                    <div className="relative bg-white dark:bg-blue-dark p-6 rounded-3xl w-80 sm:w-[600px] h-auto">
                         <button
                             onClick={() => setIsOpen(false)}
                             className="absolute top-3 right-3 btn-b rounded-full"
@@ -347,15 +354,15 @@ export default function Carousel() {
                         <p className="text-base sm:text-xl mb-6 dark:text-white">{newLine(t("popup-paragraph"))}</p>
 
                         <div className="flex flex-col items-center">
-                            <img src="/FP_PhotoProfile.png" className="w-40 h-43 sm:w-60 sm:h-64"></img>
-                            <div className="flex flex-col mt-5 gap-y-5">
-                                <a href="https://t.me/bitciccio" target="_blank" rel="noopener noreferrer" className="btn-w">
+                            <img src="/FP_PhotoProfile.png" className="w-40 h-43 sm:w-60 sm:h-64" />
+                            <div className="flex flex-col mt-5 gap-y-5 w-full px-4">
+                                <a href="https://t.me/bitciccio" target="_blank" rel="noopener noreferrer" className="btn-w text-sm sm:text-base break-words">
                                     <img src="icons/bitpolito-icon-social-telegram.svg" className="icon-style-opposite"></img>
-                                    @Bitciccio
+                                    <span className="truncate">@Bitciccio</span>
                                 </a>
-                                <a href='mailto: francesco.pelle@studenti.polito.it' target="_blank" rel="noopener noreferrer" className="btn-w">
+                                <a href='mailto: francesco.pelle@studenti.polito.it' target="_blank" rel="noopener noreferrer" className="btn-w text-xs sm:text-base break-all">
                                     <img src="icons/bitpolito-icon-mail.svg" className="icon-style-opposite"></img>
-                                    francesco.pelle@studenti.polito.it
+                                    <span className="break-all text-xs sm:text-base">francesco.pelle@studenti.polito.it</span>
                                 </a>
                             </div>
                         </div>
