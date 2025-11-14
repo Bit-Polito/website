@@ -101,6 +101,54 @@ h6 {
   }
 }
 
+@media (min-width: 2026px) {
+  .img-carousel {
+    width: 540px;
+  }
+}
+
+.progress-bar-container {
+  width: 340px;
+}
+
+@media (min-width: 2026px) {
+  .progress-bar-container {
+    width: 540px;
+  }
+}
+
+.footer-container {
+  width: 340px;
+}
+
+@media (min-width: 2026px) {
+  .footer-container {
+    width: 540px;
+  }
+}
+
+.carousel-desktop-container {
+  width: 460px;
+}
+
+@media (min-width: 2026px) {
+  .carousel-desktop-container {
+    width: 690px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content-wrapper {
+    margin-right: 460px;
+  }
+}
+
+@media (min-width: 2026px) {
+  .main-content-wrapper {
+    margin-right: 690px;
+  }
+}
+
 .carousel-mobile {
   @apply block;
 }
@@ -140,6 +188,42 @@ h6 {
 
   .chessboard-span-2 {
     @apply col-span-2;
+  }
+}
+
+.chessboard-grid-container {
+  gap: 0.75rem;
+  padding: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .chessboard-grid-container {
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .chessboard-grid-container {
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+}
+
+@media (min-width: 2026px) {
+  .chessboard-grid-container {
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
+
+.chessboard-container {
+  max-width: 80rem;
+}
+
+@media (min-width: 2026px) {
+  .chessboard-container {
+    max-width: 100rem;
   }
 }
 

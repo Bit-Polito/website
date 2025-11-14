@@ -280,7 +280,7 @@ export default function Carousel() {
                 </div>
 
                 <div className="pb-4">
-                    <div className="w-[340px] lg:w-[340px] h-1 bg-white dark:bg-blue-dark mb-2">
+                    <div className="progress-bar-container h-1 bg-white dark:bg-blue-dark mb-2">
                         <div
                             className="h-full bg-blue-dark dark:bg-white"
                             style={{ width: `${progress}%` }}
@@ -325,7 +325,7 @@ export default function Carousel() {
                         </button>
                     </div>
 
-                    <footer className="flex flex-col sm:flex-row gap-2 sm:gap-x-2 mt-4 mb-8 text-base w-[340px] lg:w-[340px]">
+                    <footer className="footer-container flex flex-col sm:flex-row gap-2 sm:gap-x-2 mt-4 mb-8 text-base">
                         <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className={"btn-w gap-3 flex-1 min-h-[44px] order-2 sm:order-1"}>
                             <img src={"icons/bitpolito-icon-social-telegram.svg"} className="w-6 h-6 flex-shrink-0 dark:invert dark:brightness-0 dark:filter-white"></img>
                             <span className="button-font">{t("telegram")}</span>

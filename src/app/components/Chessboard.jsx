@@ -275,7 +275,7 @@ export default function Chessboard() {
             .filter(row => row.length > 0);
 
     return (
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="chessboard-container w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Loading indicator */}
             {isLoading && (
                 <div className="flex justify-center items-center py-12">
@@ -313,7 +313,7 @@ export default function Chessboard() {
 
             {/* Chessboard grid */}
             {!isLoading && (
-                <div className="grid grid-cols-1 chessboard-responsive gap-3 sm:gap-4 lg:gap-5 p-2 sm:p-4 lg:p-5">
+                <div className="chessboard-grid-container grid grid-cols-1 chessboard-responsive gap-3 sm:gap-4 lg:gap-5 p-2 sm:p-4 lg:p-5">
                     {filteredLayout.slice(0, visibleRows).flatMap((row, rowIndex) =>
                         row.map((item, colIndex) => (
                             <div

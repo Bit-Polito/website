@@ -36,6 +36,7 @@ export default function HomePage() {
         sm:mr-0 sm:ml-0 sm:break-words
         lg:flex-1 lg:overflow-y-auto lg:min-h-screen
         lg:pr-20 lg:pl-2 lg:break-words lg:mr-[460px]
+        main-content-wrapper
         text-sm sm:text-base
         overflow-x-hidden
       ">
@@ -80,7 +81,7 @@ export default function HomePage() {
             <Chessboard />
           </div>
 
-          <div className={`bg-white dark:bg-blue-dark carousel-desktop w-[460px] h-screen p-2 ml-auto transition-all duration-300 top-0 right-0 ${isCarouselFixed ? "fixed" : "absolute"}`}>
+          <div className={`bg-white dark:bg-blue-dark carousel-desktop carousel-desktop-container w-[460px] h-screen p-2 ml-auto transition-all duration-300 top-0 right-0 ${isCarouselFixed ? "fixed" : "absolute"}`}>
             <Carousel />
           </div>
         </div>
