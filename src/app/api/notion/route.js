@@ -1,13 +1,46 @@
 import { Client } from '@notionhq/client';
+import fs from 'fs/promises';
+import path from 'path';
 
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
 const cacheTTL = 60 * 60 * 24 * 1000; // 24 hrs in ms
 
+const isVercel = process.env.VERCEL === "1"; // check if running on production Vercel environment
+
+const cachePath = isVercel ? "./tmp/notionCache.json" : path.join(process.cwd(), "./src/app/notionCache.json");
+
 let cache = {
   data: null,
   timestamp: 0
 };
+
+async function loadCacheFromFile() {
+  try {
+    const json = await fs.readFile(cachePath, 'utf8');
+
+    if (!json) {
+      console.log("Cache file is empty, initializing empty cache.");
+      return { chessboard: [], featured: [], timestamp: 0 };
+    }
+
+    return JSON.parse(json);
+  } catch (error) {
+    console.error("No existing cache file found: ", error);
+    return { chessboard: [], featured: [], timestamp: 0 };
+  }
+}
+
+async function saveCacheToFile(cacheData) {
+  try {
+    await fs.writeFile(cachePath, JSON.stringify(cacheData, null, 2), 'utf8');
+    console.log("Cache saved to file.");
+  } catch (error) {
+    console.error("Error writing cache file: ", error);
+  }
+}
+
+cache = await loadCacheFromFile();
 
 export async function GET() {
   try {
@@ -19,7 +52,7 @@ export async function GET() {
       });
     }
 
-    if (cache.data && currentTimestamp - cache.timestamp < cacheTTL) {
+    if (cache.data && Date.now() - cache.timestamp < cacheTTL) {
       return Response.json(cache.data, {
         headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
       });
@@ -56,19 +89,19 @@ export async function GET() {
 
       // Filtra elementi senza immagine
       if (!image) {
-        console.log(`Skipping ${name}: no image specified`);
+        // console.log(`Skipping ${name}: no image specified`);
         return;
       }
 
       // Filtra elementi senza data
       if (!date) {
-        console.log(`Skipping ${contentType}:`, {
-          hasImage: !!image,
-          hasLink: !!link,
-          hasDate: !!date,
-          contentLocation: contentLocation,
-          name: properties.Name?.title?.[0]?.text?.content || 'N/A'
-        });
+        // console.log(`Skipping ${contentType}:`, {
+        //   hasImage: !!image,
+        //   hasLink: !!link,
+        //   hasDate: !!date,
+        //   contentLocation: contentLocation,
+        //   name: properties.Name?.title?.[0]?.text?.content || 'N/A'
+        // });
         return; // Skip solo se manca la data
       }
 
@@ -100,6 +133,8 @@ export async function GET() {
       },
       timestamp: Date.now(),
     };
+
+    await saveCacheToFile(cache);
 
     return Response.json(cache.data, {
       headers: {
