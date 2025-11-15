@@ -8,7 +8,6 @@ import Footer from "./components/Footer";
 import Chessboard from "./components/Chessboard";
 import DarkModeSwitch from "./components/DarkModeSwitch";
 import LanguageSelector from "./components/LanguageSelector";
-import Image from "next/image";
 
 export default function HomePage() {
   const { t } = useTranslation();

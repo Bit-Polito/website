@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
+import chessboardData from "../notionCache.json";
 
 /**
  * Chessboard component renders a grid layout with dynamic rows and interactive elements.
@@ -43,12 +44,6 @@ export default function Chessboard() {
      * @description Tracks whether the chessboard is currently loading data from Notion
      */
     const [isLoading, setIsLoading] = useState(true);
-
-    const cacheTTL = 60 * 60 * 24 * 1000; // 24 hrs in ms
-    const [cache, setCache] = useState({
-        data: null,
-        timestamp: 0
-    });
 
     /**
      * Populates the layout with images from Notion API.
@@ -182,44 +177,24 @@ export default function Chessboard() {
     };
 
     /**
-     * @hook useEffect
-     * @description 
-     * Runs once when the component mounts. It fetches data from Notion API and uses the `populateLayout` function 
-     * to fill the layout with images from Notion, ordered by date (descending).
+     * Fetches and populates the chessboard layout from a local JSON file
      * 
-     * The layout is populated using the `createDynamicLayout` function with Notion data.
-     * If Notion API fails or returns no data, the layout remains empty.
-     * 
-     * This hook does not depend on any state or props (hence the empty dependency array), meaning it runs only 
-     * once when the component mounts and will not trigger on subsequent re-renders.
+     * This effect is triggered when the component is mounted. It attempts to load
+     * the data from the imported `carouselData` JSON file, checks for available chessboard
+     * data, and populates the layout state with the data if it's available.
+     * If no data is found or an error occurs, it sets the layout to an empty array.
      */
     useEffect(() => {
         const fetchNotionData = async () => {
             setIsLoading(true);
-
-            if (cache.data && Date.now() - cache.timestamp < cacheTTL * 1000) {
-                setLayout(populateLayout(cache.data.chessboard));
-                setIsLoading(false);
-                return;
-            }
-
             try {
-                const response = await fetch('/api/notion');
-                const data = await response.json();
-
-                if (data.chessboard && data.chessboard.length > 0) {
-                    setLayout(populateLayout(data.chessboard));
-                    setCache({
-                        data: data,
-                        timestamp: Date.now(),
-                    });
+                if (chessboardData.data?.chessboard?.length > 0) {
+                    setLayout(populateLayout(chessboardData.data.chessboard));
                 } else {
-                    // Nessun dato disponibile
                     setLayout([]);
                 }
             } catch (error) {
                 console.error('Error fetching Notion data:', error);
-                // Nessun dato disponibile in caso di errore
                 setLayout([]);
             } finally {
                 setIsLoading(false);
@@ -227,7 +202,7 @@ export default function Chessboard() {
         };
 
         fetchNotionData();
-    }, [cache]);
+    }, []);
 
     /**
      * @state {string[]} activeFilters
@@ -331,7 +306,7 @@ export default function Chessboard() {
                                                     src="#"
                                                     alt="Chart placeholder"
                                                     className="chessboard !min-h-[200px]"
-                                                    loader={({ src }) => src}
+                                                    unoptimized
                                                     width={2000}
                                                     height={2000}
                                                 />
@@ -348,7 +323,7 @@ export default function Chessboard() {
                                                             src={item.src}
                                                             alt="Project image"
                                                             className="w-full h-full object-cover rounded-2xl"
-                                                            loader={({ src }) => src}
+                                                            unoptimized
                                                             width={2000}
                                                             height={2000}
                                                         />
@@ -367,7 +342,7 @@ export default function Chessboard() {
                                                         src={item.src}
                                                         alt={item.altTextITA || `Chessboard item ${rowIndex}-${colIndex}`}
                                                         className="chessboard"
-                                                        loader={({ src }) => src}
+                                                        unoptimized
                                                         width={2000}
                                                         height={2000}
                                                     />
