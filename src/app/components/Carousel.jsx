@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import DarkModeSwitch from "./DarkModeSwitch";
 import LanguageSelector from "./LanguageSelector";
-import Image from "next/image";
+import carouselData from "../notionCache.json";
 
 // I dati del carousel vengono ora caricati dinamicamente da Notion
 
@@ -81,17 +81,14 @@ export default function Carousel() {
 
     /**
      * @hook useEffect
-     * @description Carica i dati del carousel da Notion API
+     * @description upload carousel data from json file on component mount
      */
     useEffect(() => {
         const fetchCarouselData = async () => {
             try {
-                const response = await fetch('/api/notion');
-                const data = await response.json();
-
-                if (data.featured && data.featured.length > 0) {
-                    const images = data.featured.map(item => item.src);
-                    const links = data.featured.map(item => item.link || '#');
+                if (carouselData.data?.featured?.length > 0) {
+                    const images = carouselData.data.featured.map(item => item.src);
+                    const links = carouselData.data.featured.map(item => item.link || '#');
 
                     setCarouselImages(images);
                     setImageLinks(links);
@@ -108,10 +105,10 @@ export default function Carousel() {
         fetchCarouselData();
     }, []);
 
-    // to make the carousel swipeable on mobile and on desktop
     /**
      * @ref {number} startX
-     * @description A reference to track the starting x position of a swipe action on the screen
+     * @description A reference to track the starting x position of a swipe action on the screen,
+     * to make the carousel swipeable on mobile and on desktop
      */
     const startX = useRef(0);
 
@@ -151,6 +148,8 @@ export default function Carousel() {
     useEffect(() => {
         if (carouselImages.length === 0) return;
 
+        setFade(true);
+
         const interval = setInterval(() => {
             setFade(false);
             setTimeout(() => {
@@ -170,7 +169,7 @@ export default function Carousel() {
             clearInterval(interval);
             clearInterval(progressInterval);
         };
-    }, [fade]);
+    }, [carouselImages]);
 
     /**
      * @function changeImage
@@ -295,7 +294,7 @@ export default function Carousel() {
                         </button>
                         <a href={imageLinks[currentImage]} target="_blank" rel="noopener noreferrer" className="max-w-full w-full flex justify-center">
                             {carouselImages[currentImage] ? (
-                                <Image
+                                <img
                                     src={carouselImages[currentImage]}
                                     title={descriptionImages[currentImage]}
                                     className={`img-carousel ${fade ? 'opacity-100' : 'opacity-0'}`}
@@ -311,10 +310,10 @@ export default function Carousel() {
                                     }}
                                     onMouseUp={handleEnd}
                                     onMouseLeave={handleEnd}
-                                    loader={({ src }) => src}
-                                    width={1000}
-                                    height={1000}
-                                    alt=""
+                                // unoptimized
+                                // width={1000}
+                                // height={1000}
+                                // alt=""
                                 />
                             ) : null}
                         </a>
