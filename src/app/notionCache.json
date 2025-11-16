@@ -1,0 +1,189 @@
+{
+  "data": {
+    "chessboard": [
+      {
+        "id": "27cae3da-c7c4-816a-8790-d2cbef64c0eb",
+        "name": "Bitcoin Q&A - Saifedean Ammous + Giacomo Zucco",
+        "src": "https://prod-files-secure.s3.us-west-2.amazonaws.com/0df85331-ad10-4f76-8230-bcbc7af4b684/8d37c413-755d-49cb-b3d3-2817837e23a7/bitpolito-saqa.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R4QRQWIW%2F20251116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251116T102509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHYkpcZWgL495E5GgZDzSzB4jsaQ1jWw4WTBmw709Mm6AiEA6JeBO%2FdIlC0zybMgPn%2FqBj0DRGlAalQsak6027VmFPAqiAQIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIYCjxtIbtE7A1w%2FNyrcA10k3eW4TWsYp%2Fr8htAJ52sMW44GKC6oBdYsUmzp0jqJth4rYETZxDyUKklGD9tmmXNILsqw2nO3JeEXA592ohsRZm7AomWTR03T88lxUE8xpB%2Bwk%2FVYPsPxP1Zq9VXumm2CWLE9Zan%2FyAsSZGfKcqRtegspyIZ%2Fz5De6cqwsExhXu5icKB3MidhB6L6ROCUBO5DLm8FNh9SHhnDIZjP3WDnHX86aqZ6gHuzIdggrqrb5%2BweeDrVmCji8sbpE2AtXgeOuYHzimQU0qrv%2BAPY1EGHhFTLkE97CyiYybLdy8lPmtyCf27zvVo57DyQ70AHpQKhdZGwylERRYBOdnwGFZzNVJWVwVI6DrjWVW3qIKzuw7VLCl9Jw%2FuFq%2F4lculTom2oBMYaWOTWh1zWeuqY6ZF7yqsEzzmI2y%2Bc2DpTedfsazL%2BsaS5TtdDNofJ8V83OWXgOT0yusrV8POL%2Bi19oA6SouPBL%2FVEEnSO6NNZOYxfin0mLRxkPHCTQztZaQBKU1aCycBhG0VLtrO%2FgXTSYjb5Oo3ROqo87DC%2FwJXFWdMSfFEt2rbG1k0AN2ZzRDIZ8OXBFxqLkZDqhrBjWyLHtIoXXLMe5Xd9U9wmFZE31C1bPBv6SqL6r%2F4Df%2FR9MIH%2B5cgGOqUBWjsEYVe3kdZvSPzAyMjyfxjne92ExWEM5qNfocRIq282oArxZpdE5OAMiuOYf0sZWCqHcbc5jpUrNKM%2FeuIqY25G6Q%2BrAT%2BUU5oY3ERxYuAEFpei8%2BbX9gvfAhkXZi1ySjUVToiiIIYqNsVXp8y2dFzy%2FPSLJFDvWdwrh4b3dX0LZ77yFJ2%2BQv3DoSfYaEuZz1Kyk140zaFHSOxjK8CTpvquMggd&X-Amz-Signature=f313816bc0c074f98b94f4902bee430f113dd62373cad76ccef6a06f35c73ae5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "link": "https://youtu.be/GzipybSemjE?si=IPTbIah7Lk0M0J7s",
+        "date": "2024-04-30",
+        "altTextITA": "Bitcoin Q&A - Saifedean Ammous + Giacomo Zucco",
+        "altTextENG": "",
+        "filter": "Event",
+        "contentType": "Event",
+        "isHorizontal": false
+      },
+      {
+        "id": "27cae3da-c7c4-8194-b612-e18a4cce2316",
+        "name": "From FOSS to Bitcoin - Palazzo",
+        "src": "https://prod-files-secure.s3.us-west-2.amazonaws.com/0df85331-ad10-4f76-8230-bcbc7af4b684/ca184694-7b4b-4fbb-bb87-a3b350374e25/bitpolito-evento-palazzo-verticale.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R4QRQWIW%2F20251116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251116T102509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHYkpcZWgL495E5GgZDzSzB4jsaQ1jWw4WTBmw709Mm6AiEA6JeBO%2FdIlC0zybMgPn%2FqBj0DRGlAalQsak6027VmFPAqiAQIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIYCjxtIbtE7A1w%2FNyrcA10k3eW4TWsYp%2Fr8htAJ52sMW44GKC6oBdYsUmzp0jqJth4rYETZxDyUKklGD9tmmXNILsqw2nO3JeEXA592ohsRZm7AomWTR03T88lxUE8xpB%2Bwk%2FVYPsPxP1Zq9VXumm2CWLE9Zan%2FyAsSZGfKcqRtegspyIZ%2Fz5De6cqwsExhXu5icKB3MidhB6L6ROCUBO5DLm8FNh9SHhnDIZjP3WDnHX86aqZ6gHuzIdggrqrb5%2BweeDrVmCji8sbpE2AtXgeOuYHzimQU0qrv%2BAPY1EGHhFTLkE97CyiYybLdy8lPmtyCf27zvVo57DyQ70AHpQKhdZGwylERRYBOdnwGFZzNVJWVwVI6DrjWVW3qIKzuw7VLCl9Jw%2FuFq%2F4lculTom2oBMYaWOTWh1zWeuqY6ZF7yqsEzzmI2y%2Bc2DpTedfsazL%2BsaS5TtdDNofJ8V83OWXgOT0yusrV8POL%2Bi19oA6SouPBL%2FVEEnSO6NNZOYxfin0mLRxkPHCTQztZaQBKU1aCycBhG0VLtrO%2FgXTSYjb5Oo3ROqo87DC%2FwJXFWdMSfFEt2rbG1k0AN2ZzRDIZ8OXBFxqLkZDqhrBjWyLHtIoXXLMe5Xd9U9wmFZE31C1bPBv6SqL6r%2F4Df%2FR9MIH%2B5cgGOqUBWjsEYVe3kdZvSPzAyMjyfxjne92ExWEM5qNfocRIq282oArxZpdE5OAMiuOYf0sZWCqHcbc5jpUrNKM%2FeuIqY25G6Q%2BrAT%2BUU5oY3ERxYuAEFpei8%2BbX9gvfAhkXZi1ySjUVToiiIIYqNsVXp8y2dFzy%2FPSLJFDvWdwrh4b3dX0LZ77yFJ2%2BQv3DoSfYaEuZz1Kyk140zaFHSOxjK8CTpvquMggd&X-Amz-Signature=5c967a56940399f9bbfedd7959be4b06c6ce261a445cac75c48e4c1e3543f771&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "link": "https://www.instagram.com/p/DGD-6GHoLV1/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+        "date": "2023-11-25",
+        "altTextITA": "From FOSS to Bitcoin - Palazzo",
+        "altTextENG": "",
+        "filter": "Event",
+        "contentType": "Event",
+        "isHorizontal": false
+      },
+      {
+        "id": "27cae3da-c7c4-81a7-a41a-dca98c2d2529",
+        "name": "Using Bitcoin Everyday - Roy Sheinfeld",
+        "src": "https://prod-files-secure.s3.us-west-2.amazonaws.com/0df85331-ad10-4f76-8230-bcbc7af4b684/fb9ca7f5-a2f7-476e-b947-7b58cc50ebba/bitpolito-opensource-post-bitcoin-everyday.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R4QRQWIW%2F20251116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251116T102509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHYkpcZWgL495E5GgZDzSzB4jsaQ1jWw4WTBmw709Mm6AiEA6JeBO%2FdIlC0zybMgPn%2FqBj0DRGlAalQsak6027VmFPAqiAQIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIYCjxtIbtE7A1w%2FNyrcA10k3eW4TWsYp%2Fr8htAJ52sMW44GKC6oBdYsUmzp0jqJth4rYETZxDyUKklGD9tmmXNILsqw2nO3JeEXA592ohsRZm7AomWTR03T88lxUE8xpB%2Bwk%2FVYPsPxP1Zq9VXumm2CWLE9Zan%2FyAsSZGfKcqRtegspyIZ%2Fz5De6cqwsExhXu5icKB3MidhB6L6ROCUBO5DLm8FNh9SHhnDIZjP3WDnHX86aqZ6gHuzIdggrqrb5%2BweeDrVmCji8sbpE2AtXgeOuYHzimQU0qrv%2BAPY1EGHhFTLkE97CyiYybLdy8lPmtyCf27zvVo57DyQ70AHpQKhdZGwylERRYBOdnwGFZzNVJWVwVI6DrjWVW3qIKzuw7VLCl9Jw%2FuFq%2F4lculTom2oBMYaWOTWh1zWeuqY6ZF7yqsEzzmI2y%2Bc2DpTedfsazL%2BsaS5TtdDNofJ8V83OWXgOT0yusrV8POL%2Bi19oA6SouPBL%2FVEEnSO6NNZOYxfin0mLRxkPHCTQztZaQBKU1aCycBhG0VLtrO%2FgXTSYjb5Oo3ROqo87DC%2FwJXFWdMSfFEt2rbG1k0AN2ZzRDIZ8OXBFxqLkZDqhrBjWyLHtIoXXLMe5Xd9U9wmFZE31C1bPBv6SqL6r%2F4Df%2FR9MIH%2B5cgGOqUBWjsEYVe3kdZvSPzAyMjyfxjne92ExWEM5qNfocRIq282oArxZpdE5OAMiuOYf0sZWCqHcbc5jpUrNKM%2FeuIqY25G6Q%2BrAT%2BUU5oY3ERxYuAEFpei8%2BbX9gvfAhkXZi1ySjUVToiiIIYqNsVXp8y2dFzy%2FPSLJFDvWdwrh4b3dX0LZ77yFJ2%2BQv3DoSfYaEuZz1Kyk140zaFHSOxjK8CTpvquMggd&X-Amz-Signature=b7096be36ab47e21d1c0feb6dc095663b25f38cc9cfefd033b4bd0bcdb063ac3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "link": "https://youtu.be/sy2BvAsp94U?si=LF7myTZ2ACbr3Sjn",
+        "date": "2024-03-15",
+        "altTextITA": "Using Bitcoin Everyday - Roy Sheinfeld",
+        "altTextENG": "",
+        "filter": "Event",
+        "contentType": "Event",
+        "isHorizontal": false
+      },
+      {
+        "id": "27cae3da-c7c4-81f1-bbed-ea8af12db5cf",
+        "name": "La teoria dei giochi - Federico Rivi",
+        "src": "https://prod-files-secure.s3.us-west-2.amazonaws.com/0df85331-ad10-4f76-8230-bcbc7af4b684/5bc71968-fd90-4ac3-86b5-5b4af0470903/bitpolito-opensource-post-teoria-dei-giochi.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R4QRQWIW%2F20251116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251116T102509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHYkpcZWgL495E5GgZDzSzB4jsaQ1jWw4WTBmw709Mm6AiEA6JeBO%2FdIlC0zybMgPn%2FqBj0DRGlAalQsak6027VmFPAqiAQIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIYCjxtIbtE7A1w%2FNyrcA10k3eW4TWsYp%2Fr8htAJ52sMW44GKC6oBdYsUmzp0jqJth4rYETZxDyUKklGD9tmmXNILsqw2nO3JeEXA592ohsRZm7AomWTR03T88lxUE8xpB%2Bwk%2FVYPsPxP1Zq9VXumm2CWLE9Zan%2FyAsSZGfKcqRtegspyIZ%2Fz5De6cqwsExhXu5icKB3MidhB6L6ROCUBO5DLm8FNh9SHhnDIZjP3WDnHX86aqZ6gHuzIdggrqrb5%2BweeDrVmCji8sbpE2AtXgeOuYHzimQU0qrv%2BAPY1EGHhFTLkE97CyiYybLdy8lPmtyCf27zvVo57DyQ70AHpQKhdZGwylERRYBOdnwGFZzNVJWVwVI6DrjWVW3qIKzuw7VLCl9Jw%2FuFq%2F4lculTom2oBMYaWOTWh1zWeuqY6ZF7yqsEzzmI2y%2Bc2DpTedfsazL%2BsaS5TtdDNofJ8V83OWXgOT0yusrV8POL%2Bi19oA6SouPBL%2FVEEnSO6NNZOYxfin0mLRxkPHCTQztZaQBKU1aCycBhG0VLtrO%2FgXTSYjb5Oo3ROqo87DC%2FwJXFWdMSfFEt2rbG1k0AN2ZzRDIZ8OXBFxqLkZDqhrBjWyLHtIoXXLMe5Xd9U9wmFZE31C1bPBv6SqL6r%2F4Df%2FR9MIH%2B5cgGOqUBWjsEYVe3kdZvSPzAyMjyfxjne92ExWEM5qNfocRIq282oArxZpdE5OAMiuOYf0sZWCqHcbc5jpUrNKM%2FeuIqY25G6Q%2BrAT%2BUU5oY3ERxYuAEFpei8%2BbX9gvfAhkXZi1ySjUVToiiIIYqNsVXp8y2dFzy%2FPSLJFDvWdwrh4b3dX0LZ77yFJ2%2BQv3DoSfYaEuZz1Kyk140zaFHSOxjK8CTpvquMggd&X-Amz-Signature=c8dc9bbe2015a7fb3540d990aa8cf098919e9c22abe6a306361428514e9601fd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "link": "https://youtu.be/83Vf4B3C-pM?si=ptDPnoh1RetWhFXb",
+        "date": "2024-05-25",
+        "altTextITA": "La teoria dei giochi - Federico Rivi",
+        "altTextENG": "",
+        "filter": "Event",
+        "contentType": "Event",
+        "isHorizontal": false
+      },
+      {
+        "id": "27cae3da-c7c4-81a0-8c53-cd0b80610adf",
+        "name": "Panel Mining",
+        "src": "https://prod-files-secure.s3.us-west-2.amazonaws.com/0df85331-ad10-4f76-8230-bcbc7af4b684/745f2d89-2f03-4858-915f-a3b2d4bf4812/DRAFT-bitpolito-panel-mining.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R4QRQWIW%2F20251116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251116T102509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHYkpcZWgL495E5GgZDzSzB4jsaQ1jWw4WTBmw709Mm6AiEA6JeBO%2FdIlC0zybMgPn%2FqBj0DRGlAalQsak6027VmFPAqiAQIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIYCjxtIbtE7A1w%2FNyrcA10k3eW4TWsYp%2Fr8htAJ52sMW44GKC6oBdYsUmzp0jqJth4rYETZxDyUKklGD9tmmXNILsqw2nO3JeEXA592ohsRZm7AomWTR03T88lxUE8xpB%2Bwk%2FVYPsPxP1Zq9VXumm2CWLE9Zan%2FyAsSZGfKcqRtegspyIZ%2Fz5De6cqwsExhXu5icKB3MidhB6L6ROCUBO5DLm8FNh9SHhnDIZjP3WDnHX86aqZ6gHuzIdggrqrb5%2BweeDrVmCji8sbpE2AtXgeOuYHzimQU0qrv%2BAPY1EGHhFTLkE97CyiYybLdy8lPmtyCf27zvVo57DyQ70AHpQKhdZGwylERRYBOdnwGFZzNVJWVwVI6DrjWVW3qIKzuw7VLCl9Jw%2FuFq%2F4lculTom2oBMYaWOTWh1zWeuqY6ZF7yqsEzzmI2y%2Bc2DpTedfsazL%2BsaS5TtdDNofJ8V83OWXgOT0yusrV8POL%2Bi19oA6SouPBL%2FVEEnSO6NNZOYxfin0mLRxkPHCTQztZaQBKU1aCycBhG0VLtrO%2FgXTSYjb5Oo3ROqo87DC%2FwJXFWdMSfFEt2rbG1k0AN2ZzRDIZ8OXBFxqLkZDqhrBjWyLHtIoXXLMe5Xd9U9wmFZE31C1bPBv6SqL6r%2F4Df%2FR9MIH%2B5cgGOqUBWjsEYVe3kdZvSPzAyMjyfxjne92ExWEM5qNfocRIq282oArxZpdE5OAMiuOYf0sZWCqHcbc5jpUrNKM%2FeuIqY25G6Q%2BrAT%2BUU5oY3ERxYuAEFpei8%2BbX9gvfAhkXZi1ySjUVToiiIIYqNsVXp8y2dFzy%2FPSLJFDvWdwrh4b3dX0LZ77yFJ2%2BQv3DoSfYaEuZz1Kyk140zaFHSOxjK8CTpvquMggd&X-Amz-Signature=65ecca61154444eba977ce19725c959aa48aa0c8ed7c29f7f12775ba5c5e8aef&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "link": "#",
+        "date": "2023-10-15",
+        "altTextITA": "Panel Mining",
+        "altTextENG": "",
+        "filter": "Event",
+        "contentType": "Event",
+        "isHorizontal": false
+      },
+      {
+        "id": "27cae3da-c7c4-8114-b452-d400432db34b",
+        "name": "Lightning Gaming Hackaton ft. ZBD",
+        "src": "https://prod-files-secure.s3.us-west-2.amazonaws.com/0df85331-ad10-4f76-8230-bcbc7af4b684/49c43c46-2afd-4b95-9630-ff528ce10394/bitpolito-post-zbd.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R4QRQWIW%2F20251116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251116T102509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHYkpcZWgL495E5GgZDzSzB4jsaQ1jWw4WTBmw709Mm6AiEA6JeBO%2FdIlC0zybMgPn%2FqBj0DRGlAalQsak6027VmFPAqiAQIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIYCjxtIbtE7A1w%2FNyrcA10k3eW4TWsYp%2Fr8htAJ52sMW44GKC6oBdYsUmzp0jqJth4rYETZxDyUKklGD9tmmXNILsqw2nO3JeEXA592ohsRZm7AomWTR03T88lxUE8xpB%2Bwk%2FVYPsPxP1Zq9VXumm2CWLE9Zan%2FyAsSZGfKcqRtegspyIZ%2Fz5De6cqwsExhXu5icKB3MidhB6L6ROCUBO5DLm8FNh9SHhnDIZjP3WDnHX86aqZ6gHuzIdggrqrb5%2BweeDrVmCji8sbpE2AtXgeOuYHzimQU0qrv%2BAPY1EGHhFTLkE97CyiYybLdy8lPmtyCf27zvVo57DyQ70AHpQKhdZGwylERRYBOdnwGFZzNVJWVwVI6DrjWVW3qIKzuw7VLCl9Jw%2FuFq%2F4lculTom2oBMYaWOTWh1zWeuqY6ZF7yqsEzzmI2y%2Bc2DpTedfsazL%2BsaS5TtdDNofJ8V83OWXgOT0yusrV8POL%2Bi19oA6SouPBL%2FVEEnSO6NNZOYxfin0mLRxkPHCTQztZaQBKU1aCycBhG0VLtrO%2FgXTSYjb5Oo3ROqo87DC%2FwJXFWdMSfFEt2rbG1k0AN2ZzRDIZ8OXBFxqLkZDqhrBjWyLHtIoXXLMe5Xd9U9wmFZE31C1bPBv6SqL6r%2F4Df%2FR9MIH%2B5cgGOqUBWjsEYVe3kdZvSPzAyMjyfxjne92ExWEM5qNfocRIq282oArxZpdE5OAMiuOYf0sZWCqHcbc5jpUrNKM%2FeuIqY25G6Q%2BrAT%2BUU5oY3ERxYuAEFpei8%2BbX9gvfAhkXZi1ySjUVToiiIIYqNsVXp8y2dFzy%2FPSLJFDvWdwrh4b3dX0LZ77yFJ2%2BQv3DoSfYaEuZz1Kyk140zaFHSOxjK8CTpvquMggd&X-Amz-Signature=98b66cc38a4840e8983a18fca171f26fb4257c80d8e1fa32274b378a8b10a36d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "link": "https://www.instagram.com/p/DBwk6grNy9D/",
+        "date": "2024-09-15",
+        "altTextITA": "Lightning Gaming Hackaton ft. ZBD",
+        "altTextENG": "",
+        "filter": "Event",
+        "contentType": "Event",
+        "isHorizontal": false
+      },
+      {
+        "id": "27cae3da-c7c4-81d8-88d6-ee589d6de42b",
+        "name": "Lugano Plan B, Michele Foletti incontra BitPolito",
+        "src": "https://prod-files-secure.s3.us-west-2.amazonaws.com/0df85331-ad10-4f76-8230-bcbc7af4b684/60a9c575-55b4-4050-80bb-ef75a7cb7c57/bitpolito-post-sindaco-lugano.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R4QRQWIW%2F20251116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251116T102509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHYkpcZWgL495E5GgZDzSzB4jsaQ1jWw4WTBmw709Mm6AiEA6JeBO%2FdIlC0zybMgPn%2FqBj0DRGlAalQsak6027VmFPAqiAQIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIYCjxtIbtE7A1w%2FNyrcA10k3eW4TWsYp%2Fr8htAJ52sMW44GKC6oBdYsUmzp0jqJth4rYETZxDyUKklGD9tmmXNILsqw2nO3JeEXA592ohsRZm7AomWTR03T88lxUE8xpB%2Bwk%2FVYPsPxP1Zq9VXumm2CWLE9Zan%2FyAsSZGfKcqRtegspyIZ%2Fz5De6cqwsExhXu5icKB3MidhB6L6ROCUBO5DLm8FNh9SHhnDIZjP3WDnHX86aqZ6gHuzIdggrqrb5%2BweeDrVmCji8sbpE2AtXgeOuYHzimQU0qrv%2BAPY1EGHhFTLkE97CyiYybLdy8lPmtyCf27zvVo57DyQ70AHpQKhdZGwylERRYBOdnwGFZzNVJWVwVI6DrjWVW3qIKzuw7VLCl9Jw%2FuFq%2F4lculTom2oBMYaWOTWh1zWeuqY6ZF7yqsEzzmI2y%2Bc2DpTedfsazL%2BsaS5TtdDNofJ8V83OWXgOT0yusrV8POL%2Bi19oA6SouPBL%2FVEEnSO6NNZOYxfin0mLRxkPHCTQztZaQBKU1aCycBhG0VLtrO%2FgXTSYjb5Oo3ROqo87DC%2FwJXFWdMSfFEt2rbG1k0AN2ZzRDIZ8OXBFxqLkZDqhrBjWyLHtIoXXLMe5Xd9U9wmFZE31C1bPBv6SqL6r%2F4Df%2FR9MIH%2B5cgGOqUBWjsEYVe3kdZvSPzAyMjyfxjne92ExWEM5qNfocRIq282oArxZpdE5OAMiuOYf0sZWCqHcbc5jpUrNKM%2FeuIqY25G6Q%2BrAT%2BUU5oY3ERxYuAEFpei8%2BbX9gvfAhkXZi1ySjUVToiiIIYqNsVXp8y2dFzy%2FPSLJFDvWdwrh4b3dX0LZ77yFJ2%2BQv3DoSfYaEuZz1Kyk140zaFHSOxjK8CTpvquMggd&X-Amz-Signature=60696dec91ea6176a2fc313dea4281d955136c7cddd0c23c4c75f1518f29840e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "link": "https://www.youtube.com/live/kPOPFrxjWes?si=4KDgnnejljjadRtl",
+        "date": "2024-10-20",
+        "altTextITA": "Lugano Plan B, Michele Foletti incontra BitPolito",
+        "altTextENG": "",
+        "filter": "Event",
+        "contentType": "Event",
+        "isHorizontal": false
+      },
+      {
+        "id": "27cae3da-c7c4-8148-99a7-f51d63a64895",
+        "name": "Corso Bitcoin Scuola Master Polito",
+        "src": "https://prod-files-secure.s3.us-west-2.amazonaws.com/0df85331-ad10-4f76-8230-bcbc7af4b684/941eafec-f2df-4284-bb55-628f5f532b8c/bitpolito-post-corso-bitcoin.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R4QRQWIW%2F20251116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251116T102509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHYkpcZWgL495E5GgZDzSzB4jsaQ1jWw4WTBmw709Mm6AiEA6JeBO%2FdIlC0zybMgPn%2FqBj0DRGlAalQsak6027VmFPAqiAQIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIYCjxtIbtE7A1w%2FNyrcA10k3eW4TWsYp%2Fr8htAJ52sMW44GKC6oBdYsUmzp0jqJth4rYETZxDyUKklGD9tmmXNILsqw2nO3JeEXA592ohsRZm7AomWTR03T88lxUE8xpB%2Bwk%2FVYPsPxP1Zq9VXumm2CWLE9Zan%2FyAsSZGfKcqRtegspyIZ%2Fz5De6cqwsExhXu5icKB3MidhB6L6ROCUBO5DLm8FNh9SHhnDIZjP3WDnHX86aqZ6gHuzIdggrqrb5%2BweeDrVmCji8sbpE2AtXgeOuYHzimQU0qrv%2BAPY1EGHhFTLkE97CyiYybLdy8lPmtyCf27zvVo57DyQ70AHpQKhdZGwylERRYBOdnwGFZzNVJWVwVI6DrjWVW3qIKzuw7VLCl9Jw%2FuFq%2F4lculTom2oBMYaWOTWh1zWeuqY6ZF7yqsEzzmI2y%2Bc2DpTedfsazL%2BsaS5TtdDNofJ8V83OWXgOT0yusrV8POL%2Bi19oA6SouPBL%2FVEEnSO6NNZOYxfin0mLRxkPHCTQztZaQBKU1aCycBhG0VLtrO%2FgXTSYjb5Oo3ROqo87DC%2FwJXFWdMSfFEt2rbG1k0AN2ZzRDIZ8OXBFxqLkZDqhrBjWyLHtIoXXLMe5Xd9U9wmFZE31C1bPBv6SqL6r%2F4Df%2FR9MIH%2B5cgGOqUBWjsEYVe3kdZvSPzAyMjyfxjne92ExWEM5qNfocRIq282oArxZpdE5OAMiuOYf0sZWCqHcbc5jpUrNKM%2FeuIqY25G6Q%2BrAT%2BUU5oY3ERxYuAEFpei8%2BbX9gvfAhkXZi1ySjUVToiiIIYqNsVXp8y2dFzy%2FPSLJFDvWdwrh4b3dX0LZ77yFJ2%2BQv3DoSfYaEuZz1Kyk140zaFHSOxjK8CTpvquMggd&X-Amz-Signature=d9686e6cb454f0cffa0ca9dcd6fc210915dd3e140598de60abf6d6859aa1780e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "link": "https://www.polito.it/en/education/specializing-master-s-programmes-and-lifelong-learning/executive-courses/executive-courses-catalogue/bitcoin-lightning-network-and-distributed-systems",
+        "date": "2024-07-01",
+        "altTextITA": "Corso Bitcoin Scuola Master Polito",
+        "altTextENG": "",
+        "filter": "Other",
+        "contentType": "Other",
+        "isHorizontal": false
+      },
+      {
+        "id": "27cae3da-c7c4-8181-b513-ddbf4ac84d4b",
+        "name": "Capire Bitcoin - Giorgio Rasetto",
+        "src": "https://prod-files-secure.s3.us-west-2.amazonaws.com/0df85331-ad10-4f76-8230-bcbc7af4b684/f1fa6c3c-7f01-4b9d-a596-85c1ddeb67e4/bitpolito-post-capire-bitcoin.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R4QRQWIW%2F20251116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251116T102509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHYkpcZWgL495E5GgZDzSzB4jsaQ1jWw4WTBmw709Mm6AiEA6JeBO%2FdIlC0zybMgPn%2FqBj0DRGlAalQsak6027VmFPAqiAQIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIYCjxtIbtE7A1w%2FNyrcA10k3eW4TWsYp%2Fr8htAJ52sMW44GKC6oBdYsUmzp0jqJth4rYETZxDyUKklGD9tmmXNILsqw2nO3JeEXA592ohsRZm7AomWTR03T88lxUE8xpB%2Bwk%2FVYPsPxP1Zq9VXumm2CWLE9Zan%2FyAsSZGfKcqRtegspyIZ%2Fz5De6cqwsExhXu5icKB3MidhB6L6ROCUBO5DLm8FNh9SHhnDIZjP3WDnHX86aqZ6gHuzIdggrqrb5%2BweeDrVmCji8sbpE2AtXgeOuYHzimQU0qrv%2BAPY1EGHhFTLkE97CyiYybLdy8lPmtyCf27zvVo57DyQ70AHpQKhdZGwylERRYBOdnwGFZzNVJWVwVI6DrjWVW3qIKzuw7VLCl9Jw%2FuFq%2F4lculTom2oBMYaWOTWh1zWeuqY6ZF7yqsEzzmI2y%2Bc2DpTedfsazL%2BsaS5TtdDNofJ8V83OWXgOT0yusrV8POL%2Bi19oA6SouPBL%2FVEEnSO6NNZOYxfin0mLRxkPHCTQztZaQBKU1aCycBhG0VLtrO%2FgXTSYjb5Oo3ROqo87DC%2FwJXFWdMSfFEt2rbG1k0AN2ZzRDIZ8OXBFxqLkZDqhrBjWyLHtIoXXLMe5Xd9U9wmFZE31C1bPBv6SqL6r%2F4Df%2FR9MIH%2B5cgGOqUBWjsEYVe3kdZvSPzAyMjyfxjne92ExWEM5qNfocRIq282oArxZpdE5OAMiuOYf0sZWCqHcbc5jpUrNKM%2FeuIqY25G6Q%2BrAT%2BUU5oY3ERxYuAEFpei8%2BbX9gvfAhkXZi1ySjUVToiiIIYqNsVXp8y2dFzy%2FPSLJFDvWdwrh4b3dX0LZ77yFJ2%2BQv3DoSfYaEuZz1Kyk140zaFHSOxjK8CTpvquMggd&X-Amz-Signature=38aea69105e814fb65580a09739a46f61e3400f39f0652b3dcd817bdd5e22ff8&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "link": "https://www.youtube.com/live/rz87qSq6BcE?si=os3v55RPDPhsXg5c",
+        "date": "2024-11-15",
+        "altTextITA": "Capire Bitcoin - Giorgio Rasetto",
+        "altTextENG": "",
+        "filter": "Event",
+        "contentType": "Event",
+        "isHorizontal": false
+      },
+      {
+        "id": "27cae3da-c7c4-8197-86da-e46ddf204145",
+        "name": "Promo Mastering Lightning",
+        "src": "https://prod-files-secure.s3.us-west-2.amazonaws.com/0df85331-ad10-4f76-8230-bcbc7af4b684/2d4854d2-d731-4b47-87e1-4594213db26f/bitpolito-post-mastering-lightning.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R4QRQWIW%2F20251116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251116T102509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHYkpcZWgL495E5GgZDzSzB4jsaQ1jWw4WTBmw709Mm6AiEA6JeBO%2FdIlC0zybMgPn%2FqBj0DRGlAalQsak6027VmFPAqiAQIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIYCjxtIbtE7A1w%2FNyrcA10k3eW4TWsYp%2Fr8htAJ52sMW44GKC6oBdYsUmzp0jqJth4rYETZxDyUKklGD9tmmXNILsqw2nO3JeEXA592ohsRZm7AomWTR03T88lxUE8xpB%2Bwk%2FVYPsPxP1Zq9VXumm2CWLE9Zan%2FyAsSZGfKcqRtegspyIZ%2Fz5De6cqwsExhXu5icKB3MidhB6L6ROCUBO5DLm8FNh9SHhnDIZjP3WDnHX86aqZ6gHuzIdggrqrb5%2BweeDrVmCji8sbpE2AtXgeOuYHzimQU0qrv%2BAPY1EGHhFTLkE97CyiYybLdy8lPmtyCf27zvVo57DyQ70AHpQKhdZGwylERRYBOdnwGFZzNVJWVwVI6DrjWVW3qIKzuw7VLCl9Jw%2FuFq%2F4lculTom2oBMYaWOTWh1zWeuqY6ZF7yqsEzzmI2y%2Bc2DpTedfsazL%2BsaS5TtdDNofJ8V83OWXgOT0yusrV8POL%2Bi19oA6SouPBL%2FVEEnSO6NNZOYxfin0mLRxkPHCTQztZaQBKU1aCycBhG0VLtrO%2FgXTSYjb5Oo3ROqo87DC%2FwJXFWdMSfFEt2rbG1k0AN2ZzRDIZ8OXBFxqLkZDqhrBjWyLHtIoXXLMe5Xd9U9wmFZE31C1bPBv6SqL6r%2F4Df%2FR9MIH%2B5cgGOqUBWjsEYVe3kdZvSPzAyMjyfxjne92ExWEM5qNfocRIq282oArxZpdE5OAMiuOYf0sZWCqHcbc5jpUrNKM%2FeuIqY25G6Q%2BrAT%2BUU5oY3ERxYuAEFpei8%2BbX9gvfAhkXZi1ySjUVToiiIIYqNsVXp8y2dFzy%2FPSLJFDvWdwrh4b3dX0LZ77yFJ2%2BQv3DoSfYaEuZz1Kyk140zaFHSOxjK8CTpvquMggd&X-Amz-Signature=eba20db149977cde83887cdeee0106d652ac669b07120957ea56c9b49f54f875&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "link": "https://riccardomasutti.com/Mastering%20Lightning%20Network%20-%20Protocollo%20di%20Secondo%20Livello%20per%20Pagamenti%20Bitcoin%20Istantanei.pdf",
+        "date": "2024-08-10",
+        "altTextITA": "Promo Mastering Lightning",
+        "altTextENG": "",
+        "filter": "Other",
+        "contentType": "Other",
+        "isHorizontal": false
+      },
+      {
+        "id": "27cae3da-c7c4-81fd-abee-c1a21466d818",
+        "name": "Scaling Bitcoin - Massimo Musumeci",
+        "src": "https://prod-files-secure.s3.us-west-2.amazonaws.com/0df85331-ad10-4f76-8230-bcbc7af4b684/cbf0a41c-d1e8-43b6-ac57-fcc3d2901240/bitpolito-opensource-post-scaling-bitcoin.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R4QRQWIW%2F20251116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251116T102509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHYkpcZWgL495E5GgZDzSzB4jsaQ1jWw4WTBmw709Mm6AiEA6JeBO%2FdIlC0zybMgPn%2FqBj0DRGlAalQsak6027VmFPAqiAQIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIYCjxtIbtE7A1w%2FNyrcA10k3eW4TWsYp%2Fr8htAJ52sMW44GKC6oBdYsUmzp0jqJth4rYETZxDyUKklGD9tmmXNILsqw2nO3JeEXA592ohsRZm7AomWTR03T88lxUE8xpB%2Bwk%2FVYPsPxP1Zq9VXumm2CWLE9Zan%2FyAsSZGfKcqRtegspyIZ%2Fz5De6cqwsExhXu5icKB3MidhB6L6ROCUBO5DLm8FNh9SHhnDIZjP3WDnHX86aqZ6gHuzIdggrqrb5%2BweeDrVmCji8sbpE2AtXgeOuYHzimQU0qrv%2BAPY1EGHhFTLkE97CyiYybLdy8lPmtyCf27zvVo57DyQ70AHpQKhdZGwylERRYBOdnwGFZzNVJWVwVI6DrjWVW3qIKzuw7VLCl9Jw%2FuFq%2F4lculTom2oBMYaWOTWh1zWeuqY6ZF7yqsEzzmI2y%2Bc2DpTedfsazL%2BsaS5TtdDNofJ8V83OWXgOT0yusrV8POL%2Bi19oA6SouPBL%2FVEEnSO6NNZOYxfin0mLRxkPHCTQztZaQBKU1aCycBhG0VLtrO%2FgXTSYjb5Oo3ROqo87DC%2FwJXFWdMSfFEt2rbG1k0AN2ZzRDIZ8OXBFxqLkZDqhrBjWyLHtIoXXLMe5Xd9U9wmFZE31C1bPBv6SqL6r%2F4Df%2FR9MIH%2B5cgGOqUBWjsEYVe3kdZvSPzAyMjyfxjne92ExWEM5qNfocRIq282oArxZpdE5OAMiuOYf0sZWCqHcbc5jpUrNKM%2FeuIqY25G6Q%2BrAT%2BUU5oY3ERxYuAEFpei8%2BbX9gvfAhkXZi1ySjUVToiiIIYqNsVXp8y2dFzy%2FPSLJFDvWdwrh4b3dX0LZ77yFJ2%2BQv3DoSfYaEuZz1Kyk140zaFHSOxjK8CTpvquMggd&X-Amz-Signature=553a8f3a19f2453cff6b34ad14bf977e63395c482584c0a2cba20a43da7a1e76&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "link": "https://www.instagram.com/p/DCpKJ0-oJuk/",
+        "date": "2024-06-20",
+        "altTextITA": "Scaling Bitcoin - Massimo Musumeci",
+        "altTextENG": "",
+        "filter": "Event",
+        "contentType": "Event",
+        "isHorizontal": false
+      },
+      {
+        "id": "27cae3da-c7c4-8175-8e27-d1cc83c14158",
+        "name": "Bitcoin al Liceo",
+        "src": "https://prod-files-secure.s3.us-west-2.amazonaws.com/0df85331-ad10-4f76-8230-bcbc7af4b684/b9c9081d-db05-4e37-a468-bf08a5a24fea/2025-02-20_Grafica-Bitcoin-al-Liceo-T3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R4QRQWIW%2F20251116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251116T102509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHYkpcZWgL495E5GgZDzSzB4jsaQ1jWw4WTBmw709Mm6AiEA6JeBO%2FdIlC0zybMgPn%2FqBj0DRGlAalQsak6027VmFPAqiAQIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIYCjxtIbtE7A1w%2FNyrcA10k3eW4TWsYp%2Fr8htAJ52sMW44GKC6oBdYsUmzp0jqJth4rYETZxDyUKklGD9tmmXNILsqw2nO3JeEXA592ohsRZm7AomWTR03T88lxUE8xpB%2Bwk%2FVYPsPxP1Zq9VXumm2CWLE9Zan%2FyAsSZGfKcqRtegspyIZ%2Fz5De6cqwsExhXu5icKB3MidhB6L6ROCUBO5DLm8FNh9SHhnDIZjP3WDnHX86aqZ6gHuzIdggrqrb5%2BweeDrVmCji8sbpE2AtXgeOuYHzimQU0qrv%2BAPY1EGHhFTLkE97CyiYybLdy8lPmtyCf27zvVo57DyQ70AHpQKhdZGwylERRYBOdnwGFZzNVJWVwVI6DrjWVW3qIKzuw7VLCl9Jw%2FuFq%2F4lculTom2oBMYaWOTWh1zWeuqY6ZF7yqsEzzmI2y%2Bc2DpTedfsazL%2BsaS5TtdDNofJ8V83OWXgOT0yusrV8POL%2Bi19oA6SouPBL%2FVEEnSO6NNZOYxfin0mLRxkPHCTQztZaQBKU1aCycBhG0VLtrO%2FgXTSYjb5Oo3ROqo87DC%2FwJXFWdMSfFEt2rbG1k0AN2ZzRDIZ8OXBFxqLkZDqhrBjWyLHtIoXXLMe5Xd9U9wmFZE31C1bPBv6SqL6r%2F4Df%2FR9MIH%2B5cgGOqUBWjsEYVe3kdZvSPzAyMjyfxjne92ExWEM5qNfocRIq282oArxZpdE5OAMiuOYf0sZWCqHcbc5jpUrNKM%2FeuIqY25G6Q%2BrAT%2BUU5oY3ERxYuAEFpei8%2BbX9gvfAhkXZi1ySjUVToiiIIYqNsVXp8y2dFzy%2FPSLJFDvWdwrh4b3dX0LZ77yFJ2%2BQv3DoSfYaEuZz1Kyk140zaFHSOxjK8CTpvquMggd&X-Amz-Signature=809adaef642a9c13eb5d6a50896245d7635edfb2198778398d072be551d74287&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "link": "https://drive.google.com/file/d/11TptAw8e49uzwOe51DpT1-kbvyYVlrIi/view?usp=drive_link",
+        "date": "2023-12-10",
+        "altTextITA": "Bitcoin al Liceo",
+        "altTextENG": "",
+        "filter": "Project",
+        "contentType": "Project",
+        "isHorizontal": true
+      },
+      {
+        "id": "27cae3da-c7c4-8141-94b3-c46e2dc659f4",
+        "name": "Satoshi Nakamoto (Peter Todd) a Torino",
+        "src": "https://prod-files-secure.s3.us-west-2.amazonaws.com/0df85331-ad10-4f76-8230-bcbc7af4b684/5d7dec06-4367-4340-bca8-91744ff0f4fb/bitpolito-post-todd.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R4QRQWIW%2F20251116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251116T102509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHYkpcZWgL495E5GgZDzSzB4jsaQ1jWw4WTBmw709Mm6AiEA6JeBO%2FdIlC0zybMgPn%2FqBj0DRGlAalQsak6027VmFPAqiAQIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIYCjxtIbtE7A1w%2FNyrcA10k3eW4TWsYp%2Fr8htAJ52sMW44GKC6oBdYsUmzp0jqJth4rYETZxDyUKklGD9tmmXNILsqw2nO3JeEXA592ohsRZm7AomWTR03T88lxUE8xpB%2Bwk%2FVYPsPxP1Zq9VXumm2CWLE9Zan%2FyAsSZGfKcqRtegspyIZ%2Fz5De6cqwsExhXu5icKB3MidhB6L6ROCUBO5DLm8FNh9SHhnDIZjP3WDnHX86aqZ6gHuzIdggrqrb5%2BweeDrVmCji8sbpE2AtXgeOuYHzimQU0qrv%2BAPY1EGHhFTLkE97CyiYybLdy8lPmtyCf27zvVo57DyQ70AHpQKhdZGwylERRYBOdnwGFZzNVJWVwVI6DrjWVW3qIKzuw7VLCl9Jw%2FuFq%2F4lculTom2oBMYaWOTWh1zWeuqY6ZF7yqsEzzmI2y%2Bc2DpTedfsazL%2BsaS5TtdDNofJ8V83OWXgOT0yusrV8POL%2Bi19oA6SouPBL%2FVEEnSO6NNZOYxfin0mLRxkPHCTQztZaQBKU1aCycBhG0VLtrO%2FgXTSYjb5Oo3ROqo87DC%2FwJXFWdMSfFEt2rbG1k0AN2ZzRDIZ8OXBFxqLkZDqhrBjWyLHtIoXXLMe5Xd9U9wmFZE31C1bPBv6SqL6r%2F4Df%2FR9MIH%2B5cgGOqUBWjsEYVe3kdZvSPzAyMjyfxjne92ExWEM5qNfocRIq282oArxZpdE5OAMiuOYf0sZWCqHcbc5jpUrNKM%2FeuIqY25G6Q%2BrAT%2BUU5oY3ERxYuAEFpei8%2BbX9gvfAhkXZi1ySjUVToiiIIYqNsVXp8y2dFzy%2FPSLJFDvWdwrh4b3dX0LZ77yFJ2%2BQv3DoSfYaEuZz1Kyk140zaFHSOxjK8CTpvquMggd&X-Amz-Signature=97fbc7b8ce65a48903b5e95f37ece34cc794975992dbaa5a956696374aae80f4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "link": "https://youtu.be/z5M6GdrMDdI?si=HKpT8Iyb1erOnmW1",
+        "date": "2024-01-20",
+        "altTextITA": "Satoshi Nakamoto (Peter Todd) a Torino",
+        "altTextENG": "",
+        "filter": "Event",
+        "contentType": "Event",
+        "isHorizontal": false
+      }
+    ],
+    "featured": [
+      {
+        "id": "27cae3da-c7c4-813b-aaf0-dd385615913c",
+        "name": "BitGeneration",
+        "src": "https://prod-files-secure.s3.us-west-2.amazonaws.com/0df85331-ad10-4f76-8230-bcbc7af4b684/73999c28-a3e5-475b-9627-2167fa403683/bitpolito-bitgen-3.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R4QRQWIW%2F20251116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251116T102509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHYkpcZWgL495E5GgZDzSzB4jsaQ1jWw4WTBmw709Mm6AiEA6JeBO%2FdIlC0zybMgPn%2FqBj0DRGlAalQsak6027VmFPAqiAQIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIYCjxtIbtE7A1w%2FNyrcA10k3eW4TWsYp%2Fr8htAJ52sMW44GKC6oBdYsUmzp0jqJth4rYETZxDyUKklGD9tmmXNILsqw2nO3JeEXA592ohsRZm7AomWTR03T88lxUE8xpB%2Bwk%2FVYPsPxP1Zq9VXumm2CWLE9Zan%2FyAsSZGfKcqRtegspyIZ%2Fz5De6cqwsExhXu5icKB3MidhB6L6ROCUBO5DLm8FNh9SHhnDIZjP3WDnHX86aqZ6gHuzIdggrqrb5%2BweeDrVmCji8sbpE2AtXgeOuYHzimQU0qrv%2BAPY1EGHhFTLkE97CyiYybLdy8lPmtyCf27zvVo57DyQ70AHpQKhdZGwylERRYBOdnwGFZzNVJWVwVI6DrjWVW3qIKzuw7VLCl9Jw%2FuFq%2F4lculTom2oBMYaWOTWh1zWeuqY6ZF7yqsEzzmI2y%2Bc2DpTedfsazL%2BsaS5TtdDNofJ8V83OWXgOT0yusrV8POL%2Bi19oA6SouPBL%2FVEEnSO6NNZOYxfin0mLRxkPHCTQztZaQBKU1aCycBhG0VLtrO%2FgXTSYjb5Oo3ROqo87DC%2FwJXFWdMSfFEt2rbG1k0AN2ZzRDIZ8OXBFxqLkZDqhrBjWyLHtIoXXLMe5Xd9U9wmFZE31C1bPBv6SqL6r%2F4Df%2FR9MIH%2B5cgGOqUBWjsEYVe3kdZvSPzAyMjyfxjne92ExWEM5qNfocRIq282oArxZpdE5OAMiuOYf0sZWCqHcbc5jpUrNKM%2FeuIqY25G6Q%2BrAT%2BUU5oY3ERxYuAEFpei8%2BbX9gvfAhkXZi1ySjUVToiiIIYqNsVXp8y2dFzy%2FPSLJFDvWdwrh4b3dX0LZ77yFJ2%2BQv3DoSfYaEuZz1Kyk140zaFHSOxjK8CTpvquMggd&X-Amz-Signature=0a82d495b5d4032f21f5f6f7e2df4d77f91e7d0aa0d88d7e7f68796013fbb639&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "link": "#",
+        "date": "2024-02-01",
+        "altTextITA": "BitGeneration",
+        "altTextENG": "",
+        "filter": "Project",
+        "contentType": "Project",
+        "isHorizontal": false
+      },
+      {
+        "id": "27cae3da-c7c4-8196-b5bb-df68753e878e",
+        "name": "Promo Braiins MiniMiner",
+        "src": "https://prod-files-secure.s3.us-west-2.amazonaws.com/0df85331-ad10-4f76-8230-bcbc7af4b684/582f14dc-05b9-4324-98e4-03c67961f53d/DRAFT-bitpolito-partnership-braiins.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466R4QRQWIW%2F20251116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251116T102509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHYkpcZWgL495E5GgZDzSzB4jsaQ1jWw4WTBmw709Mm6AiEA6JeBO%2FdIlC0zybMgPn%2FqBj0DRGlAalQsak6027VmFPAqiAQIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIYCjxtIbtE7A1w%2FNyrcA10k3eW4TWsYp%2Fr8htAJ52sMW44GKC6oBdYsUmzp0jqJth4rYETZxDyUKklGD9tmmXNILsqw2nO3JeEXA592ohsRZm7AomWTR03T88lxUE8xpB%2Bwk%2FVYPsPxP1Zq9VXumm2CWLE9Zan%2FyAsSZGfKcqRtegspyIZ%2Fz5De6cqwsExhXu5icKB3MidhB6L6ROCUBO5DLm8FNh9SHhnDIZjP3WDnHX86aqZ6gHuzIdggrqrb5%2BweeDrVmCji8sbpE2AtXgeOuYHzimQU0qrv%2BAPY1EGHhFTLkE97CyiYybLdy8lPmtyCf27zvVo57DyQ70AHpQKhdZGwylERRYBOdnwGFZzNVJWVwVI6DrjWVW3qIKzuw7VLCl9Jw%2FuFq%2F4lculTom2oBMYaWOTWh1zWeuqY6ZF7yqsEzzmI2y%2Bc2DpTedfsazL%2BsaS5TtdDNofJ8V83OWXgOT0yusrV8POL%2Bi19oA6SouPBL%2FVEEnSO6NNZOYxfin0mLRxkPHCTQztZaQBKU1aCycBhG0VLtrO%2FgXTSYjb5Oo3ROqo87DC%2FwJXFWdMSfFEt2rbG1k0AN2ZzRDIZ8OXBFxqLkZDqhrBjWyLHtIoXXLMe5Xd9U9wmFZE31C1bPBv6SqL6r%2F4Df%2FR9MIH%2B5cgGOqUBWjsEYVe3kdZvSPzAyMjyfxjne92ExWEM5qNfocRIq282oArxZpdE5OAMiuOYf0sZWCqHcbc5jpUrNKM%2FeuIqY25G6Q%2BrAT%2BUU5oY3ERxYuAEFpei8%2BbX9gvfAhkXZi1ySjUVToiiIIYqNsVXp8y2dFzy%2FPSLJFDvWdwrh4b3dX0LZ77yFJ2%2BQv3DoSfYaEuZz1Kyk140zaFHSOxjK8CTpvquMggd&X-Amz-Signature=0a3511b4b115bcdd9aeca3c6c3cd08791f2fde33553e4b928de44a9a82b027eb&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "link": "#",
+        "date": "2023-09-01",
+        "altTextITA": "Promo Braiins",
+        "altTextENG": "",
+        "filter": "Other",
+        "contentType": "Other",
+        "isHorizontal": false
+      }
+    ]
+  },
+  "timestamp": 1763288709478
+}
