@@ -298,7 +298,7 @@ export default function Carousel() {
                         <img src={"icons/bitpolito-icon-social-telegram.svg"} className="w-6 h-6 flex-shrink-0 dark:invert dark:brightness-0 dark:filter-white"></img>
                         <span className="button-font">{t("telegram")}</span>
                     </a>
-                    <button onClick={() => setIsOpen(true)} className={"btn-b rounded-md gap-3 flex-1 min-h-[44px] order-1 sm:order-2"}>
+                    <button onClick={() => setIsOpen(true)} className={"btn-b rounded-md gap-3 flex-1 sm:flex-none sm:w-[140px] min-h-[44px] order-1 sm:order-2"}>
                         <img src="icons/donate-light.png" className="w-5 h-5 flex-shrink-0 filter-white dark:invert-0 dark:brightness-100 dark:filter-none"></img>
                         <span className="button-font">{t("donate")}</span>
                     </button>

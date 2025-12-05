@@ -11,9 +11,22 @@ import LanguageSelector from "./components/LanguageSelector";
 import Image from "next/image";
 
 export default function HomePage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isCarouselFixed, setIsCarouselFixed] = useState(true);
+  const [languageLoaded, setLanguageLoaded] = useState(false);
   const chessboardRef = useRef(null);
+
+  // Load saved language before rendering to prevent flash of English
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('language');
+    if (savedLanguage && savedLanguage !== i18n.language) {
+      i18n.changeLanguage(savedLanguage).then(() => {
+        setLanguageLoaded(true);
+      });
+    } else {
+      setLanguageLoaded(true);
+    }
+  }, [i18n]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +41,11 @@ export default function HomePage() {
     };
   }, []);
 
+  // Wait for language to load before rendering
+  if (!languageLoaded) {
+    return <div className="min-h-screen bg-white dark:bg-blue-dark"></div>;
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
@@ -39,8 +57,8 @@ export default function HomePage() {
         text-sm sm:text-base
         overflow-x-hidden
       ">
-        <header className="flex justify-between items-center gap-4 sm:gap-7 max-w-7xl w-full pt-4 sm:pt-6">
-          <div className="relative w-[334px] sm:w-[160px] md:w-[200px] lg:w-[334px] mt-[20px] ml-[20px] sm:ml-[50px]">
+        <header className="flex justify-between items-center gap-4 sm:gap-7 max-w-7xl w-full pt-4 sm:pt-6 px-4">
+          <div className="relative w-[200px] sm:w-[160px] md:w-[200px] lg:w-[334px] lg:mt-[20px] lg:ml-[20px] sm:ml-[50px]">
             <Image
               src="/bitpolito-logo-light.svg"
               alt="Bitpolito Logo"
@@ -52,22 +70,43 @@ export default function HomePage() {
           </div>
 
           {/* only for mobile and tablet version */}
-          <div className="flex flex-col items-center gap-3 sm:gap-4 lg:hidden">
+          <div className="flex flex-row items-center gap-2 sm:gap-4 lg:hidden">
             <DarkModeSwitch />
             <LanguageSelector />
           </div>
         </header>
 
         <div className="max-w-7xl mx-auto mt-8 sm:mt-10 lg:mt-12 ml-[20px] sm:ml-[50px]">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight mb-8 sm:mb-10 lg:mb-12">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight leading-tight mt-16 mb-8 sm:mb-10 lg:mb-12">
             {t("title")}
           </h1>
 
-          <div className="max-w-prose">
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed tracking-wide
-               w-full sm:w-[85%] md:w-[75%] lg:w-[65%] xl:w-[60%] whitespace-nowrap">
+          <div className="max-w-prose mb-6 sm:mb-8">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-[32px] font-medium leading-relaxed lg:leading-[40px] tracking-wide
+               w-full max-w-[970px] lg:whitespace-nowrap
+               whitespace-normal break-words overflow-wrap-anywhere">
               {t("paragraph")}
             </p>
+          </div>
+
+          {/* Download Report Button */}
+          <div className="mt-6 sm:mt-8">
+            <a
+              href={i18n.language === 'it' 
+                ? "https://docs.bitpolito.it/bitpolito-report-24-25-ita.pdf" 
+                : "https://docs.bitpolito.it/bitpolito-report-24-25-eng.pdf"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-6 py-3 text-base sm:text-lg font-semibold
+                         border-2 border-blue-dark text-blue-dark bg-white
+                         dark:border-white dark:text-white dark:bg-blue-dark
+                         rounded-lg hover:shadow-lg hover:scale-[1.03] transition-all duration-200"
+            >
+              <svg className="w-5 h-6" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M20 10.2857L20 13.7143L17.1429 13.7143L17.1429 10.2857L20 10.2857ZM14.2857 17.1429L14.2857 13.7143L17.1429 13.7143L17.1429 17.1429L14.2857 17.1429ZM11.4286 20.5714L14.2857 20.5714L14.2857 17.1429L11.4286 17.1429L11.4286 4.15356e-05L11.5598 4.13371e-05L8.2945 4.4479e-09L8.57145 1.58426e-07L8.57143 17.1429L5.71428 17.1429L5.71428 13.7143L2.85714 13.7143L2.85714 10.2857L-4.49604e-07 10.2857L-5.99471e-07 13.7143L2.85714 13.7143L2.85714 17.1429L5.71428 17.1429L5.71428 20.5714L8.57143 20.5714L8.57143 24L11.4286 24L11.4286 20.5714Z" fill="currentColor" />
+              </svg>
+              <span>{t("download-report")}</span>
+            </a>
           </div>
         </div>
 

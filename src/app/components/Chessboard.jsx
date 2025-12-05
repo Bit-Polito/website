@@ -185,7 +185,9 @@ export default function Chessboard() {
                                 className={`
                                     rounded-full px-3 sm:px-5 py-1 text-sm sm:text-base font-semibold
                                     border-2 border-blue-dark dark:border-white
-                                    ${isActive ? "bg-blue-dark text-white hover:bg-blue-600" : "bg-white text-blue-dark hover:bg-blue-200"}
+                                    ${isActive
+                                        ? "bg-blue-dark text-white hover:bg-blue-600 dark:bg-white dark:text-blue-dark dark:hover:bg-gray-200"
+                                        : "bg-white text-blue-dark hover:bg-blue-200 dark:bg-blue-dark dark:text-white dark:hover:bg-gray-800"}
                                 `}
                             >
                                 {t(key)}
@@ -202,7 +204,7 @@ export default function Chessboard() {
                         <div
                             key={`${rowIndex}-${colIndex}`}
                             className={`${item.span === 2
-                                ? 'col-span-1 chessboard-span-2'
+                                ? 'col-span-1 sm:col-span-2 lg:col-span-2'
                                 : 'col-span-1'
                                 } transition-all duration-300 ease-in-out hover:opacity-95 hover:scale-[1.02]`}
                         >
@@ -221,11 +223,12 @@ export default function Chessboard() {
                                         );
                                     case 'box':
                                         return (
-                                            <div className="chessboard relative !min-h-[200px]">
+                                            <div className="chessboard relative !min-h-[200px] flex items-center justify-center">
                                                 <a
                                                     href={item.link}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
+                                                    className="w-full h-full flex items-center justify-center"
                                                 >
                                                     <Image
                                                         src={item.src}
@@ -264,8 +267,31 @@ export default function Chessboard() {
                 )}
             </div>
 
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-x-3 mt-8 sm:mt-10 lg:mt-12 pt-2 sm:pt-3 sm:pb-3 lg:pt-4">
+                <button
+                    onClick={() => setVisibleRows(prev => prev + 4)}
+                    className="font-bold hover:opacity-80 transition-opacity"
+                >
+                    {t("load-more")}
+                </button>
+            </div>
+
             {/* Navigation buttons */}
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-5 px-5 py-8 sm:py-12">
+            <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-8 sm:gap-5 px-5 py-8 sm:py-12">
+
+                {/* Load more / Reset button - First on mobile, Second on desktop */}
+                <div className="order-1 sm:order-2">
+                    {visibleRows >= filteredLayout.length && (
+                        <button
+                            onClick={() => setVisibleRows(4)}
+                            className="font-bold hover:opacity-80 transition-opacity"
+                        >
+                            {t("reset")}
+                        </button>
+                    )}
+                </div>
+
+                {/* Back to top button - Second on mobile, First on desktop */}
                 <button
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     className="btn-w flex items-center gap-2"
@@ -277,23 +303,6 @@ export default function Chessboard() {
                     />
                     <span>{t("top")}</span>
                 </button>
-
-                {visibleRows < filteredLayout.length && (
-                    <button
-                        onClick={() => setVisibleRows(prev => prev + 4)}
-                        className="font-bold hover:opacity-80 transition-opacity"
-                    >
-                        {t("load-more")}
-                    </button>
-                )}
-                {visibleRows >= filteredLayout.length && (
-                    <button
-                        onClick={() => setVisibleRows(4)}
-                        className="font-bold hover:opacity-80 transition-opacity"
-                    >
-                        {t("reset")}
-                    </button>
-                )}
             </div>
         </div>
     );

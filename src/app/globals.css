@@ -24,19 +24,19 @@ h6 {
 }
 
 .btn-w {
-  @apply rounded-md border border-blue-dark text-blue-dark bg-white;
+  @apply rounded-md border-2 border-blue-dark text-blue-dark bg-white;
 }
 
 .dark .btn-w {
-  @apply border border-white text-white bg-blue-dark;
+  @apply border-2 border-white text-white bg-blue-dark;
 }
 
 .btn-b {
-  @apply border border-white text-white bg-blue-dark;
+  @apply border-2 border-white text-white bg-blue-dark;
 }
 
 .dark .btn-b {
-  @apply border border-blue-dark text-blue-dark bg-white;
+  @apply border-2 border-blue-dark text-blue-dark bg-white;
 }
 
 @layer utilities {
@@ -121,6 +121,10 @@ h6 {
   .chessboard-responsive {
     @apply grid-cols-2;
   }
+
+  .chessboard-span-2 {
+    @apply col-span-2;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -165,7 +169,7 @@ h6 {
 
 @media (min-width: 600px) {
   .button-font {
-    font-size: medium;
+    font-size: 15px;
   }
 }
 
