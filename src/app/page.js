@@ -13,18 +13,15 @@ import Image from "next/image";
 export default function HomePage() {
   const { t, i18n } = useTranslation();
   const [isCarouselFixed, setIsCarouselFixed] = useState(true);
-  const [languageLoaded, setLanguageLoaded] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const chessboardRef = useRef(null);
 
-  // Load saved language before rendering to prevent flash of English
+  // Load saved language on mount
   useEffect(() => {
+    setMounted(true);
     const savedLanguage = localStorage.getItem('language');
     if (savedLanguage && savedLanguage !== i18n.language) {
-      i18n.changeLanguage(savedLanguage).then(() => {
-        setLanguageLoaded(true);
-      });
-    } else {
-      setLanguageLoaded(true);
+      i18n.changeLanguage(savedLanguage);
     }
   }, [i18n]);
 
@@ -41,9 +38,9 @@ export default function HomePage() {
     };
   }, []);
 
-  // Wait for language to load before rendering
-  if (!languageLoaded) {
-    return <div className="min-h-screen bg-white dark:bg-blue-dark"></div>;
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!mounted) {
+    return null;
   }
 
   return (
