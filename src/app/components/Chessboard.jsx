@@ -294,12 +294,12 @@ export default function Chessboard() {
                 {/* Back to top button - Second on mobile, First on desktop */}
                 <button
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    className="btn-w flex items-center gap-2"
+                    className="back-top-btn text-blue-dark dark:text-white bg-white dark:bg-blue-dark"
                 >
                     <img
                         src="/icons/back-top-light.png"
                         alt="Back to top"
-                        className="icon-style-opposite w-5 h-5 sm:w-6 sm:h-6"
+                        className="icon-style-opposite w-[17.73px] h-[15px]"
                     />
                     <span>{t("top")}</span>
                 </button>

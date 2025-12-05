@@ -58,7 +58,8 @@ h6 {
 }
 
 .chessboard {
-  @apply w-full h-full object-cover border-2 border-blue-dark rounded-2xl transition-all duration-500 ease-in-out hover:opacity-95 hover:scale-[1.02] dark:border-white;
+  @apply w-full h-full object-cover border-blue-dark rounded-2xl transition-all duration-500 ease-in-out hover:opacity-95 hover:scale-[1.02] dark:border-white;
+  border-width: 3px;
 }
 
 .footer {
@@ -70,8 +71,9 @@ h6 {
 }
 
 .img-carousel {
-  @apply max-w-full border-2 border-blue-dark rounded-lg dark:border-white;
+  @apply max-w-full border-blue-dark rounded-lg dark:border-white;
   @apply transition-opacity duration-700 ease-in-out cursor-grab active:cursor-grabbing;
+  border-width: 3px;
   width: 340px;
   height: auto;
   display: block;
@@ -216,4 +218,27 @@ h6 {
 
 .dark .carousel-scrollable:hover {
   scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+/* Back to top button */
+.back-top-btn {
+  @apply flex flex-row justify-center items-center;
+  padding: 12px;
+  gap: 5px;
+  border: 2px solid #001CE0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  transition: all 0.2s;
+}
+
+.back-top-btn:hover {
+  @apply shadow-lg;
+  transform: scale(1.03);
+}
+
+.dark .back-top-btn {
+  border: 2px solid white;
 }
