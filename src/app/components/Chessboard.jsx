@@ -164,13 +164,39 @@ export default function Chessboard() {
      * Filters layout by active filter.
      * Returns full layout if no filters are active.
      * When a filter is selected, only items matching it are shown.
-     * Empty rows are removed.
+     * For projects, alternates between span-2 and span-1 to maintain visual rhythm.
      */
     const filteredLayout = activeFilters.length === 0
         ? layout
-        : layout
-            .map(row => row.filter(item => item.filter === activeFilters[0]))
-            .filter(row => row.length > 0);
+        : (() => {
+            const filtered = layout
+                .flatMap(row => row.filter(item => item.filter === activeFilters[0]));
+            
+            // For projects, recreate rows with alternating spans
+            if (activeFilters[0] === 'projects') {
+                const projectRows = [];
+                for (let i = 0; i < filtered.length; i += 2) {
+                    if (i + 1 < filtered.length) {
+                        // Alternate: first item span-2, second item span-1
+                        projectRows.push([
+                            { ...filtered[i], span: 2 },
+                            { ...filtered[i + 1], span: 1 }
+                        ]);
+                    } else {
+                        // Last item if odd number
+                        projectRows.push([{ ...filtered[i], span: 2 }]);
+                    }
+                }
+                return projectRows;
+            }
+            
+            // For other filters, group items in rows of 3
+            const rows = [];
+            for (let i = 0; i < filtered.length; i += 3) {
+                rows.push(filtered.slice(i, i + 3));
+            }
+            return rows.filter(row => row.length > 0);
+        })();
 
     return (
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -223,23 +249,21 @@ export default function Chessboard() {
                                         );
                                     case 'box':
                                         return (
-                                            <div className="chessboard relative !min-h-[200px] flex items-center justify-center">
-                                                <a
-                                                    href={item.link}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="w-full h-full flex items-center justify-center"
-                                                >
-                                                    <Image
-                                                        src={item.src}
-                                                        alt="Project image"
-                                                        className="w-full h-full object-cover rounded-2xl"
-                                                        priority
-                                                        width={2000}
-                                                        height={2000}
-                                                    />
-                                                </a>
-                                            </div>
+                                            <a
+                                                href={item.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="block w-full h-full"
+                                            >
+                                                <Image
+                                                    src={item.src}
+                                                    alt={`Chessboard item ${rowIndex}-${colIndex}`}
+                                                    className="chessboard"
+                                                    priority
+                                                    width={2000}
+                                                    height={2000}
+                                                />
+                                            </a>
                                         );
                                     default:
                                         return (
@@ -296,8 +320,10 @@ export default function Chessboard() {
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     className="back-top-btn text-blue-dark dark:text-white bg-white dark:bg-blue-dark"
                 >
+
+                    
                     <img
-                        src="/icons/back-top-light.png"
+                        src={"icons/bitpolito-icon-back-top.svg"}
                         alt="Back to top"
                         className="icon-style-opposite w-[17.73px] h-[15px]"
                     />

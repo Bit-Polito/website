@@ -17,26 +17,38 @@ h6 {
 }
 
 .btn-w,
-.btn-b {
+.btn-b,
+.btn-d {
   @apply flex items-center justify-center px-2 py-2 transition-all duration-200 hover:shadow-lg hover:[scale:1.03] font-bold;
   width: auto;
   min-height: fit-content;
+  border-width: 3px !important;
 }
 
 .btn-w {
-  @apply rounded-md border-2 border-blue-dark text-blue-dark bg-white;
+  @apply rounded-md border-blue-dark text-blue-dark bg-white;
 }
 
 .dark .btn-w {
-  @apply border-2 border-white text-white bg-blue-dark;
+  @apply border-white text-white bg-blue-dark;
 }
 
 .btn-b {
-  @apply border-2 border-white text-white bg-blue-dark;
+  @apply border-white text-white bg-blue-dark;
 }
 
 .dark .btn-b {
-  @apply border-2 border-blue-dark text-blue-dark bg-white;
+  @apply border-blue-dark text-blue-dark bg-white;
+}
+
+.btn-d {
+  @apply text-white bg-blue-dark;
+  border: 3px solid #001CE0;
+}
+
+.dark .btn-d {
+  @apply text-blue-dark bg-white;
+  border: 2px solid white;
 }
 
 @layer utilities {
@@ -241,4 +253,14 @@ h6 {
 
 .dark .back-top-btn {
   border: 2px solid white;
+}
+
+.content-top-space {
+  top: 120px;
+}
+
+@media (max-width: 1023px) {
+  .content-top-space {
+    top: 0px;
+  }
 }

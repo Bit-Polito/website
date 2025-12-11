@@ -46,16 +46,11 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-      <div className="
-        px-4 sm:px-6 lg:px-8
-        sm:mr-0 sm:ml-0 sm:break-words
-        lg:flex-1 lg:overflow-y-auto lg:min-h-screen
-        lg:pr-20 lg:pl-2 lg:break-words lg:mr-[460px]
-        text-sm sm:text-base
-        overflow-x-hidden
-      ">
-        <header className="flex justify-between items-center gap-4 sm:gap-7 max-w-7xl w-full pt-4 sm:pt-6 px-4">
-          <div className="relative w-[200px] sm:w-[160px] md:w-[200px] lg:w-[334px] lg:mt-[20px] lg:ml-[20px] sm:ml-[50px]">
+      
+      {/* Fixed Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#F9F9F9] dark:bg-blue-dark backdrop-blur-lg bg-opacity-100 dark:bg-opacity-100 border-blue-dark dark:border-white">
+        <div className="flex justify-between items-center gap-4 sm:gap-7 w-full pt-4 sm:pt-6 px-4 sm:px-6 lg:px-8 pb-4">
+          <div className="relative w-[200px] sm:w-[160px] md:w-[200px] lg:w-[334px]">
             <Image
               src="/bitpolito-logo-light.svg"
               alt="Bitpolito Logo"
@@ -66,28 +61,38 @@ export default function HomePage() {
             />
           </div>
 
-          {/* only for mobile and tablet version */}
-          <div className="flex flex-row items-center gap-2 sm:gap-4 lg:hidden">
+          {/* Theme and Language selectors for all screen sizes */}
+          <div className="flex flex-row items-center gap-2 sm:gap-4 lg:gap-7">
             <DarkModeSwitch />
             <LanguageSelector />
           </div>
-        </header>
+        </div>
+      </header>
 
-        <div className="max-w-7xl mx-auto mt-8 sm:mt-10 lg:mt-12 ml-[20px] sm:ml-[50px]">
+      {/* Main Content with padding to account for fixed header */}
+      <div className="
+        pt-[100px] sm:pt-[110px] lg:pt-[120px]
+        px-4 sm:px-6 lg:px-8
+        sm:mr-0 sm:ml-0 sm:break-words
+        lg:flex-1 lg:overflow-y-auto lg:min-h-screen
+        lg:pr-20 lg:pl-2 lg:break-words lg:mr-[460px]
+        text-sm sm:text-base
+        overflow-x-hidden
+      ">
+        <div className="w-full max-w-7xl mt-8 sm:mt-10 lg:mt-12 pl-5 sm:pl-[50px] pr-5">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight leading-tight mt-16 mb-8 sm:mb-10 lg:mb-12">
             {t("title")}
           </h1>
 
-          <div className="max-w-prose mb-6 sm:mb-8">
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-[32px] font-medium leading-relaxed lg:leading-[40px] tracking-wide
-               w-full max-w-[970px] lg:whitespace-nowrap
-               whitespace-normal break-words overflow-wrap-anywhere">
+          <div className="mb-6 sm:mb-8">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-[32px] font-medium leading-relaxed sm:leading-[1.4] lg:leading-[40px] tracking-wide
+               whitespace-normal break-words">
               {t("paragraph")}
             </p>
           </div>
 
           {/* Download Report Button */}
-          <div className="mt-6 sm:mt-8">
+          <div className="mt-6 mb-20 sm:mt-8">
             <a
               href={i18n.language === 'it' 
                 ? "https://docs.bitpolito.it/bitpolito-report-24-25-ita.pdf" 
@@ -117,7 +122,7 @@ export default function HomePage() {
             <Chessboard />
           </div>
 
-          <div className={`bg-white dark:bg-blue-dark carousel-desktop w-[460px] h-screen p-2 ml-auto transition-all duration-300 top-0 right-0 ${isCarouselFixed ? "fixed" : "absolute"}`}>
+          <div className={`bg-white dark:bg-blue-dark carousel-desktop w-[460px] h-screen p-2 ml-auto transition-all duration-300 top-0 right-0 z-40 ${isCarouselFixed ? "fixed" : "absolute"}`}>
             <Carousel />
           </div>
         </div>
