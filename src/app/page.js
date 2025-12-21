@@ -47,10 +47,10 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen">
       <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       
-      {/* Fixed Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#F9F9F9] dark:bg-blue-dark backdrop-blur-lg bg-opacity-100 dark:bg-opacity-100 border-blue-dark dark:border-white">
-        <div className="flex justify-between items-center gap-4 sm:gap-7 w-full pt-4 sm:pt-6 px-4 sm:px-6 lg:px-8 pb-4">
-          <div className="relative w-[200px] sm:w-[160px] md:w-[200px] lg:w-[334px]">
+      {/* Mobile/Tablet Fixed Header - hidden on desktop */}
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-[#F9F9F9] dark:bg-blue-dark shadow-md">
+        <div className="flex justify-between items-center gap-4 sm:gap-7 w-full pt-4 sm:pt-6 px-4 sm:px-6 pb-4">
+          <div className="relative w-[200px] sm:w-[160px] md:w-[200px]">
             <Image
               src="/bitpolito-logo-light.svg"
               alt="Bitpolito Logo"
@@ -61,17 +61,23 @@ export default function HomePage() {
             />
           </div>
 
-          {/* Theme and Language selectors for all screen sizes */}
-          <div className="flex flex-row items-center gap-2 sm:gap-4 lg:gap-7">
+          {/* Theme and Language selectors for mobile/tablet */}
+          <div className="flex flex-row items-center gap-2 sm:gap-4">
             <DarkModeSwitch />
             <LanguageSelector />
           </div>
         </div>
       </header>
 
+      {/* Desktop Fixed Controls - only theme and language selector fixed on right */}
+      <div className="hidden lg:flex fixed top-4 right-8 z-50 flex-row items-center gap-7">
+        <DarkModeSwitch />
+        <LanguageSelector />
+      </div>
+
       {/* Main Content with padding to account for fixed header */}
       <div className="
-        pt-[100px] sm:pt-[110px] lg:pt-[120px]
+        pt-[100px] sm:pt-[110px] lg:pt-8
         px-4 sm:px-6 lg:px-8
         sm:mr-0 sm:ml-0 sm:break-words
         lg:flex-1 lg:overflow-y-auto lg:min-h-screen
@@ -79,6 +85,20 @@ export default function HomePage() {
         text-sm sm:text-base
         overflow-x-hidden
       ">
+        {/* Desktop Logo - scrolls with content */}
+        <div className="hidden lg:block w-full max-w-7xl pl-5 sm:pl-[50px] pr-5">
+          <div className="relative w-[334px]">
+            <Image
+              src="/bitpolito-logo-light.svg"
+              alt="Bitpolito Logo"
+              width={334}
+              height={57}
+              className="icon-style-opposite !w-full !h-auto"
+              priority
+            />
+          </div>
+        </div>
+
         <div className="w-full max-w-7xl mt-8 sm:mt-10 lg:mt-12 pl-5 sm:pl-[50px] pr-5">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight leading-tight mt-16 mb-8 sm:mb-10 lg:mb-12">
             {t("title")}

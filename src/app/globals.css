@@ -264,3 +264,105 @@ h6 {
     top: 0px;
   }
 }
+
+/* Sponsors Animation */
+.sponsors-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.sponsors-scroll {
+  width: 100%;
+  overflow: visible;
+  position: relative;
+  padding: 15px 0;
+}
+
+.sponsors-track {
+  display: flex;
+  gap: 1.5rem;
+  animation: scroll-sponsors 25s linear infinite;
+  width: max-content;
+}
+
+.sponsor-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  animation: sponsor-pulse 2.5s ease-in-out infinite;
+  animation-delay: calc(var(--index) * 0.25s);
+}
+
+.sponsor-item:nth-child(1) { --index: 0; }
+.sponsor-item:nth-child(2) { --index: 1; }
+.sponsor-item:nth-child(3) { --index: 2; }
+.sponsor-item:nth-child(4) { --index: 3; }
+.sponsor-item:nth-child(5) { --index: 4; }
+.sponsor-item:nth-child(6) { --index: 5; }
+.sponsor-item:nth-child(7) { --index: 6; }
+.sponsor-item:nth-child(8) { --index: 7; }
+.sponsor-item:nth-child(9) { --index: 8; }
+.sponsor-item:nth-child(10) { --index: 9; }
+.sponsor-item:nth-child(11) { --index: 10; }
+.sponsor-item:nth-child(12) { --index: 11; }
+.sponsor-item:nth-child(13) { --index: 12; }
+.sponsor-item:nth-child(14) { --index: 13; }
+.sponsor-item:nth-child(15) { --index: 14; }
+.sponsor-item:nth-child(16) { --index: 15; }
+.sponsor-item:nth-child(17) { --index: 16; }
+.sponsor-item:nth-child(18) { --index: 17; }
+.sponsor-item:nth-child(19) { --index: 18; }
+.sponsor-item:nth-child(20) { --index: 19; }
+
+@keyframes sponsor-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+.sponsor-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  /* No grayscale - show original colors */
+}
+
+.dark .sponsor-logo {
+  filter: brightness(0) invert(1);
+}
+
+/* BitCuneo keeps original colors in dark mode */
+.dark .sponsor-logo.no-invert {
+  filter: none;
+}
+
+.sponsor-name {
+  font-size: 9px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  @apply text-blue-dark dark:text-white;
+  opacity: 0.8;
+}
+
+@keyframes scroll-sponsors {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
