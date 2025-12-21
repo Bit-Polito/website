@@ -64,13 +64,13 @@ export default function LanguageSelector() {
 
     /**
      * @function changeLanguage
-     * @description Changes the current language by invoking the 'i18n.changeLanguage' method from the 'useTranslation' hook.
-     * It also closes the language dropdown after a language selection is made.
+     * @description Changes the current language and saves the preference to localStorage.
      * 
      * @param {string} langCode - The language code ("en", "it", ...) corresponding to the selected language.
      */
     const changeLanguage = (langCode) => {
         i18n.changeLanguage(langCode);
+        localStorage.setItem('language', langCode);
         setIsDropdownOpen(false);
     };
 
@@ -103,13 +103,13 @@ export default function LanguageSelector() {
             </button>
 
             {isDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-blue-dark rounded shadow-lg z-50 opacity-100">
+                <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-blue-dark border-2 border-blue-dark dark:border-white rounded-lg shadow-lg z-50 opacity-100">
                     <ul className="py-1">
                         {languages.map((lang) => (
                             <li key={lang.code}>
                                 <button
                                     onClick={() => changeLanguage(lang.code)}
-                                    className="block w-full px-4 py-2 text-left rounded-3xl hover:bg-gray-200 dark:hover:bg-gray-400"
+                                    className="block w-full px-4 py-2 text-left hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-150"
                                 >
                                     {lang.name}
                                 </button>

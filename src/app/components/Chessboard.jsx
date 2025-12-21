@@ -164,13 +164,39 @@ export default function Chessboard() {
      * Filters layout by active filter.
      * Returns full layout if no filters are active.
      * When a filter is selected, only items matching it are shown.
-     * Empty rows are removed.
+     * For projects, alternates between span-2 and span-1 to maintain visual rhythm.
      */
     const filteredLayout = activeFilters.length === 0
         ? layout
-        : layout
-            .map(row => row.filter(item => item.filter === activeFilters[0]))
-            .filter(row => row.length > 0);
+        : (() => {
+            const filtered = layout
+                .flatMap(row => row.filter(item => item.filter === activeFilters[0]));
+            
+            // For projects, recreate rows with alternating spans
+            if (activeFilters[0] === 'projects') {
+                const projectRows = [];
+                for (let i = 0; i < filtered.length; i += 2) {
+                    if (i + 1 < filtered.length) {
+                        // Alternate: first item span-2, second item span-1
+                        projectRows.push([
+                            { ...filtered[i], span: 2 },
+                            { ...filtered[i + 1], span: 1 }
+                        ]);
+                    } else {
+                        // Last item if odd number
+                        projectRows.push([{ ...filtered[i], span: 2 }]);
+                    }
+                }
+                return projectRows;
+            }
+            
+            // For other filters, group items in rows of 3
+            const rows = [];
+            for (let i = 0; i < filtered.length; i += 3) {
+                rows.push(filtered.slice(i, i + 3));
+            }
+            return rows.filter(row => row.length > 0);
+        })();
 
     return (
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -185,7 +211,9 @@ export default function Chessboard() {
                                 className={`
                                     rounded-full px-3 sm:px-5 py-1 text-sm sm:text-base font-semibold
                                     border-2 border-blue-dark dark:border-white
-                                    ${isActive ? "bg-blue-dark text-white hover:bg-blue-600" : "bg-white text-blue-dark hover:bg-blue-200"}
+                                    ${isActive
+                                        ? "bg-blue-dark text-white hover:bg-blue-600 dark:bg-white dark:text-blue-dark dark:hover:bg-gray-200"
+                                        : "bg-white text-blue-dark hover:bg-blue-200 dark:bg-blue-dark dark:text-white dark:hover:bg-gray-800"}
                                 `}
                             >
                                 {t(key)}
@@ -202,7 +230,7 @@ export default function Chessboard() {
                         <div
                             key={`${rowIndex}-${colIndex}`}
                             className={`${item.span === 2
-                                ? 'col-span-1 chessboard-span-2'
+                                ? 'col-span-1 sm:col-span-2 lg:col-span-2'
                                 : 'col-span-1'
                                 } transition-all duration-300 ease-in-out hover:opacity-95 hover:scale-[1.02]`}
                         >
@@ -221,22 +249,21 @@ export default function Chessboard() {
                                         );
                                     case 'box':
                                         return (
-                                            <div className="chessboard relative !min-h-[200px]">
-                                                <a
-                                                    href={item.link}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    <Image
-                                                        src={item.src}
-                                                        alt="Project image"
-                                                        className="w-full h-full object-cover rounded-2xl"
-                                                        priority
-                                                        width={2000}
-                                                        height={2000}
-                                                    />
-                                                </a>
-                                            </div>
+                                            <a
+                                                href={item.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="block w-full h-full"
+                                            >
+                                                <Image
+                                                    src={item.src}
+                                                    alt={`Chessboard item ${rowIndex}-${colIndex}`}
+                                                    className="chessboard"
+                                                    priority
+                                                    width={2000}
+                                                    height={2000}
+                                                />
+                                            </a>
                                         );
                                     default:
                                         return (
@@ -264,36 +291,44 @@ export default function Chessboard() {
                 )}
             </div>
 
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-x-3 mt-8 sm:mt-10 lg:mt-12 pt-2 sm:pt-3 sm:pb-3 lg:pt-4">
+                <button
+                    onClick={() => setVisibleRows(prev => prev + 4)}
+                    className="font-bold hover:opacity-80 transition-opacity"
+                >
+                    {t("load-more")}
+                </button>
+            </div>
+
             {/* Navigation buttons */}
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-5 px-5 py-8 sm:py-12">
+            <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-8 sm:gap-5 px-5 py-8 sm:py-12">
+
+                {/* Load more / Reset button - First on mobile, Second on desktop */}
+                <div className="order-1 sm:order-2">
+                    {visibleRows >= filteredLayout.length && (
+                        <button
+                            onClick={() => setVisibleRows(4)}
+                            className="font-bold hover:opacity-80 transition-opacity"
+                        >
+                            {t("reset")}
+                        </button>
+                    )}
+                </div>
+
+                {/* Back to top button - Second on mobile, First on desktop */}
                 <button
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    className="btn-w flex items-center gap-2"
+                    className="back-top-btn text-blue-dark dark:text-white bg-white dark:bg-blue-dark"
                 >
+
+                    
                     <img
-                        src="/icons/back-top-light.png"
+                        src={"icons/bitpolito-icon-back-top.svg"}
                         alt="Back to top"
-                        className="icon-style-opposite w-5 h-5 sm:w-6 sm:h-6"
+                        className="icon-style-opposite w-[17.73px] h-[15px]"
                     />
                     <span>{t("top")}</span>
                 </button>
-
-                {visibleRows < filteredLayout.length && (
-                    <button
-                        onClick={() => setVisibleRows(prev => prev + 4)}
-                        className="font-bold hover:opacity-80 transition-opacity"
-                    >
-                        {t("load-more")}
-                    </button>
-                )}
-                {visibleRows >= filteredLayout.length && (
-                    <button
-                        onClick={() => setVisibleRows(4)}
-                        className="font-bold hover:opacity-80 transition-opacity"
-                    >
-                        {t("reset")}
-                    </button>
-                )}
             </div>
         </div>
     );
