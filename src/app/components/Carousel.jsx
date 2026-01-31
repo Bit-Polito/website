@@ -299,60 +299,6 @@ export default function Carousel() {
                 </div>
             </div>
 
-            {/* Sponsors Section - Full width of carousel container */}
-            <div className="w-full mt-4 px-2">
-                <p className="text-center text-sm font-bold mb-3 text-blue-dark dark:text-white">{t("sponsors") || "Our Sponsors"}</p>
-                <div className="sponsors-container">
-                    <div className="sponsors-scroll">
-                        <div className="sponsors-track">
-                            {[
-                                { src: "/sponsors/Braiins.svg", name: "Braiins", noInvert: false },
-                                { src: "/sponsors/Blockstream.svg", name: "Blockstream", noInvert: false },
-                                { src: "/sponsors/Fulgur Ventures.svg", name: "Fulgur Ventures", noInvert: false },
-                                { src: "/sponsors/Vexl.svg", name: "Vexl", noInvert: false },
-                                { src: "/sponsors/Zebedee.svg", name: "Zebedee", noInvert: false },
-                                { src: "/sponsors/Plan B Network.svg", name: "Plan B Network", noInvert: false },
-                                { src: "/sponsors/Lugano Plan B Forum.svg", name: "Lugano Plan B Forum", noInvert: false },
-                                { src: "/sponsors/BitCare Forum.svg", name: "BitCare Forum", noInvert: false },
-                                { src: "/sponsors/BitCuneo.svg", name: "BitCuneo", noInvert: true },
-                                { src: "/sponsors/Stratum V2.svg", name: "Stratum V2", noInvert: false },
-                            ].map((sponsor, index) => (
-                                <div key={index} className="sponsor-item">
-                                    <img
-                                        src={sponsor.src}
-                                        alt={sponsor.name}
-                                        className={`sponsor-logo ${sponsor.noInvert ? 'no-invert' : ''}`}
-                                    />
-                                    <span className="sponsor-name">{sponsor.name}</span>
-                                </div>
-                            ))}
-                            {/* Duplicate for seamless loop */}
-                            {[
-                                { src: "/sponsors/Braiins.svg", name: "Braiins", noInvert: false },
-                                { src: "/sponsors/Blockstream.svg", name: "Blockstream", noInvert: false },
-                                { src: "/sponsors/Fulgur Ventures.svg", name: "Fulgur Ventures", noInvert: false },
-                                { src: "/sponsors/Vexl.svg", name: "Vexl", noInvert: false },
-                                { src: "/sponsors/Zebedee.svg", name: "Zebedee", noInvert: false },
-                                { src: "/sponsors/Plan B Network.svg", name: "Plan B Network", noInvert: false },
-                                { src: "/sponsors/Lugano Plan B Forum.svg", name: "Lugano Plan B Forum", noInvert: false },
-                                { src: "/sponsors/BitCare Forum.svg", name: "BitCare Forum", noInvert: false },
-                                { src: "/sponsors/BitCuneo.svg", name: "BitCuneo", noInvert: true },
-                                { src: "/sponsors/Stratum V2.svg", name: "Stratum V2", noInvert: false },
-                            ].map((sponsor, index) => (
-                                <div key={`dup-${index}`} className="sponsor-item">
-                                    <img
-                                        src={sponsor.src}
-                                        alt={sponsor.name}
-                                        className={`sponsor-logo ${sponsor.noInvert ? 'no-invert' : ''}`}
-                                    />
-                                    <span className="sponsor-name">{sponsor.name}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             {isOpen && (
                 <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50"
                     onClick={(e) => { if (e.target === e.currentTarget) setIsOpen(false) }} // closes popup when clicking outside the content
