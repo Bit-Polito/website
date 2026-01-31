@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Chessboard from "./components/Chessboard";
 import DarkModeSwitch from "./components/DarkModeSwitch";
 import LanguageSelector from "./components/LanguageSelector";
+import Sponsors from "./components/Sponsors";
 import Image from "next/image";
 
 export default function HomePage() {
@@ -70,7 +71,7 @@ export default function HomePage() {
       </header>
 
       {/* Desktop Fixed Controls - only theme and language selector fixed on right */}
-      <div className="hidden lg:flex fixed top-4 right-8 z-50 flex-row items-center gap-7">
+      <div className={`hidden lg:flex fixed top-4 right-8 z-50 flex-row items-center gap-7 transition-opacity duration-300 ${isCarouselFixed ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
         <DarkModeSwitch />
         <LanguageSelector />
       </div>
@@ -136,6 +137,9 @@ export default function HomePage() {
         <div className="carousel-mobile">
           <Carousel />
         </div>
+
+        {/* Sponsors Section */}
+        <Sponsors />
 
         <div className="flex mt-4 sm:mt-10 lg:mt-12">
           <div ref={chessboardRef}>
