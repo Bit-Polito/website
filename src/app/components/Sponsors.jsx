@@ -12,16 +12,16 @@ export default function Sponsors() {
     const { t } = useTranslation();
 
     const sponsorsList = [
-        { src: "/sponsors/Braiins.svg", name: "Braiins", noInvert: false },
-        { src: "/sponsors/Blockstream.svg", name: "Blockstream", noInvert: false },
-        { src: "/sponsors/Fulgur Ventures.svg", name: "Fulgur Ventures", noInvert: false },
-        { src: "/sponsors/Vexl.svg", name: "Vexl", noInvert: false },
-        { src: "/sponsors/Zebedee.svg", name: "Zebedee", noInvert: false },
-        { src: "/sponsors/Plan B Network.svg", name: "Plan B Network", noInvert: false },
-        { src: "/sponsors/Lugano Plan B Forum.svg", name: "Lugano Plan B Forum", noInvert: false },
-        { src: "/sponsors/BitCare Forum.svg", name: "BitCare Forum", noInvert: false },
-        { src: "/sponsors/BitCuneo.svg", name: "BitCuneo", noInvert: true },
-        { src: "/sponsors/Stratum V2.svg", name: "Stratum V2", noInvert: false },
+        { src: "/sponsors/Braiins.svg", name: "Braiins", url: "https://braiins.com/", noInvert: false },
+        { src: "/sponsors/Blockstream.svg", name: "Blockstream", url: "https://blockstream.com/", noInvert: false },
+        { src: "/sponsors/Fulgur Ventures.svg", name: "Fulgur Ventures", url: "https://www.fulgur.ventures/", noInvert: false },
+        { src: "/sponsors/Vexl.svg", name: "Vexl", url: "https://vexl.it/", noInvert: false },
+        { src: "/sponsors/Zebedee.svg", name: "Zebedee", url: "https://zbd.gg/", noInvert: false },
+        { src: "/sponsors/Plan B Network.svg", name: "Plan B Network", url: "https://planb.network/", noInvert: false },
+        { src: "/sponsors/Lugano Plan B Forum.svg", name: "Lugano Plan B Forum", url: "https://planb.lugano.ch/planb-forum/", noInvert: false },
+        { src: "/sponsors/BitCare Forum.svg", name: "BitCare Forum", url: "https://bitcareforum.it/", noInvert: false },
+        { src: "/sponsors/BitCuneo.svg", name: "BitCuneo", url: "https://bitcuneo.it/", noInvert: true },
+        { src: "/sponsors/Stratum V2.svg", name: "Stratum V2", url: "https://stratumprotocol.org/", noInvert: false },
     ];
 
     return (
@@ -31,45 +31,36 @@ export default function Sponsors() {
                     <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-center relative text-blue-dark dark:text-white"
                         style={{
                             letterSpacing: '0.05em',
-                            textShadow: '0 2px 10px rgba(0, 102, 255, 0.3)'
                         }}>
                         {t("sponsors")}
                     </h2>
-                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 sm:w-32 md:w-40 h-1 rounded-full bg-blue-dark dark:bg-white"
-                        style={{
-                            boxShadow: '0 0 15px rgba(0, 102, 255, 0.5)',
-                            animation: 'glow-pulse 2s ease-in-out infinite'
-                        }}>
-                    </div>
                 </div>
-                <style jsx>{`
-                    @keyframes glow-pulse {
-                        0%, 100% { opacity: 1; transform: translateX(-50%) scaleX(1); }
-                        50% { opacity: 0.7; transform: translateX(-50%) scaleX(1.1); }
-                    }
-                `}</style>
                 <div className="sponsors-container w-full">
                     <div className="sponsors-scroll">
                         <div className="sponsors-track">
                             {sponsorsList.map((sponsor, index) => (
                                 <div key={index} className="sponsor-item">
-                                    <img
-                                        src={sponsor.src}
-                                        alt={sponsor.name}
-                                        className={`sponsor-logo ${sponsor.noInvert ? 'no-invert' : ''}`}
-                                    />
-                                    <span className="sponsor-name">{sponsor.name}</span>
+                                    <a href={sponsor.url} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
+                                        <img
+                                            src={sponsor.src}
+                                            alt={sponsor.name}
+                                            className={`sponsor-logo ${sponsor.noInvert ? 'no-invert' : ''}`}
+                                        />
+                                        <span className="sponsor-name">{sponsor.name}</span>
+                                    </a>
                                 </div>
                             ))}
                             {/* Duplicate for seamless loop */}
                             {sponsorsList.map((sponsor, index) => (
                                 <div key={`dup-${index}`} className="sponsor-item">
-                                    <img
-                                        src={sponsor.src}
-                                        alt={sponsor.name}
-                                        className={`sponsor-logo ${sponsor.noInvert ? 'no-invert' : ''}`}
-                                    />
-                                    <span className="sponsor-name">{sponsor.name}</span>
+                                    <a href={sponsor.url} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
+                                        <img
+                                            src={sponsor.src}
+                                            alt={sponsor.name}
+                                            className={`sponsor-logo ${sponsor.noInvert ? 'no-invert' : ''}`}
+                                        />
+                                        <span className="sponsor-name">{sponsor.name}</span>
+                                    </a>
                                 </div>
                             ))}
                         </div>
