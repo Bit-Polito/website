@@ -25,7 +25,7 @@ export default function Sponsors() {
     ];
 
     return (
-        <div className="w-full max-w-7xl pl-5 sm:pl-[50px] pr-5">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 lg:gap-5 p-2 sm:p-4 lg:p-5">
             <div className="mb-8 sm:mb-10 lg:mb-12 pt-2 sm:pt-3 lg:pt-4">
                 <div className="relative mb-6 sm:mb-8">
                     <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-center relative text-blue-dark dark:text-white"
