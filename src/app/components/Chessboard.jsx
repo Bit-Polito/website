@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import chessboardImages from '../data/chessboardImages.json';
 import Image from "next/image";
+import Sponsors from "./Sponsors";
 
 // const chartRow = [
 //     { type: 'image', span: 1 },
@@ -171,7 +172,7 @@ export default function Chessboard() {
         : (() => {
             const filtered = layout
                 .flatMap(row => row.filter(item => item.filter === activeFilters[0]));
-            
+
             // For projects, recreate rows with alternating spans
             if (activeFilters[0] === 'projects') {
                 const projectRows = [];
@@ -189,7 +190,7 @@ export default function Chessboard() {
                 }
                 return projectRows;
             }
-            
+
             // For other filters, group items in rows of 3
             const rows = [];
             for (let i = 0; i < filtered.length; i += 3) {
@@ -291,6 +292,9 @@ export default function Chessboard() {
                 )}
             </div>
 
+            {/* Sponsors Section */}
+            <Sponsors />
+
             <div className="flex flex-wrap justify-center gap-2 sm:gap-x-3 mt-8 sm:mt-10 lg:mt-12 pt-2 sm:pt-3 sm:pb-3 lg:pt-4">
                 <button
                     onClick={() => setVisibleRows(prev => prev + 4)}
@@ -321,7 +325,7 @@ export default function Chessboard() {
                     className="back-top-btn text-blue-dark dark:text-white bg-white dark:bg-blue-dark"
                 >
 
-                    
+
                     <img
                         src={"icons/bitpolito-icon-back-top.svg"}
                         alt="Back to top"

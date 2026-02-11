@@ -8,7 +8,6 @@ import Footer from "./components/Footer";
 import Chessboard from "./components/Chessboard";
 import DarkModeSwitch from "./components/DarkModeSwitch";
 import LanguageSelector from "./components/LanguageSelector";
-import Sponsors from "./components/Sponsors";
 import Image from "next/image";
 
 export default function HomePage() {
@@ -137,9 +136,6 @@ export default function HomePage() {
         <div className="carousel-mobile">
           <Carousel />
         </div>
-
-        {/* Sponsors Section */}
-        <Sponsors />
 
         <div className="flex mt-4 sm:mt-10 lg:mt-12">
           <div ref={chessboardRef}>
