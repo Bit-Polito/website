@@ -228,19 +228,12 @@ export default function Carousel() {
     };
 
     return (
-        <div className="relative overflow-y-auto overflow-x-hidden h-full w-full carousel-scrollable">
-            <div className="flex flex-col items-center w-full pt-8 pb-4"
+        <div className="relative overflow-y-auto overflow-x-hidden h-full w-full carousel-scrollable content-top-space">
+            <div className="flex flex-col items-center justify-center w-full"
                 onMouseEnter={() => showArrows(true)}
                 onMouseLeave={() => showArrows(false)}
             >
-                <header className="w-full flex justify-center">
-                    <div className="flex items-center gap-x-7 lg:flex hidden">
-                        <DarkModeSwitch />
-                        <LanguageSelector />
-                    </div>
-                </header>
-
-                <div className="flex justify-between gap-x-8 mb-3 mt-7">
+                <div className="flex justify-between gap-x-8 mb-3">
                     {["projects", "podcast", "about"].map((key) => (
                         <div key={key} className="relative group">
                             <a className="cursor-not-allowed transition-all duration-200 hover:scale-105 font-bold">{t(key)}</a>
@@ -250,59 +243,59 @@ export default function Carousel() {
                 </div>
 
                 <div className="pb-4">
-                <div className="w-[340px] lg:w-[340px] h-1 bg-white dark:bg-blue-dark mb-2">
-                    <div
-                        className="h-full bg-blue-dark dark:bg-white"
-                        style={{ width: `${progress}%` }}
-                    ></div>
-                </div>
+                    <div className="w-[340px] lg:w-[340px] h-1 bg-white dark:bg-blue-dark mb-2">
+                        <div
+                            className="h-full bg-blue-dark dark:bg-white"
+                            style={{ width: `${progress}%` }}
+                        ></div>
+                    </div>
 
-                <div className="relative">
-                    <button
-                        onClick={() => changeImage(-1)}
-                        className={`hidden lg:block arrow -left-12 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
-                        &lt;
-                    </button>
-                    <a href={imageLinks[currentImage]} target="_blank" rel="noopener noreferrer" className="max-w-full w-full flex justify-center">
-                        <Image
-                            src={carouselImages[currentImage]}
-                            title={descriptionImages[currentImage]}
-                            className={`img-carousel ${fade ? 'opacity-100' : 'opacity-0'}`}
-                            // for mobile / tablet
-                            onTouchStart={(e) => handleStart(e.touches[0].clientX)}
-                            onTouchMove={(e) => handleMove(e.touches[0].clientX)}
-                            onTouchEnd={handleEnd}
-                            // for desktop
-                            onMouseDown={(e) => handleStart(e.clientX)}
-                            onMouseMove={(e) => {
-                                if (isDragging.current) e.preventDefault();
-                                handleMove(e.clientX);
-                            }}
-                            onMouseUp={handleEnd}
-                            onMouseLeave={handleEnd}
-                            priority
-                            width={1000}
-                            height={1000}
-                            alt=""
-                        />
-                    </a>
-                    <button
-                        onClick={() => changeImage(1)}
-                        className={`hidden lg:block arrow -right-12 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
-                        &gt;
-                    </button>
-                </div>
+                    <div className="relative">
+                        <button
+                            onClick={() => changeImage(-1)}
+                            className={`hidden lg:block arrow -left-12 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
+                            &lt;
+                        </button>
+                        <a href={imageLinks[currentImage]} target="_blank" rel="noopener noreferrer" className="max-w-full w-full flex justify-center">
+                            <Image
+                                src={carouselImages[currentImage]}
+                                title={descriptionImages[currentImage]}
+                                className={`img-carousel ${fade ? 'opacity-100' : 'opacity-0'}`}
+                                // for mobile / tablet
+                                onTouchStart={(e) => handleStart(e.touches[0].clientX)}
+                                onTouchMove={(e) => handleMove(e.touches[0].clientX)}
+                                onTouchEnd={handleEnd}
+                                // for desktop
+                                onMouseDown={(e) => handleStart(e.clientX)}
+                                onMouseMove={(e) => {
+                                    if (isDragging.current) e.preventDefault();
+                                    handleMove(e.clientX);
+                                }}
+                                onMouseUp={handleEnd}
+                                onMouseLeave={handleEnd}
+                                priority
+                                width={1000}
+                                height={1000}
+                                alt=""
+                            />
+                        </a>
+                        <button
+                            onClick={() => changeImage(1)}
+                            className={`hidden lg:block arrow -right-12 ${arrowsVisible ? 'opacity-100' : 'opacity-0'}`}>
+                            &gt;
+                        </button>
+                    </div>
 
-                <footer className="flex flex-col sm:flex-row gap-2 sm:gap-x-2 mt-4 mb-8 text-base w-[340px] lg:w-[340px]">
-                    <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className={"btn-w gap-3 flex-1 min-h-[44px] order-2 sm:order-1"}>
-                        <img src={"icons/bitpolito-icon-social-telegram.svg"} className="w-6 h-6 flex-shrink-0 dark:invert dark:brightness-0 dark:filter-white"></img>
-                        <span className="button-font">{t("telegram")}</span>
-                    </a>
-                    <button onClick={() => setIsOpen(true)} className={"btn-b rounded-md gap-3 flex-1 min-h-[44px] order-1 sm:order-2"}>
-                        <img src="icons/donate-light.png" className="w-5 h-5 flex-shrink-0 filter-white dark:invert-0 dark:brightness-100 dark:filter-none"></img>
-                        <span className="button-font">{t("donate")}</span>
-                    </button>
-                </footer>
+                    <footer className="flex flex-col sm:flex-row gap-2 sm:gap-x-2 mt-4 mb-8 text-base w-[340px] lg:w-[340px]">
+                        <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className={"btn-w gap-3 flex-1 min-h-[44px] order-2 sm:order-1"}>
+                            <img src={"icons/bitpolito-icon-social-telegram.svg"} className="w-6 h-6 flex-shrink-0 dark:invert dark:brightness-0 dark:filter-white"></img>
+                            <span className="button-font">{t("telegram")}</span>
+                        </a>
+                        <button onClick={() => setIsOpen(true)} className={"btn-d rounded-md gap-3 flex-1 sm:flex-none sm:w-[140px] min-h-[44px] order-1 sm:order-2"}>
+                            <img src="icons/donate-light.png" className="w-5 h-5 flex-shrink-0 filter-white dark:invert-0 dark:brightness-100 dark:filter-none"></img>
+                            <span className="button-font">{t("donate")}</span>
+                        </button>
+                    </footer>
                 </div>
             </div>
 
@@ -322,7 +315,7 @@ export default function Carousel() {
                         <p className="text-base sm:text-xl mb-6 dark:text-white">{newLine(t("popup-paragraph"))}</p>
 
                         <div className="flex flex-col items-center">
-                            <Image src="/FP_PhotoProfile.png" className="w-40 h-43 sm:w-60 sm:h-64" priority width={100} height={100} alt=""/>
+                            <Image src="/FP_PhotoProfile.png" className="w-40 h-43 sm:w-60 sm:h-64" priority width={100} height={100} alt="" />
                             <div className="flex flex-col mt-5 gap-y-5 w-full px-4">
                                 <a href="https://t.me/bitciccio" target="_blank" rel="noopener noreferrer" className="btn-w text-sm sm:text-base break-words">
                                     <img src="icons/bitpolito-icon-social-telegram.svg" className="icon-style-opposite"></img>
