@@ -292,10 +292,7 @@ export default function Chessboard() {
                 )}
             </div>
 
-            {/* Sponsors Section */}
-            <Sponsors />
-
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-x-3 mt-8 sm:mt-10 lg:mt-12 pt-2 sm:pt-3 sm:pb-3 lg:pt-4">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-x-3 mt-8 sm:mt-10 lg:mt-12 sm:pt-1 sm:pb-3 lg:pt-2">
                 <button
                     onClick={() => setVisibleRows(prev => prev + 4)}
                     className="font-bold hover:opacity-80 transition-opacity"
@@ -303,6 +300,9 @@ export default function Chessboard() {
                     {t("load-more")}
                 </button>
             </div>
+
+            {/* Sponsors Section */}
+            <Sponsors />
 
             {/* Navigation buttons */}
             <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-8 sm:gap-5 px-5 py-8 sm:py-12">
