@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
-import chessboardData from "../notionCache.json";
+import Sponsors from "./Sponsors";
 
 /**
  * Chessboard component renders a grid layout with dynamic rows and interactive elements.
@@ -44,6 +44,12 @@ export default function Chessboard() {
      * @description Tracks whether the chessboard is currently loading data from Notion
      */
     const [isLoading, setIsLoading] = useState(true);
+
+    const cacheTTL = 60 * 60 * 24 * 1000; // 24 hrs in ms
+    const [cache, setCache] = useState({
+        data: null,
+        timestamp: 0
+    });
 
     /**
      * Populates the layout with images from Notion API.
@@ -187,9 +193,23 @@ export default function Chessboard() {
     useEffect(() => {
         const fetchNotionData = async () => {
             setIsLoading(true);
+
+            if (cache.data && Date.now() - cache.timestamp < cacheTTL * 1000) {
+                setLayout(populateLayout(cache.data.chessboard));
+                setIsLoading(false);
+                return;
+            }
+
             try {
-                if (chessboardData.data?.chessboard?.length > 0) {
-                    setLayout(populateLayout(chessboardData.data.chessboard));
+                const response = await fetch('/api/notion');
+                const data = await response.json();
+
+                if (data.chessboard && data.chessboard.length > 0) {
+                    setLayout(populateLayout(data.chessboard));
+                    setCache({
+                        data: data,
+                        timestamp: Date.now(),
+                    });
                 } else {
                     setLayout([]);
                 }
@@ -202,7 +222,7 @@ export default function Chessboard() {
         };
 
         fetchNotionData();
-    }, []);
+    }, [cache]);
 
     /**
      * @state {string[]} activeFilters
@@ -265,7 +285,7 @@ export default function Chessboard() {
 
             {/* Filter buttons */}
             {!isLoading && (
-                <div className="flex flex-wrap justify-center gap-2 sm:gap-x-3 mb-3 pt-8 sm:pt-12 lg:pt-16">
+                <div className="flex flex-wrap justify-center gap-2 sm:gap-x-3 mb-8 sm:mb-10 lg:mb-12 pt-2 sm:pt-3 lg:pt-4">
                     {["event", "podcast", "project", "other"].map((key) => {
                         const isActive = activeFilters.includes(key);
                         return (
@@ -275,7 +295,9 @@ export default function Chessboard() {
                                     className={`
                                         rounded-full px-3 sm:px-5 py-1 text-sm sm:text-base font-semibold
                                         border-2 border-blue-dark dark:border-white
-                                        ${isActive ? "bg-blue-dark text-white hover:bg-blue-600" : "bg-white text-blue-dark hover:bg-blue-200"}
+                                        ${isActive
+                                            ? "bg-blue-dark text-white hover:bg-blue-600 dark:bg-white dark:text-blue-dark dark:hover:bg-gray-200"
+                                            : "bg-white text-blue-dark hover:bg-blue-200 dark:bg-blue-dark dark:text-white dark:hover:bg-gray-800"}
                                     `}
                                 >
                                     {key === 'podcast' ? 'Podcasts' : t(key + 's')}
@@ -307,28 +329,27 @@ export default function Chessboard() {
                                                     alt="Chart placeholder"
                                                     className="chessboard !min-h-[200px]"
                                                     unoptimized
-                                                    width={2000}
-                                                    height={2000}
+                                                    width={1}
+                                                    height={1}
                                                 />
                                             );
                                         case 'box':
                                             return (
-                                                <div className="chessboard relative !min-h-[200px]">
-                                                    <a
-                                                        href={item.link}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                    >
-                                                        <Image
-                                                            src={item.src}
-                                                            alt="Project image"
-                                                            className="w-full h-full object-cover rounded-2xl"
-                                                            unoptimized
-                                                            width={2000}
-                                                            height={2000}
-                                                        />
-                                                    </a>
-                                                </div>
+                                                <a
+                                                    href={item.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="block w-full h-full"
+                                                >
+                                                    <Image
+                                                        src={item.src}
+                                                        alt={`Chessboard item ${rowIndex}-${colIndex}`}
+                                                        className="chessboard"
+                                                        unoptimized
+                                                        width={1}
+                                                        height={1}
+                                                    />
+                                                </a>
                                             );
                                         default:
                                             return (
@@ -340,11 +361,11 @@ export default function Chessboard() {
                                                 >
                                                     <Image
                                                         src={item.src}
-                                                        alt={item.altTextITA || `Chessboard item ${rowIndex}-${colIndex}`}
+                                                        alt={`Chessboard item ${rowIndex}-${colIndex}`}
                                                         className="chessboard"
                                                         unoptimized
-                                                        width={2000}
-                                                        height={2000}
+                                                        width={1}
+                                                        height={1}
                                                     />
                                                 </a>
                                             );
@@ -356,29 +377,22 @@ export default function Chessboard() {
                 </div>
             )}
 
-            {/* Navigation buttons */}
-            {!isLoading && (
-                <div className="flex flex-col sm:flex-row justify-between items-center gap-5 px-5 py-8 sm:py-12">
-                    <button
-                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                        className="btn-w flex items-center gap-2"
-                    >
-                        <img
-                            src="/icons/back-top-light.png"
-                            alt="Back to top"
-                            className="icon-style-opposite w-5 h-5 sm:w-6 sm:h-6"
-                        />
-                        <span>{t("top")}</span>
-                    </button>
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-x-3 mt-8 sm:mt-10 lg:mt-12 sm:pt-1 sm:pb-3 lg:pt-2">
+                <button
+                    onClick={() => setVisibleRows(prev => prev + 4)}
+                    className="font-bold hover:opacity-80 transition-opacity"
+                >
+                    {t("load-more")}
+                </button>
+            </div>
 
-                    {visibleRows < filteredLayout.length && (
-                        <button
-                            onClick={() => setVisibleRows(prev => prev + 4)}
-                            className="font-bold hover:opacity-80 transition-opacity"
-                        >
-                            {t("load-more")}
-                        </button>
-                    )}
+            {/* Sponsors Section */}
+            <Sponsors />
+
+            {/* Navigation buttons */}
+            <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-8 sm:gap-5 px-5 py-8 sm:py-12">
+                {/* Load more / Reset button - First on mobile, Second on desktop */}
+                <div className="order-1 sm:order-2">
                     {visibleRows >= filteredLayout.length && (
                         <button
                             onClick={() => setVisibleRows(4)}
@@ -388,7 +402,20 @@ export default function Chessboard() {
                         </button>
                     )}
                 </div>
-            )}
+
+                {/* Back to top button - Second on mobile, First on desktop */}
+                <button
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    className="back-top-btn text-blue-dark dark:text-white bg-white dark:bg-blue-dark"
+                >
+                    <img
+                        src={"icons/bitpolito-icon-back-top.svg"}
+                        alt="Back to top"
+                        className="icon-style-opposite w-[17.73px] h-[15px]"
+                    />
+                    <span>{t("top")}</span>
+                </button>
+            </div>
         </div>
     );
 }

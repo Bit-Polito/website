@@ -9,19 +9,8 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-const eslintConfig = [...compat.extends("next/core-web-vitals")].map((config) => {
-  // Remove non-serializable parser properties
-  if (config.languageOptions?.parser) {
-    const { parse, parseForESLint, ...serializableParser } = config.languageOptions.parser;
-    return {
-      ...config,
-      languageOptions: {
-        ...config.languageOptions,
-        parser: serializableParser,
-      },
-    };
-  }
-  return config;
-});
+const eslintConfig = [
+  ...compat.extends("next/core-web-vitals")
+];
 
 export default eslintConfig;

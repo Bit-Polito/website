@@ -2,10 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import DarkModeSwitch from "./DarkModeSwitch";
-import LanguageSelector from "./LanguageSelector";
 import Image from "next/image";
-import carouselData from "../notionCache.json";
 
 // images are loaded from the json file created with the Notion api
 
@@ -81,21 +78,39 @@ export default function Carousel() {
     const [imageLinks, setImageLinks] = useState([]);
 
     /**
+     * @state {string[]} descriptionImages
+     * @description Array of image descriptions loaded from Notion
+     */
+    const [descriptionImages, setDescriptionImages] = useState([]);
+
+    /**
      * @hook useEffect
      * @description upload carousel data from json file on component mount
      */
     useEffect(() => {
         const fetchCarouselData = async () => {
             try {
-                if (carouselData.data?.featured?.length > 0) {
-                    const images = carouselData.data.featured.map(item => item.src) || [];
-                    const links = carouselData.data.featured.map(item => item.link || '#') || [];
+                const response = await fetch('/api/notion');
+                const data = await response.json();
+
+                if (data.featured && data.featured.length > 0) {
+                    const images = data.featured.map(item => item.src) || [];
+                    const links = data.featured.map(item => item.link || '#') || [];
+                    const alt = data.featured.map(item => item.altTextITA || '') || [];
 
                     setCarouselImages(images);
                     setImageLinks(links);
+                    setDescriptionImages(alt);
+                } else {
+                    setCarouselImages([]);
+                    setImageLinks([]);
+                    setDescriptionImages([]);
                 }
             } catch (error) {
                 console.error('Error fetching carousel data from Notion:', error);
+                setCarouselImages([]);
+                setImageLinks([]);
+                setDescriptionImages([]);
             }
         };
         fetchCarouselData();
@@ -125,17 +140,6 @@ export default function Carousel() {
      * @description The minimum pixel distance required to register a swipe gesture
      */
     const threshold = 50;
-
-    /**
-    * @constant {string[]} descriptionImages
-    * @description Array of image descriptions used as alt text for each image in the carousel, translated using i18next
-    */
-    const descriptionImages = [
-        t("alt-img-1"),
-        t("alt-img-2"),
-        t("alt-img-3"),
-        t("alt-img-4"),
-    ];
 
     /**
      * @effect
@@ -253,19 +257,12 @@ export default function Carousel() {
     };
 
     return (
-        <div className="relative overflow-y-auto overflow-x-hidden h-full w-full carousel-scrollable">
-            <div className="flex flex-col items-center w-full pt-8 pb-4"
+        <div className="relative overflow-y-auto overflow-x-hidden h-full w-full carousel-scrollable content-top-space">
+            <div className="flex flex-col items-center justify-center w-full"
                 onMouseEnter={() => showArrows(true)}
                 onMouseLeave={() => showArrows(false)}
             >
-                <header className="w-full flex justify-center">
-                    <div className="flex items-center gap-x-7 lg:flex hidden">
-                        <DarkModeSwitch />
-                        <LanguageSelector />
-                    </div>
-                </header>
-
-                <div className="flex justify-between gap-x-8 mb-3 mt-7">
+                <div className="flex justify-between gap-x-8 mb-3">
                     {["projects", "podcast", "about"].map((key) => (
                         <div key={key} className="relative group">
                             <a className="cursor-not-allowed transition-all duration-200 hover:scale-105 font-bold">{t(key)}</a>
@@ -307,8 +304,9 @@ export default function Carousel() {
                                     onMouseUp={handleEnd}
                                     onMouseLeave={handleEnd}
                                     unoptimized
-                                    width={1000}
-                                    height={1000}
+                                    width={1}
+                                    height={1}
+                                    alt=""
                                 />
                             ) : null}
                         </a>
@@ -324,7 +322,7 @@ export default function Carousel() {
                             <img src={"icons/bitpolito-icon-social-telegram.svg"} className="w-6 h-6 flex-shrink-0 dark:invert dark:brightness-0 dark:filter-white"></img>
                             <span className="button-font">{t("telegram")}</span>
                         </a>
-                        <button onClick={() => setIsOpen(true)} className={"btn-b rounded-md gap-3 flex-1 min-h-[44px] order-1 sm:order-2"}>
+                        <button onClick={() => setIsOpen(true)} className={"btn-d rounded-md gap-3 flex-1 sm:flex-none sm:w-[140px] min-h-[44px] order-1 sm:order-2"}>
                             <img src="icons/donate-light.png" className="w-5 h-5 flex-shrink-0 filter-white dark:invert-0 dark:brightness-100 dark:filter-none"></img>
                             <span className="button-font">{t("donate")}</span>
                         </button>
@@ -348,7 +346,7 @@ export default function Carousel() {
                         <p className="text-base sm:text-xl mb-6 dark:text-white">{newLine(t("popup-paragraph"))}</p>
 
                         <div className="flex flex-col items-center">
-                            <img src="/FP_PhotoProfile.png" className="w-40 h-43 sm:w-60 sm:h-64" />
+                            <Image src="/FP_PhotoProfile.png" className="w-40 h-43 sm:w-60 sm:h-64" unoptimized width={100} height={100} alt="" />
                             <div className="flex flex-col mt-5 gap-y-5 w-full px-4">
                                 <a href="https://t.me/bitciccio" target="_blank" rel="noopener noreferrer" className="btn-w text-sm sm:text-base break-words">
                                     <img src="icons/bitpolito-icon-social-telegram.svg" className="icon-style-opposite"></img>
