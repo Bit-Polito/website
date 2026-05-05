@@ -19,7 +19,7 @@ export async function GET() {
       });
     }
 
-    if (cache.data && currentTimestamp - cache.timestamp < cacheTTL) {
+    if (cache.data && (Date.now() - cache.timestamp) < cacheTTL) {
       return Response.json(cache.data, {
         headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
       });
@@ -35,7 +35,7 @@ export async function GET() {
 
     const chessboardItems = [];
     const featuredItems = [];
-    const shuffledResults = response.results.sort(() => Math.random() - 0.5);
+    const shuffledResults = [...response.results].sort(() => Math.random() - 0.5);
 
     shuffledResults.forEach((page) => {
       const p = page.properties;

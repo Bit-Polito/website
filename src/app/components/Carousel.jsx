@@ -101,10 +101,6 @@ export default function Carousel() {
                     setCarouselImages(images);
                     setImageLinks(links);
                     setDescriptionImages(alt);
-                } else {
-                    setCarouselImages([]);
-                    setImageLinks([]);
-                    setDescriptionImages([]);
                 }
             } catch (error) {
                 console.error('Error fetching carousel data from Notion:', error);

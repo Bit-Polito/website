@@ -194,7 +194,7 @@ export default function Chessboard() {
         const fetchNotionData = async () => {
             setIsLoading(true);
 
-            if (cache.data && Date.now() - cache.timestamp < cacheTTL * 1000) {
+            if (cache.data && (Date.now() - cache.timestamp) < cacheTTL) {
                 setLayout(populateLayout(cache.data.chessboard));
                 setIsLoading(false);
                 return;
@@ -210,8 +210,6 @@ export default function Chessboard() {
                         data: data,
                         timestamp: Date.now(),
                     });
-                } else {
-                    setLayout([]);
                 }
             } catch (error) {
                 console.error('Error fetching Notion data:', error);
