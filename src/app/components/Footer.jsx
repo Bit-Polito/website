@@ -52,7 +52,7 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4">
-                <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className="btn-b rounded-md !px-3 !py-2 sm:!px-4 sm:!py-3 text-xs sm:text-sm">
+                <a href="https://t.me/BitPolito" target="_blank" rel="noopener noreferrer" className="btn-b rounded-md !px-3 !py-2 sm:!px-4 sm:!py-3 text-xs sm:text-sm">
                     <img src="icons/bitpolito-icon-social-telegram.svg" className="icon-style !w-5 !h-5 sm:!w-6 sm:!h-6"></img>
                     Telegram
                 </a>
