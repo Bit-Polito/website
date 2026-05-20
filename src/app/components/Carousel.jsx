@@ -139,7 +139,6 @@ export default function Carousel() {
         setFade(false);
         setTimeout(() => {
             setCurrentImage((prev) => (prev + direction + carouselImages.length) % carouselImages.length);
-            setProgress(0);
             setFade(true);
         }, 100);
     };

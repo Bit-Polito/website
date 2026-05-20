@@ -31,8 +31,9 @@ const singleImage = [
 
 const resourceItems = [
     [
-        { type: 'resource', span: 1, title: 'Mining Game',     link: 'https://bitpolito-mining-game.vercel.app',       filter: 'resources' },
-        { type: 'resource', span: 1, title: 'Silent Payments', link: 'https://silent-payments.vercel.app/',  filter: 'resources' },
+        { type: 'resource', span: 1, title: 'Mining Game',       link: 'https://bitpolito-mining-game.vercel.app',              filter: 'resources' },
+        { type: 'resource', span: 1, title: 'Silent Payments', link: 'https://silent-payments.vercel.app/',           filter: 'resources' },
+        { type: 'resource', span: 1, title: 'BitPolito Academy', link: 'https://github.com/BitPolito/bitcoin-academy/', filter: 'resources' },
     ]
 ];
 
