@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"/Volumes/TOSHIBA EXT/BitPolito/Website/website\" diff src/app/components/Carousel.jsx)",
+      "Bash(npm run *)"
+    ]
+  }
+}
