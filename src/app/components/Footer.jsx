@@ -84,7 +84,7 @@ export default function Footer() {
 
             <div className="flex flex-wrap justify-center gap-x-10 mb-6">
                 <p>Cookie Policy</p>
-                <p>©2025, Bitpolito</p>
+                <p>©2026, Bitpolito</p>
                 <p>Privacy Policy</p>
             </div>
         </div>

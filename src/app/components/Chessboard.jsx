@@ -29,6 +29,13 @@ const singleImage = [
     { type: 'image', span: 1 }
 ];
 
+const resourceItems = [
+    [
+        { type: 'resource', span: 1, title: 'Mining Game',     link: 'https://github.com/BitPolito/MiningGame',       filter: 'resources' },
+        { type: 'resource', span: 1, title: 'Silent Payments', link: 'https://github.com/BitPolito/silent-payments',  filter: 'resources' },
+    ]
+];
+
 /**
  * @constant {Array[]} layoutTemplate
  * @description 
@@ -173,6 +180,11 @@ export default function Chessboard() {
             const filtered = layout
                 .flatMap(row => row.filter(item => item.filter === activeFilters[0]));
 
+            // Resources are static and pre-grouped
+            if (activeFilters[0] === 'resources') {
+                return resourceItems;
+            }
+
             // For projects, recreate rows with alternating spans
             if (activeFilters[0] === 'projects') {
                 const projectRows = [];
@@ -203,7 +215,7 @@ export default function Chessboard() {
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Filter buttons */}
             <div className="flex flex-wrap justify-center gap-2 sm:gap-x-3 mb-8 sm:mb-10 lg:mb-12 pt-2 sm:pt-3 lg:pt-4">
-                {["events", "podcast", "projects", "others"].map((key) => {
+                {["events", "podcast", "projects", "resources", "others"].map((key) => {
                     const isActive = activeFilters.includes(key);
                     return (
                         <div key={key} className="relative group">
@@ -237,6 +249,19 @@ export default function Chessboard() {
                         >
                             {(() => {
                                 switch (item.type) {
+                                    case 'resource':
+                                        return (
+                                            <a
+                                                href={item.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="block w-full h-full"
+                                            >
+                                                <div className="chessboard flex items-center justify-center bg-blue-dark dark:bg-white min-h-[200px]">
+                                                    <span className="text-white dark:text-blue-dark font-bold text-xl text-center px-4">{item.title}</span>
+                                                </div>
+                                            </a>
+                                        );
                                     case 'chart':
                                         return (
                                             <Image
@@ -307,17 +332,7 @@ export default function Chessboard() {
             {/* Navigation buttons */}
             <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-8 sm:gap-5 px-5 py-8 sm:py-12">
 
-                {/* Load more / Reset button - First on mobile, Second on desktop */}
-                <div className="order-1 sm:order-2">
-                    {visibleRows >= filteredLayout.length && (
-                        <button
-                            onClick={() => setVisibleRows(4)}
-                            className="font-bold hover:opacity-80 transition-opacity"
-                        >
-                            {t("reset")}
-                        </button>
-                    )}
-                </div>
+                <div className="order-1 sm:order-2"></div>
 
                 {/* Back to top button - Second on mobile, First on desktop */}
                 <button
