@@ -58,12 +58,6 @@ export default function Carousel() {
     const [currentImage, setCurrentImage] = useState(0);
 
     /**
-     * @state {number} progress
-     * @description The progress value (from 0 to 100) for the loading bar that runs above the carousel
-     */
-    const [progress, setProgress] = useState(0);
-
-    /**
      * @state {boolean} fade
      * @description Check if fade effect is currently applied to the carousel image
      */
@@ -120,29 +114,21 @@ export default function Carousel() {
 
     /**
      * @effect
-     * @description An effect hook that automatically changes the image every 15 seconds and updates the progress bar
+     * @description An effect hook that automatically changes the image every 15 seconds
      */
     useEffect(() => {
         const interval = setInterval(() => {
             setFade(false);
             setTimeout(() => {
                 setCurrentImage((prev) => (prev + 1) % carouselImages.length);
-                setProgress(0);
                 setFade(true);
             }, 100);
         }, 15000);
 
-        const progressInterval = setInterval(() => {
-            if (fade) {
-                setProgress((prev) => (prev + 1) % 100);
-            }
-        }, 150);
-
         return () => {
             clearInterval(interval);
-            clearInterval(progressInterval);
         };
-    }, [fade]);
+    }, []);
 
     /**
      * @function changeImage
@@ -233,21 +219,7 @@ export default function Carousel() {
                 onMouseEnter={() => showArrows(true)}
                 onMouseLeave={() => showArrows(false)}
             >
-                <div className="flex justify-between gap-x-8 mb-3">
-                    <div className="relative group">
-                        <a className="cursor-not-allowed transition-all duration-200 hover:scale-105 font-bold">{t("projects")}</a>
-                        <div className="coming-soon">{t("coming-soon")}</div>
-                    </div>
-                </div>
-
                 <div className="pb-4">
-                    <div className="w-[340px] lg:w-[340px] h-1 bg-white dark:bg-blue-dark mb-2">
-                        <div
-                            className="h-full bg-blue-dark dark:bg-white"
-                            style={{ width: `${progress}%` }}
-                        ></div>
-                    </div>
-
                     <div className="relative">
                         <button
                             onClick={() => changeImage(-1)}
