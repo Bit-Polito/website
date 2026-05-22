@@ -31,10 +31,15 @@ const singleImage = [
 
 const resourceItems = [
     [
-        { type: 'resource', span: 1, title: 'Mining Game',       link: 'https://bitpolito-mining-game.vercel.app',              filter: 'resources' },
-        { type: 'resource', span: 1, title: 'Silent Payments', link: 'https://silent-payments.vercel.app/',           filter: 'resources' },
-        { type: 'resource', span: 1, title: 'BitPolito Academy', link: 'https://github.com/BitPolito/bitcoin-academy/', filter: 'resources' },
+        { type: 'resource', span: 1, title: 'Mining Game',   link: 'https://bitpolito-mining-game.vercel.app', filter: 'resources', icon: 'icons/bitpolito-mining-blue.png' },
+        { type: 'resource', span: 1, title: 'Silent Payments', link: 'https://silent-payments.vercel.app/',    filter: 'resources' },
     ]
+];
+
+const projectTextItems = [
+    [{ type: 'resource', span: 1, title: 'BitPolito Academy', link: 'https://github.com/BitPolito/bitcoin-academy/', filter: 'projects' }],
+    [{ type: 'resource', span: 1, title: 'Seed Signer',       link: 'https://github.com/BitPolito/seedsigner',      filter: 'projects' }],
+    [{ type: 'resource', span: 1, title: 'Movie Subtitles',  link: 'https://github.com/BitPolito/movies',           filter: 'projects' }]
 ];
 
 /**
@@ -201,7 +206,7 @@ export default function Chessboard() {
                         projectRows.push([{ ...filtered[i], span: 2 }]);
                     }
                 }
-                return projectRows;
+                return [...projectRows, ...projectTextItems];
             }
 
             // For other filters, group items in rows of 3
@@ -258,7 +263,10 @@ export default function Chessboard() {
                                                 rel="noopener noreferrer"
                                                 className="block w-full h-full"
                                             >
-                                                <div className="chessboard flex items-center justify-center bg-blue-dark dark:bg-white min-h-[200px]">
+                                                <div className="chessboard flex flex-col items-center justify-center bg-blue-dark dark:bg-white min-h-[200px]">
+                                                    {item.icon && (
+                                                        <img src={item.icon} alt="" className="w-16 h-16 mb-3" />
+                                                    )}
                                                     <span className="text-white dark:text-blue-dark font-bold text-xl text-center px-4">{item.title}</span>
                                                 </div>
                                             </a>
