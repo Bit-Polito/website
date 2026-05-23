@@ -37,7 +37,7 @@ const resourceItems = [
 ];
 
 const projectTextItems = [
-    [{ type: 'resource', span: 1, title: 'BitPolito Academy', link: 'https://github.com/BitPolito/bitcoin-academy/', filter: 'projects' }],
+    [{ type: 'resource', span: 1, title: 'BitPolito Academy', link: 'https://drive.google.com/file/d/1Zxj0i3HWSh27AcYz8YxH0qgqd3zJFOzE/view?usp=sharing', filter: 'projects' }],
     [{ type: 'resource', span: 1, title: 'Seed Signer',       link: 'https://github.com/BitPolito/seedsigner',      filter: 'projects' }],
     [{ type: 'resource', span: 1, title: 'Movie Subtitles',  link: 'https://github.com/BitPolito/movies',           filter: 'projects' }]
 ];
