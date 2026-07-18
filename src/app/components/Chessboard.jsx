@@ -3,6 +3,19 @@ import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import Sponsors from "./Sponsors";
 
+const resourceItems = [
+    [
+        { type: 'resource', span: 1, title: 'Mining Game', link: 'https://bitpolito-mining-game.vercel.app', filter: 'resources', icon: 'icons/bitpolito-mining-blue.png' },
+        { type: 'resource', span: 1, title: 'Silent Payments', link: 'https://silent-payments.vercel.app/', filter: 'resources' },
+    ]
+];
+
+const projectTextItems = [
+    [{ type: 'resource', span: 1, title: 'BitPolito Academy', link: 'https://drive.google.com/file/d/1Zxj0i3HWSh27AcYz8YxH0qgqd3zJFOzE/view?usp=sharing', filter: 'projects' }],
+    [{ type: 'resource', span: 1, title: 'Seed Signer', link: 'https://github.com/BitPolito/seedsigner', filter: 'projects' }],
+    [{ type: 'resource', span: 1, title: 'Movie Subtitles', link: 'https://github.com/BitPolito/movies', filter: 'projects' }]
+];
+
 /**
  * Chessboard component renders a grid layout with dynamic rows and interactive elements.
  * It includes a grid of items and a "Load More" button to display additional rows.
@@ -16,7 +29,7 @@ import Sponsors from "./Sponsors";
  * @description
  * - The component displays a grid of images and charts in a responsive layout.
  * - The "Load More" button allows users to reveal more rows (4) of items dynamically.
- *  
+ *
  * @dependencies
  * - 'useTranslation': React hook for internationalization (multiple language support).
  *
@@ -53,21 +66,21 @@ export default function Chessboard() {
 
     /**
      * Populates the layout with images from Notion API.
-     * 
+     *
      * This function uses the predefined 'layoutTemplate' as a blueprint to build the final layout.
      * It assigns images from the Notion API to layout slots based on their type and orientation:
-     * 
+     *
      * - If the slot is of type 'box', it is filled with an image tagged as 'projects'.
      * - If the slot is of type 'image', it is filled with any other image (not tagged as 'projects').
      * - Images are automatically sized based on their orientation (horizontal = 2 span, vertical = 1 span)
-     * 
+     *
      * The images are ordered by date (descending) and filtered by content type.
      * If there are more slots than images, unassigned slots are left with their default data (e.g. 'src: null').
      *
      * @function populateLayout
      * @param {Array} notionImages - Array of images from Notion API
      * @returns {Array<Array<Object>>} A 2D array representing the populated layout grid.
-     * 
+     *
      */
     function populateLayout(notionImages = []) {
         // Usa il layout dinamico basato sul checkbox "Is Horizontal"
@@ -184,7 +197,7 @@ export default function Chessboard() {
 
     /**
      * Fetches and populates the chessboard layout from a local JSON file
-     * 
+     *
      * This effect is triggered when the component is mounted. It attempts to load
      * the data from the imported `carouselData` JSON file, checks for available chessboard
      * data, and populates the layout state with the data if it's available.
@@ -250,22 +263,51 @@ export default function Chessboard() {
      * Filters layout by active filter.
      * Returns full layout if no filters are active.
      * When a filter is selected, only items matching it are shown.
-     * Empty rows are removed.
+     * Resources are static (not sourced from Notion) and pre-grouped.
+     * For projects, alternates between span-2 and span-1 to maintain visual rhythm
+     * and appends the static project text items.
      */
     const filteredLayout = activeFilters.length === 0
         ? layout
-        : layout
-            .map(row => row.filter(item => {
-                // Mappa i filtri ai valori corretti dal database Notion
-                const filterMap = {
-                    'event': 'Event',
-                    'podcast': 'Podcast',
-                    'project': 'Project',
-                    'other': 'Other'
-                };
-                return item.filter === filterMap[activeFilters[0]];
-            }))
-            .filter(row => row.length > 0);
+        : (() => {
+            if (activeFilters[0] === 'resources') {
+                return resourceItems;
+            }
+
+            // Mappa i filtri ai valori corretti dal database Notion
+            const filterMap = {
+                'events': 'Event',
+                'podcast': 'Podcast',
+                'projects': 'Project',
+                'others': 'Other'
+            };
+
+            const filtered = layout
+                .flatMap(row => row.filter(item => item.filter === filterMap[activeFilters[0]]));
+
+            if (activeFilters[0] === 'projects') {
+                const projectRows = [];
+                for (let i = 0; i < filtered.length; i += 2) {
+                    if (i + 1 < filtered.length) {
+                        // Alternate: first item span-2, second item span-1
+                        projectRows.push([
+                            { ...filtered[i], span: 2 },
+                            { ...filtered[i + 1], span: 1 }
+                        ]);
+                    } else {
+                        // Last item if odd number
+                        projectRows.push([{ ...filtered[i], span: 2 }]);
+                    }
+                }
+                return [...projectRows, ...projectTextItems];
+            }
+
+            const rows = [];
+            for (let i = 0; i < filtered.length; i += 3) {
+                rows.push(filtered.slice(i, i + 3));
+            }
+            return rows.filter(row => row.length > 0);
+        })();
 
     return (
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -284,7 +326,7 @@ export default function Chessboard() {
             {/* Filter buttons */}
             {!isLoading && (
                 <div className="flex flex-wrap justify-center gap-2 sm:gap-x-3 mb-8 sm:mb-10 lg:mb-12 pt-2 sm:pt-3 lg:pt-4">
-                    {["event", "podcast", "project", "other"].map((key) => {
+                    {["events", "podcast", "projects", "resources", "others"].map((key) => {
                         const isActive = activeFilters.includes(key);
                         return (
                             <div key={key} className="relative group">
@@ -298,7 +340,7 @@ export default function Chessboard() {
                                             : "bg-white text-blue-dark hover:bg-blue-200 dark:bg-blue-dark dark:text-white dark:hover:bg-gray-800"}
                                     `}
                                 >
-                                    {key === 'podcast' ? 'Podcasts' : t(key + 's')}
+                                    {t(key)}
                                 </button>
                             </div>
                         );
@@ -314,12 +356,28 @@ export default function Chessboard() {
                             <div
                                 key={`${rowIndex}-${colIndex}`}
                                 className={`${item.span === 2
-                                    ? 'col-span-1 sm:col-span-2'
+                                    ? 'col-span-1 sm:col-span-2 lg:col-span-2'
                                     : 'col-span-1'
                                     } transition-all duration-300 ease-in-out hover:opacity-95 hover:scale-[1.02]`}
                             >
                                 {(() => {
                                     switch (item.type) {
+                                        case 'resource':
+                                            return (
+                                                <a
+                                                    href={item.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="block w-full h-full"
+                                                >
+                                                    <div className="chessboard flex flex-col items-center justify-center bg-blue-dark dark:bg-white min-h-[200px]">
+                                                        {item.icon && (
+                                                            <img src={item.icon} alt="" className="w-16 h-16 mb-3" />
+                                                        )}
+                                                        <span className="text-white dark:text-blue-dark font-bold text-xl text-center px-4">{item.title}</span>
+                                                    </div>
+                                                </a>
+                                            );
                                         case 'chart':
                                             return (
                                                 <Image
