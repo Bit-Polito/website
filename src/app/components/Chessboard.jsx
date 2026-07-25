@@ -2,6 +2,20 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import Sponsors from "./Sponsors";
+import chessboardImages from "../data/chessboardImages.json";
+
+const staticFilterMap = {
+    events: 'Event',
+    podcast: 'Podcast',
+    projects: 'Project',
+    others: 'Other'
+};
+
+const fallbackChessboardImages = chessboardImages.map(img => ({
+    ...img,
+    filter: staticFilterMap[img.filter] || img.filter,
+    altTextITA: img.name,
+}));
 
 const resourceItems = [
     [
@@ -118,25 +132,13 @@ export default function Chessboard() {
         let verticalIndex = 0;
         // let lastHorizontalRow = -3; // Inizializza a -3 per permettere il primo elemento orizzontale
 
-        // Mescola casualmente gli elementi verticali
-        const shuffledVertical = verticalItems.sort(() => Math.random() - 0.5);
+        const shuffledVertical = verticalItems;
+        const shuffledHorizontal = horizontalItems;
 
-        // Mescola casualmente gli elementi orizzontali
-        const shuffledHorizontal = horizontalItems.sort(() => Math.random() - 0.5);
-
-        // Calcola le posizioni possibili per gli elementi orizzontali
-        const totalRows = Math.ceil((shuffledVertical.length + shuffledHorizontal.length) / 3);
         const horizontalPositions = [];
-
-        // Genera posizioni casuali per gli elementi orizzontali (con distanza minima di 3)
         for (let i = 0; i < shuffledHorizontal.length; i++) {
-            let position;
-            do {
-                position = Math.floor(Math.random() * Math.max(1, totalRows - 2)) + 1; // Non alla prima riga
-            } while (horizontalPositions.some(pos => Math.abs(pos - position) < 3));
-            horizontalPositions.push(position);
+            horizontalPositions.push(1 + i * 3);
         }
-        horizontalPositions.sort((a, b) => a - b);
 
         let horizontalPositionIndex = 0;
 
@@ -223,10 +225,12 @@ export default function Chessboard() {
                         data: data,
                         timestamp: Date.now(),
                     });
+                } else {
+                    setLayout(populateLayout(fallbackChessboardImages));
                 }
             } catch (error) {
                 console.error('Error fetching Notion data:', error);
-                setLayout([]);
+                setLayout(populateLayout(fallbackChessboardImages));
             } finally {
                 setIsLoading(false);
             }

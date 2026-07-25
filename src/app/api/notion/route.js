@@ -35,9 +35,8 @@ export async function GET() {
 
     const chessboardItems = [];
     const featuredItems = [];
-    const shuffledResults = [...response.results].sort(() => Math.random() - 0.5);
 
-    shuffledResults.forEach((page) => {
+    response.results.forEach((page) => {
       const p = page.properties;
 
       const contentType = p['Content type']?.select?.name;

@@ -1,0 +1,128 @@
+[
+    {
+        "name": "bitpolito-post-mastering-lightning",
+        "src": "/chessboard/bitpolito-post-mastering-lightning.jpg",
+        "link": "https://riccardomasutti.com/Mastering%20Lightning%20Network%20-%20Protocollo%20di%20Secondo%20Livello%20per%20Pagamenti%20Bitcoin%20Istantanei.pdf",
+        "filter": "others"
+    },
+    {
+        "name": "bitpolito-post-sindaco-lugano",
+        "src": "/chessboard/bitpolito-post-sindaco-lugano.jpg",
+        "link": "https://www.instagram.com/p/Csd0MmFtisC/",
+        "filter": "events"
+    },
+    {
+        "name": "bitpolito-post-capire-bitcoin",
+        "src": "/chessboard/bitpolito-post-capire-bitcoin.jpg",
+        "link": "https://www.instagram.com/p/Cl_rlqHtqFW/",
+        "filter": "events"
+    },
+    {
+        "name": "bitpolito-opensource-post-discovering-bitcoin",
+        "src": "/chessboard/bitpolito-opensource-post-discovering-bitcoin.jpg",
+        "link": "https://www.instagram.com/p/C7j74w0NrN5/",
+        "filter": "events"
+    },
+    {
+        "name": "bitpolito-opensource-post-custodire-bitcoin",
+        "src": "/chessboard/bitpolito-opensource-post-custodire-bitcoin.jpg",
+        "link": "https://www.instagram.com/p/C6O1cmPtbxe/",
+        "filter": "events"
+    },
+    {
+        "name": "bitpolito-post-pizza-day-gridless",
+        "src": "/chessboard/bitpolito-post-pizza-day-gridless.jpg",
+        "link": "https://www.instagram.com/p/C6tzVJ3tc3F/?img_index=1",
+        "filter": "events"
+    },
+    {
+        "name": "bitpolito-opensource-post-bitcoin-everyday",
+        "src": "/chessboard/bitpolito-opensource-post-bitcoin-everyday.jpg",
+        "link": "https://www.instagram.com/p/C4-tmUMN3Ow/",
+        "filter": "events"
+    },
+    {
+        "name": "bitpolito-post-zbd",
+        "src": "/chessboard/bitpolito-post-zbd.jpg",
+        "link": "https://www.instagram.com/p/DBwk6grNy9D/",
+        "filter": "events"
+    },
+    {
+        "name": "bitpolito-post-todd",
+        "src": "/chessboard/bitpolito-post-todd.jpg",
+        "link": "https://www.instagram.com/p/DBGg-EqojVE/",
+        "filter": "events"
+    },
+    {
+        "name": "bitpolito-post-corso-bitcoin",
+        "src": "/chessboard/bitpolito-post-corso-bitcoin.jpg",
+        "link": "#",
+        "filter": "others"
+    },
+    {
+        "name": "bitpolito-opensource-post-teoria-dei-giochi",
+        "src": "/chessboard/bitpolito-opensource-post-teoria-dei-giochi.jpg",
+        "link": "https://www.instagram.com/p/C2-fr-btZ1D/",
+        "filter": "events"
+    },
+    {
+        "name": "bitpolito-opensource-post-scaling-bitcoin",
+        "src": "/chessboard/bitpolito-opensource-post-scaling-bitcoin.jpg",
+        "link": "https://www.instagram.com/p/DCpKJ0-oJuk/",
+        "filter": "events"
+    },
+    {
+        "name": "2025-02-13_Grafica-Partnership-BRAIINS_T1-5",
+        "src": "/chessboard/2025-02-13_Grafica-Partnership-BRAIINS_T1-5.png",
+        "link": "https://braiins.com/hardware/mini-miner-bmm-101",
+        "filter": "others"
+    },
+    {
+        "name": "2025-02-20_Grafica-Bitcoin-al-Liceo-T3",
+        "src": "/chessboard/2025-02-20_Grafica-Bitcoin-al-Liceo-T3.png",
+        "link": "",
+        "filter": "projects"
+    },
+    {
+        "name": "bitpolito-bitgeneration",
+        "src": "/chessboard/bitpolito-bitgeneration.png",
+        "link": "https://youtu.be/eZmjlNSgB5w?si=FlBAJONrSRdzhnFl",
+        "filter": "projects"
+    },
+    {
+        "name": "bitpolito-evento-palazzo-verticale",
+        "src": "/chessboard/bitpolito-evento-palazzo-verticale.jpg",
+        "link": "https://www.instagram.com/p/DGD-6GHoLV1/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+        "filter": "events"
+    },
+    {
+        "name": "bitpolito-post-report",
+        "src": "/chessboard/bitpolito-post-report.jpg",
+        "link": "",
+        "filter": "others"
+    },
+    {
+        "name": "bitpolito-saqa",
+        "src": "/chessboard/bitpolito-saqa.jpg",
+        "link": "",
+        "filter": "events"
+    },
+    {
+        "name": "bitpolito-template-regular-event-1",
+        "src": "/chessboard/bitpolito-template-regular-event-1.jpg",
+        "link": "",
+        "filter": "events"
+    },
+    {
+        "name": "bitpolito-podcast-sito",
+        "src": "/chessboard/bitpolito-podcast-sito.jpg",
+        "link": "https://youtu.be/_qfvkak5Kw0?si=hr2pCIXbG7xodS19",
+        "filter": "podcast"
+    },
+    {
+        "name": "bitpolito-podcast-sito-2",
+        "src": "/chessboard/bitpolito-podcast-sito-2.jpg",
+        "link": "https://youtu.be/lD8f3LfdV4s?si=hS5IIeZQegG81pIj",
+        "filter": "podcast"
+    }
+]

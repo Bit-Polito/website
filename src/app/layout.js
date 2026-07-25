@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: 'Bitpolito',
+  title: 'BitPolito',
   description: 'bitpolito',
 };
 

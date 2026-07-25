@@ -6,6 +6,13 @@ import Image from "next/image";
 
 // images are loaded from the json file created with the Notion api
 
+const fallbackCarouselImages = [
+    "/bitpolito-bitgen-3.jpg",
+    "/bitpolito-missione-praga.png",
+    "/DRAFT-bitpolito-panel-mining.jpg"
+];
+const fallbackImageLinks = ["", "", ""];
+
 /**
  * Carousel component renders a series of images in swipeable format.
  * It includes a progress bar that fills over time and navigation arrows for manual image switching.
@@ -101,12 +108,16 @@ export default function Carousel() {
                     setCarouselImages(images);
                     setImageLinks(links);
                     setDescriptionImages(alt);
+                } else {
+                    setCarouselImages(fallbackCarouselImages);
+                    setImageLinks(fallbackImageLinks);
+                    setDescriptionImages(fallbackCarouselImages.map((_, i) => t(`alt-img-${i + 1}`)));
                 }
             } catch (error) {
                 console.error('Error fetching carousel data from Notion:', error);
-                setCarouselImages([]);
-                setImageLinks([]);
-                setDescriptionImages([]);
+                setCarouselImages(fallbackCarouselImages);
+                setImageLinks(fallbackImageLinks);
+                setDescriptionImages(fallbackCarouselImages.map((_, i) => t(`alt-img-${i + 1}`)));
             }
         };
         fetchCarouselData();
