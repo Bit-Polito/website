@@ -39,7 +39,7 @@ const fallbackImageLinks = ["", "", ""];
  * @function
  * @name Carousel
  */
-export default function Carousel() {
+export default function Carousel({ isOpen, setIsOpen }) {
     const { t } = useTranslation();
 
     /**
@@ -65,12 +65,6 @@ export default function Carousel() {
      * @description Check if the carousel navigation arrows are visible
      */
     const [arrowsVisible, setArrowsVisible] = useState(false);
-
-    /**
-     * @state {boolean} isOpen
-     * @description Track if the popup is currently open or not
-     */
-    const [isOpen, setIsOpen] = useState(false);
 
     /**
      * @state {string[]} carouselImages
