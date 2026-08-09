@@ -54,3 +54,83 @@ The branch called "landing" is the one that contains the old landing page (curen
 
 ## How to wok on an issue
 When working on an issue you are gonna create a new branch and push on that, opening than a PR to merge from that branch to dev.
+
+## Notion Database Integration
+
+This website integrates with a Notion database to dynamically populate the chessboard and carousel components.
+
+### Database Structure
+
+The Notion database should have the following properties:
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `Name` | Title | Name of the content item |
+| `Content type` | Select | Type of content: Event, Podcast, Project, Other |
+| `Content location` | Select | Where to display: Chessboard, Carousel |
+| `Image` | Files | Image file to display |
+| `Link` | URL | Link destination when clicked |
+| `Date` | Date | Date of the content (used for sorting) |
+| `Alt-textITA` | Rich text | Italian alt text for accessibility |
+| `Alt-textENG` | Rich text | English alt text for accessibility |
+| `Is Horizontal` | Checkbox | If checked, image occupies 2 spans (wide layout) |
+
+### Field Mapping
+
+- **Image** → Image displayed on the website
+- **Link** → Redirect URL when image is clicked
+- **Alt-textITA** → Italian alt text for accessibility
+- **Alt-textENG** → English alt text for accessibility
+- **Is Horizontal** → Controls layout: checked = 2 spans (wide), unchecked = 1 span (normal)
+
+### Configuration
+
+The Notion integration uses environment variables:
+- **NOTION_TOKEN**: Your Notion integration token
+- **NOTION_DATABASE_ID**: Your Notion database ID
+
+#### Local Development
+1. Copy `env.example` to `.env`:
+   ```bash
+   cp env.example .env
+   ```
+2. The `.env` file contains the Notion credentials for local development
+
+#### Production/Preview Deploy
+
+**Vercel:**
+1. Go to your project in Vercel Dashboard
+2. Settings → Environment Variables
+3. Add these variables for all environments (Production, Preview, Development):
+   ```
+   NOTION_TOKEN = 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
+   NOTION_DATABASE_ID = 27cae3dac7c4817da038df21ae8482f7
+   ```
+
+**GitHub Secrets (for GitHub Actions if needed later):**
+1. Go to your GitHub repository
+2. Settings → Secrets and variables → Actions
+3. Add repository secrets:
+   ```
+   NOTION_TOKEN = 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
+   NOTION_DATABASE_ID = 27cae3dac7c4817da038df21ae8482f7
+   ```
+
+**Other platforms:**
+- **Netlify**: Site settings → Environment variables
+- **Railway/Render**: Environment tab
+
+### Layout Logic
+
+- **Chessboard**: Shows items with `Content location = "Chessboard"`
+- **Carousel**: Shows items with `Content location = "Carousel"`
+- **Filtering**: Items are filtered by `Content type` (Event, Podcast, Project, Other)
+- **Sorting**: Items are sorted by `Date` in ascending order (oldest first)
+- **Horizontal Images**: Items with `Is Horizontal = true` occupy 2 spans in the grid
+
+### Components Integration
+
+Both components now fetch data dynamically from Notion:
+- **Chessboard**: Uses `data.chessboard` from `/api/notion`
+- **Carousel**: Uses `data.featured` from `/api/notion`
+- **No hardcoded data**: All content is managed through the Notion database
