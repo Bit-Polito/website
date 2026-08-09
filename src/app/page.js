@@ -8,12 +8,14 @@ import Footer from "./components/Footer";
 import Chessboard from "./components/Chessboard";
 import DarkModeSwitch from "./components/DarkModeSwitch";
 import LanguageSelector from "./components/LanguageSelector";
+import HamburgerMenu from "./components/HamburgerMenu";
 import Image from "next/image";
 
 export default function HomePage() {
   const { t, i18n } = useTranslation();
   const [isCarouselFixed, setIsCarouselFixed] = useState(true);
   const [mounted, setMounted] = useState(false);
+  const [isDonatePopupOpen, setIsDonatePopupOpen] = useState(false);
   const chessboardRef = useRef(null);
 
   // Load saved language on mount
@@ -61,10 +63,10 @@ export default function HomePage() {
             />
           </div>
 
-          {/* Theme and Language selectors for mobile/tablet */}
+          {/* Language selector and menu trigger for mobile/tablet */}
           <div className="flex flex-row items-center gap-2 sm:gap-4">
-            <DarkModeSwitch />
             <LanguageSelector />
+            <HamburgerMenu variant="mobile" onDonateClick={() => setIsDonatePopupOpen(true)} />
           </div>
         </div>
       </header>
@@ -73,6 +75,7 @@ export default function HomePage() {
       <div className={`hidden lg:flex fixed top-4 right-8 z-50 flex-row items-center gap-7 transition-opacity duration-300 ${isCarouselFixed ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
         <DarkModeSwitch />
         <LanguageSelector />
+        <HamburgerMenu variant="desktop" onDonateClick={() => setIsDonatePopupOpen(true)} />
       </div>
 
       {/* Main Content with padding to account for fixed header */}
@@ -134,7 +137,7 @@ export default function HomePage() {
 
         {/* only for mobile and tablet version */}
         <div className="carousel-mobile">
-          <Carousel />
+          <Carousel isOpen={isDonatePopupOpen} setIsOpen={setIsDonatePopupOpen} />
         </div>
 
         <div className="flex mt-2 sm:mt-10 lg:mt-12">
@@ -143,7 +146,7 @@ export default function HomePage() {
           </div>
 
           <div className={`bg-white dark:bg-blue-dark carousel-desktop w-[460px] h-screen p-2 ml-auto transition-all duration-300 top-0 right-0 z-40 ${isCarouselFixed ? "fixed" : "absolute"}`}>
-            <Carousel />
+            <Carousel isOpen={isDonatePopupOpen} setIsOpen={setIsDonatePopupOpen} />
           </div>
         </div>
       </div>
