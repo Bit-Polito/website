@@ -2,25 +2,16 @@
 
 import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import DarkModeSwitch from "./DarkModeSwitch";
-import LanguageSelector from "./LanguageSelector";
 import Image from "next/image";
 
-/**
- * @constant {string[]} carouselImages
- * @description Array of image paths for the carousel
- */
-const carouselImages = [
+// images are loaded from the json file created with the Notion api
+
+const fallbackCarouselImages = [
     "/bitpolito-bitgen-3.jpg",
     "/bitpolito-missione-praga.png",
     "/DRAFT-bitpolito-panel-mining.jpg"
 ];
-
-/**
- * @constant {string[]} imageLinks
- * @description URLs that each carousel image links to when clicked
- */
-const imageLinks = ["", "", ""];
+const fallbackImageLinks = ["", "", ""];
 
 /**
  * Carousel component renders a series of images in swipeable format.
@@ -48,7 +39,7 @@ const imageLinks = ["", "", ""];
  * @function
  * @name Carousel
  */
-export default function Carousel() {
+export default function Carousel({ isOpen, setIsOpen }) {
     const { t } = useTranslation();
 
     /**
@@ -56,6 +47,12 @@ export default function Carousel() {
      * @description The index of the currently displayed image in the carousel
      */
     const [currentImage, setCurrentImage] = useState(0);
+
+    /**
+     * @state {number} progress
+     * @description The progress value (from 0 to 100) for the loading bar that runs above the carousel
+     */
+    const [progress, setProgress] = useState(0);
 
     /**
      * @state {boolean} fade
@@ -70,16 +67,60 @@ export default function Carousel() {
     const [arrowsVisible, setArrowsVisible] = useState(false);
 
     /**
-     * @state {boolean} isOpen
-     * @description Track if the popup is currently open or not
+     * @state {string[]} carouselImages
+     * @description Array of image paths loaded from Notion
      */
-    const [isOpen, setIsOpen] = useState(false);
+    const [carouselImages, setCarouselImages] = useState([]);
 
+    /**
+     * @state {string[]} imageLinks
+     * @description Array of links loaded from Notion
+     */
+    const [imageLinks, setImageLinks] = useState([]);
 
-    // to make the carousel swipeable on mobile and on desktop
+    /**
+     * @state {string[]} descriptionImages
+     * @description Array of image descriptions loaded from Notion
+     */
+    const [descriptionImages, setDescriptionImages] = useState([]);
+
+    /**
+     * @hook useEffect
+     * @description upload carousel data from json file on component mount
+     */
+    useEffect(() => {
+        const fetchCarouselData = async () => {
+            try {
+                const response = await fetch('/api/notion');
+                const data = await response.json();
+
+                if (data.featured && data.featured.length > 0) {
+                    const images = data.featured.map(item => item.src) || [];
+                    const links = data.featured.map(item => item.link || '#') || [];
+                    const alt = data.featured.map(item => item.altTextITA || '') || [];
+
+                    setCarouselImages(images);
+                    setImageLinks(links);
+                    setDescriptionImages(alt);
+                } else {
+                    setCarouselImages(fallbackCarouselImages);
+                    setImageLinks(fallbackImageLinks);
+                    setDescriptionImages(fallbackCarouselImages.map((_, i) => t(`alt-img-${i + 1}`)));
+                }
+            } catch (error) {
+                console.error('Error fetching carousel data from Notion:', error);
+                setCarouselImages(fallbackCarouselImages);
+                setImageLinks(fallbackImageLinks);
+                setDescriptionImages(fallbackCarouselImages.map((_, i) => t(`alt-img-${i + 1}`)));
+            }
+        };
+        fetchCarouselData();
+    }, []);
+
     /**
      * @ref {number} startX
-     * @description A reference to track the starting x position of a swipe action on the screen
+     * @description A reference to track the starting x position of a swipe action on the screen,
+     * to make the carousel swipeable on mobile and on desktop
      */
     const startX = useRef(0);
 
@@ -102,33 +143,34 @@ export default function Carousel() {
     const threshold = 50;
 
     /**
-    * @constant {string[]} descriptionImages
-    * @description Array of image descriptions used as alt text for each image in the carousel, translated using i18next
-    */
-    const descriptionImages = [
-        t("alt-img-1"),
-        t("alt-img-2"),
-        t("alt-img-3"),
-        t("alt-img-4"),
-    ];
-
-    /**
      * @effect
-     * @description An effect hook that automatically changes the image every 15 seconds
+     * @description An effect hook that automatically changes the image every 15 seconds and updates the progress bar
      */
     useEffect(() => {
+        if (carouselImages.length === 0) return;
+
+        setFade(true);
+
         const interval = setInterval(() => {
             setFade(false);
             setTimeout(() => {
                 setCurrentImage((prev) => (prev + 1) % carouselImages.length);
+                setProgress(0);
                 setFade(true);
             }, 100);
         }, 15000);
 
+        const progressInterval = setInterval(() => {
+            if (fade) {
+                setProgress((prev) => (prev + 1) % 100);
+            }
+        }, 150);
+
         return () => {
             clearInterval(interval);
+            clearInterval(progressInterval);
         };
-    }, []);
+    }, [carouselImages]);
 
     /**
      * @function changeImage
@@ -136,9 +178,12 @@ export default function Carousel() {
      * @param {number} direction - The direction to change the image: positive for forward, negative for backward
      */
     const changeImage = (direction) => {
+        if (carouselImages.length === 0) return;
+
         setFade(false);
         setTimeout(() => {
             setCurrentImage((prev) => (prev + direction + carouselImages.length) % carouselImages.length);
+            setProgress(0);
             setFade(true);
         }, 100);
     };
@@ -195,7 +240,7 @@ export default function Carousel() {
      * @param {number} x - The current x position of the swipe gesture
      */
     const handleMove = (x) => {
-        if (!isDragging.current) return;
+        if (!isDragging.current || carouselImages.length === 0) return;
         const difference = x - startX.current;
 
         if (Math.abs(difference) > threshold && !hasMoved.current) {
@@ -218,7 +263,23 @@ export default function Carousel() {
                 onMouseEnter={() => showArrows(true)}
                 onMouseLeave={() => showArrows(false)}
             >
+                <div className="flex justify-between gap-x-8 mb-3">
+                    {["projects", "podcast", "about"].map((key) => (
+                        <div key={key} className="relative group">
+                            <a className="cursor-not-allowed transition-all duration-200 hover:scale-105 font-bold">{t(key)}</a>
+                            <div className="coming-soon">{t("coming-soon")}</div>
+                        </div>
+                    ))}
+                </div>
+
                 <div className="pb-4">
+                    <div className="w-[340px] lg:w-[340px] h-1 bg-white dark:bg-blue-dark mb-2">
+                        <div
+                            className="h-full bg-blue-dark dark:bg-white"
+                            style={{ width: `${progress}%` }}
+                        ></div>
+                    </div>
+
                     <div className="relative">
                         <button
                             onClick={() => changeImage(-1)}
@@ -226,27 +287,29 @@ export default function Carousel() {
                             &lt;
                         </button>
                         <a href={imageLinks[currentImage]} target="_blank" rel="noopener noreferrer" className="max-w-full w-full flex justify-center">
-                            <Image
-                                src={carouselImages[currentImage]}
-                                title={descriptionImages[currentImage]}
-                                className={`img-carousel ${fade ? 'opacity-100' : 'opacity-0'}`}
-                                // for mobile / tablet
-                                onTouchStart={(e) => handleStart(e.touches[0].clientX)}
-                                onTouchMove={(e) => handleMove(e.touches[0].clientX)}
-                                onTouchEnd={handleEnd}
-                                // for desktop
-                                onMouseDown={(e) => handleStart(e.clientX)}
-                                onMouseMove={(e) => {
-                                    if (isDragging.current) e.preventDefault();
-                                    handleMove(e.clientX);
-                                }}
-                                onMouseUp={handleEnd}
-                                onMouseLeave={handleEnd}
-                                priority
-                                width={1000}
-                                height={1000}
-                                alt=""
-                            />
+                            {carouselImages[currentImage] ? (
+                                <Image
+                                    src={carouselImages[currentImage]}
+                                    title={descriptionImages[currentImage]}
+                                    className={`img-carousel ${fade ? 'opacity-100' : 'opacity-0'}`}
+                                    // for mobile / tablet
+                                    onTouchStart={(e) => handleStart(e.touches[0].clientX)}
+                                    onTouchMove={(e) => handleMove(e.touches[0].clientX)}
+                                    onTouchEnd={handleEnd}
+                                    // for desktop
+                                    onMouseDown={(e) => handleStart(e.clientX)}
+                                    onMouseMove={(e) => {
+                                        if (isDragging.current) e.preventDefault();
+                                        handleMove(e.clientX);
+                                    }}
+                                    onMouseUp={handleEnd}
+                                    onMouseLeave={handleEnd}
+                                    unoptimized
+                                    width={1}
+                                    height={1}
+                                    alt=""
+                                />
+                            ) : null}
                         </a>
                         <button
                             onClick={() => changeImage(1)}
@@ -256,7 +319,7 @@ export default function Carousel() {
                     </div>
 
                     <footer className="flex flex-col sm:flex-row gap-2 sm:gap-x-2 mt-4 mb-8 text-base w-[340px] lg:w-[340px]">
-                        <a href="https://t.me/BitPolitoForum" target="_blank" rel="noopener noreferrer" className={"btn-w gap-3 flex-1 min-h-[44px] order-2 sm:order-1"}>
+                        <a href="https://t.me/BitPolito" target="_blank" rel="noopener noreferrer" className={"btn-w gap-3 flex-1 min-h-[44px] order-2 sm:order-1"}>
                             <img src={"icons/bitpolito-icon-social-telegram.svg"} className="w-6 h-6 flex-shrink-0 dark:invert dark:brightness-0 dark:filter-white"></img>
                             <span className="button-font">{t("telegram")}</span>
                         </a>
@@ -284,7 +347,7 @@ export default function Carousel() {
                         <p className="text-base sm:text-xl mb-6 dark:text-white">{newLine(t("popup-paragraph"))}</p>
 
                         <div className="flex flex-col items-center">
-                            <Image src="/FP_PhotoProfile.png" className="w-40 h-43 sm:w-60 sm:h-64" priority width={100} height={100} alt="" />
+                            <Image src="/FP_PhotoProfile.png" className="w-40 h-43 sm:w-60 sm:h-64" unoptimized width={100} height={100} alt="" />
                             <div className="flex flex-col mt-5 gap-y-5 w-full px-4">
                                 <a href="https://t.me/bitciccio" target="_blank" rel="noopener noreferrer" className="btn-w text-sm sm:text-base break-words">
                                     <img src="icons/bitpolito-icon-social-telegram.svg" className="icon-style-opposite"></img>

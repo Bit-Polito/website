@@ -11,6 +11,9 @@ export default {
       colors: {
         'blue-dark': '#001CE0',
       },
+      fontFamily: {
+        logo: ['var(--font-logo)', 'serif'],
+      },
     },
   },
   plugins: [],
