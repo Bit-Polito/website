@@ -1,6 +1,4 @@
-import { Client } from '@notionhq/client';
-
-const notion = new Client({ auth: process.env.NOTION_TOKEN });
+import { APIErrorCode, Client, isNotionClientError } from '@notionhq/client';
 
 const cacheTTL = 60 * 60 * 24 * 1000; // 24 hrs in ms
 
@@ -9,14 +7,20 @@ let cache = {
   timestamp: 0
 };
 
+const emptyData = {
+  chessboard: [],
+  featured: [],
+};
+
+let credentialsRejected = false;
+
 export async function GET() {
   try {
-    if (!process.env.NOTION_TOKEN || !process.env.NOTION_DATABASE_ID) {
+    if (!process.env.NOTION_TOKEN || !process.env.NOTION_DATABASE_ID || credentialsRejected) {
       return Response.json({
-        chessboard: [],
-        featured: [],
-        error: 'Missing Notion credentials'
-      });
+        ...emptyData,
+        error: credentialsRejected ? 'Notion credentials rejected' : 'Missing Notion credentials'
+      }, { headers: { 'Cache-Control': 'no-store' } });
     }
 
     if (cache.data && (Date.now() - cache.timestamp) < cacheTTL) {
@@ -25,6 +29,7 @@ export async function GET() {
       });
     }
 
+    const notion = new Client({ auth: process.env.NOTION_TOKEN });
     const response = await notion.search({
       query: '',
       filter: {
@@ -82,11 +87,18 @@ export async function GET() {
       },
     });
   } catch (error) {
-    console.error('Error fetching from Notion:', error);
+    const isUnauthorized = isNotionClientError(error) && error.code === APIErrorCode.Unauthorized;
+
+    if (isUnauthorized) {
+      credentialsRejected = true;
+      console.warn('Notion credentials were rejected. Serving local fallback content.');
+    } else {
+      console.error('Error fetching from Notion:', error);
+    }
+
     return Response.json({
-      chessboard: [],
-      featured: [],
-      error: error.message
-    });
+      ...emptyData,
+      error: isUnauthorized ? 'Notion credentials rejected' : 'Notion is temporarily unavailable'
+    }, { headers: { 'Cache-Control': 'no-store' } });
   }
 }

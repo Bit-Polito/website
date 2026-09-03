@@ -9,7 +9,7 @@
    ```
 2. **The `.env` file contains:**
    ```
-   NOTION_TOKEN=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
+   NOTION_TOKEN=ntn_your_integration_token
    NOTION_DATABASE_ID=27cae3dac7c4817da038df21ae8482f7
    ```
 3. **Start development server:**
@@ -24,7 +24,7 @@
 2. **Settings** → **Environment Variables**
 3. **Add these variables:**
    ```
-   NOTION_TOKEN = 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
+   NOTION_TOKEN = ntn_your_integration_token
    NOTION_DATABASE_ID = 27cae3dac7c4817da038df21ae8482f7
    ```
 4. **Select environments:**
@@ -42,7 +42,7 @@
 2. **Settings** → **Secrets and variables** → **Actions**
 3. **Add repository secrets:**
    ```
-   NOTION_TOKEN = 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
+   NOTION_TOKEN = ntn_your_integration_token
    NOTION_DATABASE_ID = 27cae3dac7c4817da038df21ae8482f7
    ```
 

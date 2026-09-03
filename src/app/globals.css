@@ -78,6 +78,24 @@ h6 {
   @apply w-full bg-blue-dark dark:bg-white text-white dark:text-blue-dark font-bold flex flex-col items-center justify-center bottom-0 left-0 p-4;
 }
 
+.hackathon-footer {
+  @apply w-full bg-blue-dark px-4 py-6 text-white;
+  color: white !important;
+  border-top: 6px solid white;
+}
+
+.hackathon-footer .btn-b,
+.dark .hackathon-footer .btn-b {
+  color: white;
+  background-color: #001CE0;
+  border-color: white;
+}
+
+.hackathon-footer .icon-style,
+.dark .hackathon-footer .icon-style {
+  filter: brightness(0) invert(1);
+}
+
 .coming-soon {
   @apply absolute left-1/2 top-full mt-2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all duration-300 bg-blue-dark text-white text-sm font-bold px-3 py-2 rounded-lg shadow-lg z-10 whitespace-nowrap opacity-0 group-hover:opacity-100 dark:bg-white dark:text-blue-dark;
 }
@@ -257,6 +275,63 @@ h6 {
 
 .content-top-space {
   top: 120px;
+}
+
+.hackathon-hero {
+  background-image: linear-gradient(rgba(0, 28, 224, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 28, 224, 0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.dark .hackathon-hero {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+}
+
+.hackathon-eyebrow {
+  @apply text-sm font-bold uppercase tracking-[.2em] sm:text-base;
+}
+
+.hackathon-title {
+  @apply mt-5 text-4xl font-medium leading-[1] tracking-[-.04em] sm:text-6xl;
+}
+
+.hackathon-ticker {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: hackathon-ticker-scroll 24s linear infinite;
+  will-change: transform;
+}
+
+.hackathon-ticker-item {
+  padding-right: 2rem;
+}
+
+@keyframes hackathon-ticker-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.hackathon-floating-cta {
+  @apply fixed bottom-5 right-5 z-[60] inline-flex items-center justify-between gap-6 rounded-xl border-2 border-white bg-blue-dark px-5 py-4 text-base font-bold text-white shadow-2xl transition duration-200 hover:scale-[1.04] focus:outline-none focus:ring-4 focus:ring-blue-dark/30 dark:border-blue-dark dark:bg-white dark:text-blue-dark dark:focus:ring-white/30 sm:bottom-8 sm:right-8 sm:gap-10 sm:px-7 sm:py-5 sm:text-lg;
+  animation: apply-button-bounce 5s ease-in-out infinite;
+}
+
+@keyframes apply-button-bounce {
+  0%, 4%, 12%, 20%, 100% {
+    transform: translateY(0);
+  }
+
+  8%, 16% {
+    transform: translateY(-7px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hackathon-floating-cta,
+  .hackathon-ticker {
+    animation: none;
+  }
 }
 
 @media (max-width: 1023px) {

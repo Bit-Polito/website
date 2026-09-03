@@ -103,7 +103,7 @@ The Notion integration uses environment variables:
 2. Settings → Environment Variables
 3. Add these variables for all environments (Production, Preview, Development):
    ```
-   NOTION_TOKEN = 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
+   NOTION_TOKEN = ntn_your_integration_token
    NOTION_DATABASE_ID = 27cae3dac7c4817da038df21ae8482f7
    ```
 
@@ -112,7 +112,7 @@ The Notion integration uses environment variables:
 2. Settings → Secrets and variables → Actions
 3. Add repository secrets:
    ```
-   NOTION_TOKEN = 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
+   NOTION_TOKEN = ntn_your_integration_token
    NOTION_DATABASE_ID = 27cae3dac7c4817da038df21ae8482f7
    ```
 
