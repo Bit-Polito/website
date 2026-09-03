@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import DarkModeSwitch from "./DarkModeSwitch";
+import Link from "next/link";
 
 /**
  * List of nav items shown in the full-screen menu.
@@ -11,7 +12,8 @@ import DarkModeSwitch from "./DarkModeSwitch";
  * until their pages/sections exist.
  */
 const NAV_ITEMS = [
-    { key: "home", available: true },
+    { key: "home", available: true, href: "/" },
+    { key: "hackathon", available: true, href: "/hackathon" },
     { key: "blog", available: false },
     { key: "projects", available: false },
     { key: "events", available: false },
@@ -88,15 +90,16 @@ export default function HamburgerMenu({ onDonateClick, variant = "desktop" }) {
                     </div>
 
                     <nav className="flex-1 flex flex-col justify-center gap-4 sm:gap-6">
-                        {NAV_ITEMS.map(({ key, available }) =>
+                        {NAV_ITEMS.map(({ key, available, href }) =>
                             available ? (
-                                <button
+                                <Link
                                     key={key}
+                                    href={href}
                                     onClick={() => setIsOpen(false)}
                                     className="text-left text-4xl sm:text-5xl font-bold hover:scale-105 transition-transform w-fit"
                                 >
                                     {t(key)}
-                                </button>
+                                </Link>
                             ) : (
                                 <div key={key} className="relative group w-fit">
                                     <span className="text-4xl sm:text-5xl font-bold cursor-not-allowed">
