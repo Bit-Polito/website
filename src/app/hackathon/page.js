@@ -78,7 +78,7 @@ export default function HackathonPage() {
           </div>
           <div className="mx-auto grid max-w-7xl grid-cols-1 border-x-2 border-t-2 border-blue-dark dark:border-white sm:grid-cols-3">
             {[['17–18', 'October 2026'], ['70', 'Builders only'], ['BLOX', 'Turin']].map(([value, label]) => (
-              <div key={value} className="border-b-2 border-blue-dark p-6 dark:border-white sm:border-b-0 sm:border-r-2 sm:last:border-r-0 lg:p-9">
+              <div key={value} className="border-b-2 border-white bg-blue-dark p-6 text-white sm:border-b-0 sm:border-r-2 sm:last:border-r-0 lg:p-9">
                 <p className="text-4xl font-medium sm:text-5xl">{value}</p><p className="mt-2 font-bold uppercase tracking-wider">{label}</p>
               </div>
             ))}
@@ -107,6 +107,12 @@ export default function HackathonPage() {
           <p className="hackathon-eyebrow">How it works</p><h2 className="hackathon-title">From today to demo day.</h2>
           <div className="mt-14 border-t-2 border-blue-dark dark:border-white">
             {timeline.map(([date, title, text]) => <div key={date} className="grid gap-3 border-b-2 border-blue-dark py-7 dark:border-white md:grid-cols-[180px_220px_1fr] md:gap-8"><p className="font-bold uppercase tracking-wide">{date}</p><h3 className="text-xl font-medium">{title}</h3><p className="text-lg opacity-80">{text}</p></div>)}
+          </div>
+        </section>
+
+        <section className="bg-blue-dark text-white dark:bg-white dark:text-blue-dark">
+          <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
+            <div><p className="hackathon-eyebrow">70 places · applications close on October 3</p><h2 className="mt-5 text-5xl font-medium uppercase leading-[.9] tracking-[-.05em] sm:text-7xl">Build it<br />in Turin.</h2></div>
           </div>
         </section>
 
@@ -148,16 +154,6 @@ export default function HackathonPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
-          <p className="hackathon-eyebrow">Behind it</p><h2 className="hackathon-title">A weekend backed by the ecosystem.</h2>
-          <div className="mt-14 grid border-l-2 border-t-2 border-blue-dark dark:border-white md:grid-cols-2"><article className="border-b-2 border-r-2 border-blue-dark p-8 dark:border-white"><p className="text-sm font-bold uppercase tracking-widest">Main sponsor</p><h3 className="mt-8 text-5xl font-medium">Tether</h3><p className="mt-5 text-lg leading-relaxed">Backing open-source development on Bitcoin. The WDK and QVAC teams will join us as mentors across both days.</p></article><article className="border-b-2 border-r-2 border-blue-dark p-8 dark:border-white"><p className="text-sm font-bold uppercase tracking-widest">Media partner</p><h3 className="mt-8 text-5xl font-medium">Atlas21</h3><p className="mt-5 text-lg leading-relaxed">Italian-born media covering Bitcoin with daily news, interviews and in-depth analysis in Italian and English.</p></article></div>
-        </section>
-
-        <section className="bg-blue-dark text-white dark:bg-white dark:text-blue-dark">
-          <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
-            <div><p className="hackathon-eyebrow">70 places · applications close on October 3</p><h2 className="mt-5 text-5xl font-medium uppercase leading-[.9] tracking-[-.05em] sm:text-7xl">Build it<br />in Turin.</h2></div>
-          </div>
-        </section>
       </main>
       <div className="hackathon-footer">
         <Footer />
