@@ -10,10 +10,10 @@ const APPLY_URL = "https://forms.gle/AdoCUYeL4z5hpA3a6";
 const MAPS_URL = "https://www.google.com/maps/place/Blox+Space/@45.0702913,7.678567,626m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47886d2bd46b3f31:0xe3558c5f809a4cb3!8m2!3d45.0702913!4d7.678567!16s%2Fg%2F11n52t2zqt?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D";
 
 const tracks = [
-  ["01", "Payments and checkout", "Invoicing, payroll and cross-border flows"],
-  ["02", "Self-custodial digital dollar apps", "Wallets, savings and shared accounts"],
-  ["03", "Private financial intelligence", "On-device budgeting and fraud alerts"],
-  ["04", "Autonomous economic agents", "Local AI proposes, you approve"],
+  ["Payments and checkout", "Invoicing, payroll and cross-border flows"],
+  ["Self-custodial digital dollar apps", "Wallets, savings and shared accounts"],
+  ["Private financial intelligence", "On-device budgeting and fraud alerts"],
+  ["Autonomous economic agents", "Local AI proposes, you approve"],
 ];
 
 const timeline = [
@@ -61,7 +61,7 @@ export default function HackathonPage() {
           <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:gap-14 lg:py-28">
             <div>
               <p className="mb-5 text-sm font-bold uppercase tracking-[.22em] sm:text-base">Powered by local AI</p>
-              <h1 className="max-w-5xl text-5xl font-medium uppercase leading-[.88] tracking-[-.055em] sm:text-7xl lg:text-[5.6rem] xl:text-[6.8rem]">Agentic dollars<br />on Bitcoin</h1>
+              <h1 className="max-w-5xl text-4xl font-medium leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">agentic dollars<br />on bitcoin</h1>
               <p className="mt-8 max-w-3xl text-xl font-medium leading-relaxed sm:text-2xl">Two days to build self-custodial dollar apps driven by models that run on device. No cloud, no custodian.</p>
             </div>
             <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-2xl border-2 border-blue-dark bg-white shadow-2xl dark:border-white lg:max-w-none">
@@ -77,16 +77,19 @@ export default function HackathonPage() {
             </div>
           </div>
           <div className="mx-auto grid max-w-7xl grid-cols-1 border-x-2 border-t-2 border-blue-dark dark:border-white sm:grid-cols-3">
-            {[['17–18', 'October 2026'], ['70', 'Builders only'], ['BLOX', 'Turin']].map(([value, label]) => (
+            {[['17–18', 'October 2026'], ['70', 'Builders only'], ['@ Blox.space', 'Turin']].map(([value, label]) => (
               <div key={value} className="border-b-2 border-white bg-blue-dark p-6 text-white sm:border-b-0 sm:border-r-2 sm:last:border-r-0 lg:p-9">
-                <p className="text-4xl font-medium sm:text-5xl">{value}</p><p className="mt-2 font-bold uppercase tracking-wider">{label}</p>
+                <p className="text-4xl font-medium sm:text-5xl">{value === '@ Blox.space' ? <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="underline decoration-2 underline-offset-4">{value}</a> : value}</p><p className="mt-2 font-bold uppercase tracking-wider">{label}</p>
               </div>
             ))}
           </div>
         </section>
 
         <div className="overflow-hidden border-y-2 border-blue-dark bg-blue-dark py-3 text-white dark:border-white dark:bg-white dark:text-blue-dark">
-          <p className="whitespace-nowrap text-center text-sm font-bold uppercase tracking-[.18em] sm:text-base">Local AI ✦ €6,000 in prizes ✦ Teams of 2 to 4 ✦ Free to attend ✦ Apply by 03.10</p>
+          <div className="hackathon-ticker text-sm font-bold uppercase tracking-[.18em] sm:text-base">
+            <span className="hackathon-ticker-item">Local AI ✦ €6,000 in prizes ✦ Teams of 2 to 4 ✦ Free to attend ✦ Apply by 03.10 ✦</span>
+            <span className="hackathon-ticker-item" aria-hidden="true">Local AI ✦ €6,000 in prizes ✦ Teams of 2 to 4 ✦ Free to attend ✦ Apply by 03.10 ✦</span>
+          </div>
         </div>
 
         <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
@@ -111,8 +114,18 @@ export default function HackathonPage() {
         </section>
 
         <section className="bg-blue-dark text-white dark:bg-white dark:text-blue-dark">
-          <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
-            <div><p className="hackathon-eyebrow">70 places · applications close on October 3</p><h2 className="mt-5 text-5xl font-medium uppercase leading-[.9] tracking-[-.05em] sm:text-7xl">Build it<br />in Turin.</h2></div>
+          <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1fr_.75fr] lg:gap-16">
+            <div><p className="hackathon-eyebrow">70 places · applications close on October 3</p><h2 className="mt-5 text-4xl font-medium leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">build it<br />in Turin.</h2></div>
+            <a href="https://rgbprotocol.org/" target="_blank" rel="noopener noreferrer" aria-label="Visit the RGB Protocol Association website" className="block rounded-2xl transition hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-white/50 dark:focus:ring-blue-dark/40">
+              <Image
+                src="/rgb.webp"
+                alt="RGB Protocol Association"
+                width={1672}
+                height={941}
+                className="h-auto w-full rounded-2xl"
+                sizes="(max-width: 1023px) 100vw, 40vw"
+              />
+            </a>
           </div>
         </section>
 
@@ -136,7 +149,7 @@ export default function HackathonPage() {
             <h2 className="hackathon-title max-w-4xl">Four directions, no fixed brief.</h2>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed sm:text-xl">Local AI, payments and wallets for digital dollars you hold yourself. Bitcoin is the settlement layer underneath, and we will show you how it works.</p>
             <div className="mt-14 grid border-l-2 border-t-2 border-blue-dark dark:border-white md:grid-cols-2">
-              {tracks.map(([number, title, text]) => <article key={number} className="min-h-64 border-b-2 border-r-2 border-blue-dark p-7 dark:border-white sm:p-9"><p className="text-sm font-bold">{number}</p><h3 className="mt-12 text-2xl font-medium sm:text-3xl">{title}</h3><p className="mt-3 text-lg opacity-80">{text}</p></article>)}
+              {tracks.map(([title, text], index) => <article key={title} className={`min-h-[11.2rem] border-b-2 border-r-2 border-blue-dark p-7 dark:border-white sm:p-9 ${index === 0 || index === 3 ? 'bg-blue-dark text-white' : 'bg-white text-blue-dark'}`}><h3 className="text-2xl font-medium sm:text-3xl">{title}</h3><p className="mt-3 text-lg opacity-80">{text}</p></article>)}
             </div>
           </div>
         </section>

@@ -294,6 +294,24 @@ h6 {
   @apply mt-5 text-4xl font-medium leading-[1] tracking-[-.04em] sm:text-6xl;
 }
 
+.hackathon-ticker {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: hackathon-ticker-scroll 24s linear infinite;
+  will-change: transform;
+}
+
+.hackathon-ticker-item {
+  padding-right: 2rem;
+}
+
+@keyframes hackathon-ticker-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .hackathon-floating-cta {
   @apply fixed bottom-5 right-5 z-[60] inline-flex items-center justify-between gap-6 rounded-xl border-2 border-white bg-blue-dark px-5 py-4 text-base font-bold text-white shadow-2xl transition duration-200 hover:scale-[1.04] focus:outline-none focus:ring-4 focus:ring-blue-dark/30 dark:border-blue-dark dark:bg-white dark:text-blue-dark dark:focus:ring-white/30 sm:bottom-8 sm:right-8 sm:gap-10 sm:px-7 sm:py-5 sm:text-lg;
   animation: apply-button-bounce 5s ease-in-out infinite;
@@ -310,7 +328,8 @@ h6 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hackathon-floating-cta {
+  .hackathon-floating-cta,
+  .hackathon-ticker {
     animation: none;
   }
 }
