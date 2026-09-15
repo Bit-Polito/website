@@ -2,9 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bitpolito-blue: #001CE0;
+  --bitpolito-paper: #F9F9F9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  color: white;
+  background: var(--bitpolito-blue);
+}
+
 body {
   @apply bg-white text-blue-dark dark:bg-blue-dark dark:text-white transition-all duration-300;
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+@keyframes content-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-reveal {
+  animation: content-reveal 280ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .content-reveal {
+    animation: none;
+  }
 }
 
 h1,
@@ -365,4 +405,72 @@ h6 {
   100% {
     transform: translateX(0);
   }
+}
+
+.hackathon-footer {
+  @apply w-full bg-blue-dark px-4 py-6 text-white;
+  color: white !important;
+  border-top: 6px solid white;
+}
+
+.hackathon-footer .btn-b,
+.dark .hackathon-footer .btn-b {
+  color: white;
+  background-color: #001CE0;
+  border-color: white;
+}
+
+.hackathon-footer .icon-style,
+.dark .hackathon-footer .icon-style {
+  filter: brightness(0) invert(1);
+}
+
+.hackathon-hero {
+  background-image: linear-gradient(rgba(0, 28, 224, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 28, 224, 0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.dark .hackathon-hero {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+}
+
+.hackathon-eyebrow {
+  @apply text-sm font-bold uppercase tracking-[.2em] sm:text-base;
+}
+
+.hackathon-title {
+  @apply mt-5 text-4xl font-medium leading-[1] tracking-[-.04em] sm:text-6xl;
+}
+
+.hackathon-ticker {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: hackathon-ticker-scroll 24s linear infinite;
+  will-change: transform;
+}
+
+.hackathon-ticker-item {
+  padding-right: 2rem;
+}
+
+@keyframes hackathon-ticker-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.hackathon-floating-cta {
+  @apply fixed bottom-5 right-5 z-[60] inline-flex items-center justify-between gap-6 rounded-xl border-2 border-white bg-blue-dark px-5 py-4 text-base font-bold text-white shadow-2xl transition duration-200 hover:scale-[1.04] focus:outline-none focus:ring-4 focus:ring-blue-dark/30 dark:border-blue-dark dark:bg-white dark:text-blue-dark dark:focus:ring-white/30 sm:bottom-8 sm:right-8 sm:gap-10 sm:px-7 sm:py-5 sm:text-lg;
+  animation: apply-button-bounce 5s ease-in-out infinite;
+}
+
+@keyframes apply-button-bounce {
+  0%, 4%, 12%, 20%, 100% { transform: translateY(0); }
+  8%, 16% { transform: translateY(-7px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hackathon-floating-cta,
+  .hackathon-ticker { animation: none; }
 }

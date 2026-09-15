@@ -10,7 +10,7 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata = {
   title: 'BitPolito',
-  description: 'bitpolito',
+  description: 'Formazione, ricerca e sviluppo Bitcoin al Politecnico di Torino.',
 };
 
 export default function RootLayout({ children }) {

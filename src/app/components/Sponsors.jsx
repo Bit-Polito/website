@@ -13,10 +13,8 @@ export default function Sponsors() {
 
     const sponsorsList = [
         { src: "/sponsors/Braiins.svg", name: "Braiins", url: "https://braiins.com/", noInvert: false },
-        { src: "/sponsors/Blockstream.svg", name: "Blockstream", url: "https://blockstream.com/", noInvert: false },
         { src: "/sponsors/Fulgur Ventures.svg", name: "Fulgur Ventures", url: "https://www.fulgur.ventures/", noInvert: false },
         { src: "/sponsors/Vexl.svg", name: "Vexl", url: "https://vexl.it/", noInvert: false },
-        { src: "/sponsors/Zebedee.svg", name: "Zebedee", url: "https://zbd.gg/", noInvert: false },
         { src: "/sponsors/Plan B Network.svg", name: "Plan B Network", url: "https://planb.network/", noInvert: false },
         { src: "/sponsors/Lugano Plan B Forum.svg", name: "Lugano Plan B Forum", url: "https://planb.lugano.ch/planb-forum/", noInvert: false },
         { src: "/sponsors/BitCare Forum.svg", name: "BitCare Forum", url: "https://bitcareforum.it/", noInvert: false },
