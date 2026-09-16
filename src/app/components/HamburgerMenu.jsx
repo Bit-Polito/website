@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import DarkModeSwitch from "./DarkModeSwitch";
 import Link from "next/link";
 
 /**
@@ -10,12 +11,12 @@ import Link from "next/link";
  * existing "coming soon" pattern until their pages/sections exist.
  */
 const NAV_ITEMS = [
-    { key: "home", href: "/", available: true },
-    { key: "about-us", href: "/about", available: true },
-    { key: "blog", href: "/blog", available: true },
-    { key: "events", href: "/events", available: true },
-    { key: "projects", href: "/projects", available: true },
-    { key: "licei", href: "/licei", available: true },
+    { key: "home", available: true, href: "/" },
+    { key: "hackathon", available: true, href: "/hackathon" },
+    { key: "blog", available: false },
+    { key: "projects", available: false },
+    { key: "events", available: false },
+    { key: "merch", available: false },
 ];
 
 /**
@@ -89,8 +90,8 @@ export default function HamburgerMenu({ onDonateClick, variant = "desktop" }) {
                         </button>
                     </div>
 
-                    <nav className="flex flex-1 flex-col justify-center gap-4 py-16 sm:gap-6 sm:py-20" aria-label="Navigazione principale">
-                        {NAV_ITEMS.map(({ key, href, available }) =>
+                    <nav className="flex-1 flex flex-col justify-center gap-4 sm:gap-6">
+                        {NAV_ITEMS.map(({ key, available, href }) =>
                             available ? (
                                 <Link
                                     key={key}
