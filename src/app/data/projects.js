@@ -9,14 +9,14 @@ const projects = [
   {
     slug: "seed-signer",
     title: "Seed Signer",
-    category: "Open source",
+    category: "Lab",
     description: "Un progetto open source per esplorare la firma delle transazioni Bitcoin.",
     url: "https://github.com/BitPolito/seedsigner",
   },
   {
     slug: "movie-subtitles",
     title: "Movie Subtitles",
-    category: "Open source",
+    category: "Formazione",
     description: "Sottotitoli e traduzioni per rendere contenuti Bitcoin più accessibili.",
     url: "https://github.com/BitPolito/movies",
   },

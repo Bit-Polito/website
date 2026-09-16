@@ -14,8 +14,8 @@ const englishContent = {
     description: "Two days in Turin to build self-custodial digital-dollar apps powered by local AI and settled on Bitcoin.",
   },
   "project:bitpolito-academy": { category: "Education", description: "Materials and resources to study Bitcoin through a structured learning path." },
-  "project:seed-signer": { category: "Open source", description: "An open-source project for exploring Bitcoin transaction signing." },
-  "project:movie-subtitles": { category: "Open source", description: "Subtitles and translations that make Bitcoin content more accessible." },
+  "project:seed-signer": { category: "Lab", description: "An open-source project for exploring Bitcoin transaction signing." },
+  "project:movie-subtitles": { category: "Education", description: "Subtitles and translations that make Bitcoin content more accessible." },
 };
 
 export function localizeContent(item, language) {

@@ -1,0 +1,75 @@
+- generic [ref=f2e2]:
+  - banner [ref=f2e3]:
+    - generic [ref=f2e4]:
+      - link "Torna alla home di BitPolito" [ref=f2e5] [cursor=pointer]:
+        - /url: /
+        - img "BitPolito" [ref=f2e6]
+      - navigation "Navigazione principale" [ref=f2e7]:
+        - link "Home" [ref=f2e8] [cursor=pointer]:
+          - /url: /
+        - link "About us" [ref=f2e9] [cursor=pointer]:
+          - /url: /about
+        - link "Events" [ref=f2e10] [cursor=pointer]:
+          - /url: /events
+        - link "Blog" [ref=f2e11] [cursor=pointer]:
+          - /url: /blog
+        - link "Projects" [ref=f2e12] [cursor=pointer]:
+          - /url: /projects
+        - link "High schools" [ref=f2e13] [cursor=pointer]:
+          - /url: /licei
+      - generic [ref=f2e14]:
+        - checkbox [disabled] [ref=f2e18]
+        - button "EN" [ref=f2e23] [cursor=pointer]
+  - main [ref=f2e24]:
+    - generic [ref=f2e25]:
+      - generic [ref=f2e26]:
+        - paragraph [ref=f2e27]: BitPolito
+        - heading "Projects" [level=1] [ref=f2e28]
+        - paragraph [ref=f2e29]: Resources, open-source software and initiatives born from our community.
+      - region "Project list" [ref=f2e30]:
+        - link [ref=f2e31] [cursor=pointer]:
+          - /url: https://drive.google.com/file/d/1Zxj0i3HWSh27AcYz8YxH0qgqd3zJFOzE/view?usp=sharing
+          - generic [aria-hidden] [ref=f2e36]: ↗
+          - generic [ref=f2e37]:
+            - paragraph [ref=f2e38]: Education
+            - heading "BitPolito Academy" [level=2] [ref=f2e39]
+            - paragraph [ref=f2e40]: Materials and resources to study Bitcoin through a structured learning path.
+        - link [ref=f2e41] [cursor=pointer]:
+          - /url: https://github.com/BitPolito/seedsigner
+          - generic [aria-hidden] [ref=f2e46]: ↗
+          - generic [ref=f2e47]:
+            - paragraph [ref=f2e48]: Lab
+            - heading "Seed Signer" [level=2] [ref=f2e49]
+            - paragraph [ref=f2e50]: An open-source project for exploring Bitcoin transaction signing.
+        - link [ref=f2e51] [cursor=pointer]:
+          - /url: https://github.com/BitPolito/movies
+          - generic [aria-hidden] [ref=f2e56]: ↗
+          - generic [ref=f2e57]:
+            - paragraph [ref=f2e58]: Education
+            - heading "Movie Subtitles" [level=2] [ref=f2e59]
+            - paragraph [ref=f2e60]: Subtitles and translations that make Bitcoin content more accessible.
+  - generic [ref=f2e62]:
+    - generic [ref=f2e66]:
+      - link "info@bitpolito.it" [ref=f2e67] [cursor=pointer]:
+        - /url: "mailto: info@bitpolito.it"
+      - link "Apply to be part of the team" [ref=f2e69] [cursor=pointer]:
+        - /url: https://tinyurl.com/bitpolito
+    - generic [ref=f2e71]:
+      - link "Telegram" [ref=f2e72] [cursor=pointer]:
+        - /url: https://t.me/BitPolito
+      - link "Twitter" [ref=f2e74] [cursor=pointer]:
+        - /url: https://www.x.com/bitpolito
+      - link "Instagram" [ref=f2e76] [cursor=pointer]:
+        - /url: https://www.instagram.com/bitpolito/
+      - link "YouTube" [ref=f2e78] [cursor=pointer]:
+        - /url: https://www.youtube.com/@BitPolito
+      - link "Spotify" [ref=f2e80] [cursor=pointer]:
+        - /url: https://open.spotify.com/show/3xXqSrkyLloGhTozWMnuhH
+      - link "GitHub" [ref=f2e82] [cursor=pointer]:
+        - /url: https://github.com/BitPolito
+      - link "LinkedIn" [ref=f2e84] [cursor=pointer]:
+        - /url: https://www.linkedin.com/company/bitpolito/?originalSubdomain=it
+    - generic [ref=f2e86]:
+      - paragraph [ref=f2e87]: Cookie Policy
+      - paragraph [ref=f2e88]: ©2026, Bitpolito
+      - paragraph [ref=f2e89]: Privacy Policy

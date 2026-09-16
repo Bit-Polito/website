@@ -3,16 +3,25 @@
 const schoolVisits = [
   {
     id: "istituto-istruzione-superiore-mario-delpozzo",
+    location: "Cuneo",
     status: "upcoming",
     school: 'Istituto Istruzione Superiore "Mario Delpozzo"',
     format: "Prossimamente",
   },
   {
     id: "istituto-istruzione-superiore-jc-maxwell",
+    location: "Torino",
     status: "past",
     school: "Istituto di Istruzione Superiore J.C. Maxwell",
     format: "Corso di 10 lezioni",
   },
+  {
+    id: "istituto-tecnico-commerciale-g-sommeiller",
+    location: "Nichelino",
+    status: "past",
+    school: "Istituto Tecnico Commerciale \"G. Sommeiller\"",
+    format: "Lezione introduttiva",
+  }
   // {
   //   id: "liceo-nome-2026",
   //   status: "upcoming", // "past" oppure "upcoming"

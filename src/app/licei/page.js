@@ -13,8 +13,8 @@ function VisitCard({ visit, t }) {
         <span>{visit.format === "Prossimamente" ? t("schools-coming") : visit.format === "Corso di 10 lezioni" ? t("schools-course-ten") : visit.format || t("schools-meeting")}</span>
         {visit.date && <span className="rounded-full border border-current px-3 py-1 text-xs normal-case tracking-normal opacity-70">{visit.date}</span>}
       </div>
+      {visit.location && <p className="mt-2 text-sm font-bold uppercase tracking-[0.22em] text-blue-dark/70 dark:text-white/70">{visit.location}</p>}
       <h3 className="mt-8 text-3xl font-semibold leading-tight tracking-tight">{visit.school}</h3>
-      {visit.city && <p className="mt-2 text-lg opacity-70">{visit.city}</p>}
       {visit.description && <p className="mt-6 leading-relaxed">{visit.description}</p>}
       {visit.link && <p className="mt-7 text-sm font-bold uppercase tracking-[0.14em]">Scopri di più <span aria-hidden="true">→</span></p>}
     </article>

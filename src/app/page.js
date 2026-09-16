@@ -25,8 +25,8 @@ export default function HomePage() {
           </div>
           <dl className="mt-10 grid max-w-xl grid-cols-3 border-y-2 border-blue-dark py-5 dark:border-white">
             <div><dt className="text-3xl font-semibold">50</dt><dd className="mt-1 text-sm font-bold uppercase tracking-[0.12em] opacity-70">{t("home-active")}</dd></div>
-            <div className="border-x-2 border-blue-dark px-5 dark:border-white"><dt className="text-3xl font-semibold">250</dt><dd className="mt-1 text-sm font-bold uppercase tracking-[0.12em] opacity-70">Alumni</dd></div>
-            <div className="pl-5"><dt className="text-3xl font-semibold">35</dt><dd className="mt-1 text-sm font-bold uppercase tracking-[0.12em] opacity-70">{t("home-sector")}</dd></div>
+            <div className="border-x-2 border-blue-dark px-5 dark:border-white"><dt className="text-3xl font-semibold">200</dt><dd className="mt-1 text-sm font-bold uppercase tracking-[0.12em] opacity-70">Alumni</dd></div>
+            <div className="pl-5"><dt className="text-3xl font-semibold">30</dt><dd className="mt-1 text-sm font-bold uppercase tracking-[0.12em] opacity-70">{t("home-sector")}</dd></div>
           </dl>
         </div>
         <HeroContentSlider events={events} posts={blogPosts} projects={projects} />

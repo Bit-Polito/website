@@ -44,8 +44,8 @@ export default function AboutPage() {
           <h1 className="mt-5 max-w-4xl text-5xl font-medium leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl">The bridge between academia and Bitcoin.</h1>
           <p className="mt-7 max-w-3xl text-lg leading-relaxed sm:text-xl">BitPolito is a student team at Politecnico di Torino and one of Italy&apos;s leading Bitcoin initiatives. We create opportunities to learn, build and connect around Bitcoin technology.</p>
         </div>
-        <dl className="grid grid-cols-2 border-l-2 border-t-2 border-blue-dark dark:border-white">
-          {[['6', 'years of activity'], ['50', 'active members'], ['250', 'people involved'], ['35+', 'in the Bitcoin industry']].map(([value, label]) => <div key={label} className="border-b-2 border-r-2 border-blue-dark p-5 dark:border-white"><dt className="text-3xl font-semibold sm:text-4xl">{value}</dt><dd className="mt-2 text-sm font-bold uppercase leading-tight tracking-[0.12em] opacity-70">{label}</dd></div>)}
+        <dl className="grid grid-cols-2 overflow-hidden rounded-xl border-l-2 border-t-2 border-blue-dark dark:border-white">
+          {[['6', 'years of activity'], ['50', 'active members'], ['200', 'people involved'], ['30+', 'in the Bitcoin industry']].map(([value, label]) => <div key={label} className="border-b-2 border-r-2 border-blue-dark p-5 dark:border-white"><dt className="text-3xl font-semibold sm:text-4xl">{value}</dt><dd className="mt-2 text-sm font-bold uppercase leading-tight tracking-[0.12em] opacity-70">{label}</dd></div>)}
         </dl>
       </section>
 
