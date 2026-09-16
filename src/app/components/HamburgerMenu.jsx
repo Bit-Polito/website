@@ -2,20 +2,20 @@
 
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import DarkModeSwitch from "./DarkModeSwitch";
+import Link from "next/link";
 
 /**
  * List of nav items shown in the full-screen menu.
- * Only "home" is a real, clickable destination for now; the rest reuse
- * the same "coming soon" placeholder pattern used elsewhere on the site
- * until their pages/sections exist.
+ * Available destinations open directly; the remaining entries keep the
+ * existing "coming soon" pattern until their pages/sections exist.
  */
 const NAV_ITEMS = [
-    { key: "home", available: true },
-    { key: "blog", available: false },
-    { key: "projects", available: false },
-    { key: "events", available: false },
-    { key: "merch", available: false },
+    { key: "home", href: "/", available: true },
+    { key: "about-us", href: "/about", available: true },
+    { key: "blog", href: "/blog", available: true },
+    { key: "events", href: "/events", available: true },
+    { key: "projects", href: "/projects", available: true },
+    { key: "licei", href: "/licei", available: true },
 ];
 
 /**
@@ -75,9 +75,11 @@ export default function HamburgerMenu({ onDonateClick, variant = "desktop" }) {
             )}
 
             {isOpen && (
-                <div className="fixed inset-0 z-[100] flex flex-col bg-white dark:bg-blue-dark text-blue-dark dark:text-white p-8 sm:p-12">
+                <div className="fixed inset-0 z-[200] flex min-h-[100dvh] flex-col overflow-y-auto overscroll-contain bg-[#F9F9F9] p-6 text-blue-dark shadow-2xl dark:bg-blue-dark dark:text-white sm:p-12">
                     <div className="flex justify-between items-center">
-                        <span className="font-logo italic font-bold text-2xl sm:text-3xl">BitPolito</span>
+                        <Link href="/" onClick={() => setIsOpen(false)} aria-label="Torna alla home di BitPolito" className="block w-48 sm:w-56">
+                            <img src="/bitpolito-logo-light.svg" alt="BitPolito" className="icon-style-opposite !mr-0 !h-auto !w-full" />
+                        </Link>
                         <button
                             onClick={() => setIsOpen(false)}
                             aria-label={t("close")}
@@ -87,16 +89,17 @@ export default function HamburgerMenu({ onDonateClick, variant = "desktop" }) {
                         </button>
                     </div>
 
-                    <nav className="flex-1 flex flex-col justify-center gap-4 sm:gap-6">
-                        {NAV_ITEMS.map(({ key, available }) =>
+                    <nav className="flex flex-1 flex-col justify-center gap-4 py-16 sm:gap-6 sm:py-20" aria-label="Navigazione principale">
+                        {NAV_ITEMS.map(({ key, href, available }) =>
                             available ? (
-                                <button
+                                <Link
                                     key={key}
+                                    href={href}
                                     onClick={() => setIsOpen(false)}
                                     className="text-left text-4xl sm:text-5xl font-bold hover:scale-105 transition-transform w-fit"
                                 >
                                     {t(key)}
-                                </button>
+                                </Link>
                             ) : (
                                 <div key={key} className="relative group w-fit">
                                     <span className="text-4xl sm:text-5xl font-bold cursor-not-allowed">
@@ -108,21 +111,6 @@ export default function HamburgerMenu({ onDonateClick, variant = "desktop" }) {
                         )}
                     </nav>
 
-                    <div className="flex items-center justify-between gap-4 w-full lg:w-fit lg:justify-start">
-                        <div className="lg:hidden">
-                            <DarkModeSwitch />
-                        </div>
-                        <button
-                            onClick={() => {
-                                setIsOpen(false);
-                                onDonateClick();
-                            }}
-                            className="btn-d rounded-md gap-3 px-6"
-                        >
-                            <img src="icons/donate-light.png" className="w-5 h-5 flex-shrink-0 filter-white dark:invert-0 dark:brightness-100 dark:filter-none" alt="" />
-                            <span className="button-font">{t("donate")}</span>
-                        </button>
-                    </div>
                 </div>
             )}
         </>
