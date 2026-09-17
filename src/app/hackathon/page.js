@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
 import DarkModeSwitch from "../components/DarkModeSwitch";
+import LanguageSelector from "../components/LanguageSelector";
+import HamburgerMenu from "../components/HamburgerMenu";
 import Footer from "../components/Footer";
 import "../i18n/i18n";
 
@@ -49,16 +53,50 @@ function Arrow() {
 }
 
 export default function HackathonPage() {
+  const { t } = useTranslation();
+  const pathname = usePathname();
+
+  const navItems = [
+    { href: "/", label: t("home") },
+    { href: "/about", label: t("about-us") },
+    { href: "/events", label: t("events") },
+    { href: "/blog", label: t("blog") },
+    { href: "/projects", label: t("projects") },
+    { href: "/licei", label: t("licei") },
+  ];
+
   return (
     <div className="min-h-screen bg-[#F9F9F9] text-blue-dark dark:bg-blue-dark dark:text-white">
-      <header className="sticky top-0 z-50 border-b-2 border-blue-dark/15 bg-[#F9F9F9]/95 backdrop-blur dark:border-white/20 dark:bg-blue-dark/95">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-          <Link href="/" aria-label="Back to home" className="block w-[190px] sm:w-[245px]">
+      <header className="sticky top-0 z-50 border-b-2 border-blue-dark bg-[#F9F9F9]/95 backdrop-blur-md dark:border-white dark:bg-blue-dark/95">
+        <div className="mx-auto flex h-[78px] w-full max-w-[1440px] items-center justify-between gap-5 px-4 sm:h-[86px] sm:px-8 lg:px-12">
+          <Link href="/" aria-label="Torna alla home di BitPolito" className="relative block w-[190px] shrink-0 sm:w-[220px]">
             <Image src="/bitpolito-logo-light.svg" alt="BitPolito" width={334} height={57} className="icon-style-opposite !h-auto !w-full" priority unoptimized />
           </Link>
-          <div className="flex items-center gap-4 sm:gap-7">
+
+          <nav className="hidden items-center gap-1 lg:flex" aria-label="Navigazione principale">
+            {navItems.map((item) => {
+              const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`rounded-md px-4 py-2 text-sm font-bold transition-colors ${isActive ? "bg-blue-dark text-white dark:bg-white dark:text-blue-dark" : "hover:bg-blue-dark/10 dark:hover:bg-white/15"}`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+
+          <div className="hidden items-center gap-5 lg:flex">
             <DarkModeSwitch />
-            <Link href="/" className="rounded-full border-2 border-blue-dark px-4 py-2 text-sm font-bold transition hover:scale-105 dark:border-white sm:text-base">Home</Link>
+            <LanguageSelector />
+          </div>
+
+          <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
+            <LanguageSelector />
+            <HamburgerMenu variant="mobile" />
           </div>
         </div>
       </header>

@@ -47,8 +47,8 @@ export default function HeroContentSlider({ events, posts, projects }) {
       </div>
       <div className="flex flex-1 flex-col p-6">
         <p className="text-sm font-bold uppercase tracking-[0.14em] text-blue-dark/70 dark:text-white/70">{activeItem.type === "event" ? activeItem.date : activeItem.category || activeItem.date}</p>
-        <h2 className="mt-3 text-2xl font-semibold leading-tight">{activeItem.title}</h2>
-        <p className="mt-3 line-clamp-3 leading-relaxed">{activeItem.description}</p>
+        <h2 className="mt-3 line-clamp-2 min-h-[3.6rem] text-2xl font-semibold leading-tight">{activeItem.title}</h2>
+        <p className="mt-3 line-clamp-3 min-h-[4.75rem] leading-relaxed">{activeItem.description}</p>
         <span className="mt-5 text-sm font-bold uppercase tracking-[0.14em]">{t("content-open")} <span aria-hidden="true">{isExternal ? "↗" : "→"}</span></span>
       </div>
     </>

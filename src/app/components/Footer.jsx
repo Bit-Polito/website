@@ -51,27 +51,27 @@ export default function Footer() {
                 </a>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4">
-                <a href="https://t.me/BitPolito" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="btn-b rounded-md !px-3 !py-2 sm:!px-4 sm:!py-3">
-                    <img src="icons/bitpolito-icon-social-telegram.svg" alt="" aria-hidden="true" className="icon-style !mr-0 !w-5 !h-5 sm:!w-6 sm:!h-6"></img>
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-5 lg:gap-6">
+                <a href="https://t.me/BitPolito" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="opacity-80 transition-opacity hover:opacity-100">
+                    <img src="icons/bitpolito-icon-social-telegram.svg" alt="" aria-hidden="true" className="icon-style !mr-0 !w-6 !h-6 sm:!w-7 sm:!h-7"></img>
                 </a>
-                <a href="https://www.x.com/bitpolito" target="_blank" rel="noopener noreferrer" aria-label="X" className="btn-b rounded-md !px-3 !py-2 sm:!px-4 sm:!py-3">
-                    <img src="icons/bitpolito-icon-social-x.svg" alt="" aria-hidden="true" className="icon-style !mr-0 !w-5 !h-5 sm:!w-6 sm:!h-6"></img>
+                <a href="https://www.x.com/bitpolito" target="_blank" rel="noopener noreferrer" aria-label="X" className="opacity-80 transition-opacity hover:opacity-100">
+                    <img src="icons/bitpolito-icon-social-x.svg" alt="" aria-hidden="true" className="icon-style !mr-0 !w-6 !h-6 sm:!w-7 sm:!h-7"></img>
                 </a>
-                <a href="https://www.instagram.com/bitpolito/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="btn-b rounded-md !px-3 !py-2 sm:!px-4 sm:!py-3">
-                    <img src="icons/bitpolito-icon-social-instagram.svg" alt="" aria-hidden="true" className="icon-style !mr-0 !w-5 !h-5 sm:!w-6 sm:!h-6"></img>
+                <a href="https://www.instagram.com/bitpolito/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="opacity-80 transition-opacity hover:opacity-100">
+                    <img src="icons/bitpolito-icon-social-instagram.svg" alt="" aria-hidden="true" className="icon-style !mr-0 !w-6 !h-6 sm:!w-7 sm:!h-7"></img>
                 </a>
-                <a href="https://www.youtube.com/@BitPolito" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="btn-b rounded-md !px-3 !py-2 sm:!px-4 sm:!py-3">
-                    <img src="icons/bitpolito-icon-social-youtube.svg" alt="" aria-hidden="true" className="icon-style !mr-0 !w-5 !h-5 sm:!w-6 sm:!h-6"></img>
+                <a href="https://www.youtube.com/@BitPolito" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="opacity-80 transition-opacity hover:opacity-100">
+                    <img src="icons/bitpolito-icon-social-youtube.svg" alt="" aria-hidden="true" className="icon-style !mr-0 !w-6 !h-6 sm:!w-7 sm:!h-7"></img>
                 </a>
-                <a href="https://open.spotify.com/show/3xXqSrkyLloGhTozWMnuhH" target="_blank" rel="noopener noreferrer" aria-label="Spotify" className="btn-b rounded-md !px-3 !py-2 sm:!px-4 sm:!py-3">
-                    <img src="icons/bitpolito-icon-spotify.svg" alt="" aria-hidden="true" className="icon-style !mr-0 !w-5 !h-5 sm:!w-6 sm:!h-6"></img>
+                <a href="https://open.spotify.com/show/3xXqSrkyLloGhTozWMnuhH" target="_blank" rel="noopener noreferrer" aria-label="Spotify" className="opacity-80 transition-opacity hover:opacity-100">
+                    <img src="icons/bitpolito-icon-spotify.svg" alt="" aria-hidden="true" className="icon-style !mr-0 !w-6 !h-6 sm:!w-7 sm:!h-7"></img>
                 </a>
-                <a href="https://github.com/BitPolito" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="btn-b rounded-md !px-3 !py-2 sm:!px-4 sm:!py-3">
-                    <img src="icons/bitpolito-icon-github.svg" alt="" aria-hidden="true" className="icon-style !mr-0 !w-5 !h-5 sm:!w-6 sm:!h-6"></img>
+                <a href="https://github.com/BitPolito" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="opacity-80 transition-opacity hover:opacity-100">
+                    <img src="icons/bitpolito-icon-github.svg" alt="" aria-hidden="true" className="icon-style !mr-0 !w-6 !h-6 sm:!w-7 sm:!h-7"></img>
                 </a>
-                <a href="https://www.linkedin.com/company/bitpolito/?originalSubdomain=it" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="btn-b rounded-md !px-3 !py-2 sm:!px-4 sm:!py-3">
-                    <img src="icons/bitpolito-icon-social-linkedin.svg" alt="" aria-hidden="true" className="icon-style !mr-0 !w-5 !h-5 sm:!w-6 sm:!h-6"></img>
+                <a href="https://www.linkedin.com/company/bitpolito/?originalSubdomain=it" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="opacity-80 transition-opacity hover:opacity-100">
+                    <img src="icons/bitpolito-icon-social-linkedin.svg" alt="" aria-hidden="true" className="icon-style !mr-0 !w-6 !h-6 sm:!w-7 sm:!h-7"></img>
                 </a>
             </div>
 
