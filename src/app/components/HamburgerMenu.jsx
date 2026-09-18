@@ -78,7 +78,7 @@ export default function HamburgerMenu({ onDonateClick, variant = "desktop" }) {
             {isOpen && (
                 <div className="fixed inset-0 z-[200] flex min-h-[100dvh] flex-col overflow-y-auto overscroll-contain bg-[#F9F9F9] p-6 text-blue-dark shadow-2xl dark:bg-blue-dark dark:text-white sm:p-12">
                     <div className="flex justify-between items-center">
-                        <Link href="/" onClick={() => setIsOpen(false)} aria-label="Torna alla home di BitPolito" className="block w-48 sm:w-56">
+                        <Link href="/" onClick={() => setIsOpen(false)} aria-label={t("nav-home-aria")} className="block w-48 sm:w-56">
                             <img src="/bitpolito-logo-light.svg" alt="BitPolito" className="icon-style-opposite !mr-0 !h-auto !w-full" />
                         </Link>
                         <button

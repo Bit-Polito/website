@@ -16,7 +16,7 @@ export default function BlogPostGrid({ posts }) {
 
   return (
     <>
-      <section aria-label="Articoli del blog" className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+      <section aria-label={t("blog-articles-aria")} className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
         {displayedPosts.map((post) => {
           const localizedPost = localizeContent({ ...post, type: "article" }, i18n.resolvedLanguage || i18n.language);
           return (

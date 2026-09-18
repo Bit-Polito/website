@@ -36,7 +36,7 @@ export default function BlogShell({ children }) {
     <div className="flex min-h-screen flex-col">
       <header className="fixed inset-x-0 top-0 z-50 border-b-2 border-blue-dark bg-[#F9F9F9]/95 backdrop-blur-md dark:border-white dark:bg-blue-dark/95">
         <div className="mx-auto flex h-[78px] w-full max-w-[1440px] items-center justify-between gap-5 px-4 sm:h-[86px] sm:px-8 lg:px-12">
-          <Link href="/" aria-label="Torna alla home di BitPolito" className="relative block w-[190px] shrink-0 sm:w-[220px]">
+          <Link href="/" aria-label={t("nav-home-aria")} className="relative block w-[190px] shrink-0 sm:w-[220px]">
             <Image
               src="/bitpolito-logo-light.svg"
               alt="BitPolito"
@@ -47,7 +47,7 @@ export default function BlogShell({ children }) {
             />
           </Link>
 
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Navigazione principale">
+          <nav className="hidden items-center gap-1 lg:flex" aria-label={t("nav-main-aria")}>
             {navItems.map((item) => {
               const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
               return (
@@ -88,10 +88,10 @@ export default function BlogShell({ children }) {
       {isDonatePopupOpen && (
         <div className="fixed inset-0 z-[110] flex items-center justify-center bg-blue-dark/30 p-4">
           <div className="max-w-md rounded-xl border-2 border-blue-dark bg-white p-7 text-blue-dark shadow-xl dark:border-white dark:bg-blue-dark dark:text-white">
-            <p className="text-xl font-semibold">Grazie per il tuo supporto!</p>
-            <p className="mt-3 leading-relaxed">Per effettuare una donazione, contatta il team BitPolito.</p>
+            <p className="text-xl font-semibold">{t("donate-title")}</p>
+            <p className="mt-3 leading-relaxed">{t("donate-text")}</p>
             <button onClick={() => setIsDonatePopupOpen(false)} className="btn-w mt-6 rounded-md px-5">
-              Chiudi
+              {t("close")}
             </button>
           </div>
         </div>

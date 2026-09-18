@@ -16,7 +16,7 @@ function VisitCard({ visit, t }) {
       {visit.location && <p className="mt-2 text-sm font-bold uppercase tracking-[0.22em] text-blue-dark/70 dark:text-white/70">{visit.location}</p>}
       <h3 className="mt-8 text-3xl font-semibold leading-tight tracking-tight">{visit.school}</h3>
       {visit.description && <p className="mt-6 leading-relaxed">{visit.description}</p>}
-      {visit.link && <p className="mt-7 text-sm font-bold uppercase tracking-[0.14em]">Scopri di più <span aria-hidden="true">→</span></p>}
+      {visit.link && <p className="mt-7 text-sm font-bold uppercase tracking-[0.14em]">{t("schools-more")} <span aria-hidden="true">→</span></p>}
     </article>
   );
 
@@ -51,27 +51,27 @@ export default function LiceiPage() {
         </div>
         {upcomingSchoolVisits.length ? (
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{upcomingSchoolVisits.map((visit) => <VisitCard key={visit.id} visit={visit} t={t} />)}</div>
-        ) : <div className="mt-8"><EmptyState>Le prossime lezioni saranno pubblicate qui non appena confermate.</EmptyState></div>}
+        ) : <div className="mt-8"><EmptyState>{t("schools-upcoming-empty")}</EmptyState></div>}
       </section>
 
       <section className="mt-16 rounded-2xl border-2 border-blue-dark bg-blue-dark p-7 text-white dark:border-white dark:bg-white dark:text-blue-dark sm:mt-20 sm:p-10">
-        <p className="text-sm font-bold uppercase tracking-[0.2em] opacity-75">Per docenti e scuole</p>
+        <p className="text-sm font-bold uppercase tracking-[0.2em] opacity-75">{t("schools-cta-kicker")}</p>
         <div className="mt-4 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-          <div className="max-w-2xl"><h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Vuoi organizzare una lezione?</h2><p className="mt-3 text-lg leading-relaxed">Scrivici per proporre un incontro nella tua scuola.</p></div>
-          <a href="mailto:info@bitpolito.it?subject=Bitcoin%20al%20Liceo" className="rounded-md border-2 border-white px-6 py-3 text-center text-base font-bold transition-all hover:bg-white hover:text-blue-dark dark:border-blue-dark dark:hover:bg-blue-dark dark:hover:text-white">Contatta il team</a>
+          <div className="max-w-2xl"><h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t("schools-cta-title")}</h2><p className="mt-3 text-lg leading-relaxed">{t("schools-cta-text")}</p></div>
+          <a href="mailto:info@bitpolito.it?subject=Bitcoin%20al%20Liceo" className="rounded-md border-2 border-white px-6 py-3 text-center text-base font-bold transition-all hover:bg-white hover:text-blue-dark dark:border-blue-dark dark:hover:bg-blue-dark dark:hover:text-white">{t("contact-team")}</a>
         </div>
       </section>
 
       <section className="mt-16 border-t-2 border-blue-dark pt-10 dark:border-white sm:mt-24 sm:pt-14" aria-labelledby="past-school-visits">
         <div>
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-dark/70 dark:text-white/70">Archivio</p>
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-dark/70 dark:text-white/70">{t("schools-archive")}</p>
             <h2 id="past-school-visits" className="mt-2 text-4xl font-medium tracking-tight sm:text-5xl">{t("schools-past")}</h2>
           </div>
         </div>
         {pastSchoolVisits.length ? (
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{pastSchoolVisits.map((visit) => <VisitCard key={visit.id} visit={visit} t={t} />)}</div>
-        ) : <div className="mt-8"><EmptyState>Stiamo completando l&apos;archivio delle lezioni già svolte.</EmptyState></div>}
+        ) : <div className="mt-8"><EmptyState>{t("schools-past-empty")}</EmptyState></div>}
       </section>
 
     </BlogShell>

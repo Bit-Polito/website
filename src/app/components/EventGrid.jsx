@@ -17,7 +17,7 @@ export default function EventGrid({ events }) {
 
   return (
     <>
-      <div className="mt-10 flex flex-wrap gap-3" aria-label="Filtra gli eventi">
+      <div className="mt-10 flex flex-wrap gap-3" aria-label={t("events-filter-aria")}>
         {filters.map((filter) => {
           const isActive = activeFilter === filter;
           const count = filter === "all" ? events.length : events.filter((event) => event.status === filter).length;
