@@ -204,5 +204,15 @@
     "hk-venue-text": "هکاتون در BLOX Space، در مرکز تورین برگزار می‌شود.",
     "hk-maps-cta": "باز کردن در Google Maps",
     "hk-apply-aria": "ثبت‌نام در Agentic Dollars Hackathon",
-    "hk-apply-now": "همین حالا ثبت‌نام کنید!"
+    "hk-apply-now": "همین حالا ثبت‌نام کنید!",
+    "blog-back": "همه مقالات",
+    "blog-course-cta-title": "برای اطلاعات و ثبت‌نام",
+    "blog-course-cta-link": "بازدید از صفحه دوره",
+    "events-back": "همه رویدادها",
+    "events-upcoming-badge": "رویداد پیش رو",
+    "events-past-badge": "رویداد گذشته",
+    "events-organiser": "برگزارکننده",
+    "events-details-heading": "جزئیات",
+    "events-schedule": "برنامه زمانی",
+    "schools-intro-lesson": "جلسه مقدماتی"
 }

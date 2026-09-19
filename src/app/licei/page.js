@@ -3,17 +3,25 @@
 import Image from "next/image";
 import BlogShell from "../components/BlogShell";
 import { pastSchoolVisits, upcomingSchoolVisits } from "../data/schoolVisits";
+import { localizeCity } from "../data/localizedContent";
 import { useTranslation } from "react-i18next";
 import "../i18n/i18n";
 
-function VisitCard({ visit, t }) {
+const formatKeyToTranslationKey = {
+  coming: "schools-coming",
+  "course-ten": "schools-course-ten",
+  intro: "schools-intro-lesson",
+};
+
+function VisitCard({ visit, t, language }) {
+  const formatLabel = t(formatKeyToTranslationKey[visit.formatKey] || "schools-meeting");
   const content = (
     <article className="group h-full rounded-xl border-2 border-blue-dark bg-white p-6 transition-transform duration-200 hover:-translate-y-1 dark:border-white dark:bg-blue-dark sm:p-7">
       <div className="flex flex-wrap items-center justify-between gap-3 text-sm font-bold uppercase tracking-[0.14em]">
-        <span>{visit.format === "Prossimamente" ? t("schools-coming") : visit.format === "Corso di 10 lezioni" ? t("schools-course-ten") : visit.format || t("schools-meeting")}</span>
+        <span>{formatLabel}</span>
         {visit.date && <span className="rounded-full border border-current px-3 py-1 text-xs normal-case tracking-normal opacity-70">{visit.date}</span>}
       </div>
-      {visit.location && <p className="mt-2 text-sm font-bold uppercase tracking-[0.22em] text-blue-dark/70 dark:text-white/70">{visit.location}</p>}
+      {visit.location && <p className="mt-2 text-sm font-bold uppercase tracking-[0.22em] text-blue-dark/70 dark:text-white/70">{localizeCity(visit.location, language)}</p>}
       <h3 className="mt-8 text-3xl font-semibold leading-tight tracking-tight">{visit.school}</h3>
       {visit.description && <p className="mt-6 leading-relaxed">{visit.description}</p>}
       {visit.link && <p className="mt-7 text-sm font-bold uppercase tracking-[0.14em]">{t("schools-more")} <span aria-hidden="true">→</span></p>}
@@ -28,7 +36,8 @@ function EmptyState({ children }) {
 }
 
 export default function LiceiPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const language = i18n.resolvedLanguage || i18n.language;
   return (
     <BlogShell>
       <section className="grid gap-10 border-b-2 border-blue-dark pb-12 dark:border-white lg:grid-cols-[minmax(0,1.1fr)_minmax(330px,0.75fr)] lg:items-end lg:gap-16 lg:pb-16">
@@ -50,7 +59,7 @@ export default function LiceiPage() {
           </div>
         </div>
         {upcomingSchoolVisits.length ? (
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{upcomingSchoolVisits.map((visit) => <VisitCard key={visit.id} visit={visit} t={t} />)}</div>
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{upcomingSchoolVisits.map((visit) => <VisitCard key={visit.id} visit={visit} t={t} language={language} />)}</div>
         ) : <div className="mt-8"><EmptyState>{t("schools-upcoming-empty")}</EmptyState></div>}
       </section>
 
@@ -70,7 +79,7 @@ export default function LiceiPage() {
           </div>
         </div>
         {pastSchoolVisits.length ? (
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{pastSchoolVisits.map((visit) => <VisitCard key={visit.id} visit={visit} t={t} />)}</div>
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{pastSchoolVisits.map((visit) => <VisitCard key={visit.id} visit={visit} t={t} language={language} />)}</div>
         ) : <div className="mt-8"><EmptyState>{t("schools-past-empty")}</EmptyState></div>}
       </section>
 

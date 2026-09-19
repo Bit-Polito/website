@@ -204,5 +204,15 @@
     "hk-venue-text": "The hackathon takes place at BLOX Space, in central Turin.",
     "hk-maps-cta": "Open in Google Maps",
     "hk-apply-aria": "Apply to the Agentic Dollars Hackathon",
-    "hk-apply-now": "Apply now!"
+    "hk-apply-now": "Apply now!",
+    "blog-back": "All articles",
+    "blog-course-cta-title": "For information and enrollment",
+    "blog-course-cta-link": "Visit the course page",
+    "events-back": "All events",
+    "events-upcoming-badge": "Upcoming event",
+    "events-past-badge": "Past event",
+    "events-organiser": "Organised by",
+    "events-details-heading": "Details",
+    "events-schedule": "Schedule",
+    "schools-intro-lesson": "Introductory lesson"
 }

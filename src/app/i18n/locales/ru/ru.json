@@ -205,5 +205,15 @@
     "hk-venue-text": "Хакатон проходит в BLOX Space, в центре Турина.",
     "hk-maps-cta": "Открыть в Google Maps",
     "hk-apply-aria": "Подать заявку на Agentic Dollars Hackathon",
-    "hk-apply-now": "Подать заявку!"
+    "hk-apply-now": "Подать заявку!",
+    "blog-back": "Все статьи",
+    "blog-course-cta-title": "Информация и запись",
+    "blog-course-cta-link": "Перейти на страницу курса",
+    "events-back": "Все события",
+    "events-upcoming-badge": "Предстоящее событие",
+    "events-past-badge": "Прошедшее событие",
+    "events-organiser": "Организатор",
+    "events-details-heading": "Подробности",
+    "events-schedule": "Расписание",
+    "schools-intro-lesson": "Вводное занятие"
 }
