@@ -1,5 +1,19 @@
 const events = [
   {
+    slug: "unisciti-a-bitpolito-29-settembre",
+    status: "upcoming",
+    type: "Presentazione del team",
+    title: "Recruitment BitPolito: unisciti al team",
+    date: "29 settembre 2026 · 17:30",
+    location: "Aula 13, Politecnico di Torino · Corso Duca degli Abruzzi 24",
+    organiser: "BitPolito",
+    image: "/chessboard/bitpolito-unisciti-a-bitpolito.png",
+    imageAlt: "Logo di BitPolito su sfondo blu",
+    imageFit: "contain",
+    externalUrl: "https://luma.com/1bl29wg3",
+    description: "Scopri BitPolito, il team studentesco che si occupa dello sviluppo e della divulgazione di Bitcoin, e incontra chi assume talenti nel settore. Al termine, aperitivo per tutti.",
+  },
+  {
     slug: "bitgeneration-4-corso-aperto-su-bitcoin",
     status: "past",
     type: "Formazione",

@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import featuredContent from "../data/featuredContent";
+import { heroContent } from "../data/featuredContent";
 import hackathon from "../data/hackathon";
 import { localizeContent } from "../data/localizedContent";
 
@@ -12,7 +12,7 @@ export default function HeroContentSlider({ events, posts, projects }) {
   const { t, i18n } = useTranslation();
   const items = useMemo(() => {
     const sources = { event: events, article: posts, project: projects, hackathon: [hackathon] };
-    return featuredContent
+    return heroContent
       .slice(0, 5)
       .map((selection) => {
         const content = sources[selection.type]?.find((item) => item.slug === selection.slug);

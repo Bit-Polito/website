@@ -320,11 +320,11 @@ export default function Carousel({ isOpen, setIsOpen }) {
 
                     <footer className="flex flex-col sm:flex-row gap-2 sm:gap-x-2 mt-4 mb-8 text-base w-[340px] lg:w-[340px]">
                         <a href="https://t.me/BitPolito" target="_blank" rel="noopener noreferrer" className={"btn-w gap-3 flex-1 min-h-[44px] order-2 sm:order-1"}>
-                            <img src={"icons/bitpolito-icon-social-telegram.svg"} className="w-6 h-6 flex-shrink-0 dark:invert dark:brightness-0 dark:filter-white"></img>
+                            <img src={"/icons/bitpolito-icon-social-telegram.svg"} className="w-6 h-6 flex-shrink-0 dark:invert dark:brightness-0 dark:filter-white"></img>
                             <span className="button-font">{t("telegram")}</span>
                         </a>
                         <button onClick={() => setIsOpen(true)} className={"btn-d rounded-md gap-3 flex-1 sm:flex-none sm:w-[140px] min-h-[44px] order-1 sm:order-2"}>
-                            <img src="icons/donate-light.png" className="w-5 h-5 flex-shrink-0 filter-white dark:invert-0 dark:brightness-100 dark:filter-none"></img>
+                            <img src="/icons/donate-light.png" className="w-5 h-5 flex-shrink-0 filter-white dark:invert-0 dark:brightness-100 dark:filter-none"></img>
                             <span className="button-font">{t("donate")}</span>
                         </button>
                     </footer>
@@ -350,11 +350,11 @@ export default function Carousel({ isOpen, setIsOpen }) {
                             <Image src="/FP_PhotoProfile.png" className="w-40 h-43 sm:w-60 sm:h-64" unoptimized width={100} height={100} alt="" />
                             <div className="flex flex-col mt-5 gap-y-5 w-full px-4">
                                 <a href="https://t.me/bitciccio" target="_blank" rel="noopener noreferrer" className="btn-w text-sm sm:text-base break-words">
-                                    <img src="icons/bitpolito-icon-social-telegram.svg" className="icon-style-opposite"></img>
+                                    <img src="/icons/bitpolito-icon-social-telegram.svg" className="icon-style-opposite"></img>
                                     <span className="truncate">@Bitciccio</span>
                                 </a>
                                 <a href='mailto: francesco.pelle@studenti.polito.it' target="_blank" rel="noopener noreferrer" className="btn-w text-xs sm:text-base break-all">
-                                    <img src="icons/bitpolito-icon-mail.svg" className="icon-style-opposite"></img>
+                                    <img src="/icons/bitpolito-icon-mail.svg" className="icon-style-opposite"></img>
                                     <span className="break-all text-xs sm:text-base">francesco.pelle@studenti.polito.it</span>
                                 </a>
                             </div>

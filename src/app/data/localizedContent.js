@@ -8,6 +8,13 @@ const content = {
       date: "October 28 – December 2, 2025",
       description: "A course to discover Bitcoin from every angle: technology, economics and society, with a final certification.",
     },
+    "event:unisciti-a-bitpolito-29-settembre": {
+      type: "Team presentation",
+      title: "BitPolito Recruitment: join the team",
+      date: "September 29, 2026 · 5:30 PM",
+      location: "Room 13, Politecnico di Torino · Corso Duca degli Abruzzi 24",
+      description: "Get to know BitPolito, the student team behind Bitcoin development and outreach, and meet someone who hires talent in the industry. Drinks for everyone afterwards.",
+    },
     "article:executive-master-bitcoin-tecnologia-e-protocolli": {
       title: "Politecnico di Torino launches a new Executive Master in Bitcoin technology",
       date: "September 2026",
@@ -31,6 +38,13 @@ const content = {
       title: "BitGeneration 4 · Offener Bitcoin-Kurs",
       date: "28. Oktober – 2. Dezember 2025",
       description: "Ein Kurs, um Bitcoin aus jedem Blickwinkel zu entdecken: Technologie, Wirtschaft und Gesellschaft, mit Abschlusszertifikat.",
+    },
+    "event:unisciti-a-bitpolito-29-settembre": {
+      type: "Teamvorstellung",
+      title: "BitPolito Recruiting: werde Teil des Teams",
+      date: "29. September 2026 · 17:30 Uhr",
+      location: "Raum 13, Politecnico di Torino · Corso Duca degli Abruzzi 24",
+      description: "Lerne BitPolito kennen, das Studierendenteam für die Entwicklung und Verbreitung von Bitcoin, und triff jemanden, der Talente in der Branche sucht. Danach gibt es einen Aperitif für alle.",
     },
     "article:executive-master-bitcoin-tecnologia-e-protocolli": {
       title: "Das Politecnico di Torino startet einen neuen Executive Master in Bitcoin-Technologie",
@@ -56,6 +70,13 @@ const content = {
       date: "28 de octubre – 2 de diciembre de 2025",
       description: "Un curso para descubrir Bitcoin desde todos los ángulos: tecnología, economía y sociedad, con certificación final.",
     },
+    "event:unisciti-a-bitpolito-29-settembre": {
+      type: "Presentación del equipo",
+      title: "Reclutamiento BitPolito: únete al equipo",
+      date: "29 de septiembre de 2026 · 17:30",
+      location: "Aula 13, Politecnico di Torino · Corso Duca degli Abruzzi 24",
+      description: "Conoce BitPolito, el equipo estudiantil dedicado al desarrollo y la divulgación de Bitcoin, y encuentra a quien busca talento en el sector. Al terminar, aperitivo para todos.",
+    },
     "article:executive-master-bitcoin-tecnologia-e-protocolli": {
       title: "El Politecnico di Torino lanza un nuevo Executive Master en tecnología Bitcoin",
       date: "Septiembre de 2026",
@@ -79,6 +100,13 @@ const content = {
       title: "BitGeneration 4 · Cours ouvert sur Bitcoin",
       date: "28 octobre – 2 décembre 2025",
       description: "Un cours pour découvrir Bitcoin sous tous les angles : technologie, économie et société, avec certification finale.",
+    },
+    "event:unisciti-a-bitpolito-29-settembre": {
+      type: "Présentation de l'équipe",
+      title: "Recrutement BitPolito : rejoins l'équipe",
+      date: "29 septembre 2026 · 17h30",
+      location: "Salle 13, Politecnico di Torino · Corso Duca degli Abruzzi 24",
+      description: "Découvre BitPolito, l'équipe étudiante dédiée au développement et à la diffusion de Bitcoin, et rencontre quelqu'un qui recrute des talents du secteur. Apéritif pour tous à la fin.",
     },
     "article:executive-master-bitcoin-tecnologia-e-protocolli": {
       title: "Le Politecnico di Torino lance un nouvel Executive Master en technologie Bitcoin",
@@ -104,6 +132,13 @@ const content = {
       date: "28 oktober – 2 december 2025",
       description: "Een cursus om Bitcoin vanuit elke invalshoek te ontdekken: technologie, economie en maatschappij, met een eindcertificering.",
     },
+    "event:unisciti-a-bitpolito-29-settembre": {
+      type: "Teampresentatie",
+      title: "BitPolito-recruitment: word lid van het team",
+      date: "29 september 2026 · 17:30",
+      location: "Zaal 13, Politecnico di Torino · Corso Duca degli Abruzzi 24",
+      description: "Maak kennis met BitPolito, het studententeam dat Bitcoin ontwikkelt en verspreidt, en ontmoet iemand die talent werft in de sector. Na afloop een aperitief voor iedereen.",
+    },
     "article:executive-master-bitcoin-tecnologia-e-protocolli": {
       title: "Politecnico di Torino lanceert nieuwe Executive Master in Bitcoin-technologie",
       date: "September 2026",
@@ -127,6 +162,13 @@ const content = {
       title: "BitGeneration 4 · Curso aberto sobre Bitcoin",
       date: "28 de outubro – 2 de dezembro de 2025",
       description: "Um curso para descobrir o Bitcoin de todos os ângulos: tecnologia, economia e sociedade, com certificação final.",
+    },
+    "event:unisciti-a-bitpolito-29-settembre": {
+      type: "Apresentação da equipa",
+      title: "Recrutamento BitPolito: junta-te à equipa",
+      date: "29 de setembro de 2026 · 17h30",
+      location: "Sala 13, Politecnico di Torino · Corso Duca degli Abruzzi 24",
+      description: "Conhece a BitPolito, a equipa estudantil dedicada ao desenvolvimento e à divulgação do Bitcoin, e encontra quem recruta talento no setor. No final, aperitivo para todos.",
     },
     "article:executive-master-bitcoin-tecnologia-e-protocolli": {
       title: "A Politecnico di Torino lança um novo Executive Master em tecnologia Bitcoin",
@@ -152,6 +194,13 @@ const content = {
       date: "28 октября — 2 декабря 2025",
       description: "Курс, позволяющий рассмотреть Bitcoin со всех сторон: технологии, экономика и общество, с итоговой сертификацией.",
     },
+    "event:unisciti-a-bitpolito-29-settembre": {
+      type: "Презентация команды",
+      title: "Набор в BitPolito: присоединяйся к команде",
+      date: "29 сентября 2026 · 17:30",
+      location: "Аудитория 13, Политехнический университет Турина · Corso Duca degli Abruzzi, 24",
+      description: "Познакомься с BitPolito — студенческой командой, занимающейся разработкой и популяризацией Bitcoin, и встреться с тем, кто ищет таланты в отрасли. После встречи — аперитив для всех.",
+    },
     "article:executive-master-bitcoin-tecnologia-e-protocolli": {
       title: "Политехнический университет Турина запускает новую программу Executive Master по технологии Bitcoin",
       date: "Сентябрь 2026",
@@ -176,6 +225,13 @@ const content = {
       date: "2025 年 10 月 28 日 – 12 月 2 日",
       description: "一门从技术、经济和社会等多角度探索比特币的课程,并在结业时颁发证书。",
     },
+    "event:unisciti-a-bitpolito-29-settembre": {
+      type: "团队介绍会",
+      title: "BitPolito 招募:加入团队",
+      date: "2026 年 9 月 29 日 · 17:30",
+      location: "都灵理工大学 13 教室 · Corso Duca degli Abruzzi 24",
+      description: "来认识 BitPolito——专注于比特币开发与推广的学生团队,并见见行业内的招聘负责人。活动结束后为大家准备了开胃酒会。",
+    },
     "article:executive-master-bitcoin-tecnologia-e-protocolli": {
       title: "都灵理工大学推出全新比特币技术高级硕士项目",
       date: "2026 年 9 月",
@@ -199,6 +255,13 @@ const content = {
       title: "BitGeneration 4 · دوره آزاد بیت‌کوین",
       date: "۶ آبان – ۱۱ آذر ۱۴۰۴",
       description: "دوره‌ای برای کشف بیت‌کوین از همه زوایا: فناوری، اقتصاد و جامعه، همراه با گواهی پایان دوره.",
+    },
+    "event:unisciti-a-bitpolito-29-settembre": {
+      type: "معرفی تیم",
+      title: "استخدام در BitPolito: به تیم بپیوندید",
+      date: "۷ مهر ۱۴۰۵ · ۱۷:۳۰",
+      location: "کلاس ۱۳، دانشگاه پلی‌تکنیک تورین · Corso Duca degli Abruzzi 24",
+      description: "با BitPolito، تیم دانشجویی فعال در توسعه و آموزش بیت‌کوین، آشنا شوید و با فردی که در این صنعت به‌دنبال استعداد است دیدار کنید. در پایان، پذیرایی آپریتیوو برای همه.",
     },
     "article:executive-master-bitcoin-tecnologia-e-protocolli": {
       title: "دانشگاه پلی‌تکنیک تورین دوره جدید Executive Master در فناوری بیت‌کوین را راه‌اندازی کرد",
