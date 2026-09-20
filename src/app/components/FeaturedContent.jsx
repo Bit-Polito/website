@@ -7,8 +7,9 @@ import featuredContent from "../data/featuredContent";
 import hackathon from "../data/hackathon";
 import { localizeContent } from "../data/localizedContent";
 
-function Card({ item, index, t }) {
-  const layoutClass = index === 0 ? "md:col-span-7" : index === 1 ? "md:col-span-5" : "md:col-span-4";
+function Card({ item, index, total, t }) {
+  const restSpan = total === 4 ? "md:col-span-6" : "md:col-span-4";
+  const layoutClass = index === 0 ? "md:col-span-7" : index === 1 ? "md:col-span-5" : restSpan;
   const hasImage = Boolean(item.image);
   const isExternal = Boolean(item.url && item.url.startsWith("http"));
   const href = item.href || item.url || (item.type === "event" ? `/events/${item.slug}` : `/blog/${item.slug}`);
@@ -65,7 +66,7 @@ export default function FeaturedContent({ events, posts, projects }) {
   return (
     <section id="featured-heading" className="mt-16 sm:mt-20" aria-label={t("content-featured")}>
       <div className="grid gap-5 md:grid-cols-12">
-        {items.map((item, index) => <Card key={`${item.type}-${item.slug}`} item={item} index={index} t={t} />)}
+        {items.map((item, index) => <Card key={`${item.type}-${item.slug}`} item={item} index={index} total={items.length} t={t} />)}
       </div>
     </section>
   );

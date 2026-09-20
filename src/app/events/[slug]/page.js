@@ -33,10 +33,15 @@ export default function EventDetailPage() {
           </div>
           <h1 className="mt-5 text-4xl font-medium tracking-tight sm:text-5xl lg:text-7xl">{content.title}</h1>
           <p className="mt-6 max-w-3xl text-xl leading-relaxed sm:text-2xl">{content.description}</p>
+          {event.externalUrl && event.status === "upcoming" && (
+            <a href={event.externalUrl} target="_blank" rel="noopener noreferrer" className="btn-w mt-8 inline-flex rounded-md px-8 py-4 text-lg font-bold">
+              {t("events-register")} <span className="ml-2" aria-hidden="true">↗</span>
+            </a>
+          )}
         </header>
 
-        <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-xl border-2 border-blue-dark dark:border-white">
-          <Image src={event.image} alt={event.imageAlt} fill priority sizes="(max-width: 1024px) 100vw, 896px" className="object-cover" />
+        <div className={`relative mt-10 aspect-[16/9] overflow-hidden rounded-xl border-2 border-blue-dark dark:border-white ${event.imageFit === "contain" ? "bg-[#001cdf]" : ""}`}>
+          <Image src={event.image} alt={event.imageAlt} fill priority sizes="(max-width: 1024px) 100vw, 896px" className={event.imageFit === "contain" ? "object-contain" : "object-cover"} />
         </div>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -48,7 +53,16 @@ export default function EventDetailPage() {
         {content.details && (
           <section className="mt-12 space-y-5 text-lg leading-relaxed sm:text-xl">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t("events-details-heading")}</h2>
-            {content.details.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            {content.details.map((block) =>
+              typeof block === "string" ? (
+                <p key={block}>{block}</p>
+              ) : (
+                <div key={block.intro}>
+                  <p>{block.intro}</p>
+                  <ul className="mt-3 list-disc space-y-1 ps-6">{block.items.map((item) => <li key={item}>{item}</li>)}</ul>
+                </div>
+              )
+            )}
           </section>
         )}
 
@@ -62,9 +76,9 @@ export default function EventDetailPage() {
           {content.note && <p className="mt-8 rounded-xl border-2 border-blue-dark bg-white p-5 text-lg leading-relaxed dark:border-white dark:bg-blue-dark">{content.note}</p>}
         </section>
 
-        {event.externalUrl && (
+        {event.externalUrl && event.status === "upcoming" && (
           <a href={event.externalUrl} target="_blank" rel="noopener noreferrer" className="btn-w mt-12 inline-flex rounded-md px-6 py-3 text-base">
-            {event.externalLabel} <span className="ml-2" aria-hidden="true">↗</span>
+            {t("events-register")} <span className="ml-2" aria-hidden="true">↗</span>
           </a>
         )}
       </article>

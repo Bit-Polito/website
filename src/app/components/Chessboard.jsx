@@ -19,7 +19,7 @@ const fallbackChessboardImages = chessboardImages.map(img => ({
 
 const resourceItems = [
     [
-        { type: 'resource', span: 1, title: 'Mining Game', link: 'https://bitpolito-mining-game.vercel.app', filter: 'resources', icon: 'icons/bitpolito-mining-blue.png' },
+        { type: 'resource', span: 1, title: 'Mining Game', link: 'https://bitpolito-mining-game.vercel.app', filter: 'resources', icon: '/icons/bitpolito-mining-blue.png' },
         { type: 'resource', span: 1, title: 'Silent Payments', link: 'https://silent-payments.vercel.app/', filter: 'resources' },
     ]
 ];
@@ -469,7 +469,7 @@ export default function Chessboard() {
                     className="back-top-btn text-blue-dark dark:text-white bg-white dark:bg-blue-dark"
                 >
                     <img
-                        src={"icons/bitpolito-icon-back-top.svg"}
+                        src={"/icons/bitpolito-icon-back-top.svg"}
                         alt="Back to top"
                         className="icon-style-opposite w-[17.73px] h-[15px]"
                     />
