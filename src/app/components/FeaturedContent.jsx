@@ -57,7 +57,7 @@ export default function FeaturedContent({ events, posts, projects }) {
     .slice(0, 5)
     .map((selection) => {
       const item = sources[selection.type]?.find((content) => content.slug === selection.slug);
-      return item ? localizeContent({ ...item, type: selection.type }, i18n.resolvedLanguage || i18n.language) : null;
+      return item ? { ...localizeContent({ ...item, type: selection.type }, i18n.resolvedLanguage || i18n.language), type: selection.type } : null;
     })
     .filter(Boolean);
 

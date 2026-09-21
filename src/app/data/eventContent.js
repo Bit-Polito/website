@@ -44,6 +44,31 @@ const eventContent = {
       ],
       note: "Ci vediamo il 29.09 alle 17:30 in aula 13 del Politecnico di Torino, Corso Duca degli Abruzzi 24. Prenotati per partecipare! — Team BitPolito",
     },
+    "bitpolito-speaker-a-btchel": {
+      type: "Conferenza",
+      title: "BitPolito speaker a BTCHEL",
+      date: "25 – 26 settembre 2026",
+      location: "Kaapelitehdas, Helsinki",
+      description: "Saremo a BTCHEL, la prima conferenza Bitcoin su larga scala nei paesi nordici, con Aurora Colucci sul palco a parlare di come Bitcoin possa cambiare la vita delle persone comuni.",
+      details: [
+        "Il 25 – 26 settembre parteciperemo alla prossima edizione di BTCHEL — la prima conferenza Bitcoin su larga scala nei paesi nordici.",
+        "Potrai ascoltare alcuni tra gli speaker più importanti del panorama Bitcoin, come Giacomo Zucco — Direttore e founder di Plan ₿ Network — e Adam Back — inventore di Hashcash e co-fondatore di Blockstream.",
+        "La nostra Aurora Colucci — Marketing Leader in BitPolito — parlerà di come Bitcoin possa cambiare le vite delle persone comuni e di come i valori di questa community abbiano effetto anche aldilà della sfera economica.",
+      ],
+      note: "Acquista il biglietto con il codice BITPOLITO per il 10% di sconto.",
+    },
+    "bitpolito-speaker-a-btcpp-berlino": {
+      type: "Conferenza",
+      title: "BitPolito speaker a BTC++ Berlino",
+      date: "1 – 3 ottobre 2026",
+      location: "Berlino, Germania",
+      description: "Tre giorni di hacking e workshop al bitcoin++ gets paid di Berlino. Mo Harchegani presenta un sistema aperto e self-hostable per gestire pagamenti Lightning senza perdere il controllo del proprio nodo e delle proprie chiavi.",
+      details: [
+        "Dall'1 al 3 ottobre, BitPolito sarà al bitcoin++ gets paid di Berlino. Tre giorni di hacking e workshop dedicati a chi lavora duro per raggiungere nuove frontiere dell'opensource in Bitcoin.",
+        "Il nostro Mo Harchegani — project manager di Lightning Network in BitPolito — presenterà un sistema aperto e self-hostable per gestire pagamenti Lightning senza perdere il pieno controllo del tuo nodo e delle tue chiavi.",
+      ],
+      note: "Acquista il tuo ingresso su btcpp.dev con il codice BITPOLITO20 per il 20% di sconto.",
+    },
   },
   en: {
     "bitgeneration-4-corso-aperto-su-bitcoin": {
@@ -86,6 +111,31 @@ const eventContent = {
         "Aperitivo offered by BitPolito for anyone who wants to stay and chat",
       ],
       note: "See you on 29.09 at 5:30 PM in Room 13 of Politecnico di Torino, Corso Duca degli Abruzzi 24. Sign up to attend! — Team BitPolito",
+    },
+    "bitpolito-speaker-a-btchel": {
+      type: "Conference",
+      title: "BitPolito speaker at BTCHEL",
+      date: "September 25 – 26, 2026",
+      location: "Kaapelitehdas, Helsinki",
+      description: "We'll be at BTCHEL, the first large-scale Bitcoin conference in the Nordic countries, with Aurora Colucci on stage talking about how Bitcoin can change the lives of ordinary people.",
+      details: [
+        "On September 25 – 26 we'll take part in the next edition of BTCHEL — the first large-scale Bitcoin conference in the Nordic countries.",
+        "You'll be able to hear some of the most important speakers in the Bitcoin landscape, such as Giacomo Zucco — Director and founder of Plan ₿ Network — and Adam Back — inventor of Hashcash and co-founder of Blockstream.",
+        "Our own Aurora Colucci — Marketing Leader at BitPolito — will talk about how Bitcoin can change the lives of ordinary people and how the values of this community have an impact beyond the economic sphere.",
+      ],
+      note: "Buy your ticket with the code BITPOLITO for 10% off.",
+    },
+    "bitpolito-speaker-a-btcpp-berlino": {
+      type: "Conference",
+      title: "BitPolito speaker at BTC++ Berlin",
+      date: "October 1 – 3, 2026",
+      location: "Berlin, Germany",
+      description: "Three days of hacking and workshops at bitcoin++ gets paid in Berlin. Mo Harchegani presents an open, self-hostable system for managing Lightning payments without giving up control of your node and keys.",
+      details: [
+        "From October 1 to 3, BitPolito will be at bitcoin++ gets paid in Berlin. Three days of hacking and workshops for those who work hard to reach new frontiers of open source in Bitcoin.",
+        "Our own Mo Harchegani — Lightning Network project manager at BitPolito — will present an open, self-hostable system for managing Lightning payments without losing full control of your node and your keys.",
+      ],
+      note: "Get your ticket at btcpp.dev with the code BITPOLITO20 for 20% off.",
     },
   },
   de: {
@@ -130,6 +180,31 @@ const eventContent = {
       ],
       note: "Wir sehen uns am 29.09. um 17:30 Uhr im Raum 13 des Politecnico di Torino, Corso Duca degli Abruzzi 24. Melde dich an! — Team BitPolito",
     },
+    "bitpolito-speaker-a-btchel": {
+      type: "Konferenz",
+      title: "BitPolito als Speaker bei BTCHEL",
+      date: "25. – 26. September 2026",
+      location: "Kaapelitehdas, Helsinki",
+      description: "Wir sind bei BTCHEL dabei, der ersten großen Bitcoin-Konferenz in den nordischen Ländern. Aurora Colucci spricht auf der Bühne darüber, wie Bitcoin das Leben gewöhnlicher Menschen verändern kann.",
+      details: [
+        "Am 25. – 26. September nehmen wir an der nächsten Ausgabe von BTCHEL teil — der ersten großen Bitcoin-Konferenz in den nordischen Ländern.",
+        "Du kannst einige der wichtigsten Speaker der Bitcoin-Szene hören, etwa Giacomo Zucco — Direktor und Gründer von Plan ₿ Network — und Adam Back — Erfinder von Hashcash und Mitgründer von Blockstream.",
+        "Unsere Aurora Colucci — Marketing Leader bei BitPolito — spricht darüber, wie Bitcoin das Leben gewöhnlicher Menschen verändern kann und wie die Werte dieser Community auch über die wirtschaftliche Sphäre hinaus wirken.",
+      ],
+      note: "Kaufe dein Ticket mit dem Code BITPOLITO und erhalte 10 % Rabatt.",
+    },
+    "bitpolito-speaker-a-btcpp-berlino": {
+      type: "Konferenz",
+      title: "BitPolito als Speaker bei BTC++ Berlin",
+      date: "1. – 3. Oktober 2026",
+      location: "Berlin, Deutschland",
+      description: "Drei Tage Hacking und Workshops bei bitcoin++ gets paid in Berlin. Mo Harchegani stellt ein offenes, selbst hostbares System vor, um Lightning-Zahlungen zu verwalten, ohne die Kontrolle über den eigenen Node und die eigenen Schlüssel zu verlieren.",
+      details: [
+        "Vom 1. bis 3. Oktober ist BitPolito bei bitcoin++ gets paid in Berlin. Drei Tage Hacking und Workshops für alle, die hart daran arbeiten, neue Grenzen von Open Source in Bitcoin zu erreichen.",
+        "Unser Mo Harchegani — Lightning-Network-Projektmanager bei BitPolito — stellt ein offenes, selbst hostbares System vor, mit dem du Lightning-Zahlungen verwalten kannst, ohne die volle Kontrolle über deinen Node und deine Schlüssel zu verlieren.",
+      ],
+      note: "Sichere dir dein Ticket auf btcpp.dev mit dem Code BITPOLITO20 und erhalte 20 % Rabatt.",
+    },
   },
   es: {
     "bitgeneration-4-corso-aperto-su-bitcoin": {
@@ -172,6 +247,31 @@ const eventContent = {
         "Aperitivo ofrecido por BitPolito para quien quiera quedarse a charlar",
       ],
       note: "Nos vemos el 29.09 a las 17:30 en el aula 13 del Politecnico di Torino, Corso Duca degli Abruzzi 24. ¡Reserva tu plaza! — Team BitPolito",
+    },
+    "bitpolito-speaker-a-btchel": {
+      type: "Conferencia",
+      title: "BitPolito, ponente en BTCHEL",
+      date: "25 – 26 de septiembre de 2026",
+      location: "Kaapelitehdas, Helsinki",
+      description: "Estaremos en BTCHEL, la primera conferencia de Bitcoin a gran escala en los países nórdicos, con Aurora Colucci en el escenario hablando de cómo Bitcoin puede cambiar la vida de la gente corriente.",
+      details: [
+        "El 25 – 26 de septiembre participaremos en la próxima edición de BTCHEL — la primera conferencia de Bitcoin a gran escala en los países nórdicos.",
+        "Podrás escuchar a algunos de los ponentes más importantes del panorama Bitcoin, como Giacomo Zucco — director y fundador de Plan ₿ Network — y Adam Back — inventor de Hashcash y cofundador de Blockstream.",
+        "Nuestra Aurora Colucci — Marketing Leader en BitPolito — hablará de cómo Bitcoin puede cambiar la vida de las personas corrientes y de cómo los valores de esta comunidad tienen efecto más allá de la esfera económica.",
+      ],
+      note: "Compra tu entrada con el código BITPOLITO y obtén un 10 % de descuento.",
+    },
+    "bitpolito-speaker-a-btcpp-berlino": {
+      type: "Conferencia",
+      title: "BitPolito, ponente en BTC++ Berlín",
+      date: "1 – 3 de octubre de 2026",
+      location: "Berlín, Alemania",
+      description: "Tres días de hacking y talleres en bitcoin++ gets paid de Berlín. Mo Harchegani presenta un sistema abierto y autoalojable para gestionar pagos Lightning sin perder el control de tu nodo ni de tus claves.",
+      details: [
+        "Del 1 al 3 de octubre, BitPolito estará en bitcoin++ gets paid de Berlín. Tres días de hacking y talleres dedicados a quienes trabajan duro para alcanzar nuevas fronteras del código abierto en Bitcoin.",
+        "Nuestro Mo Harchegani — project manager de Lightning Network en BitPolito — presentará un sistema abierto y autoalojable para gestionar pagos Lightning sin perder el control total de tu nodo y tus claves.",
+      ],
+      note: "Compra tu entrada en btcpp.dev con el código BITPOLITO20 y obtén un 20 % de descuento.",
     },
   },
   fr: {
@@ -216,6 +316,31 @@ const eventContent = {
       ],
       note: "Rendez-vous le 29.09 à 17h30 en salle 13 du Politecnico di Torino, Corso Duca degli Abruzzi 24. Inscris-toi pour participer ! — Team BitPolito",
     },
+    "bitpolito-speaker-a-btchel": {
+      type: "Conférence",
+      title: "BitPolito intervient à BTCHEL",
+      date: "25 – 26 septembre 2026",
+      location: "Kaapelitehdas, Helsinki",
+      description: "Nous serons à BTCHEL, la première conférence Bitcoin à grande échelle dans les pays nordiques, avec Aurora Colucci sur scène pour parler de la façon dont Bitcoin peut changer la vie des gens ordinaires.",
+      details: [
+        "Les 25 et 26 septembre, nous participerons à la prochaine édition de BTCHEL — la première conférence Bitcoin à grande échelle dans les pays nordiques.",
+        "Vous pourrez y écouter certains des intervenants les plus importants du paysage Bitcoin, comme Giacomo Zucco — directeur et fondateur de Plan ₿ Network — et Adam Back — inventeur de Hashcash et cofondateur de Blockstream.",
+        "Notre Aurora Colucci — Marketing Leader chez BitPolito — parlera de la façon dont Bitcoin peut changer la vie des gens ordinaires et de la manière dont les valeurs de cette communauté ont un effet au-delà de la sphère économique.",
+      ],
+      note: "Achetez votre billet avec le code BITPOLITO pour 10 % de réduction.",
+    },
+    "bitpolito-speaker-a-btcpp-berlino": {
+      type: "Conférence",
+      title: "BitPolito intervient à BTC++ Berlin",
+      date: "1er – 3 octobre 2026",
+      location: "Berlin, Allemagne",
+      description: "Trois jours de hacking et d'ateliers à bitcoin++ gets paid à Berlin. Mo Harchegani présente un système ouvert et auto-hébergeable pour gérer les paiements Lightning sans perdre le contrôle de votre nœud et de vos clés.",
+      details: [
+        "Du 1er au 3 octobre, BitPolito sera à bitcoin++ gets paid à Berlin. Trois jours de hacking et d'ateliers pour celles et ceux qui travaillent dur afin d'atteindre de nouvelles frontières de l'open source dans Bitcoin.",
+        "Notre Mo Harchegani — project manager Lightning Network chez BitPolito — présentera un système ouvert et auto-hébergeable pour gérer les paiements Lightning sans perdre le contrôle total de votre nœud et de vos clés.",
+      ],
+      note: "Achetez votre billet sur btcpp.dev avec le code BITPOLITO20 pour 20 % de réduction.",
+    },
   },
   nl: {
     "bitgeneration-4-corso-aperto-su-bitcoin": {
@@ -258,6 +383,31 @@ const eventContent = {
         "Aperitief aangeboden door BitPolito voor wie nog wil blijven kletsen",
       ],
       note: "Tot 29.09 om 17:30 uur in zaal 13 van het Politecnico di Torino, Corso Duca degli Abruzzi 24. Meld je aan om erbij te zijn! — Team BitPolito",
+    },
+    "bitpolito-speaker-a-btchel": {
+      type: "Conferentie",
+      title: "BitPolito spreekt op BTCHEL",
+      date: "25 – 26 september 2026",
+      location: "Kaapelitehdas, Helsinki",
+      description: "We zijn erbij op BTCHEL, de eerste grootschalige Bitcoin-conferentie in de Scandinavische landen, met Aurora Colucci op het podium over hoe Bitcoin het leven van gewone mensen kan veranderen.",
+      details: [
+        "Op 25 – 26 september nemen we deel aan de volgende editie van BTCHEL — de eerste grootschalige Bitcoin-conferentie in de Scandinavische landen.",
+        "Je kunt enkele van de belangrijkste sprekers uit de Bitcoin-wereld horen, zoals Giacomo Zucco — directeur en oprichter van Plan ₿ Network — en Adam Back — uitvinder van Hashcash en medeoprichter van Blockstream.",
+        "Onze Aurora Colucci — Marketing Leader bij BitPolito — vertelt hoe Bitcoin het leven van gewone mensen kan veranderen en hoe de waarden van deze community ook buiten de economische sfeer effect hebben.",
+      ],
+      note: "Koop je ticket met de code BITPOLITO voor 10% korting.",
+    },
+    "bitpolito-speaker-a-btcpp-berlino": {
+      type: "Conferentie",
+      title: "BitPolito spreekt op BTC++ Berlijn",
+      date: "1 – 3 oktober 2026",
+      location: "Berlijn, Duitsland",
+      description: "Drie dagen hacking en workshops op bitcoin++ gets paid in Berlijn. Mo Harchegani presenteert een open, zelf te hosten systeem om Lightning-betalingen te beheren zonder de controle over je node en sleutels te verliezen.",
+      details: [
+        "Van 1 tot 3 oktober is BitPolito op bitcoin++ gets paid in Berlijn. Drie dagen hacking en workshops voor wie hard werkt om nieuwe grenzen van open source in Bitcoin te bereiken.",
+        "Onze Mo Harchegani — Lightning Network-projectmanager bij BitPolito — presenteert een open, zelf te hosten systeem om Lightning-betalingen te beheren zonder de volledige controle over je node en je sleutels te verliezen.",
+      ],
+      note: "Koop je ticket op btcpp.dev met de code BITPOLITO20 voor 20% korting.",
     },
   },
   pt: {
@@ -302,6 +452,31 @@ const eventContent = {
       ],
       note: "Vemo-nos a 29.09 às 17h30 na sala 13 do Politecnico di Torino, Corso Duca degli Abruzzi 24. Inscreve-te para participar! — Team BitPolito",
     },
+    "bitpolito-speaker-a-btchel": {
+      type: "Conferência",
+      title: "BitPolito é speaker na BTCHEL",
+      date: "25 – 26 de setembro de 2026",
+      location: "Kaapelitehdas, Helsínquia",
+      description: "Vamos estar na BTCHEL, a primeira conferência Bitcoin em grande escala nos países nórdicos, com a Aurora Colucci em palco a falar de como o Bitcoin pode mudar a vida das pessoas comuns.",
+      details: [
+        "A 25 – 26 de setembro vamos participar na próxima edição da BTCHEL — a primeira conferência Bitcoin em grande escala nos países nórdicos.",
+        "Poderás ouvir alguns dos oradores mais importantes do panorama Bitcoin, como Giacomo Zucco — diretor e fundador da Plan ₿ Network — e Adam Back — inventor do Hashcash e cofundador da Blockstream.",
+        "A nossa Aurora Colucci — Marketing Leader na BitPolito — vai falar de como o Bitcoin pode mudar a vida das pessoas comuns e de como os valores desta comunidade têm efeito para além da esfera económica.",
+      ],
+      note: "Compra o teu bilhete com o código BITPOLITO e tem 10% de desconto.",
+    },
+    "bitpolito-speaker-a-btcpp-berlino": {
+      type: "Conferência",
+      title: "BitPolito é speaker na BTC++ Berlim",
+      date: "1 – 3 de outubro de 2026",
+      location: "Berlim, Alemanha",
+      description: "Três dias de hacking e workshops no bitcoin++ gets paid, em Berlim. O Mo Harchegani apresenta um sistema aberto e self-hostable para gerir pagamentos Lightning sem perder o controlo do teu nó e das tuas chaves.",
+      details: [
+        "De 1 a 3 de outubro, a BitPolito estará no bitcoin++ gets paid, em Berlim. Três dias de hacking e workshops dedicados a quem trabalha duro para alcançar novas fronteiras do open source no Bitcoin.",
+        "O nosso Mo Harchegani — project manager de Lightning Network na BitPolito — vai apresentar um sistema aberto e self-hostable para gerir pagamentos Lightning sem perder o controlo total do teu nó e das tuas chaves.",
+      ],
+      note: "Compra o teu ingresso em btcpp.dev com o código BITPOLITO20 e tem 20% de desconto.",
+    },
   },
   ru: {
     "bitgeneration-4-corso-aperto-su-bitcoin": {
@@ -344,6 +519,31 @@ const eventContent = {
         "Аперитив от BitPolito для тех, кто захочет остаться и пообщаться",
       ],
       note: "Увидимся 29.09 в 17:30 в аудитории 13 Политехнического университета Турина, Corso Duca degli Abruzzi, 24. Регистрируйся! — Team BitPolito",
+    },
+    "bitpolito-speaker-a-btchel": {
+      type: "Конференция",
+      title: "BitPolito выступает на BTCHEL",
+      date: "25 – 26 сентября 2026",
+      location: "Kaapelitehdas, Хельсинки",
+      description: "Мы будем на BTCHEL — первой масштабной Bitcoin-конференции в странах Северной Европы: Аврора Колуччи расскажет со сцены, как Bitcoin может изменить жизнь обычных людей.",
+      details: [
+        "25 – 26 сентября мы примем участие в очередном выпуске BTCHEL — первой масштабной Bitcoin-конференции в странах Северной Европы.",
+        "Ты сможешь послушать некоторых из самых значимых спикеров Bitcoin-сферы, например Джакомо Дзукко — директора и основателя Plan ₿ Network — и Адама Бэка — изобретателя Hashcash и сооснователя Blockstream.",
+        "Наша Аврора Колуччи — Marketing Leader в BitPolito — расскажет о том, как Bitcoin может изменить жизнь обычных людей и как ценности нашего сообщества влияют на жизнь и за пределами экономики.",
+      ],
+      note: "Купи билет с промокодом BITPOLITO и получи скидку 10%.",
+    },
+    "bitpolito-speaker-a-btcpp-berlino": {
+      type: "Конференция",
+      title: "BitPolito выступает на BTC++ в Берлине",
+      date: "1 – 3 октября 2026",
+      location: "Берлин, Германия",
+      description: "Три дня хакинга и воркшопов на bitcoin++ gets paid в Берлине. Мо Харчегани представит открытую систему с возможностью self-hosting для управления платежами Lightning без потери контроля над своим узлом и ключами.",
+      details: [
+        "С 1 по 3 октября BitPolito будет на bitcoin++ gets paid в Берлине. Три дня хакинга и воркшопов для тех, кто упорно работает, чтобы покорять новые рубежи open source в Bitcoin.",
+        "Наш Мо Харчегани — проджект-менеджер Lightning Network в BitPolito — представит открытую систему с возможностью self-hosting для управления платежами Lightning без потери полного контроля над твоим узлом и ключами.",
+      ],
+      note: "Купи билет на btcpp.dev с промокодом BITPOLITO20 и получи скидку 20%.",
     },
   },
   zh: {
@@ -388,6 +588,31 @@ const eventContent = {
       ],
       note: "9 月 29 日 17:30,我们在都灵理工大学 13 教室(Corso Duca degli Abruzzi 24)见!立即报名参加! — Team BitPolito",
     },
+    "bitpolito-speaker-a-btchel": {
+      type: "会议",
+      title: "BitPolito 出席 BTCHEL 并发表演讲",
+      date: "2026 年 9 月 25 – 26 日",
+      location: "Kaapelitehdas,赫尔辛基",
+      description: "我们将参加 BTCHEL——北欧首个大规模比特币会议,Aurora Colucci 将登台讲述比特币如何改变普通人的生活。",
+      details: [
+        "9 月 25 – 26 日,我们将参加下一届 BTCHEL——北欧首个大规模比特币会议。",
+        "你可以聆听比特币领域一些最重要的演讲嘉宾,例如 Plan ₿ Network 总监兼创始人 Giacomo Zucco,以及 Hashcash 发明者、Blockstream 联合创始人 Adam Back。",
+        "我们的 Aurora Colucci——BitPolito 市场负责人——将讲述比特币如何改变普通人的生活,以及这个社区的价值观如何在经济领域之外产生影响。",
+      ],
+      note: "使用优惠码 BITPOLITO 购票可享 9 折优惠。",
+    },
+    "bitpolito-speaker-a-btcpp-berlino": {
+      type: "会议",
+      title: "BitPolito 出席柏林 BTC++ 并发表演讲",
+      date: "2026 年 10 月 1 – 3 日",
+      location: "德国柏林",
+      description: "三天的黑客松与工作坊,地点在柏林的 bitcoin++ gets paid。Mo Harchegani 将展示一套开放、可自托管的系统,用于管理闪电网络支付,同时完全掌控你的节点和密钥。",
+      details: [
+        "10 月 1 日至 3 日,BitPolito 将出席柏林的 bitcoin++ gets paid。三天的黑客松和工作坊,献给那些努力拓展比特币开源新边界的人。",
+        "我们的 Mo Harchegani——BitPolito 闪电网络项目经理——将展示一套开放、可自托管的系统,让你在管理闪电网络支付的同时,不失去对节点和密钥的完全掌控。",
+      ],
+      note: "在 btcpp.dev 使用优惠码 BITPOLITO20 购票可享 8 折优惠。",
+    },
   },
   fa: {
     "bitgeneration-4-corso-aperto-su-bitcoin": {
@@ -430,6 +655,31 @@ const eventContent = {
         "پذیرایی آپریتیوو از طرف BitPolito برای کسانی که بخواهند بمانند و گپ بزنند",
       ],
       note: "شما را ۲۹ سپتامبر (۷ مهر) ساعت ۱۷:۳۰ در کلاس ۱۳ دانشگاه پلی‌تکنیک تورین، Corso Duca degli Abruzzi 24 می‌بینیم. برای شرکت ثبت‌نام کنید! — Team BitPolito",
+    },
+    "bitpolito-speaker-a-btchel": {
+      type: "کنفرانس",
+      title: "سخنرانی BitPolito در BTCHEL",
+      date: "۳ – ۴ مهر ۱۴۰۵",
+      location: "Kaapelitehdas، هلسینکی",
+      description: "ما در BTCHEL، نخستین کنفرانس بزرگ‌مقیاس بیت‌کوین در کشورهای شمال اروپا، حضور خواهیم داشت و Aurora Colucci روی صحنه درباره این‌که بیت‌کوین چگونه می‌تواند زندگی مردم عادی را تغییر دهد صحبت می‌کند.",
+      details: [
+        "در ۳ – ۴ مهر (۲۵ – ۲۶ سپتامبر) در دوره بعدی BTCHEL — نخستین کنفرانس بزرگ‌مقیاس بیت‌کوین در کشورهای شمال اروپا — شرکت می‌کنیم.",
+        "می‌توانید به سخنان برخی از مهم‌ترین سخنرانان دنیای بیت‌کوین گوش دهید، مانند Giacomo Zucco — مدیر و بنیان‌گذار Plan ₿ Network — و Adam Back — مخترع Hashcash و هم‌بنیان‌گذار Blockstream.",
+        "Aurora Colucci از تیم ما — مسئول بازاریابی BitPolito — درباره این‌که بیت‌کوین چگونه می‌تواند زندگی مردم عادی را تغییر دهد و ارزش‌های این جامعه چگونه فراتر از حوزه اقتصادی اثر می‌گذارند صحبت خواهد کرد.",
+      ],
+      note: "با کد BITPOLITO بلیت بخرید و ۱۰٪ تخفیف بگیرید.",
+    },
+    "bitpolito-speaker-a-btcpp-berlino": {
+      type: "کنفرانس",
+      title: "سخنرانی BitPolito در BTC++ برلین",
+      date: "۹ – ۱۱ مهر ۱۴۰۵",
+      location: "برلین، آلمان",
+      description: "سه روز هک و کارگاه در bitcoin++ gets paid برلین. Mo Harchegani سیستمی باز و قابل میزبانی شخصی برای مدیریت پرداخت‌های لایتنینگ ارائه می‌کند، بدون از دست دادن کنترل نود و کلیدهایتان.",
+      details: [
+        "از ۹ تا ۱۱ مهر (۱ تا ۳ اکتبر)، BitPolito در bitcoin++ gets paid برلین حضور دارد. سه روز هک و کارگاه برای کسانی که سخت تلاش می‌کنند تا به مرزهای جدید متن‌باز در بیت‌کوین برسند.",
+        "Mo Harchegani از تیم ما — مدیر پروژه لایتنینگ نتورک در BitPolito — سیستمی باز و قابل میزبانی شخصی برای مدیریت پرداخت‌های لایتنینگ ارائه خواهد کرد، بدون از دست دادن کنترل کامل نود و کلیدهایتان.",
+      ],
+      note: "با کد BITPOLITO20 از btcpp.dev بلیت بخرید و ۲۰٪ تخفیف بگیرید.",
     },
   },
 };

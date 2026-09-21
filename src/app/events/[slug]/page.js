@@ -35,12 +35,12 @@ export default function EventDetailPage() {
           <p className="mt-6 max-w-3xl text-xl leading-relaxed sm:text-2xl">{content.description}</p>
           {event.externalUrl && event.status === "upcoming" && (
             <a href={event.externalUrl} target="_blank" rel="noopener noreferrer" className="btn-w mt-8 inline-flex rounded-md px-8 py-4 text-lg font-bold">
-              {t("events-register")} <span className="ml-2" aria-hidden="true">↗</span>
+              {t(event.ctaKey || "events-register")} <span className="ml-2" aria-hidden="true">↗</span>
             </a>
           )}
         </header>
 
-        <div className={`relative mt-10 aspect-[16/9] overflow-hidden rounded-xl border-2 border-blue-dark dark:border-white ${event.imageFit === "contain" ? "bg-[#001cdf]" : ""}`}>
+        <div className={`relative mt-10 aspect-[16/9] overflow-hidden rounded-xl border-2 border-blue-dark dark:border-white`} style={event.imageBg ? { backgroundColor: event.imageBg } : undefined}>
           <Image src={event.image} alt={event.imageAlt} fill priority sizes="(max-width: 1024px) 100vw, 896px" className={event.imageFit === "contain" ? "object-contain" : "object-cover"} />
         </div>
 
@@ -66,19 +66,22 @@ export default function EventDetailPage() {
           </section>
         )}
 
-        <section className="mt-12">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t("events-schedule")}</h2>
-          <ol className="mt-5 space-y-3">
-            {content.program.map((item, index) => (
-              <li key={item} className="flex gap-4 border-b border-blue-dark/20 pb-3 dark:border-white/25"><span className="font-bold tabular-nums">{String(index + 1).padStart(2, "0")}</span><span>{item}</span></li>
-            ))}
-          </ol>
-          {content.note && <p className="mt-8 rounded-xl border-2 border-blue-dark bg-white p-5 text-lg leading-relaxed dark:border-white dark:bg-blue-dark">{content.note}</p>}
-        </section>
+        {content.program && (
+          <section className="mt-12">
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t("events-schedule")}</h2>
+            <ol className="mt-5 space-y-3">
+              {content.program.map((item, index) => (
+                <li key={item} className="flex gap-4 border-b border-blue-dark/20 pb-3 dark:border-white/25"><span className="font-bold tabular-nums">{String(index + 1).padStart(2, "0")}</span><span>{item}</span></li>
+              ))}
+            </ol>
+          </section>
+        )}
+
+        {content.note && <p className="mt-8 rounded-xl border-2 border-blue-dark bg-white p-5 text-lg leading-relaxed dark:border-white dark:bg-blue-dark">{content.note}</p>}
 
         {event.externalUrl && event.status === "upcoming" && (
           <a href={event.externalUrl} target="_blank" rel="noopener noreferrer" className="btn-w mt-12 inline-flex rounded-md px-6 py-3 text-base">
-            {t("events-register")} <span className="ml-2" aria-hidden="true">↗</span>
+            {t(event.ctaKey || "events-register")} <span className="ml-2" aria-hidden="true">↗</span>
           </a>
         )}
       </article>
