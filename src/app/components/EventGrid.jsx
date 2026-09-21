@@ -51,8 +51,8 @@ export default function EventGrid({ events }) {
               </span>
               <span className="text-right text-xs font-semibold uppercase tracking-[0.12em] text-blue-dark/65 dark:text-white/65">{localizedEvent.type}</span>
             </div>
-            <div className="relative aspect-[4/3] w-full overflow-hidden border-y-2 border-blue-dark dark:border-white">
-              <Image src={event.image} alt={event.imageAlt} fill sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div className="relative aspect-[4/3] w-full overflow-hidden border-y-2 border-blue-dark dark:border-white" style={event.imageBg ? { backgroundColor: event.imageBg } : undefined}>
+              <Image src={event.image} alt={event.imageAlt} fill sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw" className={`${event.imageFit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-500 group-hover:scale-105`} />
             </div>
             <div className="flex flex-1 flex-col px-6 py-6">
               <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">{localizedEvent.title}</h2>

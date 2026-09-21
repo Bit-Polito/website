@@ -57,7 +57,19 @@ export default function HackathonPage() {
     [t("hk-faq2-q"), t("hk-faq2-a")],
     [t("hk-faq3-q"), t("hk-faq3-a")],
     [t("hk-faq4-q"), t("hk-faq4-a")],
+    [t("hk-faq5-q"), t("hk-faq5-a")],
+    [t("hk-faq6-q"), t("hk-faq6-a")],
+    [t("hk-faq7-q"), t("hk-faq7-a")],
+    [t("hk-faq8-q"), t("hk-faq8-a")],
+    [t("hk-faq9-q"), t("hk-faq9-a")],
   ];
+
+  const weekend = [
+    [t("hk-wk-d1"), [[t("hk-wk-t1"), t("hk-wk-e1")]]],
+    [t("hk-wk-d2"), [[t("hk-wk-t2"), t("hk-wk-e2")], [t("hk-wk-t3"), t("hk-wk-e3")]]],
+  ];
+
+  const criteria = [1, 2, 3, 4, 5].map((n) => [t(`hk-jd${n}-title`), t(`hk-jd${n}-text`)]);
 
   const tools = [
     { name: "RGB", tag: t("hk-tool1-tag"), text: t("hk-tool1-text"), links: [[t("hk-link-website"), "https://rgb.info/"], [t("hk-link-docs"), "https://docs.rgb.info/"]] },
@@ -142,6 +154,14 @@ export default function HackathonPage() {
             <div><p className="hackathon-eyebrow">{t("hk-prize-eyebrow")}</p><h2 className="hackathon-title">{t("hk-prize-title")}</h2></div>
             <p className="text-xl leading-relaxed sm:text-2xl">{t("hk-prize-text-pre")}<a href="https://www.cyphertank.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-2 underline-offset-4">{t("hk-prize-text-link")}</a>{t("hk-prize-text-post")}</p>
           </div>
+          <div className="mt-16 grid gap-8 border-t-2 border-blue-dark pt-12 dark:border-white lg:grid-cols-2">
+            <div><p className="hackathon-eyebrow">{t("hk-ct-eyebrow")}</p><h2 className="hackathon-title">{t("hk-ct-title")}</h2></div>
+            <div className="space-y-5 text-lg leading-relaxed sm:text-xl">
+              <p>{t("hk-ct-p1")}</p>
+              <p>{t("hk-ct-p2")}</p>
+              <a href="https://www.cyphertank.org/" target="_blank" rel="noopener noreferrer" className="btn-d inline-flex rounded-md px-6 py-3 text-base">www.cyphertank.org <span className="ml-2"><Arrow /></span></a>
+            </div>
+          </div>
         </section>
 
         <section className="bg-blue-dark text-white dark:bg-white dark:text-blue-dark">
@@ -155,6 +175,21 @@ export default function HackathonPage() {
           <p className="hackathon-eyebrow">{t("hk-timeline-eyebrow")}</p><h2 className="hackathon-title">{t("hk-timeline-title")}</h2>
           <div className="mt-14 border-t-2 border-blue-dark dark:border-white">
             {timeline.map(([date, title, text]) => <div key={date} className="grid gap-3 border-b-2 border-blue-dark py-7 dark:border-white md:grid-cols-[180px_220px_1fr] md:gap-8"><p className="font-bold uppercase tracking-wide">{date}</p><h3 className="text-xl font-medium">{title}</h3><p className="text-lg opacity-80">{text}</p></div>)}
+          </div>
+
+          <div className="mt-24">
+            <p className="hackathon-eyebrow">{t("hk-wk-eyebrow")}</p><h2 className="hackathon-title">{t("hk-wk-title")}</h2>
+            <div className="mt-14 grid gap-12 lg:grid-cols-2">
+              {weekend.map(([day, events]) => (
+                <div key={day}>
+                  <h3 className="text-2xl font-medium sm:text-3xl">{day}</h3>
+                  <div className="mt-6 border-t-2 border-blue-dark dark:border-white">
+                    {events.map(([time, text]) => <div key={time} className="grid gap-2 border-b-2 border-blue-dark py-6 dark:border-white sm:grid-cols-[140px_1fr] sm:gap-6"><p className="font-bold uppercase tracking-wide">{time}</p><p className="text-lg">{text}</p></div>)}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 max-w-3xl text-lg opacity-80">{t("hk-wk-note")}</p>
           </div>
         </section>
 
@@ -196,6 +231,18 @@ export default function HackathonPage() {
             <div className="mt-14 grid border-l-2 border-t-2 border-blue-dark dark:border-white md:grid-cols-2">
               {tracks.map(([title, text], index) => <article key={title} className={`min-h-[11.2rem] border-b-2 border-r-2 border-blue-dark p-7 dark:border-white sm:p-9 ${trackStyles[index]}`}><h3 className="text-2xl font-medium sm:text-3xl">{title}</h3><p className="mt-3 text-lg opacity-80">{text}</p></article>)}
             </div>
+          </div>
+        </section>
+
+        <section className="border-b-2 border-blue-dark dark:border-white">
+          <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
+            <p className="hackathon-eyebrow">{t("hk-jd-eyebrow")}</p>
+            <h2 className="hackathon-title max-w-4xl">{t("hk-jd-title")}</h2>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed sm:text-xl">{t("hk-jd-intro")}</p>
+            <ol className="mt-14 border-t-2 border-blue-dark dark:border-white">
+              {criteria.map(([title, text], index) => <li key={title} className="grid gap-3 border-b-2 border-blue-dark py-7 dark:border-white md:grid-cols-[80px_260px_1fr] md:gap-8"><span className="text-3xl font-medium tabular-nums">{index + 1}</span><h3 className="text-xl font-medium">{title}</h3><p className="text-lg opacity-80">{text}</p></li>)}
+            </ol>
+            <p className="mt-10 rounded-xl border-2 border-blue-dark p-6 text-lg leading-relaxed dark:border-white sm:p-8 sm:text-xl"><strong>{t("hk-jd-bonus-title")}</strong> {t("hk-jd-bonus-text")}</p>
           </div>
         </section>
 

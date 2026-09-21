@@ -16,7 +16,7 @@ export default function HeroContentSlider({ events, posts, projects }) {
       .slice(0, 5)
       .map((selection) => {
         const content = sources[selection.type]?.find((item) => item.slug === selection.slug);
-        return content ? localizeContent({ ...content, type: selection.type }, i18n.resolvedLanguage || i18n.language) : null;
+        return content ? { ...localizeContent({ ...content, type: selection.type }, i18n.resolvedLanguage || i18n.language), type: selection.type } : null;
       })
       .filter(Boolean);
   }, [events, posts, projects, i18n.language, i18n.resolvedLanguage]);
