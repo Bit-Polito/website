@@ -69,6 +69,17 @@ const eventContent = {
       ],
       note: "Acquista il tuo ingresso su btcpp.dev con il codice BITPOLITO20 per il 20% di sconto.",
     },
+    "plan-b-forum-2027-lugano": {
+      type: "Conferenza",
+      title: "Plan B Forum 2027 · Lugano",
+      date: "23 – 24 ottobre 2027",
+      location: "Lugano, Svizzera",
+      description: "BitPolito parteciperà al Plan B Forum 2027, il grande appuntamento europeo su Bitcoin e freedom tech a Lugano.",
+      details: [
+        "BitPolito parteciperà al Plan B Forum 2027, a Lugano, il 23 e 24 ottobre.",
+      ],
+      note: "Scopri il programma su planb.lugano.ch/planb-forum/.",
+    },
   },
   en: {
     "bitgeneration-4-corso-aperto-su-bitcoin": {
@@ -136,6 +147,17 @@ const eventContent = {
         "Our own Mo Harchegani — Lightning Network project manager at BitPolito — will present an open, self-hostable system for managing Lightning payments without losing full control of your node and your keys.",
       ],
       note: "Get your ticket at btcpp.dev with the code BITPOLITO20 for 20% off.",
+    },
+    "plan-b-forum-2027-lugano": {
+      type: "Conference",
+      title: "Plan B Forum 2027 · Lugano",
+      date: "October 23 – 24, 2027",
+      location: "Lugano, Switzerland",
+      description: "BitPolito will take part in Plan B Forum 2027, Europe's major gathering on Bitcoin and freedom tech in Lugano.",
+      details: [
+        "BitPolito will take part in Plan B Forum 2027, in Lugano, on October 23 and 24.",
+      ],
+      note: "Discover the programme at planb.lugano.ch/planb-forum/.",
     },
   },
   de: {
@@ -205,6 +227,17 @@ const eventContent = {
       ],
       note: "Sichere dir dein Ticket auf btcpp.dev mit dem Code BITPOLITO20 und erhalte 20 % Rabatt.",
     },
+    "plan-b-forum-2027-lugano": {
+      type: "Konferenz",
+      title: "Plan B Forum 2027 · Lugano",
+      date: "23. – 24. Oktober 2027",
+      location: "Lugano, Schweiz",
+      description: "BitPolito nimmt am Plan B Forum 2027 teil, dem großen europäischen Treffen zu Bitcoin und Freedom Tech in Lugano.",
+      details: [
+        "BitPolito nimmt am 23. und 24. Oktober am Plan B Forum 2027 in Lugano teil.",
+      ],
+      note: "Entdecke das Programm auf planb.lugano.ch/planb-forum/.",
+    },
   },
   es: {
     "bitgeneration-4-corso-aperto-su-bitcoin": {
@@ -272,6 +305,17 @@ const eventContent = {
         "Nuestro Mo Harchegani — project manager de Lightning Network en BitPolito — presentará un sistema abierto y autoalojable para gestionar pagos Lightning sin perder el control total de tu nodo y tus claves.",
       ],
       note: "Compra tu entrada en btcpp.dev con el código BITPOLITO20 y obtén un 20 % de descuento.",
+    },
+    "plan-b-forum-2027-lugano": {
+      type: "Conferencia",
+      title: "Plan B Forum 2027 · Lugano",
+      date: "23 – 24 de octubre de 2027",
+      location: "Lugano, Suiza",
+      description: "BitPolito participará en el Plan B Forum 2027, la gran cita europea sobre Bitcoin y freedom tech en Lugano.",
+      details: [
+        "BitPolito participará en el Plan B Forum 2027, en Lugano, el 23 y 24 de octubre.",
+      ],
+      note: "Descubre el programa en planb.lugano.ch/planb-forum/.",
     },
   },
   fr: {
@@ -341,6 +385,17 @@ const eventContent = {
       ],
       note: "Achetez votre billet sur btcpp.dev avec le code BITPOLITO20 pour 20 % de réduction.",
     },
+    "plan-b-forum-2027-lugano": {
+      type: "Conférence",
+      title: "Plan B Forum 2027 · Lugano",
+      date: "23 – 24 octobre 2027",
+      location: "Lugano, Suisse",
+      description: "BitPolito participera au Plan B Forum 2027, le grand rendez-vous européen sur Bitcoin et la freedom tech à Lugano.",
+      details: [
+        "BitPolito participera au Plan B Forum 2027, à Lugano, les 23 et 24 octobre.",
+      ],
+      note: "Découvrez le programme sur planb.lugano.ch/planb-forum/.",
+    },
   },
   nl: {
     "bitgeneration-4-corso-aperto-su-bitcoin": {
@@ -408,6 +463,17 @@ const eventContent = {
         "Onze Mo Harchegani — Lightning Network-projectmanager bij BitPolito — presenteert een open, zelf te hosten systeem om Lightning-betalingen te beheren zonder de volledige controle over je node en je sleutels te verliezen.",
       ],
       note: "Koop je ticket op btcpp.dev met de code BITPOLITO20 voor 20% korting.",
+    },
+    "plan-b-forum-2027-lugano": {
+      type: "Conferentie",
+      title: "Plan B Forum 2027 · Lugano",
+      date: "23 – 24 oktober 2027",
+      location: "Lugano, Zwitserland",
+      description: "BitPolito neemt deel aan het Plan B Forum 2027, het grote Europese evenement over Bitcoin en freedom tech in Lugano.",
+      details: [
+        "BitPolito neemt op 23 en 24 oktober deel aan het Plan B Forum 2027, in Lugano.",
+      ],
+      note: "Bekijk het programma op planb.lugano.ch/planb-forum/.",
     },
   },
   pt: {
@@ -477,6 +543,17 @@ const eventContent = {
       ],
       note: "Compra o teu ingresso em btcpp.dev com o código BITPOLITO20 e tem 20% de desconto.",
     },
+    "plan-b-forum-2027-lugano": {
+      type: "Conferência",
+      title: "Plan B Forum 2027 · Lugano",
+      date: "23 – 24 de outubro de 2027",
+      location: "Lugano, Suíça",
+      description: "A BitPolito vai participar no Plan B Forum 2027, o grande encontro europeu sobre Bitcoin e freedom tech em Lugano.",
+      details: [
+        "A BitPolito vai participar no Plan B Forum 2027, em Lugano, nos dias 23 e 24 de outubro.",
+      ],
+      note: "Consulta o programa em planb.lugano.ch/planb-forum/.",
+    },
   },
   ru: {
     "bitgeneration-4-corso-aperto-su-bitcoin": {
@@ -544,6 +621,17 @@ const eventContent = {
         "Наш Мо Харчегани — проджект-менеджер Lightning Network в BitPolito — представит открытую систему с возможностью self-hosting для управления платежами Lightning без потери полного контроля над твоим узлом и ключами.",
       ],
       note: "Купи билет на btcpp.dev с промокодом BITPOLITO20 и получи скидку 20%.",
+    },
+    "plan-b-forum-2027-lugano": {
+      type: "Конференция",
+      title: "Plan B Forum 2027 · Лугано",
+      date: "23 – 24 октября 2027",
+      location: "Лугано, Швейцария",
+      description: "BitPolito примет участие в Plan B Forum 2027 — крупнейшей европейской встрече, посвящённой Bitcoin и freedom tech, в Лугано.",
+      details: [
+        "BitPolito примет участие в Plan B Forum 2027 в Лугано, 23 и 24 октября.",
+      ],
+      note: "Программа доступна на planb.lugano.ch/planb-forum/.",
     },
   },
   zh: {
@@ -613,6 +701,17 @@ const eventContent = {
       ],
       note: "在 btcpp.dev 使用优惠码 BITPOLITO20 购票可享 8 折优惠。",
     },
+    "plan-b-forum-2027-lugano": {
+      type: "会议",
+      title: "Plan B Forum 2027 · 卢加诺",
+      date: "2027 年 10 月 23 – 24 日",
+      location: "瑞士卢加诺",
+      description: "BitPolito 将出席 2027 年 Plan B Forum,这是欧洲关于比特币与自由科技的重要盛会,地点在卢加诺。",
+      details: [
+        "BitPolito 将于 10 月 23 日至 24 日在卢加诺出席 2027 年 Plan B Forum。",
+      ],
+      note: "访问 planb.lugano.ch/planb-forum/ 查看完整日程。",
+    },
   },
   fa: {
     "bitgeneration-4-corso-aperto-su-bitcoin": {
@@ -680,6 +779,17 @@ const eventContent = {
         "Mo Harchegani از تیم ما — مدیر پروژه لایتنینگ نتورک در BitPolito — سیستمی باز و قابل میزبانی شخصی برای مدیریت پرداخت‌های لایتنینگ ارائه خواهد کرد، بدون از دست دادن کنترل کامل نود و کلیدهایتان.",
       ],
       note: "با کد BITPOLITO20 از btcpp.dev بلیت بخرید و ۲۰٪ تخفیف بگیرید.",
+    },
+    "plan-b-forum-2027-lugano": {
+      type: "کنفرانس",
+      title: "Plan B Forum 2027 · لوگانو",
+      date: "۱ – ۲ آبان ۱۴۰۶",
+      location: "لوگانو، سوئیس",
+      description: "BitPolito در Plan B Forum 2027 شرکت می‌کند؛ بزرگ‌ترین رویداد اروپایی درباره بیت‌کوین و فناوری آزادی در لوگانو.",
+      details: [
+        "BitPolito در ۱ و ۲ آبان (۲۳ و ۲۴ اکتبر) در Plan B Forum 2027 در لوگانو شرکت می‌کند.",
+      ],
+      note: "برنامه کامل را در planb.lugano.ch/planb-forum/ ببینید.",
     },
   },
 };

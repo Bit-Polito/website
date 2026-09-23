@@ -8,6 +8,13 @@ const content = {
       date: "October 28 – December 2, 2025",
       description: "A course to discover Bitcoin from every angle: technology, economics and society, with a final certification.",
     },
+    "event:plan-b-forum-2027-lugano": {
+      type: "Conference",
+      title: "Plan B Forum 2027 · Lugano",
+      date: "October 23 – 24, 2027",
+      location: "Lugano, Switzerland",
+      description: "BitPolito will take part in Plan B Forum 2027, Europe's major gathering on Bitcoin and freedom tech in Lugano.",
+    },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "Conference",
       title: "BitPolito speaker at BTC++ Berlin",
@@ -52,6 +59,13 @@ const content = {
       title: "BitGeneration 4 · Offener Bitcoin-Kurs",
       date: "28. Oktober – 2. Dezember 2025",
       description: "Ein Kurs, um Bitcoin aus jedem Blickwinkel zu entdecken: Technologie, Wirtschaft und Gesellschaft, mit Abschlusszertifikat.",
+    },
+    "event:plan-b-forum-2027-lugano": {
+      type: "Konferenz",
+      title: "Plan B Forum 2027 · Lugano",
+      date: "23. – 24. Oktober 2027",
+      location: "Lugano, Schweiz",
+      description: "BitPolito nimmt am Plan B Forum 2027 teil, dem großen europäischen Treffen zu Bitcoin und Freedom Tech in Lugano.",
     },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "Konferenz",
@@ -98,6 +112,13 @@ const content = {
       date: "28 de octubre – 2 de diciembre de 2025",
       description: "Un curso para descubrir Bitcoin desde todos los ángulos: tecnología, economía y sociedad, con certificación final.",
     },
+    "event:plan-b-forum-2027-lugano": {
+      type: "Conferencia",
+      title: "Plan B Forum 2027 · Lugano",
+      date: "23 – 24 de octubre de 2027",
+      location: "Lugano, Suiza",
+      description: "BitPolito participará en el Plan B Forum 2027, la gran cita europea sobre Bitcoin y freedom tech en Lugano.",
+    },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "Conferencia",
       title: "BitPolito, ponente en BTC++ Berlín",
@@ -142,6 +163,13 @@ const content = {
       title: "BitGeneration 4 · Cours ouvert sur Bitcoin",
       date: "28 octobre – 2 décembre 2025",
       description: "Un cours pour découvrir Bitcoin sous tous les angles : technologie, économie et société, avec certification finale.",
+    },
+    "event:plan-b-forum-2027-lugano": {
+      type: "Conférence",
+      title: "Plan B Forum 2027 · Lugano",
+      date: "23 – 24 octobre 2027",
+      location: "Lugano, Suisse",
+      description: "BitPolito participera au Plan B Forum 2027, le grand rendez-vous européen sur Bitcoin et la freedom tech à Lugano.",
     },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "Conférence",
@@ -188,6 +216,13 @@ const content = {
       date: "28 oktober – 2 december 2025",
       description: "Een cursus om Bitcoin vanuit elke invalshoek te ontdekken: technologie, economie en maatschappij, met een eindcertificering.",
     },
+    "event:plan-b-forum-2027-lugano": {
+      type: "Conferentie",
+      title: "Plan B Forum 2027 · Lugano",
+      date: "23 – 24 oktober 2027",
+      location: "Lugano, Zwitserland",
+      description: "BitPolito neemt deel aan het Plan B Forum 2027, het grote Europese evenement over Bitcoin en freedom tech in Lugano.",
+    },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "Conferentie",
       title: "BitPolito spreekt op BTC++ Berlijn",
@@ -232,6 +267,13 @@ const content = {
       title: "BitGeneration 4 · Curso aberto sobre Bitcoin",
       date: "28 de outubro – 2 de dezembro de 2025",
       description: "Um curso para descobrir o Bitcoin de todos os ângulos: tecnologia, economia e sociedade, com certificação final.",
+    },
+    "event:plan-b-forum-2027-lugano": {
+      type: "Conferência",
+      title: "Plan B Forum 2027 · Lugano",
+      date: "23 – 24 de outubro de 2027",
+      location: "Lugano, Suíça",
+      description: "A BitPolito vai participar no Plan B Forum 2027, o grande encontro europeu sobre Bitcoin e freedom tech em Lugano.",
     },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "Conferência",
@@ -278,6 +320,13 @@ const content = {
       date: "28 октября — 2 декабря 2025",
       description: "Курс, позволяющий рассмотреть Bitcoin со всех сторон: технологии, экономика и общество, с итоговой сертификацией.",
     },
+    "event:plan-b-forum-2027-lugano": {
+      type: "Конференция",
+      title: "Plan B Forum 2027 · Лугано",
+      date: "23 – 24 октября 2027",
+      location: "Лугано, Швейцария",
+      description: "BitPolito примет участие в Plan B Forum 2027 — крупнейшей европейской встрече, посвящённой Bitcoin и freedom tech, в Лугано.",
+    },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "Конференция",
       title: "BitPolito выступает на BTC++ в Берлине",
@@ -323,6 +372,13 @@ const content = {
       date: "2025 年 10 月 28 日 – 12 月 2 日",
       description: "一门从技术、经济和社会等多角度探索比特币的课程,并在结业时颁发证书。",
     },
+    "event:plan-b-forum-2027-lugano": {
+      type: "会议",
+      title: "Plan B Forum 2027 · 卢加诺",
+      date: "2027 年 10 月 23 – 24 日",
+      location: "瑞士卢加诺",
+      description: "BitPolito 将出席 2027 年 Plan B Forum,这是欧洲关于比特币与自由科技的重要盛会,地点在卢加诺。",
+    },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "会议",
       title: "BitPolito 出席柏林 BTC++ 并发表演讲",
@@ -367,6 +423,13 @@ const content = {
       title: "BitGeneration 4 · دوره آزاد بیت‌کوین",
       date: "۶ آبان – ۱۱ آذر ۱۴۰۴",
       description: "دوره‌ای برای کشف بیت‌کوین از همه زوایا: فناوری، اقتصاد و جامعه، همراه با گواهی پایان دوره.",
+    },
+    "event:plan-b-forum-2027-lugano": {
+      type: "کنفرانس",
+      title: "Plan B Forum 2027 · لوگانو",
+      date: "۱ – ۲ آبان ۱۴۰۶",
+      location: "لوگانو، سوئیس",
+      description: "BitPolito در Plan B Forum 2027 شرکت می‌کند؛ بزرگ‌ترین رویداد اروپایی درباره بیت‌کوین و فناوری آزادی در لوگانو.",
     },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "کنفرانس",

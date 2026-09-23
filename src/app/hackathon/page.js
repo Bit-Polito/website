@@ -124,7 +124,7 @@ export default function HackathonPage() {
             <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-2xl border-2 border-blue-dark bg-white shadow-2xl dark:border-white lg:max-w-none">
               <Image
                 src="/rgb-hackathon.jpg"
-                alt="Agentic Dollars on Bitcoin Hackathon event poster"
+                alt="Locandina dell'hackathon Agentic Dollars on Bitcoin, 17–18 ottobre 2026, BLOX Space Torino"
                 width={960}
                 height={1280}
                 className="h-auto w-full"

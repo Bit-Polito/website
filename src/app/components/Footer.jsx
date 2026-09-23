@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 /**
@@ -76,9 +77,9 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-x-10 mb-6">
-                <p>Cookie Policy</p>
+                <Link href="/cookie-policy" className="hover:underline underline-offset-4">Cookie Policy</Link>
                 <p>©2026, Bitpolito</p>
-                <p>Privacy Policy</p>
+                <Link href="/privacy" className="hover:underline underline-offset-4">Privacy Policy</Link>
             </div>
         </div>
     );
