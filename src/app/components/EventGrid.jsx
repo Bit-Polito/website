@@ -38,18 +38,20 @@ export default function EventGrid({ events }) {
 
       <section aria-live="polite" className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
         {filteredEvents.map((event) => {
-          const localizedEvent = localizeContent({ ...event, type: "event" }, i18n.resolvedLanguage || i18n.language);
+          const contentType = event.contentType || "event";
+          const localizedEvent = localizeContent({ ...event, type: contentType }, i18n.resolvedLanguage || i18n.language);
+          const displayType = contentType === "event" ? localizedEvent.type : t(`content-${contentType}`);
           return (
           <Link
             key={event.slug}
-            href={`/events/${event.slug}`}
+            href={event.href || `/events/${event.slug}`}
             className="group flex min-h-full flex-col overflow-hidden rounded-xl border-2 border-blue-dark bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-xl focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-dark dark:border-white dark:bg-blue-dark dark:hover:shadow-white/10"
           >
             <div className="flex items-start justify-between gap-4 px-6 pb-5 pt-6">
               <span className={`rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] ${event.status === "upcoming" ? "bg-blue-dark text-white dark:bg-white dark:text-blue-dark" : "border border-blue-dark text-blue-dark dark:border-white dark:text-white"}`}>
                 {event.status === "upcoming" ? t("events-next") : t("events-previous")}
               </span>
-              <span className="text-right text-xs font-semibold uppercase tracking-[0.12em] text-blue-dark/65 dark:text-white/65">{localizedEvent.type}</span>
+              <span className="text-right text-xs font-semibold uppercase tracking-[0.12em] text-blue-dark/65 dark:text-white/65">{displayType}</span>
             </div>
             <div className="relative aspect-[4/3] w-full overflow-hidden border-y-2 border-blue-dark dark:border-white" style={event.imageBg ? { backgroundColor: event.imageBg } : undefined}>
               <Image src={event.image} alt={event.imageAlt} fill sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw" className={`${event.imageFit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-500 group-hover:scale-105`} />

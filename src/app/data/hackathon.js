@@ -5,7 +5,7 @@ const hackathon = {
   date: "17–18 ottobre 2026",
   description: "Due giorni a Torino per costruire applicazioni self-custodial per dollari digitali, alimentate dall'AI locale e regolate su Bitcoin.",
   image: "/rgb-hackathon.jpg",
-  imageAlt: "Locandina dell'hackathon Agentic Dollars on Bitcoin",
+  imageAlt: "Locandina dell'hackathon Agentic Dollars on Bitcoin, 17–18 ottobre 2026, BLOX Space Torino",
   href: "/hackathon",
 };
 
