@@ -25,6 +25,11 @@ export default function EventsPage() {
     href: hackathon.href,
   };
   const allEvents = [...events.slice(0, -1), hackathonEvent, events[events.length - 1]];
+  const sortedEvents = allEvents.sort((a, b) => {
+    if (a.status === "upcoming" && b.status === "past") return -1;
+    if (a.status === "past" && b.status === "upcoming") return 1;
+    return 0;
+  });
 
   return (
     <BlogShell>
@@ -36,7 +41,7 @@ export default function EventsPage() {
         </p>
       </section>
 
-      <EventGrid events={allEvents} />
+      <EventGrid events={sortedEvents} />
     </BlogShell>
   );
 }

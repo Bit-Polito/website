@@ -154,6 +154,13 @@ export default function HackathonPage() {
             <div><p className="hackathon-eyebrow">{t("hk-prize-eyebrow")}</p><h2 className="hackathon-title">{t("hk-prize-title")}</h2></div>
             <p className="text-xl leading-relaxed sm:text-2xl">{t("hk-prize-text-pre")}<a href="https://www.cyphertank.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-2 underline-offset-4">{t("hk-prize-text-link")}</a>{t("hk-prize-text-post")}</p>
           </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {[{title: t("hk-prize-1st")}, {title: t("hk-prize-2nd")}, {title: t("hk-prize-3rd")}].map((prize) => (
+              <div key={prize.title} className="rounded-lg border-2 border-blue-dark p-6 dark:border-white">
+                <p className="text-lg font-bold">{prize.title}</p>
+              </div>
+            ))}
+          </div>
           <div className="mt-16 grid gap-8 border-t-2 border-blue-dark pt-12 dark:border-white lg:grid-cols-2">
             <div><p className="hackathon-eyebrow">{t("hk-ct-eyebrow")}</p><h2 className="hackathon-title">{t("hk-ct-title")}</h2></div>
             <div className="space-y-5 text-lg leading-relaxed sm:text-xl">

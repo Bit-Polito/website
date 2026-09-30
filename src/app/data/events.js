@@ -1,7 +1,7 @@
 const events = [
   {
     slug: "bitpolito-speaker-a-btchel",
-    status: "upcoming",
+    status: "past",
     type: "Conferenza",
     title: "BitPolito speaker a BTCHEL",
     date: "25 – 26 settembre 2026",
@@ -17,7 +17,7 @@ const events = [
   },
   {
     slug: "unisciti-a-bitpolito-29-settembre",
-    status: "upcoming",
+    status: "past",
     type: "Presentazione del team",
     title: "Recruitment BitPolito: unisciti al team",
     date: "29 settembre 2026 · 17:30",
