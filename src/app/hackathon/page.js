@@ -113,6 +113,10 @@ export default function HackathonPage() {
         </div>
       </header>
 
+      <div className="border-b-2 border-blue-dark bg-blue-dark py-4 text-center text-white dark:border-white dark:bg-white dark:text-blue-dark">
+        <p className="text-2xl font-bold uppercase tracking-wider sm:text-3xl">Apply by 7 October</p>
+      </div>
+
       <main>
         <section className="hackathon-hero">
           <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:gap-14 lg:py-28">
@@ -161,14 +165,6 @@ export default function HackathonPage() {
               </div>
             ))}
           </div>
-          <div className="mt-16 grid gap-8 border-t-2 border-blue-dark pt-12 dark:border-white lg:grid-cols-2">
-            <div><p className="hackathon-eyebrow">{t("hk-ct-eyebrow")}</p><h2 className="hackathon-title">{t("hk-ct-title")}</h2></div>
-            <div className="space-y-5 text-lg leading-relaxed sm:text-xl">
-              <p>{t("hk-ct-p1")}</p>
-              <p>{t("hk-ct-p2")}</p>
-              <a href="https://www.cyphertank.org/" target="_blank" rel="noopener noreferrer" className="btn-d inline-flex rounded-md px-6 py-3 text-base">www.cyphertank.org <span className="ml-2"><Arrow /></span></a>
-            </div>
-          </div>
         </section>
 
         <section className="bg-blue-dark text-white dark:bg-white dark:text-blue-dark">
@@ -178,8 +174,9 @@ export default function HackathonPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
-          <p className="hackathon-eyebrow">{t("hk-timeline-eyebrow")}</p><h2 className="hackathon-title">{t("hk-timeline-title")}</h2>
+        <section className="border-b-2 border-blue-dark px-5 py-20 dark:border-white sm:px-8 sm:py-28">
+          <div className="mx-auto max-w-7xl">
+            <p className="hackathon-eyebrow">{t("hk-timeline-eyebrow")}</p><h2 className="hackathon-title">{t("hk-timeline-title")}</h2>
           <div className="mt-14 border-t-2 border-blue-dark dark:border-white">
             {timeline.map(([date, title, text]) => <div key={date} className="grid gap-3 border-b-2 border-blue-dark py-7 dark:border-white md:grid-cols-[180px_220px_1fr] md:gap-8"><p className="font-bold uppercase tracking-wide">{date}</p><h3 className="text-xl font-medium">{title}</h3><p className="text-lg opacity-80">{text}</p></div>)}
           </div>
@@ -198,21 +195,17 @@ export default function HackathonPage() {
             </div>
             <p className="mt-8 max-w-3xl text-lg opacity-80">{t("hk-wk-note")}</p>
           </div>
+          </div>
         </section>
 
-        <section className="bg-blue-dark text-white dark:bg-white dark:text-blue-dark">
-          <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1fr_.75fr] lg:gap-16">
-            <div><p className="hackathon-eyebrow">{t("hk-build-eyebrow")}</p><h2 className="mt-5 text-4xl font-medium leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">{t("hk-build-title-line1")}<br />{t("hk-build-title-line2")}</h2></div>
-            <a href="https://rgbprotocol.org/" target="_blank" rel="noopener noreferrer" aria-label={t("hk-rgb-aria")} className="block rounded-2xl transition hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-white/50 dark:focus:ring-blue-dark/40">
-              <Image
-                src="/rgb.webp"
-                alt="RGB Protocol Association"
-                width={1672}
-                height={941}
-                className="h-auto w-full rounded-2xl"
-                sizes="(max-width: 1023px) 100vw, 40vw"
-              />
-            </a>
+        <section className="border-b-2 border-blue-dark px-5 py-12 dark:border-white sm:px-8 sm:py-16">
+          <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
+            <div><p className="hackathon-eyebrow">{t("hk-ct-eyebrow")}</p><h2 className="hackathon-title">{t("hk-ct-title")}</h2></div>
+            <div className="space-y-5 text-lg leading-relaxed sm:text-xl">
+              <p>{t("hk-ct-p1")}</p>
+              <p>{t("hk-ct-p2")}</p>
+              <a href="https://www.cyphertank.org/" target="_blank" rel="noopener noreferrer" className="btn-d inline-flex rounded-md px-6 py-3 text-base">www.cyphertank.org <span className="ml-2"><Arrow /></span></a>
+            </div>
           </div>
         </section>
 
@@ -238,6 +231,22 @@ export default function HackathonPage() {
             <div className="mt-14 grid border-l-2 border-t-2 border-blue-dark dark:border-white md:grid-cols-2">
               {tracks.map(([title, text], index) => <article key={title} className={`min-h-[11.2rem] border-b-2 border-r-2 border-blue-dark p-7 dark:border-white sm:p-9 ${trackStyles[index]}`}><h3 className="text-2xl font-medium sm:text-3xl">{title}</h3><p className="mt-3 text-lg opacity-80">{text}</p></article>)}
             </div>
+          </div>
+        </section>
+
+        <section className="bg-blue-dark text-white dark:bg-white dark:text-blue-dark">
+          <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1fr_.75fr] lg:gap-16">
+            <div><p className="hackathon-eyebrow">{t("hk-build-eyebrow")}</p><h2 className="mt-5 text-4xl font-medium leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">{t("hk-build-title-line1")}<br />{t("hk-build-title-line2")}</h2></div>
+            <a href="https://rgbprotocol.org/" target="_blank" rel="noopener noreferrer" aria-label={t("hk-rgb-aria")} className="block rounded-2xl transition hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-white/50 dark:focus:ring-blue-dark/40">
+              <Image
+                src="/rgb.webp"
+                alt="RGB Protocol Association"
+                width={1672}
+                height={941}
+                className="h-auto w-full rounded-2xl"
+                sizes="(max-width: 1023px) 100vw, 40vw"
+              />
+            </a>
           </div>
         </section>
 
