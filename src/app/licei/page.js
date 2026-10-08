@@ -10,6 +10,7 @@ import "../i18n/i18n";
 const formatKeyToTranslationKey = {
   coming: "schools-coming",
   "course-ten": "schools-course-ten",
+  "course-eight": "schools-course-eight",
   intro: "schools-intro-lesson",
 };
 

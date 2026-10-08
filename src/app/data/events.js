@@ -32,7 +32,7 @@ const events = [
   },
   {
     slug: "bitpolito-speaker-a-btcpp-berlino",
-    status: "upcoming",
+    status: "past",
     type: "Conferenza",
     title: "BitPolito speaker a BTC++ Berlino",
     date: "1 – 3 ottobre 2026",
