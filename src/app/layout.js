@@ -1,12 +1,4 @@
-import { Playfair_Display } from "next/font/google";
 import "./globals.css";
-
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["700", "800"],
-  style: ["italic"],
-  variable: "--font-logo",
-});
 
 export const metadata = {
   title: 'BitPolito',
@@ -15,7 +7,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html suppressHydrationWarning className={playfairDisplay.variable}>
+    <html suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{

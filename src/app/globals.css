@@ -5,6 +5,7 @@
 :root {
   --bitpolito-blue: #001CE0;
   --bitpolito-paper: #F9F9F9;
+  --font-logo: Georgia, 'Times New Roman', serif;
 }
 
 html {
