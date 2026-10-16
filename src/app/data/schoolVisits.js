@@ -6,7 +6,7 @@ const schoolVisits = [
     location: "Cuneo",
     status: "upcoming",
     school: 'Istituto Istruzione Superiore "Mario Delpozzo"',
-    formatKey: "course-ten",
+    formatKey: "course-eight",
   },
   {
     id: "iis-olivetti-ivrea-upcoming",

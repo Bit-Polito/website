@@ -10,7 +10,6 @@ import HamburgerMenu from "../components/HamburgerMenu";
 import Footer from "../components/Footer";
 import "../i18n/i18n";
 
-const APPLY_URL = "https://forms.gle/AdoCUYeL4z5hpA3a6";
 const MAPS_URL = "https://www.google.com/maps/place/Blox+Space/@45.0702913,7.678567,626m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47886d2bd46b3f31:0xe3558c5f809a4cb3!8m2!3d45.0702913!4d7.678567!16s%2Fg%2F11n52t2zqt?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D";
 
 const trackStyles = [
@@ -114,7 +113,7 @@ export default function HackathonPage() {
       </header>
 
       <div className="border-b-2 border-blue-dark bg-blue-dark py-4 text-center text-white dark:border-white dark:bg-white dark:text-blue-dark">
-        <p className="text-2xl font-bold uppercase tracking-wider sm:text-3xl">Apply by 7 October</p>
+        <p className="text-2xl font-bold uppercase tracking-wider sm:text-3xl">Applications closed</p>
       </div>
 
       <main>
@@ -279,15 +278,6 @@ export default function HackathonPage() {
       <div className="hackathon-footer">
         <Footer />
       </div>
-      <a
-        href={APPLY_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hackathon-floating-cta"
-        aria-label={t("hk-apply-aria")}
-      >
-        {t("hk-apply-now")} <Arrow />
-      </a>
     </div>
   );
 }
