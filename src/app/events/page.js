@@ -15,7 +15,7 @@ export default function EventsPage() {
   const hackathonEvent = {
     slug: hackathon.slug,
     contentType: "hackathon",
-    status: "upcoming",
+    status: hackathon.status,
     title: hackathon.title,
     date: hackathon.date,
     location: `BLOX Space, ${localizeCity("Torino", language)}`,

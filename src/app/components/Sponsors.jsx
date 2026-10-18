@@ -25,6 +25,19 @@ export default function Sponsors() {
     return (
         <div className="grid grid-cols-1 gap-3 sm:gap-4 lg:gap-5 p-2 sm:p-4 lg:p-5">
             <div className="mb-8 sm:mb-10 lg:mb-12 pt-8 sm:pt-9 lg:pt-10">
+                <a
+                    href="https://www.polito.it/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Politecnico di Torino"
+                    className="mx-auto mb-8 flex w-full max-w-md items-center justify-center rounded-md border-2 border-blue-dark bg-white px-8 py-6 transition-transform hover:scale-[1.02] dark:border-white dark:bg-blue-dark sm:mb-10 sm:px-12 sm:py-8"
+                >
+                    <img
+                        src="/polito_logo.png"
+                        alt="Politecnico di Torino"
+                        className="h-auto w-64 object-contain dark:brightness-0 dark:invert sm:w-80"
+                    />
+                </a>
                 <div className="relative mb-6 sm:mb-8">
                     <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-center relative text-blue-dark dark:text-white"
                         style={{
