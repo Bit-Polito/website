@@ -1,3 +1,5 @@
+import events from "./events";
+
 // Full per-locale content for event detail pages. Base fields (image, organiser,
 // slug, status) live in events.js; this file overrides title/date/location/type/
 // description/details/program/note for every supported language.
@@ -796,7 +798,7 @@ const eventContent = {
 
 export function getEventContent(slug, language) {
   const lang = (language || "it").split("-")[0];
-  return (eventContent[lang] && eventContent[lang][slug]) || eventContent.it[slug];
+  return (eventContent[lang] && eventContent[lang][slug]) || eventContent.it[slug] || events.find((event) => event.slug === slug);
 }
 
 export default eventContent;

@@ -51,6 +51,9 @@ export default function AboutPage() {
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-dark/70 dark:text-white/70">{t("about-us")}</p>
           <h1 className="mt-5 max-w-4xl text-5xl font-medium leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl">{t("about-headline")}</h1>
           <p className="mt-7 max-w-3xl text-lg leading-relaxed sm:text-xl">{t("about-lead")}</p>
+          <a href="https://www.polito.it/" target="_blank" rel="noopener noreferrer" aria-label="Politecnico di Torino" className="mt-7 inline-flex opacity-75 transition-opacity hover:opacity-100">
+            <img src="/polito_logo.png" alt="Politecnico di Torino" className="h-auto w-32 object-contain dark:brightness-0 dark:invert" />
+          </a>
         </div>
         <dl className="grid grid-cols-2 overflow-hidden rounded-xl border-l-2 border-t-2 border-blue-dark dark:border-white">
           {stats.map(([value, label], index) => {
