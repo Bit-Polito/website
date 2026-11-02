@@ -18,17 +18,18 @@ export default function EventsPage() {
     status: hackathon.status,
     title: hackathon.title,
     date: hackathon.date,
+    sortDate: "2026-10-17",
     location: `BLOX Space, ${localizeCity("Torino", language)}`,
     image: hackathon.image,
     imageAlt: hackathon.imageAlt,
     description: hackathon.description,
     href: hackathon.href,
   };
-  const allEvents = [...events.slice(0, -1), hackathonEvent, events[events.length - 1]];
+  const allEvents = [...events, hackathonEvent];
   const sortedEvents = allEvents.sort((a, b) => {
     if (a.status === "upcoming" && b.status === "past") return -1;
     if (a.status === "past" && b.status === "upcoming") return 1;
-    return 0;
+    return (b.sortDate || "").localeCompare(a.sortDate || "");
   });
 
   return (
