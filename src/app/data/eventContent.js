@@ -5,6 +5,34 @@ import events from "./events";
 // description/details/program/note for every supported language.
 const eventContent = {
   it: {
+    "rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "Incontro",
+      title: "Rischi del web e tecnologia Bitcoin",
+      date: "4 novembre 2026 · 20:30",
+      location: "Sala Santa Marta, Pavone Canavese",
+      description: "In occasione del Mese dell'Educazione Finanziaria, BitPolito e Lorella Lavatori, educatrice finanziaria AIEF, propongono una serata di informazione e confronto sui rischi del web e sulla tecnologia Bitcoin.",
+      details: [
+        "L'incontro si terrà presso la Sala Santa Marta di Pavone Canavese, con il patrocinio del Comune.",
+        "Pensato per i giovani adulti e aperto a tutti, sarà un'occasione per approfondire il tema delle truffe online, riconoscere i rischi del mondo digitale e capire come difendersi.",
+        "A seguire, verrà proposta un'introduzione alla tecnologia Bitcoin.",
+        "La partecipazione è gratuita.",
+      ],
+      note: "4 novembre 2026 alle 20:30 · Sala Santa Marta, Pavone Canavese · Con il patrocinio del Comune",
+    },
+    "sovereign-artificial-intelligence-2026": {
+      type: "Talk",
+      title: "Sovereign Artificial Intelligence",
+      date: "3 novembre 2026 · 17:30 – 19:30",
+      location: "Aula 10A, Politecnico di Torino",
+      description: "Simone Esposito, Software Engineer in ambito Local AI, al Politecnico di Torino per parlare di Sovereign Artificial Intelligence: dalle basi del funzionamento dei modelli AI a dimostrazioni pratiche di strumenti e modelli open source da ospitare sui tuoi dispositivi.",
+      details: [
+        "Ricerche online, progetti di lavoro e decisioni quotidiane: affidi sempre più aspetti della tua vita all'intelligenza artificiale, ma pensi mai a dove finiscono i tuoi dati?",
+        "È il momento di parlarne!",
+        "Il 3 novembre, Simone Esposito, Software Engineer in ambito Local AI, sarà al Politecnico di Torino per un incontro dedicato alla Sovereign Artificial Intelligence.",
+        "Partiremo dalle basi del funzionamento dei modelli AI per arrivare a dimostrazioni pratiche di strumenti e modelli open source che puoi ospitare direttamente sui tuoi dispositivi.",
+      ],
+      note: "3 novembre, dalle 17:30 alle 19:30 · Politecnico di Torino, aula 10A · L'evento si è tenuto in inglese.",
+    },
     "bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "Formazione",
       title: "BitGeneration 4 · Corso aperto su Bitcoin",
@@ -71,10 +99,10 @@ const eventContent = {
       ],
       note: "Acquista il tuo ingresso su btcpp.dev con il codice BITPOLITO20 per il 20% di sconto.",
     },
-    "plan-b-forum-2027-lugano": {
+    "plan-b-forum-2026-lugano": {
       type: "Conferenza",
-      title: "Plan B Forum 2027 · Lugano",
-      date: "23 – 24 ottobre 2027",
+      title: "Plan B Forum 2026 · Lugano",
+      date: "23 – 24 ottobre 2026",
       location: "Lugano, Svizzera",
       description: "BitPolito parteciperà al Plan B Forum 2027, il grande appuntamento europeo su Bitcoin e freedom tech a Lugano.",
       details: [
@@ -84,6 +112,34 @@ const eventContent = {
     },
   },
   en: {
+    "rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "Event",
+      title: "Web Risks and Bitcoin Technology",
+      date: "November 4, 2026 · 8:30 PM",
+      location: "Sala Santa Marta, Pavone Canavese",
+      description: "In the context of Financial Education Month, BitPolito and Lorella Lavatori, financial educator at AIEF, present an evening of information and discussion about web risks and Bitcoin technology.",
+      details: [
+        "The meeting will be held at Sala Santa Marta in Pavone Canavese, with the patronage of the Municipality.",
+        "Designed for young adults and open to all, this will be an opportunity to explore the topic of online scams, recognize the risks of the digital world and learn how to protect yourself.",
+        "This will be followed by an introduction to Bitcoin technology.",
+        "Participation is free.",
+      ],
+      note: "November 4, 2026 at 8:30 PM · Sala Santa Marta, Pavone Canavese · With the patronage of the Municipality",
+    },
+    "sovereign-artificial-intelligence-2026": {
+      type: "Talk",
+      title: "Sovereign Artificial Intelligence",
+      date: "November 3, 2026 · 5:30 – 7:30 PM",
+      location: "Room 10A, Politecnico di Torino",
+      description: "Simone Esposito, Software Engineer working on Local AI, at Politecnico di Torino to talk about Sovereign Artificial Intelligence: from the basics of how AI models work to hands-on demos of open-source tools and models you can host on your own devices.",
+      details: [
+        "Online searches, work projects and everyday decisions: you entrust more and more of your life to artificial intelligence, but do you ever think about where your data ends up?",
+        "It's time to talk about it!",
+        "On November 3, Simone Esposito, Software Engineer working on Local AI, will be at Politecnico di Torino for a session dedicated to Sovereign Artificial Intelligence.",
+        "We'll start from the basics of how AI models work and move on to hands-on demos of open-source tools and models you can host directly on your own devices.",
+      ],
+      note: "November 3, 5:30 – 7:30 PM · Politecnico di Torino, Room 10A · The event was held in English.",
+    },
     "bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "Training",
       title: "BitGeneration 4 · Open Bitcoin course",
@@ -104,6 +160,183 @@ const eventContent = {
       ],
       note: "Sessions take place in Room 1S at Politecnico di Torino, 6:30–8:30 PM. You can also join online via the link we'll send before each lesson.",
     },
+    "b-cert-test-2025": {
+      type: "Certification",
+      title: "B-Cert Test",
+      date: "June 27, 2025",
+      location: "Online",
+      description: "Test to assess your knowledge in the field of Bitcoin.",
+    },
+
+    "baltic-honeybadger-2025": {
+      type: "Conference",
+      title: "Baltic Honeybadger Mission",
+      date: "August 9 \u2013 10, 2025",
+      location: "Riga, Latvia",
+      description: "Mission to Riga with BitPolito's participation as speaker.",
+    },
+
+    "barcellona-cypher-conference-2025": {
+      type: "Conference",
+      title: "Barcelona Cypher Conference",
+      date: "June 6 \u2013 7, 2025",
+      location: "Barcelona, Spain",
+      description: "BitPolito participated as speaker and media partner.",
+    },
+
+    "bitcare-forum-2025": {
+      type: "Conference",
+      title: "Bitcare Forum Mission",
+      date: "May 10, 2025",
+      location: "Brescia",
+      description: "BitPolito's participation as speaker, exhibition partner and media partner.",
+    },
+
+    "bitcoin-educators-academy-2025": {
+      type: "Training",
+      title: "Bitcoin Educators Academy",
+      date: "May 2 \u2013 4, 2025",
+      location: "Online",
+      description: "Training for aspiring Bitcoin educators, conducted in collaboration with AmityAge.",
+    },
+
+    "bitcoin-handle-with-care-2026": {
+      type: "Lesson",
+      title: "Bitcoin: Handle with Care",
+      date: "October 15, 2026 \u00b7 5:30 PM",
+      location: "Room 19A, Politecnico di Torino \u00b7 Corso Duca degli Abruzzi 24",
+      description: "Luca Giuliani, developer at BitBox, presents an introduction to Bitcoin, its fundamental principles and adoption. Discover the problems of the Fiat system, how Bitcoin offers an alternative to centralized financial solutions, and explore the concept of self-custody with practical tips on using hardware wallets.",
+    },
+
+    "bitcoin-mining-panel-2025": {
+      type: "Panel",
+      title: "Bitcoin Mining Panel",
+      date: "March 27, 2025",
+      location: "Politecnico di Torino",
+      description: "Panel at Politecnico di Torino with Giorgio Rasetto, Gabriele Vernetti and Turtlecute.",
+    },
+
+    "bitcoin-self-custody-2025": {
+      type: "Lesson",
+      title: "Bitcoin Self Custody",
+      date: "June 5, 2025",
+      location: "Politecnico di Torino",
+      description: "Lesson at Politecnico di Torino with Luca Giuliani, in collaboration with BitBox.",
+    },
+
+    "bitcuneo-2025": {
+      type: "Conference",
+      title: "BitCuneo Mission",
+      date: "March 21 \u2013 22, 2025",
+      location: "Cuneo",
+      description: "BitPolito's participation as speaker, media partner and exhibition partner.",
+    },
+
+    "bitgeneration-3-corso-bitcoin": {
+      type: "Training",
+      title: "BitGeneration 3",
+      date: "March 13 \u2013 May 29, 2025",
+      location: "Politecnico di Torino",
+      description: "Third edition of the introductory series on Bitcoin, consisting of eight lectures.",
+    },
+
+    "blockchain-e-privacy-2025": {
+      type: "Live interview",
+      title: "Blockchain and Privacy",
+      date: "July 22, 2025",
+      location: "YouTube Live",
+      description: "Live interview on YouTube with Daniela Brozzoni.",
+    },
+
+    "btc-prague-2025": {
+      type: "Conference",
+      title: "BTC Prague Mission",
+      date: "June 18 \u2013 21, 2025",
+      location: "Prague, Czech Republic",
+      description: "Mission to Prague with BitPolito's participation as speaker.",
+    },
+
+    "btchel-helsinki-2025": {
+      type: "Conference",
+      title: "BTCHEL 2025 - Helsinki Mission \u00b7",
+      date: "August 15 \u2013 16, 2025",
+      location: "Helsinki, Finland",
+      description: "BitPolito's participation as speaker and media partner.",
+    },
+
+    "capire-bitcoin-2025": {
+      type: "Introductory event",
+      title: "Understanding Bitcoin",
+      date: "March 5, 2025",
+      location: "Politecnico di Torino",
+      description: "Introductory event on Bitcoin at Politecnico di Torino with Giorgio Rasetto.",
+    },
+
+    "from-open-source-to-bitcoin": {
+      type: "Speech",
+      title: "From Open Source to Bitcoin",
+      date: "February 20, 2025",
+      location: "Politecnico di Torino",
+      description: "Speech at Politecnico di Torino with Vincenzo Palazzo, dedicated to the journey from open source to Bitcoin.",
+    },
+
+    "pi-greco-day-chivasso-2025": {
+      type: "Workshop",
+      title: "Pi Greco Day",
+      date: "March 13, 2025",
+      location: "Chivasso",
+      description: "With the association Ex Alunni Liceo Newton, the team conducted cryptographic games and mathematical riddles to solve as a team.",
+    },
+
+    "pi-greco-day-chivasso-2026": {
+      type: "Workshop",
+      title: "Pi Greco Day 2026",
+      date: "March 13, 2026 \u00b7 9:00 AM \u2013 5:30 PM",
+      location: "PalaLancia, Via Favorita 111, Chivasso",
+      description: "Pi Greco Day returns! We participate in 'Celebrating Pi Greco Day' with the association Ex Alunni Liceo Newton. We bring cryptographic games and mathematical riddles to solve as a team.",
+    },
+
+    "plan-b-forum-el-salvador-2025": {
+      type: "Conference",
+      title: "Plan \u20bf Forum Mission \u00b7 El Salvador",
+      date: "January 30 \u2013 31, 2025",
+      location: "El Salvador",
+      description: "BitPolito participated in the Plan \u20bf Forum in El Salvador as a media partner and speaker.",
+    },
+
+    "plan-b-forum-lugano-2025": {
+      type: "Conference",
+      title: "Lugano Mission \u00b7 Plan \u20bf Forum",
+      date: "October 24 \u2013 25, 2025",
+      location: "Lugano, Switzerland",
+      description: "BitPolito participated as speaker and exhibition partner: Francesco Pelle spoke about university initiatives, while Eugenio Valenti participated in the Orange Pilling Teenagers panel.",
+      details: [
+        "BitPolito participated in the Plan \u20bf Forum in Lugano as speaker and exhibition partner.",
+        "Francesco Pelle held a speech on how university initiatives can bring young talent to the Bitcoin world.",
+        "Eugenio Valenti participated in the 'Orange Pilling Teenagers' panel with Janis Killian Lenz, S\u20bfAM and Gustavo Lopez.",
+      ],
+    },
+
+    "scalare-bitcoin-con-ark": {
+      type: "X Space",
+      title: "Scaling Bitcoin with Ark",
+      date: "July 8, 2025",
+      location: "X Spaces",
+      description: "X Space event with Marco Argentieri and Gianluca Cappiello, dedicated to Ark and Bitcoin scalability.",
+    },
+
+    "startup-in-btc-2025": {
+      type: "Side event",
+      title: "Startup in BTC",
+      date: "October 3, 2025",
+      location: "Italian Tech Week",
+      description: "Official side event of the Italian Tech Week, with members and former members of the team involved in moderation and Bitcoin panels on Startup Ecosystem and Startup Stories.",
+      details: [
+        "Startup in BTC was the official side event of the Italian Tech Week.",
+        "Several members and former members of BitPolito were involved in moderating the event and in the 'Bitcoin Startup Ecosystem' and 'Bitcoin Startup Stories' panels.",
+      ],
+    },
+
     "unisciti-a-bitpolito-29-settembre": {
       type: "Team presentation",
       title: "BitPolito Recruitment: join the team",
@@ -150,10 +383,10 @@ const eventContent = {
       ],
       note: "Get your ticket at btcpp.dev with the code BITPOLITO20 for 20% off.",
     },
-    "plan-b-forum-2027-lugano": {
+    "plan-b-forum-2026-lugano": {
       type: "Conference",
-      title: "Plan B Forum 2027 · Lugano",
-      date: "October 23 – 24, 2027",
+      title: "Plan B Forum 2026 · Lugano",
+      date: "October 23 – 24, 2026",
       location: "Lugano, Switzerland",
       description: "BitPolito will take part in Plan B Forum 2027, Europe's major gathering on Bitcoin and freedom tech in Lugano.",
       details: [
@@ -163,6 +396,34 @@ const eventContent = {
     },
   },
   de: {
+    "rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "Veranstaltung",
+      title: "Risiken des Internets und Bitcoin-Technologie",
+      date: "4. November 2026 · 20:30 Uhr",
+      location: "Sala Santa Marta, Pavone Canavese",
+      description: "Im Rahmen des Finanzbildungsmonats präsentieren BitPolito und Lorella Lavatori, Finanzbildnerin bei AIEF, einen Informations- und Gesprächsabend zu Internetrisiken und Bitcoin-Technologie.",
+      details: [
+        "Das Treffen findet in der Sala Santa Marta in Pavone Canavese statt, unter der Schirmherrschaft der Gemeinde.",
+        "Konzipiert für junge Erwachsene und für alle offen, bietet dies eine Gelegenheit, sich mit dem Thema Online-Betrug auseinanderzusetzen, die Risiken der digitalen Welt zu erkennen und zu lernen, wie man sich schützt.",
+        "Anschließend wird eine Einführung in die Bitcoin-Technologie angeboten.",
+        "Die Teilnahme ist kostenlos.",
+      ],
+      note: "4. November 2026 um 20:30 Uhr · Sala Santa Marta, Pavone Canavese · Unter der Schirmherrschaft der Gemeinde",
+    },
+    "sovereign-artificial-intelligence-2026": {
+      type: "Vortrag",
+      title: "Sovereign Artificial Intelligence",
+      date: "3. November 2026 · 17:30 – 19:30 Uhr",
+      location: "Raum 10A, Politecnico di Torino",
+      description: "Simone Esposito, Software Engineer im Bereich Local AI, spricht am Politecnico di Torino über Sovereign Artificial Intelligence: von den Grundlagen der Funktionsweise von KI-Modellen bis zu praktischen Demos von Open-Source-Tools und -Modellen, die du auf deinen eigenen Geräten hosten kannst.",
+      details: [
+        "Online-Suchen, Arbeitsprojekte und alltägliche Entscheidungen: Du vertraust immer mehr Bereiche deines Lebens der künstlichen Intelligenz an – aber denkst du je darüber nach, wo deine Daten landen?",
+        "Es ist Zeit, darüber zu sprechen!",
+        "Am 3. November ist Simone Esposito, Software Engineer im Bereich Local AI, am Politecnico di Torino für ein Treffen zum Thema Sovereign Artificial Intelligence.",
+        "Wir beginnen mit den Grundlagen der Funktionsweise von KI-Modellen und kommen zu praktischen Demos von Open-Source-Tools und -Modellen, die du direkt auf deinen eigenen Geräten hosten kannst.",
+      ],
+      note: "3. November, 17:30 – 19:30 Uhr · Politecnico di Torino, Raum 10A · Die Veranstaltung fand auf Englisch statt.",
+    },
     "bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "Bildung",
       title: "BitGeneration 4 · Offener Bitcoin-Kurs",
@@ -229,10 +490,10 @@ const eventContent = {
       ],
       note: "Sichere dir dein Ticket auf btcpp.dev mit dem Code BITPOLITO20 und erhalte 20 % Rabatt.",
     },
-    "plan-b-forum-2027-lugano": {
+    "plan-b-forum-2026-lugano": {
       type: "Konferenz",
-      title: "Plan B Forum 2027 · Lugano",
-      date: "23. – 24. Oktober 2027",
+      title: "Plan B Forum 2026 · Lugano",
+      date: "23. – 24. Oktober 2026",
       location: "Lugano, Schweiz",
       description: "BitPolito nimmt am Plan B Forum 2027 teil, dem großen europäischen Treffen zu Bitcoin und Freedom Tech in Lugano.",
       details: [
@@ -242,6 +503,34 @@ const eventContent = {
     },
   },
   es: {
+    "rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "Evento",
+      title: "Riesgos de Internet y Tecnología Bitcoin",
+      date: "4 de noviembre de 2026 · 20:30",
+      location: "Sala Santa Marta, Pavone Canavese",
+      description: "En el marco del Mes de Educación Financiera, BitPolito y Lorella Lavatori, educadora financiera en AIEF, presentan una velada de información y debate sobre riesgos de Internet y tecnología Bitcoin.",
+      details: [
+        "El encuentro se celebrará en la Sala Santa Marta de Pavone Canavese, bajo el patrocinio del Municipio.",
+        "Diseñado para jóvenes adultos y abierto a todos, será una oportunidad para profundizar en el tema de las estafas en línea, reconocer los riesgos del mundo digital y aprender a protegerse.",
+        "A continuación, se ofrecerá una introducción a la tecnología Bitcoin.",
+        "La participación es gratuita.",
+      ],
+      note: "4 de noviembre de 2026 a las 20:30 · Sala Santa Marta, Pavone Canavese · Bajo el patrocinio del Municipio",
+    },
+    "sovereign-artificial-intelligence-2026": {
+      type: "Charla",
+      title: "Sovereign Artificial Intelligence",
+      date: "3 de noviembre de 2026 · 17:30 – 19:30",
+      location: "Aula 10A, Politecnico di Torino",
+      description: "Simone Esposito, Software Engineer especializado en Local AI, en el Politecnico di Torino para hablar de Sovereign Artificial Intelligence: desde los fundamentos de cómo funcionan los modelos de IA hasta demostraciones prácticas de herramientas y modelos open source que puedes alojar en tus propios dispositivos.",
+      details: [
+        "Búsquedas en línea, proyectos de trabajo y decisiones cotidianas: confías cada vez más aspectos de tu vida a la inteligencia artificial, pero ¿alguna vez piensas en adónde van a parar tus datos?",
+        "¡Es el momento de hablar de ello!",
+        "El 3 de noviembre, Simone Esposito, Software Engineer especializado en Local AI, estará en el Politecnico di Torino para un encuentro dedicado a la Sovereign Artificial Intelligence.",
+        "Partiremos de los fundamentos de cómo funcionan los modelos de IA para llegar a demostraciones prácticas de herramientas y modelos open source que puedes alojar directamente en tus dispositivos.",
+      ],
+      note: "3 de noviembre, de 17:30 a 19:30 · Politecnico di Torino, aula 10A · El evento se celebró en inglés.",
+    },
     "bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "Formación",
       title: "BitGeneration 4 · Curso abierto sobre Bitcoin",
@@ -308,10 +597,10 @@ const eventContent = {
       ],
       note: "Compra tu entrada en btcpp.dev con el código BITPOLITO20 y obtén un 20 % de descuento.",
     },
-    "plan-b-forum-2027-lugano": {
+    "plan-b-forum-2026-lugano": {
       type: "Conferencia",
-      title: "Plan B Forum 2027 · Lugano",
-      date: "23 – 24 de octubre de 2027",
+      title: "Plan B Forum 2026 · Lugano",
+      date: "23 – 24 de octubre de 2026",
       location: "Lugano, Suiza",
       description: "BitPolito participará en el Plan B Forum 2027, la gran cita europea sobre Bitcoin y freedom tech en Lugano.",
       details: [
@@ -321,6 +610,34 @@ const eventContent = {
     },
   },
   fr: {
+    "rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "Rencontre",
+      title: "Risques du Web et Technologie Bitcoin",
+      date: "4 novembre 2026 · 20h30",
+      location: "Sala Santa Marta, Pavone Canavese",
+      description: "Dans le cadre du Mois de l'Éducation Financière, BitPolito et Lorella Lavatori, éducatrice financière à l'AIEF, proposent une soirée d'information et de discussion sur les risques du web et la technologie Bitcoin.",
+      details: [
+        "La rencontre se tiendra à la Sala Santa Marta de Pavone Canavese, sous le patronage de la Commune.",
+        "Conçue pour les jeunes adultes et ouverte à tous, ce sera l'occasion d'approfondir le thème des arnaques en ligne, de reconnaître les risques du monde numérique et d'apprendre à vous protéger.",
+        "Une introduction à la technologie Bitcoin sera proposée ensuite.",
+        "La participation est gratuite.",
+      ],
+      note: "4 novembre 2026 à 20h30 · Sala Santa Marta, Pavone Canavese · Sous le patronage de la Commune",
+    },
+    "sovereign-artificial-intelligence-2026": {
+      type: "Conférence",
+      title: "Sovereign Artificial Intelligence",
+      date: "3 novembre 2026 · 17h30 – 19h30",
+      location: "Salle 10A, Politecnico di Torino",
+      description: "Simone Esposito, Software Engineer spécialisé en Local AI, au Politecnico di Torino pour parler de Sovereign Artificial Intelligence : des bases du fonctionnement des modèles d'IA jusqu'à des démonstrations pratiques d'outils et de modèles open source à héberger sur tes propres appareils.",
+      details: [
+        "Recherches en ligne, projets professionnels et décisions quotidiennes : tu confies de plus en plus d'aspects de ta vie à l'intelligence artificielle, mais penses-tu parfois à l'endroit où finissent tes données ?",
+        "Il est temps d'en parler !",
+        "Le 3 novembre, Simone Esposito, Software Engineer spécialisé en Local AI, sera au Politecnico di Torino pour une rencontre consacrée à la Sovereign Artificial Intelligence.",
+        "Nous partirons des bases du fonctionnement des modèles d'IA pour arriver à des démonstrations pratiques d'outils et de modèles open source que tu peux héberger directement sur tes appareils.",
+      ],
+      note: "3 novembre, de 17h30 à 19h30 · Politecnico di Torino, salle 10A · L'événement s'est déroulé en anglais.",
+    },
     "bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "Formation",
       title: "BitGeneration 4 · Cours ouvert sur Bitcoin",
@@ -387,10 +704,10 @@ const eventContent = {
       ],
       note: "Achetez votre billet sur btcpp.dev avec le code BITPOLITO20 pour 20 % de réduction.",
     },
-    "plan-b-forum-2027-lugano": {
+    "plan-b-forum-2026-lugano": {
       type: "Conférence",
-      title: "Plan B Forum 2027 · Lugano",
-      date: "23 – 24 octobre 2027",
+      title: "Plan B Forum 2026 · Lugano",
+      date: "23 – 24 octobre 2026",
       location: "Lugano, Suisse",
       description: "BitPolito participera au Plan B Forum 2027, le grand rendez-vous européen sur Bitcoin et la freedom tech à Lugano.",
       details: [
@@ -400,6 +717,34 @@ const eventContent = {
     },
   },
   nl: {
+    "rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "Bijeenkomst",
+      title: "Internetrisico's en Bitcoin-technologie",
+      date: "4 november 2026 · 20:30",
+      location: "Sala Santa Marta, Pavone Canavese",
+      description: "Ter gelegenheid van Financial Education Month presenteren BitPolito en Lorella Lavatori, financiële educatrice bij AIEF, een avond met informatie en discussie over internetrisico's en Bitcoin-technologie.",
+      details: [
+        "De bijeenkomst vindt plaats in de Sala Santa Marta in Pavone Canavese, onder auspiciën van de gemeente.",
+        "Ontworpen voor jonge volwassenen en open voor iedereen, dit is een gelegenheid om in te gaan op het onderwerp online fraude, de risico's van de digitale wereld te herkennen en te leren hoe je jezelf kunt beschermen.",
+        "Daarna volgt een introductie tot Bitcoin-technologie.",
+        "Deelname is gratis.",
+      ],
+      note: "4 november 2026 om 20:30 uur · Sala Santa Marta, Pavone Canavese · Onder auspiciën van de gemeente",
+    },
+    "sovereign-artificial-intelligence-2026": {
+      type: "Talk",
+      title: "Sovereign Artificial Intelligence",
+      date: "3 november 2026 · 17:30 – 19:30",
+      location: "Zaal 10A, Politecnico di Torino",
+      description: "Simone Esposito, Software Engineer op het gebied van Local AI, aan het Politecnico di Torino over Sovereign Artificial Intelligence: van de basis van hoe AI-modellen werken tot praktische demo's van open-source tools en modellen die je op je eigen apparaten kunt hosten.",
+      details: [
+        "Online zoekopdrachten, werkprojecten en dagelijkse beslissingen: je vertrouwt steeds meer aspecten van je leven toe aan kunstmatige intelligentie, maar denk je er ooit over na waar je data terechtkomt?",
+        "Tijd om erover te praten!",
+        "Op 3 november is Simone Esposito, Software Engineer op het gebied van Local AI, aan het Politecnico di Torino voor een bijeenkomst over Sovereign Artificial Intelligence.",
+        "We beginnen bij de basis van hoe AI-modellen werken en gaan door naar praktische demo's van open-source tools en modellen die je rechtstreeks op je eigen apparaten kunt hosten.",
+      ],
+      note: "3 november, 17:30 – 19:30 · Politecnico di Torino, zaal 10A · Het evenement was in het Engels.",
+    },
     "bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "Opleiding",
       title: "BitGeneration 4 · Open Bitcoin-cursus",
@@ -466,10 +811,10 @@ const eventContent = {
       ],
       note: "Koop je ticket op btcpp.dev met de code BITPOLITO20 voor 20% korting.",
     },
-    "plan-b-forum-2027-lugano": {
+    "plan-b-forum-2026-lugano": {
       type: "Conferentie",
-      title: "Plan B Forum 2027 · Lugano",
-      date: "23 – 24 oktober 2027",
+      title: "Plan B Forum 2026 · Lugano",
+      date: "23 – 24 oktober 2026",
       location: "Lugano, Zwitserland",
       description: "BitPolito neemt deel aan het Plan B Forum 2027, het grote Europese evenement over Bitcoin en freedom tech in Lugano.",
       details: [
@@ -479,6 +824,34 @@ const eventContent = {
     },
   },
   pt: {
+    "rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "Encontro",
+      title: "Riscos da Web e Tecnologia Bitcoin",
+      date: "4 de novembro de 2026 · 20:30",
+      location: "Sala Santa Marta, Pavone Canavese",
+      description: "No âmbito do Mês da Educação Financeira, BitPolito e Lorella Lavatori, educadora financeira na AIEF, apresentam uma noite de informação e discussão sobre riscos da web e tecnologia Bitcoin.",
+      details: [
+        "O encontro será realizado na Sala Santa Marta em Pavone Canavese, sob o patrocínio do Município.",
+        "Projetado para jovens adultos e aberto a todos, será uma oportunidade para aprofundar o tema de fraudes online, reconhecer os riscos do mundo digital e aprender como se proteger.",
+        "A seguir, será oferecida uma introdução à tecnologia Bitcoin.",
+        "A participação é gratuita.",
+      ],
+      note: "4 de novembro de 2026 às 20:30 · Sala Santa Marta, Pavone Canavese · Sob o patrocínio do Município",
+    },
+    "sovereign-artificial-intelligence-2026": {
+      type: "Palestra",
+      title: "Sovereign Artificial Intelligence",
+      date: "3 de novembro de 2026 · 17:30 – 19:30",
+      location: "Sala 10A, Politecnico di Torino",
+      description: "Simone Esposito, Software Engineer na área de Local AI, no Politecnico di Torino para falar de Sovereign Artificial Intelligence: dos fundamentos de como funcionam os modelos de IA a demonstrações práticas de ferramentas e modelos open source que você pode hospedar nos seus próprios dispositivos.",
+      details: [
+        "Pesquisas online, projetos de trabalho e decisões do dia a dia: você confia cada vez mais aspectos da sua vida à inteligência artificial, mas já pensou para onde vão os seus dados?",
+        "É hora de falar sobre isso!",
+        "Em 3 de novembro, Simone Esposito, Software Engineer na área de Local AI, estará no Politecnico di Torino para um encontro dedicado à Sovereign Artificial Intelligence.",
+        "Partiremos dos fundamentos de como funcionam os modelos de IA para chegar a demonstrações práticas de ferramentas e modelos open source que você pode hospedar diretamente nos seus dispositivos.",
+      ],
+      note: "3 de novembro, das 17:30 às 19:30 · Politecnico di Torino, sala 10A · O evento foi realizado em inglês.",
+    },
     "bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "Formação",
       title: "BitGeneration 4 · Curso aberto sobre Bitcoin",
@@ -545,10 +918,10 @@ const eventContent = {
       ],
       note: "Compra o teu ingresso em btcpp.dev com o código BITPOLITO20 e tem 20% de desconto.",
     },
-    "plan-b-forum-2027-lugano": {
+    "plan-b-forum-2026-lugano": {
       type: "Conferência",
-      title: "Plan B Forum 2027 · Lugano",
-      date: "23 – 24 de outubro de 2027",
+      title: "Plan B Forum 2026 · Lugano",
+      date: "23 – 24 de outubro de 2026",
       location: "Lugano, Suíça",
       description: "A BitPolito vai participar no Plan B Forum 2027, o grande encontro europeu sobre Bitcoin e freedom tech em Lugano.",
       details: [
@@ -558,6 +931,34 @@ const eventContent = {
     },
   },
   ru: {
+    "rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "Встреча",
+      title: "Риски Интернета и технология Bitcoin",
+      date: "4 ноября 2026 · 20:30",
+      location: "Sala Santa Marta, Pavone Canavese",
+      description: "В рамках Месяца финансового образования BitPolito и Lorella Lavatori, финансовая педагог в AIEF, проводят вечер информации и обсуждения о рисках Интернета и технологии Bitcoin.",
+      details: [
+        "Встреча состоится в Sala Santa Marta в Павоне Канавезе при поддержке муниципалитета.",
+        "Разработано для молодых взрослых и открыто для всех, это будет возможностью изучить тему онлайн-мошенничества, распознать риски цифрового мира и узнать, как защитить себя.",
+        "Далее будет предложено введение в технологию Bitcoin.",
+        "Участие бесплатное.",
+      ],
+      note: "4 ноября 2026 в 20:30 · Sala Santa Marta, Pavone Canavese · При поддержке муниципалитета",
+    },
+    "sovereign-artificial-intelligence-2026": {
+      type: "Доклад",
+      title: "Sovereign Artificial Intelligence",
+      date: "3 ноября 2026 · 17:30 – 19:30",
+      location: "Аудитория 10A, Politecnico di Torino",
+      description: "Симоне Эспозито, Software Engineer в области Local AI, в Politecnico di Torino рассказывает о Sovereign Artificial Intelligence: от основ работы моделей ИИ до практических демонстраций open-source инструментов и моделей, которые можно разместить на собственных устройствах.",
+      details: [
+        "Поиск в интернете, рабочие проекты и повседневные решения: вы доверяете искусственному интеллекту всё больше сторон своей жизни, но задумываетесь ли вы, куда попадают ваши данные?",
+        "Пора об этом поговорить!",
+        "3 ноября Симоне Эспозито, Software Engineer в области Local AI, выступит в Politecnico di Torino со встречей, посвящённой Sovereign Artificial Intelligence.",
+        "Мы начнём с основ работы моделей ИИ и перейдём к практическим демонстрациям open-source инструментов и моделей, которые можно разместить прямо на своих устройствах.",
+      ],
+      note: "3 ноября, 17:30 – 19:30 · Politecnico di Torino, аудитория 10A · Мероприятие прошло на английском языке.",
+    },
     "bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "Обучение",
       title: "BitGeneration 4 · Открытый курс по Bitcoin",
@@ -624,10 +1025,10 @@ const eventContent = {
       ],
       note: "Купи билет на btcpp.dev с промокодом BITPOLITO20 и получи скидку 20%.",
     },
-    "plan-b-forum-2027-lugano": {
+    "plan-b-forum-2026-lugano": {
       type: "Конференция",
-      title: "Plan B Forum 2027 · Лугано",
-      date: "23 – 24 октября 2027",
+      title: "Plan B Forum 2026 · Лугано",
+      date: "23 – 24 октября 2026",
       location: "Лугано, Швейцария",
       description: "BitPolito примет участие в Plan B Forum 2027 — крупнейшей европейской встрече, посвящённой Bitcoin и freedom tech, в Лугано.",
       details: [
@@ -637,6 +1038,34 @@ const eventContent = {
     },
   },
   zh: {
+    "rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "讲座",
+      title: "网络风险和比特币技术",
+      date: "2026年11月4日 · 20:30",
+      location: "Pavone Canavese Santa Marta 会议厅",
+      description: "在金融教育月期间，BitPolito 和 AIEF 财务教育工作者 Lorella Lavatori 举办一场关于网络风险和比特币技术的信息分享和讨论活动。",
+      details: [
+        "会议将在 Pavone Canavese 的 Sala Santa Marta 举办，获得市政府的赞助。",
+        "专为青年成人设计，同时对所有人开放，这将是一个深入探讨在线诈骗主题、认识数字世界风险以及学习如何自我保护的机会。",
+        "之后将提供比特币技术的介绍。",
+        "参加完全免费。",
+      ],
+      note: "2026年11月4日 20:30 · Pavone Canavese Santa Marta 会议厅 · 获得市政府赞助",
+    },
+    "sovereign-artificial-intelligence-2026": {
+      type: "讲座",
+      title: "Sovereign Artificial Intelligence",
+      date: "2026年11月3日 · 17:30 – 19:30",
+      location: "都灵理工大学 10A 教室",
+      description: "Local AI 领域软件工程师 Simone Esposito 来到都灵理工大学，探讨主权人工智能（Sovereign Artificial Intelligence）：从 AI 模型的基本工作原理，到可在你自己的设备上部署的开源工具和模型的实操演示。",
+      details: [
+        "网上搜索、工作项目和日常决策：你把生活中越来越多的方面交给人工智能，但你是否想过自己的数据最终去了哪里？",
+        "是时候谈谈这个问题了！",
+        "11月3日，Local AI 领域软件工程师 Simone Esposito 将来到都灵理工大学，带来一场关于主权人工智能的分享。",
+        "我们将从 AI 模型的基本工作原理讲起，并现场演示可直接部署在你自己设备上的开源工具和模型。",
+      ],
+      note: "11月3日 17:30 – 19:30 · 都灵理工大学 10A 教室 · 活动以英语进行。",
+    },
     "bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "培训",
       title: "BitGeneration 4 · 比特币公开课",
@@ -703,9 +1132,9 @@ const eventContent = {
       ],
       note: "在 btcpp.dev 使用优惠码 BITPOLITO20 购票可享 8 折优惠。",
     },
-    "plan-b-forum-2027-lugano": {
+    "plan-b-forum-2026-lugano": {
       type: "会议",
-      title: "Plan B Forum 2027 · 卢加诺",
+      title: "Plan B Forum 2026 · 卢加诺",
       date: "2027 年 10 月 23 – 24 日",
       location: "瑞士卢加诺",
       description: "BitPolito 将出席 2027 年 Plan B Forum,这是欧洲关于比特币与自由科技的重要盛会,地点在卢加诺。",
@@ -716,6 +1145,34 @@ const eventContent = {
     },
   },
   fa: {
+    "rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "جلسه",
+      title: "خطرات وب و فناوری بیت‌کوین",
+      date: "۱۴ آبان ۱۴۰۵ · ۲۰:۳۰",
+      location: "Sala Santa Marta، Pavone Canavese",
+      description: "در راستای ماه آموزش مالی، BitPolito و Lorella Lavatori، مربی مالی AIEF، یک شب اطلاع‌رسانی و بحث درباره خطرات وب و فناوری بیت‌کوین ارائه می‌دهند.",
+      details: [
+        "این جلسه در Sala Santa Marta در Pavone Canavese برگزار خواهد شد، با حمایت شهرداری.",
+        "برای جوانان بزرگ‌سال طراحی شده و برای همه باز است، این فرصتی برای پرداختن به موضوع تقلب‌های آنلاین، تشخیص خطرات جهان دیجیتال و یادگیری نحوه محافظت از خود است.",
+        "پس از آن، یک مقدمه بر فناوری بیت‌کوین ارائه خواهد شد.",
+        "شرکت رایگان است.",
+      ],
+      note: "۱۴ آبان ۱۴۰۵ ساعت ۲۰:۳۰ · Sala Santa Marta، Pavone Canavese · با حمایت شهرداری",
+    },
+    "sovereign-artificial-intelligence-2026": {
+      type: "سخنرانی",
+      title: "Sovereign Artificial Intelligence",
+      date: "۱۲ آبان ۱۴۰۵ · ۱۷:۳۰ – ۱۹:۳۰",
+      location: "کلاس 10A، Politecnico di Torino",
+      description: "Simone Esposito، مهندس نرم‌افزار در حوزه Local AI، در Politecnico di Torino درباره هوش مصنوعی مستقل (Sovereign Artificial Intelligence) صحبت می‌کند: از مبانی عملکرد مدل‌های هوش مصنوعی تا نمایش عملی ابزارها و مدل‌های متن‌باز که می‌توانید روی دستگاه‌های خودتان میزبانی کنید.",
+      details: [
+        "جست‌وجوهای اینترنتی، پروژه‌های کاری و تصمیم‌های روزمره: جنبه‌های بیشتری از زندگی‌تان را به هوش مصنوعی می‌سپارید، اما آیا تا به حال فکر کرده‌اید داده‌هایتان به کجا می‌روند؟",
+        "وقت آن است که درباره‌اش صحبت کنیم!",
+        "در ۱۲ آبان (۳ نوامبر)، Simone Esposito، مهندس نرم‌افزار در حوزه Local AI، برای نشستی درباره هوش مصنوعی مستقل به Politecnico di Torino می‌آید.",
+        "از مبانی عملکرد مدل‌های هوش مصنوعی شروع می‌کنیم و به نمایش عملی ابزارها و مدل‌های متن‌باز می‌رسیم که می‌توانید مستقیماً روی دستگاه‌های خودتان میزبانی کنید.",
+      ],
+      note: "۱۲ آبان (۳ نوامبر)، ۱۷:۳۰ تا ۱۹:۳۰ · Politecnico di Torino، کلاس 10A · این رویداد به زبان انگلیسی برگزار شد.",
+    },
     "bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "آموزش",
       title: "BitGeneration 4 · دوره آزاد بیت‌کوین",
@@ -782,9 +1239,9 @@ const eventContent = {
       ],
       note: "با کد BITPOLITO20 از btcpp.dev بلیت بخرید و ۲۰٪ تخفیف بگیرید.",
     },
-    "plan-b-forum-2027-lugano": {
+    "plan-b-forum-2026-lugano": {
       type: "کنفرانس",
-      title: "Plan B Forum 2027 · لوگانو",
+      title: "Plan B Forum 2026 · لوگانو",
       date: "۱ – ۲ آبان ۱۴۰۶",
       location: "لوگانو، سوئیس",
       description: "BitPolito در Plan B Forum 2027 شرکت می‌کند؛ بزرگ‌ترین رویداد اروپایی درباره بیت‌کوین و فناوری آزادی در لوگانو.",

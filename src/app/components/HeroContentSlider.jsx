@@ -4,22 +4,21 @@ import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { heroContent } from "../data/featuredContent";
-import hackathon from "../data/hackathon";
 import { localizeContent } from "../data/localizedContent";
 
 export default function HeroContentSlider({ events, posts, projects }) {
   const { t, i18n } = useTranslation();
   const items = useMemo(() => {
-    const sources = { event: events, article: posts, project: projects, hackathon: [hackathon] };
-    return heroContent
-      .slice(0, 5)
-      .map((selection) => {
-        const content = sources[selection.type]?.find((item) => item.slug === selection.slug);
-        return content ? { ...localizeContent({ ...content, type: selection.type }, i18n.resolvedLanguage || i18n.language), type: selection.type } : null;
-      })
-      .filter(Boolean);
-  }, [events, posts, projects, i18n.language, i18n.resolvedLanguage]);
+    // Get the latest 3 events, sorted by sortDate in descending order (newest first)
+    const sortedEvents = [...events]
+      .sort((a, b) => (b.sortDate || "").localeCompare(a.sortDate || ""))
+      .slice(0, 3);
+
+    return sortedEvents.map((event) => ({
+      ...localizeContent({ ...event, type: "event" }, i18n.resolvedLanguage || i18n.language),
+      type: "event",
+    }));
+  }, [events, i18n.language, i18n.resolvedLanguage]);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const activeItem = items[activeIndex] || items[0];
