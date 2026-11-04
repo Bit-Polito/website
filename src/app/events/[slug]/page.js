@@ -38,6 +38,11 @@ export default function EventDetailPage() {
               {t(event.ctaKey || "events-register")} <span className="ml-2" aria-hidden="true">↗</span>
             </a>
           )}
+          {event.videoUrl && (
+            <a href={event.videoUrl} target="_blank" rel="noopener noreferrer" className="btn-w mt-8 inline-flex rounded-md px-8 py-4 text-lg font-bold">
+              {t("events-watch-video")} <span className="ml-2" aria-hidden="true">↗</span>
+            </a>
+          )}
         </header>
 
         <div className={`relative mt-10 aspect-[16/9] overflow-hidden rounded-xl border-2 border-blue-dark dark:border-white`} style={event.imageBg ? { backgroundColor: event.imageBg } : undefined}>

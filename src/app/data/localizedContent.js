@@ -2,18 +2,24 @@
 // Base data in the data files (events.js, blogPosts.js, projects.js, hackathon.js) is Italian.
 const content = {
   en: {
+    "event:rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "Event",
+      title: "Web Risks and Bitcoin Technology",
+      date: "November 4, 2026 · 8:30 PM",
+      description: "In the context of Financial Education Month, BitPolito and Lorella Lavatori, financial educator at AIEF, present an evening of information and discussion about web risks and Bitcoin technology.",
+    },
     "event:bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "Training",
       title: "BitGeneration 4 · Open Bitcoin course",
       date: "October 28 – December 2, 2025",
       description: "A course to discover Bitcoin from every angle: technology, economics and society, with a final certification.",
     },
-    "event:plan-b-forum-2027-lugano": {
+    "event:plan-b-forum-2026-lugano": {
       type: "Conference",
-      title: "Plan B Forum 2027 · Lugano",
-      date: "October 23 – 24, 2027",
+      title: "Plan B Forum 2026 · Lugano",
+      date: "October 23 – 24, 2026",
       location: "Lugano, Switzerland",
-      description: "BitPolito will take part in Plan B Forum 2027, Europe's major gathering on Bitcoin and freedom tech in Lugano.",
+      description: "BitPolito took part in Plan B Forum 2026, Europe's major gathering on Bitcoin and freedom tech in Lugano.",
     },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "Conference",
@@ -54,18 +60,24 @@ const content = {
     "project:bitcoin-testing-tools": { category: "Lab", description: "A Docker-based testing framework for Bitcoin and Lightning applications using a custom Signet environment." },
   },
   de: {
+    "event:rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "Veranstaltung",
+      title: "Internetrisiken und Bitcoin-Technologie",
+      date: "4. November 2026 · 20:30 Uhr",
+      description: "Im Rahmen des Finanzbildungsmonats präsentieren BitPolito und Lorella Lavatori, Finanzbildnerin bei AIEF, einen Informations- und Gesprächsabend zu Internetrisiken und Bitcoin-Technologie.",
+    },
     "event:bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "Bildung",
       title: "BitGeneration 4 · Offener Bitcoin-Kurs",
       date: "28. Oktober – 2. Dezember 2025",
       description: "Ein Kurs, um Bitcoin aus jedem Blickwinkel zu entdecken: Technologie, Wirtschaft und Gesellschaft, mit Abschlusszertifikat.",
     },
-    "event:plan-b-forum-2027-lugano": {
+    "event:plan-b-forum-2026-lugano": {
       type: "Konferenz",
-      title: "Plan B Forum 2027 · Lugano",
-      date: "23. – 24. Oktober 2027",
+      title: "Plan B Forum 2026 · Lugano",
+      date: "23. – 24. Oktober 2026",
       location: "Lugano, Schweiz",
-      description: "BitPolito nimmt am Plan B Forum 2027 teil, dem großen europäischen Treffen zu Bitcoin und Freedom Tech in Lugano.",
+      description: "BitPolito nahm am Plan B Forum 2026 teil, dem großen europäischen Treffen zu Bitcoin und Freedom Tech in Lugano.",
     },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "Konferenz",
@@ -106,18 +118,24 @@ const content = {
     "project:bitcoin-testing-tools": { category: "Lab", description: "Ein Docker-basiertes Test-Framework für Bitcoin- und Lightning-Anwendungen mit einer eigenen Signet-Umgebung." },
   },
   es: {
+    "event:rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "Evento",
+      title: "Riesgos de Internet y Tecnología Bitcoin",
+      date: "4 de noviembre de 2026 · 20:30",
+      description: "En el marco del Mes de Educación Financiera, BitPolito y Lorella Lavatori, educadora financiera en AIEF, presentan una velada de información y debate sobre riesgos de Internet y tecnología Bitcoin.",
+    },
     "event:bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "Formación",
       title: "BitGeneration 4 · Curso abierto sobre Bitcoin",
       date: "28 de octubre – 2 de diciembre de 2025",
       description: "Un curso para descubrir Bitcoin desde todos los ángulos: tecnología, economía y sociedad, con certificación final.",
     },
-    "event:plan-b-forum-2027-lugano": {
+    "event:plan-b-forum-2026-lugano": {
       type: "Conferencia",
-      title: "Plan B Forum 2027 · Lugano",
-      date: "23 – 24 de octubre de 2027",
+      title: "Plan B Forum 2026 · Lugano",
+      date: "23 – 24 de octubre de 2026",
       location: "Lugano, Suiza",
-      description: "BitPolito participará en el Plan B Forum 2027, la gran cita europea sobre Bitcoin y freedom tech en Lugano.",
+      description: "BitPolito participó en el Plan B Forum 2026, la gran cita europea sobre Bitcoin y freedom tech en Lugano.",
     },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "Conferencia",
@@ -158,18 +176,24 @@ const content = {
     "project:bitcoin-testing-tools": { category: "Lab", description: "Un framework de pruebas basado en Docker para aplicaciones Bitcoin y Lightning con un entorno Signet personalizado." },
   },
   fr: {
+    "event:rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "Événement",
+      title: "Risques du Web et Technologie Bitcoin",
+      date: "4 novembre 2026 · 20h30",
+      description: "Dans le cadre du Mois de l'Éducation Financière, BitPolito et Lorella Lavatori, éducatrice financière à l'AIEF, proposent une soirée d'information et de discussion sur les risques du web et la technologie Bitcoin.",
+    },
     "event:bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "Formation",
       title: "BitGeneration 4 · Cours ouvert sur Bitcoin",
       date: "28 octobre – 2 décembre 2025",
       description: "Un cours pour découvrir Bitcoin sous tous les angles : technologie, économie et société, avec certification finale.",
     },
-    "event:plan-b-forum-2027-lugano": {
+    "event:plan-b-forum-2026-lugano": {
       type: "Conférence",
-      title: "Plan B Forum 2027 · Lugano",
-      date: "23 – 24 octobre 2027",
+      title: "Plan B Forum 2026 · Lugano",
+      date: "23 – 24 octobre 2026",
       location: "Lugano, Suisse",
-      description: "BitPolito participera au Plan B Forum 2027, le grand rendez-vous européen sur Bitcoin et la freedom tech à Lugano.",
+      description: "BitPolito a participé au Plan B Forum 2026, le grand rendez-vous européen sur Bitcoin et la freedom tech à Lugano.",
     },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "Conférence",
@@ -210,18 +234,24 @@ const content = {
     "project:bitcoin-testing-tools": { category: "Lab", description: "Un framework de test basé sur Docker pour les applications Bitcoin et Lightning, avec un environnement Signet personnalisé." },
   },
   nl: {
+    "event:rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "Bijeenkomst",
+      title: "Internetrisico's en Bitcoin-technologie",
+      date: "4 november 2026 · 20:30",
+      description: "Ter gelegenheid van Financial Education Month presenteren BitPolito en Lorella Lavatori, financiële educatrice bij AIEF, een avond met informatie en discussie over internetrisico's en Bitcoin-technologie.",
+    },
     "event:bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "Opleiding",
       title: "BitGeneration 4 · Open Bitcoin-cursus",
       date: "28 oktober – 2 december 2025",
       description: "Een cursus om Bitcoin vanuit elke invalshoek te ontdekken: technologie, economie en maatschappij, met een eindcertificering.",
     },
-    "event:plan-b-forum-2027-lugano": {
+    "event:plan-b-forum-2026-lugano": {
       type: "Conferentie",
-      title: "Plan B Forum 2027 · Lugano",
-      date: "23 – 24 oktober 2027",
+      title: "Plan B Forum 2026 · Lugano",
+      date: "23 – 24 oktober 2026",
       location: "Lugano, Zwitserland",
-      description: "BitPolito neemt deel aan het Plan B Forum 2027, het grote Europese evenement over Bitcoin en freedom tech in Lugano.",
+      description: "BitPolito nam deel aan het Plan B Forum 2026, het grote Europese evenement over Bitcoin en freedom tech in Lugano.",
     },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "Conferentie",
@@ -262,18 +292,24 @@ const content = {
     "project:bitcoin-testing-tools": { category: "Lab", description: "Een Docker-gebaseerd testframework voor Bitcoin- en Lightning-applicaties met een eigen Signet-omgeving." },
   },
   pt: {
+    "event:rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "Encontro",
+      title: "Riscos da Web e Tecnologia Bitcoin",
+      date: "4 de novembro de 2026 · 20:30",
+      description: "No âmbito do Mês da Educação Financeira, BitPolito e Lorella Lavatori, educadora financeira na AIEF, apresentam uma noite de informação e discussão sobre riscos da web e tecnologia Bitcoin.",
+    },
     "event:bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "Formação",
       title: "BitGeneration 4 · Curso aberto sobre Bitcoin",
       date: "28 de outubro – 2 de dezembro de 2025",
       description: "Um curso para descobrir o Bitcoin de todos os ângulos: tecnologia, economia e sociedade, com certificação final.",
     },
-    "event:plan-b-forum-2027-lugano": {
+    "event:plan-b-forum-2026-lugano": {
       type: "Conferência",
-      title: "Plan B Forum 2027 · Lugano",
-      date: "23 – 24 de outubro de 2027",
+      title: "Plan B Forum 2026 · Lugano",
+      date: "23 – 24 de outubro de 2026",
       location: "Lugano, Suíça",
-      description: "A BitPolito vai participar no Plan B Forum 2027, o grande encontro europeu sobre Bitcoin e freedom tech em Lugano.",
+      description: "A BitPolito vai participar no Plan B Forum 2026, o grande encontro europeu sobre Bitcoin e freedom tech em Lugano.",
     },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "Conferência",
@@ -314,18 +350,24 @@ const content = {
     "project:bitcoin-testing-tools": { category: "Lab", description: "Um framework de testes baseado em Docker para aplicações Bitcoin e Lightning com um ambiente Signet personalizado." },
   },
   ru: {
+    "event:rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "Встреча",
+      title: "Риски Интернета и технология Bitcoin",
+      date: "4 ноября 2026 · 20:30",
+      description: "В рамках Месяца финансового образования BitPolito и Lorella Lavatori, финансовая педагог в AIEF, проводят вечер информации и обсуждения о рисках Интернета и технологии Bitcoin.",
+    },
     "event:bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "Обучение",
       title: "BitGeneration 4 · Открытый курс по Bitcoin",
       date: "28 октября — 2 декабря 2025",
       description: "Курс, позволяющий рассмотреть Bitcoin со всех сторон: технологии, экономика и общество, с итоговой сертификацией.",
     },
-    "event:plan-b-forum-2027-lugano": {
+    "event:plan-b-forum-2026-lugano": {
       type: "Конференция",
-      title: "Plan B Forum 2027 · Лугано",
-      date: "23 – 24 октября 2027",
+      title: "Plan B Forum 2026 · Лугано",
+      date: "23 – 24 октября 2026",
       location: "Лугано, Швейцария",
-      description: "BitPolito примет участие в Plan B Forum 2027 — крупнейшей европейской встрече, посвящённой Bitcoin и freedom tech, в Лугано.",
+      description: "BitPolito принял участие в Plan B Forum 2026 — крупнейшей европейской встрече, посвящённой Bitcoin и freedom tech, в Лугано.",
     },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "Конференция",
@@ -366,18 +408,24 @@ const content = {
     "project:bitcoin-testing-tools": { category: "Lab", description: "Тестовый фреймворк на базе Docker для приложений Bitcoin и Lightning с собственной средой Signet." },
   },
   zh: {
+    "event:rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "活动",
+      title: "网络风险和比特币技术",
+      date: "2026年11月4日 · 20:30",
+      description: "在金融教育月期间，BitPolito 和 AIEF 财务教育工作者 Lorella Lavatori 举办一场关于网络风险和比特币技术的信息分享和讨论活动。",
+    },
     "event:bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "培训",
       title: "BitGeneration 4 · 比特币公开课",
       date: "2025 年 10 月 28 日 – 12 月 2 日",
       description: "一门从技术、经济和社会等多角度探索比特币的课程,并在结业时颁发证书。",
     },
-    "event:plan-b-forum-2027-lugano": {
+    "event:plan-b-forum-2026-lugano": {
       type: "会议",
-      title: "Plan B Forum 2027 · 卢加诺",
-      date: "2027 年 10 月 23 – 24 日",
+      title: "Plan B Forum 2026 · 卢加诺",
+      date: "2026 年 10 月 23 – 24 日",
       location: "瑞士卢加诺",
-      description: "BitPolito 将出席 2027 年 Plan B Forum,这是欧洲关于比特币与自由科技的重要盛会,地点在卢加诺。",
+      description: "BitPolito 参加了 2026 年 Plan B Forum,这是欧洲关于比特币与自由科技的重要盛会,地点在卢加诺。",
     },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "会议",
@@ -418,18 +466,24 @@ const content = {
     "project:bitcoin-testing-tools": { category: "实验室", description: "基于 Docker 的比特币与闪电网络应用测试框架，使用自定义 Signet 环境。" },
   },
   fa: {
+    "event:rischi-web-bitcoin-pavone-canavese-2026": {
+      type: "رویداد",
+      title: "خطرات وب و فناوری بیت‌کوین",
+      date: "۱۴ آبان ۱۴۰۵ · ۲۰:۳۰",
+      description: "در راستای ماه آموزش مالی، BitPolito و Lorella Lavatori، مربی مالی AIEF، یک شب اطلاع‌رسانی و بحث درباره خطرات وب و فناوری بیت‌کوین ارائه می‌دهند.",
+    },
     "event:bitgeneration-4-corso-aperto-su-bitcoin": {
       type: "آموزش",
       title: "BitGeneration 4 · دوره آزاد بیت‌کوین",
       date: "۶ آبان – ۱۱ آذر ۱۴۰۴",
       description: "دوره‌ای برای کشف بیت‌کوین از همه زوایا: فناوری، اقتصاد و جامعه، همراه با گواهی پایان دوره.",
     },
-    "event:plan-b-forum-2027-lugano": {
+    "event:plan-b-forum-2026-lugano": {
       type: "کنفرانس",
-      title: "Plan B Forum 2027 · لوگانو",
-      date: "۱ – ۲ آبان ۱۴۰۶",
+      title: "Plan B Forum 2026 · لوگانو",
+      date: "۱ – ۲ آبان ۱۴۰۵",
       location: "لوگانو، سوئیس",
-      description: "BitPolito در Plan B Forum 2027 شرکت می‌کند؛ بزرگ‌ترین رویداد اروپایی درباره بیت‌کوین و فناوری آزادی در لوگانو.",
+      description: "BitPolito در Plan B Forum 2026 شرکت می‌کند؛ بزرگ‌ترین رویداد اروپایی درباره بیت‌کوین و فناوری آزادی در لوگانو.",
     },
     "event:bitpolito-speaker-a-btcpp-berlino": {
       type: "کنفرانس",
