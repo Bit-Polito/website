@@ -258,7 +258,7 @@ const eventContent = {
 
     "btchel-helsinki-2025": {
       type: "Conference",
-      title: "Helsinki Mission \u00b7 BTCHEL",
+      title: "BTCHEL 2025 - Helsinki Mission \u00b7",
       date: "August 15 \u2013 16, 2025",
       location: "Helsinki, Finland",
       description: "BitPolito's participation as speaker and media partner.",
@@ -1027,7 +1027,7 @@ const eventContent = {
     },
     "plan-b-forum-2026-lugano": {
       type: "Конференция",
-      title: "Plan B Forum 2027 · Лугано",
+      title: "Plan B Forum 2026 · Лугано",
       date: "23 – 24 октября 2026",
       location: "Лугано, Швейцария",
       description: "BitPolito примет участие в Plan B Forum 2027 — крупнейшей европейской встрече, посвящённой Bitcoin и freedom tech, в Лугано.",
