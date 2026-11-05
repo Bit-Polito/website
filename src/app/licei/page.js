@@ -16,11 +16,12 @@ const formatKeyToTranslationKey = {
 
 function VisitCard({ visit, t, language }) {
   const formatLabel = t(formatKeyToTranslationKey[visit.formatKey] || "schools-meeting");
+  const dateLabel = visit.dateKey ? t(visit.dateKey) : visit.date;
   const content = (
     <article className="group h-full rounded-xl border-2 border-blue-dark bg-white p-6 transition-transform duration-200 hover:-translate-y-1 dark:border-white dark:bg-blue-dark sm:p-7">
       <div className="flex flex-wrap items-center justify-between gap-3 text-sm font-bold uppercase tracking-[0.14em]">
         <span>{formatLabel}</span>
-        {visit.date && <span className="rounded-full border border-current px-3 py-1 text-xs normal-case tracking-normal opacity-70">{visit.date}</span>}
+        {dateLabel && <span className="rounded-full border border-current px-3 py-1 text-xs normal-case tracking-normal opacity-70">{dateLabel}</span>}
       </div>
       {visit.location && <p className="mt-2 text-sm font-bold uppercase tracking-[0.22em] text-blue-dark/70 dark:text-white/70">{localizeCity(visit.location, language)}</p>}
       <h3 className="mt-8 text-3xl font-semibold leading-tight tracking-tight">{visit.school}</h3>

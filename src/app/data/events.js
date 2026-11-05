@@ -1,7 +1,7 @@
 const events = [
   {
     slug: "rischi-web-bitcoin-pavone-canavese-2026",
-    status: "upcoming",
+    status: "past",
     sortDate: "2026-11-04",
     type: "Incontro",
     title: "Rischi del web e tecnologia Bitcoin",
@@ -11,6 +11,8 @@ const events = [
     image: "/mission/pavone-canavese.jpeg",
     imageAlt: "Evento Rischi del web e tecnologia Bitcoin a Pavone Canavese",
     imageFit: "contain",
+    externalUrl: "https://www.comune.pavone.to.it/it-it/vivere-il-comune/eventi/truffa-o-opportunita-come-riconoscere-i-rischi-del-web-e-le-trappole-online-132141-1-958e6e47614c19ce54be8a05e1b4f545",
+    ctaKey: "events-discover",
     description: "In occasione del Mese dell'Educazione Finanziaria, un incontro dedicato ai rischi del web e alla tecnologia Bitcoin. Approfondisci truffe online, rischi digitali e difesa, con introduzione a Bitcoin. Partecipazione gratuita.",
   },
   {
