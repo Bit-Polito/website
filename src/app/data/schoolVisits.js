@@ -2,6 +2,14 @@
 // automaticamente nella sezione corretta in base allo stato.
 const schoolVisits = [
   {
+    id: "itis-pininfarina",
+    location: "Moncalieri",
+    status: "upcoming",
+    school: "ITIS Pininfarina",
+    dateKey: "schools-pininfarina-date",
+    formatKey: "intro",
+  },
+  {
     id: "istituto-istruzione-superiore-mario-delpozzo",
     location: "Cuneo",
     status: "upcoming",
