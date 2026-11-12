@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import BlogShell from "../../components/BlogShell";
+import NewsletterSignup from "../../components/NewsletterSignup";
 import { getBlogPost } from "../../data/blogPosts";
 import { getBlogPostContent } from "../../data/blogPostContent";
 import "../../i18n/i18n";
@@ -59,6 +60,7 @@ export default function BlogArticlePage() {
             {t("blog-course-cta-link")} <span aria-hidden="true">↗</span>
           </a>
         </div>
+        <NewsletterSignup className="mt-12" titleKey="newsletter-blog-title" textKey="newsletter-blog-text" />
       </article>
     </BlogShell>
   );

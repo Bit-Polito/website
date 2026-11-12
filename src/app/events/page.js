@@ -2,6 +2,7 @@
 
 import BlogShell from "../components/BlogShell";
 import EventGrid from "../components/EventGrid";
+import NewsletterSignup from "../components/NewsletterSignup";
 import events from "../data/events";
 import hackathon from "../data/hackathon";
 import { localizeCity } from "../data/localizedContent";
@@ -43,6 +44,8 @@ export default function EventsPage() {
       </section>
 
       <EventGrid events={sortedEvents} />
+
+      <NewsletterSignup className="mt-16" titleKey="newsletter-events-title" textKey="newsletter-events-text" />
     </BlogShell>
   );
 }
