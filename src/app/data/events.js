@@ -1,5 +1,42 @@
 const events = [
   {
+    slug: "bitcoin-conferenza-luino-2026",
+    status: "upcoming",
+    sortDate: "2026-11-28",
+    type: "Conferenza",
+    title: "Cos’è realmente Bitcoin? Conferenza a Luino",
+    date: "28 novembre 2026 · 17:00",
+    location: "Palazzo Verbania, Luino",
+    organiser: "BitPolito",
+    image: "/mission/luino-conferenza-bitcoin-locandina.jpg",
+    imageAlt: "Grafica della Bitcoin Educators Academy 2026",
+    imageFit: "contain",
+    description: `Bitcoin: se ne parla sempre di più, ma quanto ne sappiamo davvero?
+Il 28 novembre, BitPolito, team studentesco del Politecnico di Torino, arriva a Luino con un incontro pensato per chi vuole avvicinarsi a Bitcoin partendo da zero. Non è richiesta alcuna conoscenza tecnica o finanziaria, servirà solo curiosità e voglia di capire.
+Partiremo dalla storia della moneta e dalla sua evoluzione per capire i problemi del sistema monetario attuale parlando di inflazione, espansione monetaria e diminuzione del potere d’acquisto.
+Scopriremo perché Bitcoin può essere una risposta a questi problemi, come funziona e cosa lo rende diverso dalle altre criptovalute.
+Parleremo anche del suo impatto sociale, valutando i casi in cui il suo utilizzo ha fatto la differenza nella vita di attivisti, dissidenti politici e comunità in via di sviluppo.
+Un’occasione per andare oltre i luoghi comuni e capire cosa si nasconde davvero dietro Bitcoin.
+Quando: 28 novembre, dalle 17:00 alle 19:00
+Dove: Palazzo Verbania, Luino`,
+  },
+  {
+    slug: "bitcoin-colosseum-2026",
+    status: "upcoming",
+    sortDate: "2026-11-14",
+    type: "Incontro",
+    title: "Bitcoin Colosseum 2026",
+    date: "14 novembre 2026 · 17:00",
+    location: "Via del Castro Pretorio, 28a, Roma",
+    organiser: "Bitcoin Colosseum",
+    image: "/mission/bitcoin-colosseum-communities.jpg",
+    imageAlt: "Evento Bitcoin Colosseum Communities",
+    imageFit: "contain",
+    externalUrl: "https://www.bitcoincolosseum.it",
+    ctaKey: "events-discover",
+    description: "BitPolito parteciperà all'evento Bitcoin Colosseum 2026, un incontro dedicato alla comunità Bitcoin e alle sue iniziative. Per partecipare, prenota gratuitamente il tuo posto dal sito degli organizzatori.",
+  },
+  {
     slug: "rischi-web-bitcoin-pavone-canavese-2026",
     status: "past",
     sortDate: "2026-11-04",

@@ -64,7 +64,7 @@ export default function EventGrid({ events }) {
                 <div className="flex gap-2"><dt className="font-bold">{t("events-when")}</dt><dd>{localizedEvent.date}</dd></div>
                 <div className="flex gap-2"><dt className="font-bold">{t("events-where")}</dt><dd>{localizedEvent.location}</dd></div>
               </dl>
-              <p className="mt-5 text-base leading-relaxed">{localizedEvent.description}</p>
+              <p className="mt-5 text-base leading-relaxed">{localizedEvent.description.length > 250 ? localizedEvent.description.substring(0, 250) + "..." : localizedEvent.description}</p>
               <span className="mt-6 text-sm font-bold uppercase tracking-[0.14em]">{t("events-discover")} <span aria-hidden="true">→</span></span>
             </div>
           </Link>
