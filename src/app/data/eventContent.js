@@ -5,6 +5,20 @@ import events from "./events";
 // description/details/program/note for every supported language.
 const eventContent = {
   it: {
+    "event:bitcoin-conferenza-luino-2026": {
+      type: "Conferenza",
+      title: "Cos'è realmente Bitcoin? Conferenza a Luino",
+      date: "28 novembre 2026 · 17:00",
+      location: "Palazzo Verbania, Luino",
+      description: "Bitcoin: se ne parla sempre di più, ma quanto ne sappiamo davvero? Il 28 novembre, BitPolito, team studentesco del Politecnico di Torino, arriva a Luino con un incontro pensato per chi vuole avvicinarsi a Bitcoin partendo da zero. Non è richiesta alcuna conoscenza tecnica o finanziaria, servirà solo curiosità e voglia di capire. Partiremo dalla storia della moneta e dalla sua evoluzione per capire i problemi del sistema monetario attuale parlando di inflazione, espansione monetaria e diminuzione del potere d'acquisto. Scopriremo perché Bitcoin può essere una risposta a questi problemi, come funziona e cosa lo rende diverso dalle altre criptovalute. Parleremo anche del suo impatto sociale, valutando i casi in cui il suo utilizzo ha fatto la differenza nella vita di attivisti, dissidenti politici e comunità in via di sviluppo. Un'occasione per andare oltre i luoghi comuni e capire cosa si nasconde davvero dietro Bitcoin.",
+    },
+    "event:bitcoin-colosseum-2026": {
+      type: "Incontro",
+      title: "Bitcoin Colosseum 2026",
+      date: "14 novembre 2026 · 17:00",
+      location: "Via del Castro Pretorio, 28a, Roma",
+      description: "BitPolito parteciperà all'evento Bitcoin Colosseum 2026, un incontro dedicato alla comunità Bitcoin e alle sue iniziative. Per partecipare, prenota gratuitamente il tuo posto dal sito degli organizzatori.",
+    },
     "rischi-web-bitcoin-pavone-canavese-2026": {
       type: "Incontro",
       title: "Rischi del web e tecnologia Bitcoin",
@@ -112,6 +126,20 @@ const eventContent = {
     },
   },
   en: {
+    "event:bitcoin-conferenza-luino-2026": {
+      type: "Conference",
+      title: "What is Bitcoin really? Luino Conference",
+      date: "November 28, 2026 · 5:00 PM",
+      location: "Palazzo Verbania, Luino",
+      description: "Bitcoin: we hear about it more and more, but how much do we really know about it? On November 28, BitPolito, a student team from Politecnico di Torino, comes to Luino with a meeting designed for those who want to learn about Bitcoin from scratch. No technical or financial knowledge is required, just curiosity and a desire to understand. We'll start from the history of money and its evolution to understand the problems of today's monetary system, talking about inflation, monetary expansion and the decline in purchasing power. We'll discover why Bitcoin can be a solution to these problems, how it works and what makes it different from other cryptocurrencies. We'll also talk about its social impact, evaluating cases where its use has made a difference in the lives of activists, political dissidents and developing communities. An opportunity to go beyond common misconceptions and understand what really lies behind Bitcoin.",
+    },
+    "event:bitcoin-colosseum-2026": {
+      type: "Event",
+      title: "Bitcoin Colosseum 2026",
+      date: "November 14, 2026 · 5:00 PM",
+      location: "Via del Castro Pretorio, 28a, Rome",
+      description: "BitPolito will participate in the Bitcoin Colosseum 2026 event, a meeting dedicated to the Bitcoin community and its initiatives. To attend, book your free spot on the organizers' website.",
+    },
     "rischi-web-bitcoin-pavone-canavese-2026": {
       type: "Event",
       title: "Web Risks and Bitcoin Technology",
@@ -396,6 +424,20 @@ const eventContent = {
     },
   },
   de: {
+    "event:bitcoin-conferenza-luino-2026": {
+      type: "Konferenz",
+      title: "Was ist Bitcoin wirklich? Konferenz in Luino",
+      date: "28. November 2026 · 17:00 Uhr",
+      location: "Palazzo Verbania, Luino",
+      description: "Bitcoin: Wir hören immer wieder davon, aber wie viel wissen wir wirklich darüber? Am 28. November kommt BitPolito, ein Studententeam des Politecnico di Torino, nach Luino mit einem Treffen für alle, die Bitcoin von Grund auf verstehen möchten. Es sind keine technischen oder finanziellen Kenntnisse erforderlich, nur Neugier und der Wille zu verstehen. Wir beginnen mit der Geschichte der Währung und ihrer Entwicklung, um die Probleme des heutigen Geldsystems zu verstehen: Inflation, Geldmengenexpansion und Kaufkraftverlust. Wir werden entdecken, warum Bitcoin eine Lösung für diese Probleme sein kann, wie es funktioniert und was es von anderen Kryptowährungen unterscheidet. Wir werden auch über seine sozialen Auswirkungen sprechen und Fälle bewerten, in denen seine Nutzung im Leben von Aktivisten, politischen Dissidenten und Entwicklungsgemeinschaften einen Unterschied gemacht hat. Eine Gelegenheit, über Klischees hinauszugehen und zu verstehen, was wirklich hinter Bitcoin steckt.",
+    },
+    "event:bitcoin-colosseum-2026": {
+      type: "Veranstaltung",
+      title: "Bitcoin Colosseum 2026",
+      date: "14. November 2026 · 17:00 Uhr",
+      location: "Via del Castro Pretorio, 28a, Rom",
+      description: "BitPolito wird an der Veranstaltung Bitcoin Colosseum 2026 teilnehmen, ein Treffen, das der Bitcoin-Gemeinschaft und ihren Initiativen gewidmet ist. Um teilzunehmen, buchen Sie kostenlos Ihren Platz auf der Website der Organisatoren.",
+    },
     "rischi-web-bitcoin-pavone-canavese-2026": {
       type: "Veranstaltung",
       title: "Risiken des Internets und Bitcoin-Technologie",
@@ -503,6 +545,20 @@ const eventContent = {
     },
   },
   es: {
+    "event:bitcoin-conferenza-luino-2026": {
+      type: "Conferencia",
+      title: "¿Qué es realmente Bitcoin? Conferencia en Luino",
+      date: "28 de noviembre de 2026 · 17:00",
+      location: "Palazzo Verbania, Luino",
+      description: "Bitcoin: Cada vez se habla más de él, pero ¿cuánto sabemos realmente? El 28 de noviembre, BitPolito, un equipo estudiantil del Politecnico di Torino, llega a Luino con un encuentro pensado para quienes quieren acercarse a Bitcoin desde cero. No se requieren conocimientos técnicos ni financieros, solo curiosidad y ganas de entender. Partiremos de la historia de la moneda y su evolución para comprender los problemas del actual sistema monetario, hablando de inflación, expansión monetaria y disminución del poder adquisitivo. Descubriremos por qué Bitcoin puede ser una respuesta a estos problemas, cómo funciona y qué lo diferencia de otras criptomonedas. También hablaremos de su impacto social, evaluando casos en los que su uso ha hecho la diferencia en la vida de activistas, disidentes políticos y comunidades en desarrollo. Una oportunidad para ir más allá de los lugares comunes y entender qué se esconde realmente detrás de Bitcoin.",
+    },
+    "event:bitcoin-colosseum-2026": {
+      type: "Evento",
+      title: "Bitcoin Colosseum 2026",
+      date: "14 de noviembre de 2026 · 17:00",
+      location: "Via del Castro Pretorio, 28a, Roma",
+      description: "BitPolito participará en el evento Bitcoin Colosseum 2026, un encuentro dedicado a la comunidad Bitcoin y sus iniciativas. Para participar, reserva tu lugar de forma gratuita en el sitio web de los organizadores.",
+    },
     "rischi-web-bitcoin-pavone-canavese-2026": {
       type: "Evento",
       title: "Riesgos de Internet y Tecnología Bitcoin",
@@ -610,6 +666,20 @@ const eventContent = {
     },
   },
   fr: {
+    "event:bitcoin-conferenza-luino-2026": {
+      type: "Conférence",
+      title: "Qu'est-ce que Bitcoin vraiment ? Conférence à Luino",
+      date: "28 novembre 2026 · 17h00",
+      location: "Palazzo Verbania, Luino",
+      description: "Bitcoin : on en parle de plus en plus, mais en savons-nous vraiment autant ? Le 28 novembre, BitPolito, une équipe d'étudiants du Politecnico di Torino, arrive à Luino avec une rencontre pensée pour ceux qui veulent se rapprocher de Bitcoin à partir de zéro. Aucune connaissance technique ou financière n'est requise, juste de la curiosité et le désir de comprendre. Nous commencerons par l'histoire de la monnaie et son évolution pour comprendre les problèmes du système monétaire actuel en parlant d'inflation, d'expansion monétaire et de déclin du pouvoir d'achat. Nous découvrirons pourquoi Bitcoin peut être une réponse à ces problèmes, comment il fonctionne et ce qui le différencie des autres cryptomonnaies. Nous parlerons également de son impact social, en examinant les cas où son utilisation a fait la différence dans la vie des activistes, des dissidents politiques et des communautés en développement. Une occasion d'aller au-delà des lieux communs et de comprendre ce qui se cache vraiment derrière Bitcoin.",
+    },
+    "event:bitcoin-colosseum-2026": {
+      type: "Rencontre",
+      title: "Bitcoin Colosseum 2026",
+      date: "14 novembre 2026 · 17h00",
+      location: "Via del Castro Pretorio, 28a, Rome",
+      description: "BitPolito participera à l'événement Bitcoin Colosseum 2026, une rencontre dédiée à la communauté Bitcoin et à ses initiatives. Pour participer, réservez gratuitement votre place sur le site des organisateurs.",
+    },
     "rischi-web-bitcoin-pavone-canavese-2026": {
       type: "Rencontre",
       title: "Risques du Web et Technologie Bitcoin",
@@ -717,6 +787,20 @@ const eventContent = {
     },
   },
   nl: {
+    "event:bitcoin-conferenza-luino-2026": {
+      type: "Conferentie",
+      title: "Wat is Bitcoin echt? Conferentie in Luino",
+      date: "28 november 2026 · 17:00 uur",
+      location: "Palazzo Verbania, Luino",
+      description: "Bitcoin: we horen er steeds meer over, maar hoeveel weten we er echt van? Op 28 november komt BitPolito, een studententeam van het Politecnico di Torino, naar Luino met een bijeenkomst voor iedereen die Bitcoin van nul af aan wil leren begrijpen. Er is geen technische of financiële kennis vereist, alleen nieuwsgierigheid en de wil om te begrijpen. We beginnen met de geschiedenis van geld en de evolutie ervan om de problemen van het huidige monetaire systeem te begrijpen: inflatie, geldhoeveelexpansie en koopkrachtdalingen. We zullen ontdekken waarom Bitcoin een oplossing voor deze problemen kan zijn, hoe het werkt en wat het onderscheidt van andere cryptocurrencies. We zullen ook spreken over de maatschappelijke impact, door naar gevallen te kijken waarin het gebruik ervan het verschil heeft gemaakt in het leven van activisten, politieke dissidenten en zich ontwikkelende gemeenschappen. Een kans om voorbij clichés te gaan en te begrijpen wat er echt achter Bitcoin schuilgaat.",
+    },
+    "event:bitcoin-colosseum-2026": {
+      type: "Bijeenkomst",
+      title: "Bitcoin Colosseum 2026",
+      date: "14 november 2026 · 17:00 uur",
+      location: "Via del Castro Pretorio, 28a, Rome",
+      description: "BitPolito zal deelnemen aan het Bitcoin Colosseum 2026-evenement, een bijeenkomst gewijd aan de Bitcoin-gemeenschap en haar initiatieven. Om deel te nemen, reserveer gratis uw plaats op de website van de organisatoren.",
+    },
     "rischi-web-bitcoin-pavone-canavese-2026": {
       type: "Bijeenkomst",
       title: "Internetrisico's en Bitcoin-technologie",
@@ -824,6 +908,20 @@ const eventContent = {
     },
   },
   pt: {
+    "event:bitcoin-conferenza-luino-2026": {
+      type: "Conferência",
+      title: "O que é realmente Bitcoin? Conferência em Luíno",
+      date: "28 de novembro de 2026 · 17:00",
+      location: "Palazzo Verbania, Luíno",
+      description: "Bitcoin: falamos cada vez mais sobre ele, mas quanto realmente sabemos? No dia 28 de novembro, BitPolito, uma equipa estudantil do Politecnico di Torino, chega a Luíno com um encontro pensado para quem quer aproximar-se do Bitcoin do zero. Não é necessário conhecimento técnico ou financeiro, só curiosidade e vontade de compreender. Começaremos pela história da moeda e sua evolução para compreender os problemas do sistema monetário atual, falando de inflação, expansão monetária e diminuição do poder de compra. Descobriremos porque Bitcoin pode ser uma resposta a estes problemas, como funciona e o que o torna diferente de outras criptomoedas. Falaremos também do seu impacto social, avaliando casos em que seu uso fez a diferença na vida de ativistas, dissidentes políticos e comunidades em desenvolvimento. Uma oportunidade para ir além dos clichés e compreender o que realmente se esconde atrás do Bitcoin.",
+    },
+    "event:bitcoin-colosseum-2026": {
+      type: "Encontro",
+      title: "Bitcoin Colosseum 2026",
+      date: "14 de novembro de 2026 · 17:00",
+      location: "Via del Castro Pretorio, 28a, Roma",
+      description: "BitPolito participará no evento Bitcoin Colosseum 2026, um encontro dedicado à comunidade Bitcoin e às suas iniciativas. Para participar, reserve gratuitamente o seu lugar no site dos organizadores.",
+    },
     "rischi-web-bitcoin-pavone-canavese-2026": {
       type: "Encontro",
       title: "Riscos da Web e Tecnologia Bitcoin",
@@ -931,6 +1029,20 @@ const eventContent = {
     },
   },
   ru: {
+    "event:bitcoin-conferenza-luino-2026": {
+      type: "Конференция",
+      title: "Что такое Bitcoin на самом деле? Конференция в Луино",
+      date: "28 ноября 2026 · 17:00",
+      location: "Palazzo Verbania, Луино",
+      description: "Bitcoin: мы все больше о нём говорим, но насколько хорошо мы его понимаем? 28 ноября BitPolito, студенческая команда Политехнического университета Турина, приезжает в Луино с встречей для тех, кто хочет начать изучать Bitcoin с нуля. Не требуется никаких технических или финансовых знаний, только любопытство и желание разобраться. Мы начнём с истории денег и их эволюции, чтобы понять проблемы современной денежной системы: инфляцию, расширение денежной массы и снижение покупательной способности. Мы узнаем, почему Bitcoin может быть ответом на эти проблемы, как он работает и чем отличается от других криптовалют. Мы также поговорим о его социальном влиянии, рассмотрев случаи, когда его использование изменило жизнь активистов, политических диссидентов и развивающихся сообществ. Возможность выйти за рамки стереотипов и понять, что на самом деле стоит за Bitcoin.",
+    },
+    "event:bitcoin-colosseum-2026": {
+      type: "Встреча",
+      title: "Bitcoin Colosseum 2026",
+      date: "14 ноября 2026 · 17:00",
+      location: "Via del Castro Pretorio, 28a, Рим",
+      description: "BitPolito примет участие в событии Bitcoin Colosseum 2026 — встречу, посвящённую сообществу Bitcoin и его инициативам. Чтобы принять участие, бесплатно зарезервируйте своё место на сайте организаторов.",
+    },
     "rischi-web-bitcoin-pavone-canavese-2026": {
       type: "Встреча",
       title: "Риски Интернета и технология Bitcoin",
@@ -1038,6 +1150,20 @@ const eventContent = {
     },
   },
   zh: {
+    "event:bitcoin-conferenza-luino-2026": {
+      type: "会议",
+      title: "比特币真的是什么？卢伊诺会议",
+      date: "2026年11月28日 · 17:00",
+      location: "Palazzo Verbania, 卢伊诺",
+      description: "比特币：我们对它的讨论越来越多，但我们真正了解多少呢？11月28日，都灵理工大学学生团队BitPolito将来到卢伊诺，举办一场为想从零开始学习比特币的人们设计的会议。不需要任何技术或金融知识，只需好奇心和理解的渴望。我们将从货币的历史和演变开始，以理解当代货币体系的问题——通货膨胀、货币扩张和购买力下降。我们将发现为什么比特币可以解决这些问题，它如何运作，以及它与其他加密货币的区别。我们还将讨论其社会影响，审视比特币在改变活动人士、政治异议人士和发展中社区生活中所产生的差异。这是一个超越常见观点、理解比特币真正含义的机会。",
+    },
+    "event:bitcoin-colosseum-2026": {
+      type: "讲座",
+      title: "Bitcoin Colosseum 2026",
+      date: "2026年11月14日 · 17:00",
+      location: "Via del Castro Pretorio, 28a, 罗马",
+      description: "BitPolito 将参加 Bitcoin Colosseum 2026 活动，这是一个献给比特币社区及其倡议的聚会。要参加，请在组织者的网站上免费预订您的位置。",
+    },
     "rischi-web-bitcoin-pavone-canavese-2026": {
       type: "讲座",
       title: "网络风险和比特币技术",
@@ -1145,6 +1271,20 @@ const eventContent = {
     },
   },
   fa: {
+    "event:bitcoin-conferenza-luino-2026": {
+      type: "کنفرانس",
+      title: "بیت‌کوین واقعاً چیست؟ کنفرانس لوئینو",
+      date: "۲۸ نوامبر ۲۰۲۶ · ۱۷:۰۰",
+      location: "Palazzo Verbania, لوئینو",
+      description: "بیت‌کوین: ما هر روز درباره‌اش بیشتر می‌شنویم، اما واقعاً چقدر در مورد آن می‌دانیم؟ در ۲۸ نوامبر، BitPolito، تیم دانشجویی دانشگاه پلی‌تکنیک تورین، به لوئینو می‌آید و جلسه‌ای برگزار می‌کند برای کسانی که می‌خواهند بیت‌کوین را از صفر شروع کنند. نیازی به دانش فنی یا مالی نیست، فقط کنجکاوی و تمایل برای فهم کافی است. ما از تاریخ پول و تحول آن شروع می‌کنیم تا مشکلات سیستم پولی فعلی را درک کنیم: تورم، گسترش جرم پول و کاهش قدرت خرید. ما خواهیم فهمید که چرا بیت‌کوین می‌تواند پاسخی برای این مشکلات باشد، چگونه کار می‌کند و چه چیزی آن را از سایر ارز دیجیتال متمایز می‌کند. ما همچنین درباره تأثیر اجتماعی آن صحبت خواهیم کرد و مواردی را بررسی می‌کنیم که استفاده از آن در زندگی فعالین، مخالفین سیاسی و جوامع در حال توسعه تفاوت ایجاد کرده است. فرصتی برای فراتر رفتن از تصورات عمومی و درک اصلی ماهیت بیت‌کوین.",
+    },
+    "event:bitcoin-colosseum-2026": {
+      type: "جلسه",
+      title: "Bitcoin Colosseum 2026",
+      date: "۱۴ نوامبر ۲۰۲۶ · ۱۷:۰۰",
+      location: "Via del Castro Pretorio, 28a, رم",
+      description: "BitPolito در رویداد Bitcoin Colosseum 2026 شرکت خواهد کرد، جلسه‌ای که به جامعه بیت‌کوین و ابتکارات آن اختصاص یافته است. برای شرکت، بطور رایگان جای خود را در وب‌سایت سازمان‌دهندگان رزرو کنید.",
+    },
     "rischi-web-bitcoin-pavone-canavese-2026": {
       type: "جلسه",
       title: "خطرات وب و فناوری بیت‌کوین",

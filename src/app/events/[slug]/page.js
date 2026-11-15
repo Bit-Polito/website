@@ -45,7 +45,7 @@ export default function EventDetailPage() {
           )}
         </header>
 
-        <div className={`relative mt-10 aspect-[16/9] overflow-hidden rounded-xl border-2 border-blue-dark dark:border-white`} style={event.imageBg ? { backgroundColor: event.imageBg } : undefined}>
+        <div className={`relative mt-10 aspect-[3/2] overflow-hidden rounded-xl border-2 border-blue-dark dark:border-white`} style={event.imageBg ? { backgroundColor: event.imageBg } : undefined}>
           <Image src={event.image} alt={event.imageAlt} fill priority sizes="(max-width: 1024px) 100vw, 896px" className={event.imageFit === "contain" ? "object-contain" : "object-cover"} />
         </div>
 
