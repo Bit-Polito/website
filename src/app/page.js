@@ -2,6 +2,7 @@
 
 import BlogShell from "./components/BlogShell";
 import FeaturedContent from "./components/FeaturedContent";
+import NewsletterSignup from "./components/NewsletterSignup";
 import HeroContentSlider from "./components/HeroContentSlider";
 import Sponsors from "./components/Sponsors";
 import blogPosts from "./data/blogPosts";
@@ -37,6 +38,8 @@ export default function HomePage() {
       </section>
 
       <FeaturedContent events={events} posts={blogPosts} projects={projects} />
+
+      <NewsletterSignup className="mt-16 lg:mt-24" />
     </BlogShell>
   );
 }

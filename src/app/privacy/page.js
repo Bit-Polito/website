@@ -3,7 +3,7 @@
 import Link from "next/link";
 import BlogShell from "../components/BlogShell";
 
-const LAST_UPDATED = "23 settembre 2026";
+const LAST_UPDATED = "12 novembre 2026";
 
 const sections = [
   {
@@ -22,6 +22,7 @@ const sections = [
       "Preferenze di navigazione (tema chiaro/scuro, lingua selezionata): salvate esclusivamente nel browser del dispositivo che usi, tramite localStorage. Non vengono trasmesse a BitPolito né a terzi. Sono descritte nel dettaglio nella nostra Cookie Policy.",
       "Dati tecnici minimi di funzionamento del sito (ad es. indirizzo IP, tipo di browser), trattati dal nostro fornitore di hosting (Vercel Inc.) per garantire sicurezza, stabilità e funzionamento del servizio. BitPolito non ha accesso diretto a log dettagliati e non effettua profilazione degli utenti.",
       "Dati che ci invii volontariamente scrivendo all'indirizzo info@bitpolito.it (ad es. nome, indirizzo email, contenuto del messaggio), usati esclusivamente per risponderti.",
+      "Indirizzo email che inserisci nei moduli di iscrizione alla newsletter presenti sul sito, solo dopo aver dato il tuo consenso spuntando l'apposita casella. Lo usiamo esclusivamente per inviarti la newsletter di BitPolito (eventi, articoli e novità). Puoi disiscriverti in qualsiasi momento tramite il link presente in ogni email o scrivendo a info@bitpolito.it.",
       "Dati che inserisci in moduli di terze parti collegati dal sito, come i moduli di iscrizione a eventi e hackathon (Luma, Google Forms) o le pagine social collegate. Quando compili uno di questi moduli, i tuoi dati vengono raccolti direttamente da quelle piattaforme secondo le rispettive informative privacy; BitPolito riceve e utilizza i dati necessari (ad es. nome ed email dei partecipanti) esclusivamente per organizzare l'evento o l'attività a cui ti sei iscritto/a.",
     ],
   },
@@ -39,6 +40,7 @@ const sections = [
     list: [
       "Vercel Inc. — hosting ed erogazione del sito.",
       "Notion Labs, Inc. — gestione dei contenuti editoriali del blog.",
+      "Brevo (Sendinblue SAS, Francia) — gestione della lista e invio della newsletter.",
       "Luma (Luma Labs) e Google (Google Forms) — quando usati per le iscrizioni a eventi e attività.",
       "Le piattaforme social collegate dal sito (Telegram, X, Instagram, YouTube, Spotify, GitHub, LinkedIn), solo se scegli di seguirci su quei canali.",
     ],
@@ -47,7 +49,7 @@ const sections = [
   {
     heading: "5. Per quanto tempo conserviamo i dati",
     paragraphs: [
-      "I messaggi ricevuti via email sono conservati per il tempo necessario a gestire la richiesta e, successivamente, per il tempo previsto da eventuali obblighi di legge. I dati raccolti per l'organizzazione di un evento sono conservati per la durata dell'evento stesso e per il periodo necessario a rendicontarlo, salvo diverso periodo indicato nel modulo di iscrizione specifico.",
+      "I messaggi ricevuti via email sono conservati per il tempo necessario a gestire la richiesta e, successivamente, per il tempo previsto da eventuali obblighi di legge. I dati raccolti per l'organizzazione di un evento sono conservati per la durata dell'evento stesso e per il periodo necessario a rendicontarlo, salvo diverso periodo indicato nel modulo di iscrizione specifico. L'indirizzo email della newsletter è conservato finché resti iscritto/a; quando ti disiscrivi viene rimosso dalla lista di invio.",
     ],
   },
   {
